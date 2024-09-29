@@ -1,19 +1,29 @@
 'use client'
 
-import { useState } from 'react'
-import { ExternalLink, Play, Maximize2, Minimize2 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { ExternalLink, Play, Maximize2, Minimize2, Loader2 } from 'lucide-react'
 import p5jsProjects from "../../public/information/p5jsProjects.json"
 import AppListDisplay from '../components/AppListDisplay'
 
 const P5App = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const link = `https://moisestrejo.com/${app.id}`
 
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen)
   }
+
+  useEffect(() => {
+    setIsLoading(true)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
+
+    return () => clearTimeout(timer)
+  }, [app.id])
 
   return (
     <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
@@ -66,11 +76,17 @@ const P5App = ({ app }) => {
       )}
       
       <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px]'}`}>
-        <iframe
-          src={`https://p5moises-27cba0c96786.herokuapp.com/${app.id}`}
-          title={app.id}
-          className="w-full h-full border-t border-gray-200"
-        />
+        {isLoading ? (
+          <div className="w-full h-full flex items-center justify-center bg-gray-100">
+            <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+          </div>
+        ) : (
+          <iframe
+            src={`https://p5moises-27cba0c96786.herokuapp.com/${app.id}`}
+            title={app.id}
+            className="w-full h-full border-t border-gray-200"
+          />
+        )}
       </div>
     </div>
   )

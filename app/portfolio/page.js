@@ -1,13 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import { ExternalLink, Play, Maximize2, Minimize2 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { ExternalLink, Play, Maximize2, Minimize2, Loader2 } from 'lucide-react'
 import externalApps from "../../public/information/externalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
 
 const ExternalApp = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const keywords = ["cloud", "youtube", "github.com"]
   const includesKeyword = keywords.some((keyword) => app.link.includes(keyword))
@@ -15,6 +16,15 @@ const ExternalApp = ({ app }) => {
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen)
   }
+
+  useEffect(() => {
+    setIsLoading(true)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [app.id])
 
   return (
     <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
@@ -69,11 +79,16 @@ const ExternalApp = ({ app }) => {
       
       {!includesKeyword && !app.hide && (
         <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px]'}`}>
-          <iframe
-            src={app.link}
-            title={app.id}
-            className="w-full h-full border-t border-gray-200"
-          />
+          <div className={`w-full h-full flex items-center justify-center bg-gray-100 ${isLoading ? 'block' : 'hidden'}`}>
+            <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+          </div>
+          <div className={`w-full h-full ${isLoading ? 'hidden' : 'block'}`}>
+            <iframe
+              src={app.link}
+              title={app.id}
+              className="w-full h-full border-t border-gray-200"
+            />
+          </div>
         </div>
       )}
     </div>

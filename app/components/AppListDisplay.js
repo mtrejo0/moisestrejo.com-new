@@ -1,20 +1,26 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 
 export default function AppListDisplay({ apps, displayApp, subRoute }) {
   const { id } = useParams()
+  const router = useRouter()
+  const searchParams = useSearchParams()
   const [activeApp, setActiveApp] = useState(null)
 
   useEffect(() => {
-    const initialApp = apps.find(app => app.id === id) || apps[0]
+    const queryId = searchParams.get('id')
+    const initialApp = apps.find(app => app.id === (queryId || id)) || apps[0]
     setActiveApp(initialApp)
-  }, [apps, id])
+  }, [apps, id, searchParams])
 
   const handleAppChange = (appId) => {
     const newApp = apps.find(app => app.id === appId)
-    if (newApp) setActiveApp(newApp)
+    if (newApp) {
+      setActiveApp(newApp)
+      router.push(`/${subRoute}?id=${appId}`, undefined, { shallow: true })
+    }
   }
 
   if (!activeApp) return null
