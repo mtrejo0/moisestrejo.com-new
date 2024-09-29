@@ -1,0 +1,213 @@
+[
+  {
+    "name": "Software Engineer - Catalog Enrichment Team @ Instacart",
+    "year": "May 2023 - Present",
+    "description": [
+      "Successfully migrated 13 DAGs to Airflow2, conducting parity testing before and after to ensure seamless functionality and improved monitoring, while deprecating outdated DAGs to streamline operations",
+      "Created dashboards and runbooks for the Ads/Sales teams, allowing input of product IDs to investigate image sources, significantly improving data visibility and reducing troubleshooting time, addressing up to 30% of redundant tickets",
+      "Managed 100+ priority updates by coordinating with technical account managers, measuring impacts, and obtaining approvals to ensure data accuracy and availability",
+      "Led splitting the existing Sidekiq worker, creating a dedicated queue for enrichment jobs, which improved job ownership, monitoring, and overall system reliability",
+      "Migrated and audited 30+ monitors to DDC and added 10+ alerts improving system monitoring",
+      "Redesigned a sync job for the Catalyst pipeline, creating a dedicated Snowflake warehouse for team jobs, which improved cost measurement and reduced the risk of system incidents",
+      "Developed NutriCoach, a winning hackathon project, to display nutritional value of items in a shopping cart to promote healthier purchasing decisions and recommend nutritional complements"
+    ],
+    "links": [],
+    "tags": ["work"]
+  },
+  {
+    "name": "Robotics UX Engineer, Researcher Designer @ Tutor Intelligence",
+    "year": "May 2022 - Present",
+    "description": [
+      "Developed web application for factory workers to interact with robots, start jobs, view metrics, and billing",
+      "Improved live data labeling portal to increase the number of robots a tutor can manage",
+      "Conducted multiple user interviews for improving user experiences with the robots"
+    ],
+    "links": [],
+    "tags": ["work"]
+  },
+  {
+    "name": "CTO @ Function",
+    "year": "December 2021 - May 2022",
+    "description": [
+      "Function connects high growth startups to talented student communities to disrupt recruiting. We helped Tutor Intelligence, Nya Labs, and Prestij recruit top tier talent from MIT and Boston schools",
+      "I built the web application that companies and student organizations used to create events and communicate"
+    ],
+    "links": [],
+    "tags": ["work"]
+  },
+  {
+    "name": "Undergraduate Researcher in the Digital Humanities Lab",
+    "year": "Spring 2022",
+    "description": [
+      "Racial discrimination in access to housing, jobs, finance and health care has left a lasting mark on the US urban landscape. In Boston in 2015, the average White family’s assets amounted to $247,500. The average Black family’s assets totaled all of $8.00—the price of two McDonald’s happy meals. We set out in this digital history lab to figure out at the neighborhood level how this great gap in wealth occurred. I worked on the housing page."
+    ],
+    "links": [
+      {
+        "name": "Self-Sufficient Cities",
+        "link": "https://cities.dhlab.mit.edu/"
+      },
+      {
+        "name": "Github",
+        "link": "https://github.com/dhmit/self-sustaining-cities"
+      }
+    ],
+    "tags": ["work", "research"]
+  },
+  {
+    "name": "Undergraduate Researcher in the Digital Humanities Lab",
+    "year": "Fall 2021",
+    "description": [
+      "Developed a 'sonification toolkit,' a flexible digital tools that will enable conversion of data sets (images, text, statistics) into sound in ways that quickly yield results. These tools will allow users to easily modify and adapt the ways the data is expressed to design and sculpt sound that is aesthetically satisfying and analytically illuminating. UROPs will define and develop a range of practices, then devise digital tools to quickly transform data sets of all types into a variety of sonified results."
+    ],
+    "links": [
+      {
+        "name": "Sonification Toolkit",
+        "link": "https://sonification.dhlab.mit.edu/time-series/"
+      },
+      {
+        "name": "Github",
+        "link": "https://github.com/dhmit/sonification"
+      }
+    ],
+    "tags": ["work", "research"]
+  },
+  {
+    "name": "Interfraternity Council (IFC) - Risk Management Consultant",
+    "year": "Fall 2021",
+    "description": [
+      "Encouraged Social and Risk Management Policies. Helped hosts spot policy violations and advising them on how to mitigate risk."
+    ],
+    "links": [
+      {
+        "name": "MIT IFC Handbook",
+        "link": "https://www.mitifc.com/risk-handbook/"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "Twitter SWE",
+    "year": "June 2021 - August 2021",
+    "description": [
+      "Introduced Zipkin tracing to sample live SQL operations and save them for access in BigQuery",
+      "Developed scheduled job that finds how often each graph/partition are hit and the popular queries under each",
+      "Built dashboard for engineers to identify pain points and trends in partition/graph load"
+    ],
+    "icon": "logos/twitter.jpg",
+    "tags": ["work"]
+  },
+  {
+    "name": "SuperUROP - Responsible Regulating Social Media",
+    "year": "May 2020 - May 2021",
+    "description": [
+      "Developed a policy that can test and quantify the effect of content curation on user learning",
+      "Built a recommendation system using content filtering and matrix factorization algorithms",
+      "Created learning agents to track the effect of different recommending systems on decision making",
+      "Abstract: Social Media Platforms (SMPs) use recommendations to provide userswith content [1].  Some standard recommendation techniques can nega-tively affect the way users learn and how much SMPs can profit.  Plat-forms can to have a greedy approach when recommending content to users,which can negatively affect learning and profits.  We align the platform’sgoals with gaining more money and user’s goals to learn freely by modify-ing how recommendation systems estimate and recommend to their users.We introduce a new approach for estimating user interests for topics tointroduce diversity and treat users as a learning agent rather than a staticuser.  We found a way that a SMP can focus on these goals to improveusers’ learning experiences and make more profit than current approaches"
+    ],
+    "links": [
+      {
+        "name": "Responsible Regulating Social Media PDF",
+        "link": "https://drive.google.com/file/d/15iwvnPyylNGwLkDqHr37FQsH4W7KADlL/view?usp=sharing"
+      },
+      {
+        "name": "3 min talk",
+        "link": "https: //www.youtube.com/watch?v=CRcruJ3Eu7o"
+      }
+    ],
+    "icon": "logos/lids.jpg",
+    "tags": ["work", "research"]
+  },
+  {
+    "name": "Facebook SWE ",
+    "year": "June 2020 - August 2020",
+    "description": [
+      "Created internal tool to load B2C chat plugin for debugging and E2E + snapshot testing",
+      "Refactored existing web controller to use class-based evaluator for whitelisting and privacy rules",
+      "Updated the on boarding flow for the chat plugin to allow businesses to add and customize newly introduced features"
+    ],
+    "icon": "logos/facebook.png",
+    "tags": ["work"]
+  },
+  {
+    "name": "Interfraternity Council (IFC) - Risk Management Consultant",
+    "year": "Spring 2020",
+    "description": [
+      "Encouraged Social and Risk Management Policies. Helped hosts spot policy violations and advising them on how to mitigate risk."
+    ],
+    "links": [
+      {
+        "name": "MIT IFC Handbook",
+        "link": "https://www.mitifc.com/risk-handbook/"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "TownSq SWE",
+    "year": "January 2020",
+    "description": [
+      "Constructed front end dashboard displaying average feedback, reviews, and payment churn for HOA managers toimprove resident experiences",
+      "Participated in Data Lab with AWS to develop data lake + warehouse for HOA resident feedback and payment metrics"
+    ],
+    "links": [
+      {
+        "name": "TownSq",
+        "link": "https://townsq.io/"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "HKN Algorithms Tutor",
+    "year": "January 2019 - January 2020",
+    "description": [
+      "Mentored and taught 2 students each semester in Introduction to Algorithms and Data Structures 6.006. Topics included Master Theorem, Insertion + Selection + Merge + In Place Merge + Radix Sort, dynamic arrays, BSTs, AVLs, Heaps, Hash Maps, BFS, DFS, Dijkstras, Johnsons, Bellman Ford, Dynamic Programming, Subset Sum & Pseudo-polynomial, P, NP, Hardness, Completeness"
+    ],
+    "links": [
+      {
+        "name": "HKN",
+        "link": "https: //hkn.mit.edu/"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "Facebook University SWE",
+    "year": "June 2019 - August 2019",
+    "description": [
+      "Developed an Android application called Skillshop that allows users to post workshops they want to teach and theability to sign up for public workshops connecting them to teachers and other students in the class"
+    ],
+    "icon": "logos/facebook.png",
+    "links": [
+      {
+        "name": "Facebook University",
+        "link": "https: //www.facebook.com/careers/students-and-grads/students"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "Global Teching Labs - Teaching Assistant",
+    "year": "January 2019",
+    "description": [
+      "Taught intro computer science to highschool sophomores and mentored mobile app development to highschool juniors at Prepa Tec in Mexico City"
+    ],
+    "links": [
+      {
+        "name": "MIT MISTI",
+        "link": "https://misti.mit.edu/your-resources/crafting-your-experience/types-programs/global-teaching-labs"
+      }
+    ],
+    "tags": ["work"]
+  },
+  {
+    "name": "Whataburger",
+    "year": "Spring 2018",
+    "description": [
+      "Exceptional drive-thru personel 🍔. I always gave extra spicy ketchup."
+    ],
+    "icon": "logos/whataburger.png",
+    "tags": ["work"]
+  }
+]

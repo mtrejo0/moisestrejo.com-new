@@ -1,0 +1,341 @@
+[
+  {
+    "name": "Massachusetts Institute of Technology",
+    "description": ["BS in Computer Science and Engineering, GPA: 4.6/5"],
+    "year": "Expected May 2022",
+    "tags": ["education"],
+    "icon": "logos/mit.png",
+    "sub_items": [
+      {
+        "name": "21M.385 - Interactive Music Systems",
+        "description": [
+          "Interactive Music Systems is a hands-on programming and design course that explores audio synthesis, musical structure, human-computer interaction (HCI), and visual presentation as the ingredients for the creation of engaging, real-time interactive musical experiences. These experiences allow users to connect with music more deeply than through passive listening. The most successful ones (such as Harmonix's Guitar Hero, Rock Band, and Fantasia: Music Evolved) give users intuitive control, greater musical insight, and a deeper emotional response to music."
+        ],
+        "links": [
+          {
+            "name": "Pset 1 - Youtube - Synthesizer",
+            "link": "https://youtu.be/vNiUtwGRVZo"
+          },
+          {
+            "name": "Pset 1 - Tiktok - Synthesizer",
+            "link": "https://vm.tiktok.com/TTPdkokvRD/"
+          },
+          {
+            "name": "Pset 2 - Youtube - Mixer",
+            "link": "https://youtu.be/3ns3d1gNIU4"
+          },
+          {
+            "name": "Pset 2 - Tiktok - Mixer",
+            "link": "https://vm.tiktok.com/TTPdBgGLSt/"
+          },
+          {
+            "name": "Pset 3 - Youtube - Step Sequencer",
+            "link": "https://youtu.be/PX0zHalZSj8"
+          },
+          {
+            "name": "Pset 3 - Tiktok - Step Sequencer",
+            "link": "https://vm.tiktok.com/TTPdSgJt66/"
+          },
+          {
+            "name": "Pset 4 - Youtube - Arpeggiator",
+            "link": "https://youtu.be/uwiBemrtzjY"
+          }
+        ],
+        "year": "Spring 2022",
+        "tags": ["education"]
+      },
+      {
+        "name": "15.9001 - Engineering Innovation: Moving Ideas to Impact",
+        "description": [
+          "To be effective, business leaders must understand the factors responsible for their firm’s past performance and be able to identify those changes (inside or outside the firm) that are most likely to help or hurt future performance.  In this course, we introduce modern strategy frameworks and methodologies to help you develop the skills needed to be a successful manager with responsibility for the performance of a firm or business unit within a firm.  We use cases and readings to explore a wide range of strategic problems, focusing particularly on the sources of competitive advantage and the interaction between industry structure and organizational capabilities.  "
+        ],
+        "links": [],
+        "year": "Spring 2022",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.810 - Engineering Interactive Technologies",
+        "description": [
+          "Provides instruction in building cutting-edge interactive technologies, explains the underlying engineering concepts, and shows how those technologies evolved over time. Students use a studio format (i.e., extended periods of time) for constructing software and hardware prototypes. Topics include interactive technologies, such as multi-touch, augmented reality, haptics, wearables, and shape-changing interfaces. In a group project, students build their own interactive hardware/software prototypes and present them in a live demo at the end of term."
+        ],
+        "links": [
+          {
+            "name": "Class Website",
+            "link": "https://hcie.csail.mit.edu/classes/2021-fall-6810/6810-engineering-interactive-technologies.html"
+          },
+          {
+            "name": "Final Project Demo",
+            "link": "https://www.youtube.com/watch?v=dfSvAIP3gSA"
+          }
+        ],
+        "year": "Fall 2021",
+        "tags": ["education", "research"]
+      },
+      {
+        "name": "15.359/6.901 - Engineering Innovation: Moving Ideas to Impact",
+        "description": [
+          "With a focus on “innovation engineering” or the engineering of innovation, the class presents the processes, knowledge and techniques needed to take an opportunity from the earliest stages of idea conception through to impact in the global economy.  The class takes the perspective of the Chief Technology Officer (CTO) of an entrepreneurial start-up venture with a novel technology-based innovation and explores the challenges, tradeoffs, and issues associated with moving a solution to readiness (i.e. being ready for market adoption), emphasizing production, team, and stakeholder readiness."
+        ],
+        "links": [],
+        "year": "Fall 2021",
+        "tags": ["education"]
+      },
+      {
+        "name": "EC.074 - The Start-up Experience at MIT",
+        "description": [
+          "This Seminar is not a 'cook book' for starting companies.   It grew out of the weekly hacking sessions of the MIT Entrepreneurs Club where students and others would discuss new venture ideas.   As such it is a bit of a Reality TV show."
+        ],
+        "links": [],
+        "year": "Fall 2021",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.904 - Ethics for Engineers",
+        "description": [
+          "In this weekly seminar we will study ethics in theory and in practice.  We will read and consider portions of works by some of history’s greatest and most influential ethical thinkers.  Meanwhile, we will examine ethical decision making in real-life engineering is not merely about design and implementation.  Engineering aims at goods both for the individual and for society.  The thoughtful pursuit of engineering requires an understanding of these goods, and therefore reflection upon what is truly good for human beings.  "
+        ],
+        "links": [
+          {
+            "name": "Kant - Duty Ethics",
+            "link": "https://docs.google.com/document/d/1E9DO_2RL0Adk9i0iqOLacDKBNCRmJccLxJOGFHqhag8/edit?usp=sharing"
+          },
+          {
+            "name": "Tocqueville - Ethics in America",
+            "link": "https://docs.google.com/document/d/1CTNuhy8e1HDPbQIdhq5dVkL-pJ7-UbxDlbj8NmAj21s/edit?usp=sharing"
+          },
+          {
+            "name": "Science Race and Bias",
+            "link": "https://docs.google.com/document/d/1dEw9_CIhxX_kUnDwDSS3rT7GfL_Y16iKZAzn1S9_NkY/edit?usp=sharing"
+          },
+          {
+            "name": "Machiavelli - FREEDOM OF THOUGHT IN AMERICA",
+            "link": "https://docs.google.com/document/d/1wkkOn_XEeqtS1IldMMQRxMWqCE-LJUy2ISTXQJvpNso/edit?usp=sharing"
+          },
+          {
+            "name": "Tocqueville",
+            "link": "https://docs.google.com/document/d/1PZN7abwsTbflOR2XpkYZg0tOev8l0plho-sYafFIglA/edit?usp=sharing"
+          },
+          {
+            "name": "Bacon's approach to philosophy or science",
+            "link": "https://docs.google.com/document/d/1PZN7abwsTbflOR2XpkYZg0tOev8l0plho-sYafFIglA/edit?usp=sharing"
+          },
+          {
+            "name": "Arendt - Bostrom - AGI ",
+            "link": "https://docs.google.com/document/d/1-WdAbkRUyuDhf26MpdplQrpPCuBnHwlEBaB6AW1xEM0/edit?usp=sharing"
+          },
+          {
+            "name": "Hobbes + Locke - Rights Ethics",
+            "link": "https://docs.google.com/document/d/1-NeMRv0ZGskMY244S1sdqzFFPHWX_VDsVMtN-oH2vtM/edit?usp=sharing"
+          },
+          {
+            "name": "Aristotle's - Virtue Ethics",
+            "link": "https://docs.google.com/document/d/1XFn4OegRnR6w4m6qb7Ctlrc1YXHp_TCIxY-NEIC7B6w/edit?usp=sharing"
+          },
+          {
+            "name": "Bentham - Utilitarianism",
+            "link": "https://docs.google.com/document/d/1_fvmVm5SIyPoBGM8XOGTvtZyRDJVWVaUYmV_WOZrP7E/edit?usp=sharing"
+          },
+          {
+            "name": "Aristotle’s list of virtues and vices",
+            "link": "https://docs.google.com/document/d/1sKMEn6vRfCJfwHEvyE0mSsDrawSzTFUiOl1Q9_3C6L0/edit?usp=sharing"
+          },
+          {
+            "name": "Aristotle's - Virtue Ethics",
+            "link": "https://docs.google.com/document/d/1XFn4OegRnR6w4m6qb7Ctlrc1YXHp_TCIxY-NEIC7B6w/edit?usp=sharing"
+          }
+        ],
+        "year": "Fall 2021",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.859 - Data Visualization - Graduate",
+        "description": [
+          "Provides design-focused instruction on how to build software applications. Design topics include classic human-computer interaction (HCI) design tactics (need finding, heuristic evaluation, prototyping, user testing), conceptual design (modeling and evaluating constituent concepts), abstract data modeling, and visual design. Implementation topics include functional programming in Javascript, reactive front-ends, web services, and databases. Students work in teams on term-long projects in which they construct applications of social value."
+        ],
+        "links": [
+          {
+            "name": "Class Website",
+            "link": "http: //vis.csail.mit.edu/classes/6.894/"
+          }
+        ],
+        "year": "Spring 2021",
+        "tags": ["education", "research"]
+      },
+      {
+        "name": "18.065 - Matrix Methods in Data Analysis & Signal Processing - Graduate",
+        "description": [
+          "Provides design-focused instruction on how to build software applications. Design topics include classic human-computer interaction (HCI) design tactics (need finding, heuristic evaluation, prototyping, user testing), conceptual design (modeling and evaluating constituent concepts), abstract data modeling, and visual design. Implementation topics include functional programming in Javascript, reactive front-ends, web services, and databases. Students work in teams on term-long projects in which they construct applications of social value."
+        ],
+        "year": "Spring 2021",
+        "tags": ["education", "research"]
+      },
+      {
+        "name": "6.170 - Software Studio",
+        "description": [
+          "Provides design-focused instruction on how to build software applications. Design topics include classic human-computer interaction (HCI) design tactics (need finding, heuristic evaluation, prototyping, user testing), conceptual design (modeling and evaluating constituent concepts), abstract data modeling, and visual design. Implementation topics include functional programming in Javascript, reactive front-ends, web services, and databases. Students work in teams on term-long projects in which they construct applications of social value."
+        ],
+        "year": "Fall 2020",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.033 - Computer Systems Engineering",
+        "description": [
+          "Topics on the engineering of computer software and hardware systems: techniques for controlling complexity; strong modularity using client-server design, operating systems; performance, networks; naming; security and privacy; fault-tolerant systems, atomicity and coordination of concurrent activities, and recovery; impact of computer systems on society. Case studies of working systems and readings from the current literature provide comparisons and contrasts. Includes a single, semester-long design project. Students engage in extensive written communication exercises. Enrollment may be limited."
+        ],
+        "year": "Spring 2020",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.031 - Elements of Software Construction",
+        "description": [
+          "Introduces fundamental principles and techniques of software development: how to write software that is safe from bugs, easy to understand, and ready for change. Topics include specifications and invariants; testing, test-case generation, and coverage; abstract data types and representation independence; design patterns for object-oriented programming; concurrent programming, including message passing and shared memory concurrency, and defending against races and deadlock; and functional programming with immutable data and higher-order functions. Includes weekly programming exercises and larger group programming projects."
+        ],
+        "year": "Fall 2019",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.046 - Design and Analysis of Algorithms",
+        "description": [
+          "Techniques for the design and analysis of efficient algorithms, emphasizing methods useful in practice. Topics include sorting; search trees, heaps, and hashing; divide-and-conquer; dynamic programming; greedy algorithms; amortized analysis; graph algorithms; and shortest paths. Advanced topics may include network flow; computational geometry; number-theoretic algorithms; polynomial and matrix calculations; caching; and parallel computing."
+        ],
+        "year": "Fall 2019",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.036 - Introduction to Machine Learning",
+        "description": [
+          "Introduces principles, algorithms, and applications of machine learning from the point of view of modeling and prediction; formulation of learning problems; representation, over-fitting, generalization; clustering, classification, probabilistic modeling; and methods such as support vector machines, hidden Markov models, and neural networks. Students taking graduate version complete additional assignments. Meets with 6.862 when offered concurrently. Recommended prerequisites: 6.006 and 18.06. Enrollment may be limited."
+        ],
+        "year": "Spring 2019",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.006 - Introduction to Algorithms",
+        "description": [
+          "Introduction to mathematical modeling of computational problems, as well as common algorithms, algorithmic paradigms, and data structures used to solve these problems. Emphasizes the relationship between algorithms and programming, and introduces basic performance measures and analysis techniques for these problems."
+        ],
+        "year": "Fall 2018",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.004 - Computation Structures",
+        "description": [
+          "Provides an introduction to the design of digital systems and computer architecture. Emphasizes expressing all hardware designs in a high-level hardware language and synthesizing the designs. Topics include combinational and sequential circuits, instruction set abstraction for programmable hardware, single-cycle and pipelined processor implementations, multi-level memory hierarchies, virtual memory, exceptions and I/O, and parallel systems."
+        ],
+        "year": "Fall 2018",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.009 - Fundamentals of Programming",
+        "description": [
+          "Introduces fundamental concepts of programming. Designed to develop skills in applying basic methods from programming languages to abstract problems. Topics include programming and Python basics, computational concepts, software engineering, algorithmic techniques, data types, and recursion. Lab component consists of software design, construction, and implementation of design."
+        ],
+        "year": "Spring 2019",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.08 - Introduction to EECS via Interconnected Embedded Systems",
+        "description": [
+          "Introduction to embedded systems in the context of connected devices, wearables and the \"Internet of Things\" (IoT). Topics include microcontrollers, energy utilization, algorithmic efficiency, interfacing with sensors, networking, cryptography, and local versus distributed computation. Students design, make, and program an internet-connected wearable or handheld device. In final project, student teams design and demo their own cloud-connected IoT system. Enrollment limited; preference to first- and second-year students."
+        ],
+        "year": "Spring 2019",
+        "tags": ["education"]
+      },
+      {
+        "name": "6.UAT - Oral Communication",
+        "year": "Spring 2020",
+        "description": [
+          "Provides instruction in aspects of effective technical oral presentations and exposure to communication skills useful in a workplace setting. Students create, give and revise a number of presentations of varying length targeting a range of different audiences. Enrollment may be limited."
+        ],
+        "tags": ["education"]
+      },
+      {
+        "name": "Interphase",
+        "year": "Summer 2018",
+        "description": [
+          "Provides instruction in aspects of effective technical oral presentations and exposure to communication skills useful in a workplace setting. Students create, give and revise a number of presentations of varying length targeting a range of different audiences. Enrollment may be limited."
+        ],
+        "tags": ["education"]
+      }
+    ]
+  },
+  {
+    "name": "Summer Academy of Math and Science (SAMS) - Carnegie Mellon University",
+    "links": [
+      {
+        "name": " Program Website",
+        "link": "https://www.cmu.edu/pre-college/academic-programs/sams.html"
+      }
+    ],
+    "year": "Spring 2020",
+    "description": [
+      "The Summer Academy for Math and Science (SAMS) provides opportunities for students from underrepresented communities to explore STEM-related fields"
+    ],
+    "icon": "logos/cmu.png",
+    "tags": ["education"]
+  },
+  {
+    "name": "Code Longhorn - University of Texas at Austin",
+    "year": "Spring 2020",
+    "links": [
+      {
+        "name": "Showcase Video",
+        "link": "https://m.facebook.com/watch/?v=10155491309099588&_rdr"
+      }
+    ],
+    "description": [
+      "1 Week Summer program to learn more about UT School of Computing"
+    ],
+    "icon": "logos/ut.png",
+    "tags": ["education"]
+  },
+  {
+    "name": "School of Science and Engineering Magnet High School",
+    "year": "Spring 2018",
+    "links": [
+      {
+        "name": "School Website",
+        "link": "https://www.semagnet.org/"
+      }
+    ],
+    "description": ["I loved High School"],
+    "icon": "logos/sem.jpg",
+    "tags": ["education"]
+  },
+  {
+    "name": "Decompiling Data Visualizations from Images - 6.859 Final Project",
+    "description": [
+      "Abstract: Creating static visualizations is a lossy process, a user’s codeand data is compiled in the form of a static image.  Theseimages are the default form of data visualizations, and areubiquitous across both social media and academia. As visual-ization researchers, this lossy compilation into images makesit very challenging to experiment and tweak with design deci-sions of the original author. In this work, we present a noveldeep-learning based algorithm that candecompilean imagevisualization, allowing researchers to easily edit and inspectits visual design. Our method and domain-specific languageis more general than previous approaches and is extensible tomore types of data visualizations without the need for expert-tuned heuristics."
+    ],
+    "links": [
+      {
+        "name": "Decompiling Data Visualizations from Images PDF",
+        "link": "https://drive.google.com/file/d/1fWRGP0TCktx1DLG7bcBXkLL1l4UyupfZ/view?usp=sharing"
+      },
+      {
+        "name": "Demo",
+        "link": "https://www.youtube.com/watch?v=JmG8-sZFIbM"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["research", "projects"]
+  },
+  {
+    "name": "Who’s That Pokemon? - 6.859 Final Project",
+    "description": [
+      "Abstract: Recent research in machine learning and image processing has pro-duced convolutional neural network (CNN) architectures that may betrained on regression tasks to predict continuous values, rather than just classification. In this paper, we explore applying regression CNNs to pre-dict the base fighting statistics (stats) of Pokemon using only an image of the Pokemon. Our CNN is shown to outperform random guessing or strategic guessing of stats. As a fun exercise, we also created a website that allows users to upload their own images to see what their stats would be using the trained CNNs."
+    ],
+    "links": [
+      {
+        "name": "Who’s That Pokemon? PDF",
+        "link": "https://drive.google.com/file/d/192ObTkvq8h8qRylK-1Hqqx2P2cIIAcrZ/view?usp=sharing"
+      },
+      {
+        "name": "Demo",
+        "link": "https://www.youtube.com/watch?v=J20-to4ZOPc"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["research", "projects"]
+  }
+]

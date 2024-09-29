@@ -1,0 +1,215 @@
+[
+  {
+    "name": "Code Nation Volunteer",
+    "year": "August 2022 - Present",
+    "ongoing": true,
+    "description": [
+      "I volunteer once a week at DeWitt highschool in Bronx, NY a Title I school teaching computer science through project based learning!"
+    ],
+    "tags": ["leadership"],
+    "links": [
+      {
+        "name": "Code Nation",
+        "link": "https://codenation.org/"
+      }
+    ]
+  },
+  {
+    "name": "MIT Kickboxing Club - Social Media Chair",
+    "year": "August 2022 - Present",
+    "ongoing": true,
+    "description": [
+      "As social media chair I record lessons and partner drills for the MIT and worldwide kickboxing community to see."
+    ],
+    "tags": ["leadership"],
+    "links": [
+      {
+        "name": "MIT Kickboxing Instagram",
+        "link": "https://www.instagram.com/mitkickboxing/"
+      },
+      {
+        "name": "MIT Kickboxing Website",
+        "link": "http://kickboxing.mit.edu/"
+      }
+    ]
+  },
+  {
+    "name": "MIT BJJ Club - Social Media Chair",
+    "year": "August 2022 - Present",
+    "ongoing": true,
+    "description": [
+      "As social media chair I record lessons and partner drills for the MIT and worldwide BJJ community to see."
+    ],
+    "tags": ["leadership"],
+    "links": [
+      {
+        "name": "MIT BJJ Instagram",
+        "link": "https://www.instagram.com/mitbjjclub/"
+      }
+    ]
+  },
+  {
+    "name": "Society of Hispanic Professional Engineers - (SHPE)",
+    "year": "Fall 2018 - May 2022",
+    "ongoing": true,
+    "links": [
+      {
+        "name": "MIT SHPE",
+        "link": "http://shpe.mit.edu"
+      }
+    ],
+    "description": [
+      "SHPE provides community and resources to its members through collaborative coprotate, profesional development events and so much more!"
+    ],
+    "tags": ["leadership"],
+    "icon": "logos/shpe.jpg",
+    "sub_items": [
+      {
+        "name": "President",
+        "year": "May 2021 - May 2022",
+        "description": [
+          "Empower the MIT Latinx community through company/community outreach events",
+          "Delegate weekly responsibilities to all executive members to ensure successful event coordination",
+          "Coordinate events with diverse company portfolio to allow members to gain professional skills and job opportunities"
+        ]
+      },
+      {
+        "name": "Vice President",
+        "year": "January 2020 - May 2021",
+        "description": [
+          "Lead the Community Service comittee on fundraising events and highschool outread",
+          "Managed shpe.mit.edu"
+        ]
+      },
+      {
+        "name": "Secretary",
+        "year": "May 2020 - January 2021",
+        "description": [
+          "Manage mailing list and distribute professional and academic opportunities to members",
+          "Develop and manage website with sponsor info",
+          "Manage group docs such as resume books and sponsor contacts"
+        ]
+      },
+      {
+        "name": "Social Chair",
+        "year": "May 2019 - May 2020",
+        "description": [
+          "Planned 4-5 events a semester for members to meet each other and talk about engineering and social conversations"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Latinos in Science and Engineering - (MAES)",
+    "year": "Spring 2018 - May 2022",
+    "links": [
+      {
+        "name": "MIT MAES",
+        "link": "http://maes.mit.edu"
+      }
+    ],
+    "ongoing": true,
+    "description": [
+      "MAES's mission is to promote, cultivate, and honor excellence in education and leadership among Latino engineers and scientists."
+    ],
+    "tags": ["leadership"],
+    "icon": "logos/maes.jpg",
+    "sub_items": [
+      {
+        "name": "VP Internal Relations",
+        "year": "May 2021 - May 2022",
+        "description": [
+          "Manage mailing list and distribute professional and academic opportunities to members",
+          "Develop and manage website with sponsor info",
+          "Manage group docs such as resume books and sponsor contacts"
+        ]
+      },
+      {
+        "name": "President",
+        "year": "May 2020 - May 2021",
+        "description": [
+          "Last remaining exec member due to COVID-19, I ran elections and built a new team of underclassmen",
+          "Empower the MIT Latinx community through company/community outreach events",
+          "Delegate weekly responsibilities to all executive members to ensure successful event coordination",
+          "Coordinate events with diverse company portfolio to allow members to gain professional skills and job opportunities"
+        ]
+      },
+      {
+        "name": "Publicity Chair",
+        "year": "May 2019 - May 2020",
+        "description": ["Publicized weekly events to encourage participation!"]
+      }
+    ]
+  },
+  {
+    "name": "Sigma Nu",
+    "year": "May 2021 - May 2022",
+    "links": [
+      {
+        "name": "MIT Sigma Nu",
+        "link": "http://sigmanu.mit.edu"
+      }
+    ],
+    "ongoing": true,
+    "description": [
+      "To develop ethical leaders inspired by the principles of Love, Honor, and Truth. To foster the personal growth of each man’s mind, heart, and character. To perpetuate lifelong friendships and commitment to the Fraternity."
+    ],
+    "tags": ["leadership"],
+    "icon": "logos/sigmanu.jpg",
+    "sub_items": [
+      {
+        "name": "Social Chair",
+        "year": "May 2021 - May 2022",
+        "description": [
+          "Oragnize social events like parties, mixers, and formal"
+        ]
+      },
+      {
+        "name": "LEAD Chair",
+        "year": "January 2021 - May 2021",
+        "description": ["Leadership Ethics Achievement Development"]
+      },
+      {
+        "name": "Volunteer Chair",
+        "year": "January 2021 - May 2021",
+        "description": [
+          "Organized pie in the face philantropy event for April Sexual Assault Awareness Month where we raised over $500"
+        ]
+      },
+      {
+        "name": "Technology Chair",
+        "year": "May 2020 - January 2021",
+        "description": ["Developed sigmanu.mit.edu"]
+      },
+      {
+        "name": "Chaplain",
+        "year": "January 2020 - May 2020",
+        "description": [
+          "Organized brotherhood bonding events and planned retreat"
+        ]
+      },
+      {
+        "name": "Social Chair",
+        "year": "May 2019 - January 2020",
+        "description": [
+          "Oragnize social events like parties, mixers, and formal."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "The Standard - Member",
+    "year": "January 2019 - May 2022",
+    "ongoing": true,
+    "description": [
+      "Men of color setting the standard for academic, professional, and professional success"
+    ],
+    "tags": ["leadership"],
+    "links": [
+      {
+        "name": "The Standard",
+        "link": "https://ome.mit.edu/programs-services/standard"
+      }
+    ]
+  }
+]

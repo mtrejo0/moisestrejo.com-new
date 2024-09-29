@@ -1,0 +1,52 @@
+[
+  {
+    "text": "You know the apple is rotten when you take your first bite",
+    "date": "Thursday Nov 10th, 2022",
+    "tags": ["wisdom"]
+  },
+  {
+    "text": "You know the apple is rotten when you take your first bite",
+    "date": "Thursday Nov 10th, 2022",
+    "tags": ["wisdom"]
+  },
+  {
+    "text": "life is like a sandwich. no matter which way you flip it, the bread always comes up first.\\n the best advice my teacher ever told me is: keep your eyes on your own paper.",
+    "date": "Sunday May 29th, 2022",
+    "tags": ["advice"]
+  },
+  {
+    "text": "I graduated today! <3",
+    "date": "Sunday May 27th, 2022",
+    "tags": ["MIT"]
+  },
+  {
+    "text": "My mentor Ryaan Ahmed gave me some beneficial advice on knowing what to spend your time on. If you're deciding between going into big tech, startup, nonprofit, retail, school, etc. you need a framework for this decision. The framework Ryaan showed me is finding something that gives you the lifestyle, impact, and education you want. I want to work on a startup to have a lifestyle that allows me to meet new people and think of complex problems all the time so that I can push the world in new directions. I want to work on a startup to impact underserved communities and improve the lives of everyone. I want to be in a startup to learn something new every day and get out of my comfort zone to code something new, network with someone new, or understand some new legal procedure. For these reasons, I want to pursue making a startup. Use this framework to decide where you are and where you will be.",
+    "date": "Sunday March 6th, 2022",
+    "tags": ["advice", "framework"]
+  },
+  {
+    "text": "I dont update this regularly but I updated my error page. Go to moisestrejo.com/error :) Also I want to make a tikok page where I make beans and rice every video.",
+    "date": "November 15th, 2021",
+    "tags": ["beans and rice"]
+  },
+  {
+    "text": "I added multiple links per page but I think it clutters the space a little. Anyways I added my youtube page because I want to make more content and get good at creating! :0",
+    "date": "October 14th, 2021",
+    "tags": ["create create create"]
+  },
+  {
+    "text": "I want to make a github template for people to clone and make a website just like this one just my throwaway thoughts",
+    "date": "October 7th, 2021",
+    "tags": ["git clone"]
+  },
+  {
+    "text": "I thought it was a pretty cool idea to make a blog on my own website. I now want to make a video of how to make a simple blog. All I do to add a new entry is add to a .json file full of blog posts. Its kind of cool!",
+    "date": "October 4th, 2021",
+    "tags": ["motivation, just do it"]
+  },
+  {
+    "text": "Hello World!",
+    "date": "October 4th, 2021",
+    "tags": ["start"]
+  }
+]

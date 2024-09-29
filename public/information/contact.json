@@ -1,0 +1,60 @@
+[
+  {
+    "name": "moisest[@]alum.mit.edu",
+    "description": "Send me an email I will respond :)"
+  },
+  {
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/in/moisestrejo/",
+    "description": "Connect with me!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/MTrejo0",
+    "description": "Connect with me!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg"
+  },
+  {
+    "name": "Instagram",
+    "link": "https://www.instagram.com/moises.trejo0/",
+    "description": "Follow me!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+  },
+  {
+    "name": "Github",
+    "link": "https://github.com/mtrejo0",
+    "description": "Checkout past projects",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/2/29/GitHub_logo_2013.svg"
+  },
+  {
+    "name": "Devpost",
+    "link": "https://devpost.com/mtrejo",
+    "description": "Checkout past hackathons",
+    "icon": "https://q9k6x7m8.stackpathcdn.com/assets/reimagine2/devpost-logo-646bdf6ac6663230947a952f8d354cad.svg"
+  },
+  {
+    "name": "Youtube",
+    "link": "https://www.youtube.com/channel/UCWiykWlbmi3ewionNGg5G-Q",
+    "description": "Checkout my goofy youtube videos :)",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+  },
+  {
+    "name": "TikTok",
+    "link": "https://www.tiktok.com/@moisestrejo100",
+    "description": "Coolest tiktok page youve ever seen!",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
+  },
+  {
+    "name": "Soundcloud",
+    "link": "https://soundcloud.com/295221-6",
+    "description": "Listen to my music!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/78/Soundcloud_logo.svg"
+  },
+  {
+    "name": "Medium",
+    "link": "https://medium.com/@moises.trejo0",
+    "description": "Read my articles!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Medium_%28website%29_logo.svg/2880px-Medium_%28website%29_logo.svg.png"
+  }
+]

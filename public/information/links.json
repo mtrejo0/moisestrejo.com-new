@@ -1,0 +1,46 @@
+[
+  {
+    "ids": ["egg"],
+    "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "ids": ["fb", "facebook"],
+    "link": "https://www.facebook.com/moises.trejo.773"
+  },
+  {
+    "ids": ["ig", "instagram"],
+    "link": "https://www.instagram.com/moises.trejo0/"
+  },
+  {
+    "ids": ["li", "linkedin"],
+    "link": "https://www.linkedin.com/in/moisestrejo/"
+  },
+  {
+    "ids": ["github"],
+    "link": "https://github.com/mtrejo0"
+  },
+  {
+    "ids": ["yt", "youtube"],
+    "link": "https://www.youtube.com/channel/UCWiykWlbmi3ewionNGg5G-Q"
+  },
+  {
+    "ids": ["tiktok"],
+    "link": "https://www.tiktok.com/@moisestrejo100"
+  },
+  {
+    "ids": ["calendly", "schedule"],
+    "link": "https://calendly.com/moisestrejo/30min"
+  },
+  {
+    "ids": ["zoom"],
+    "link": "https://mit.zoom.us/my/moisestrejo"
+  },
+  {
+    "ids": ["twitter"],
+    "link": "https://twitter.com/MTrejo0"
+  },
+  {
+    "ids": ["patreon"],
+    "link": "https://www.patreon.com/user?u=87100023"
+  }
+]

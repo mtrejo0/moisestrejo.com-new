@@ -1,0 +1,50 @@
+[
+  {
+    "name": "React.JS / Vue.JS / Angular.JS",
+    "description": [
+      "I have made over 20 front end applications using these JS frameworks. ~4 years of expereince. ~15000 lines of code."
+    ],
+    "tags": ["skills"]
+  },
+  {
+    "name": "Python",
+    "description": [
+      "I have taken over 4 MIT courses in python. I can build anything from an api server, to a poker bot, and even an ML model. ~4 years of expereince. ~10000 lines of code."
+    ],
+    "tags": ["skills"]
+  },
+  {
+    "name": "Java/Scala",
+    "description": [
+      "Best langauge to use because of static checking and speed IMO. ~2 years of experience. ~3000 lines of code."
+    ],
+    "tags": ["skills"]
+  },
+  {
+    "name": "AWS / GCP",
+    "description": [
+      "This website was made using Amplify and Route 53. I count visitors using DynamoDB and AWS endpoint. I ve worked with GCP while at Twitter to process and store graph metrics."
+    ],
+    "tags": ["skills"]
+  },
+  {
+    "name": "C++",
+    "description": [
+      "I have written scripts for microcontrollers like Arduinos and ESP32. ~1 year of experience. ~2000 lines of code."
+    ],
+    "tags": ["skills"]
+  },
+
+  {
+    "name": "IOT / Microcontrollers: Arduino, ESP32, RaspberryPy",
+    "description": [
+      "I have built lazer tag, weather detectors, step counters, and more!"
+    ],
+    "tags": ["skills"]
+  },
+  {
+    "name": "Unity / C#",
+    "description": ["I made a unity game for HackMIT 2018!"],
+    "tags": ["skills"]
+  }
+]

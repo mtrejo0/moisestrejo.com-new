@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Random Number Generator",
+    "description": "Generates random numbers!",
+    "id": "randomNumbers"
+  },
+  {
+    "name": "Word Frequency",
+    "description": "Find the frequency of words in your text!",
+    "id": "wordFrequency"
+  }
+]

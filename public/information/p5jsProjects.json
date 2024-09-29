@@ -1,0 +1,400 @@
+[
+  {
+    "name": "Genetic Path Finding",
+    "description": [
+      "Generates lots of agents with random moves. The ones with the best fitness are used to generate more agents to learn a path."
+    ],
+    "id": "genetic",
+    "src": "genetic.gif",
+    "href": "https://giphy.com/embed/d27oC1jjwGfQhPbWJI"
+  },
+  {
+    "name": "DJ Visualizer",
+    "description": [
+      ", - halves the bpm",
+      ". - doubles the bpm",
+      "[ ] - shifts color theme down/up",
+      "1 - toggles random circles",
+      "2 - toggles verticle lines<",
+      "3 - toggles spiral lines",
+      "4 - toggles center circle",
+      "up/down - changes bpm +/- 5",
+      "left/right - changes bpm +/- 1",
+      "spacebar - tap for the program to learn the BPM you are tapping at"
+    ],
+    "id": "dj_vis",
+    "video": "j-UYMUW4Ehw",
+    "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu",
+    "youtubeLink": ""
+  },
+  {
+    "name": "Maze path finder",
+    "description": [
+      "Generates random maze and uses BFS to make sure there is a path possible between them then visualizes how it searches the graph until it finds a path from the start point to the end point"
+    ],
+    "id": "maze_solver",
+    "href": "https://giphy.com/embed/K6xPbwxUA3Ib7JB83y"
+  },
+  {
+    "name": "Text Display ",
+    "description": [
+      "I was inspired to make something cute for displaying tiktok names on live or just any text in an interesting way"
+    ],
+    "id": "names",
+    "href": "https://giphy.com/embed/YRKybvHrPpVMcNt44z"
+  },
+  {
+    "name": "Langton's Ant",
+    "description": [
+      "A large matrix where we can simulate Langton's Ant that has the simple rules: if white turn left, if black turn right"
+    ],
+    "id": "ant",
+    "href": "https://giphy.com/embed/EwyhrR0Oy9Z9j6sTII"
+  },
+  {
+    "name": "Conways Game of Life",
+    "description": ["With a twist, you can reverse the direction of time"],
+    "id": "conway",
+    "href": "https://giphy.com/embed/5vCmRwwqYlosjyWfNg"
+  },
+  {
+    "name": "PID Control",
+    "description": [
+      "PID stands for proportional integral derivative which is a controller that will try to reach a state this interaction lets you change the constants and goal state"
+    ],
+    "id": "PID",
+    "href": "https://giphy.com/embed/nof9LToV001nxDPF3z"
+  },
+  {
+    "name": "Hearts <3",
+    "description": ["Randomized heart animations for my love"],
+    "id": "hearts",
+    "href": "https://giphy.com/embed/n1jqKaHxYNOxhorWAe"
+  },
+  {
+    "name": "Sheps :)",
+    "description": ["What it is like to kiss with my girlfriend"],
+    "id": "sheps",
+    "href": "https://giphy.com/embed/nKqTRiYPU25FeOgUkF"
+  },
+  {
+    "name": "Triangles.",
+    "description": ["Random triangles popping up on your screen!"],
+    "id": "triangles",
+    "href": "https://giphy.com/embed/WuPjfhrDs1vev9YAcA"
+  },
+  {
+    "name": "PID Race car",
+    "description": [
+      "Small simulation with a car that uses PID to follow a wall. Click and drag to add obstacles"
+    ],
+    "id": "race car",
+    "href": "https://giphy.com/embed/tBzDKntjdBAfjbWx8S"
+  },
+  {
+    "name": "Base Calculator",
+    "description": [
+      "Add number, its base A, and target base B this will convert the number from base A to base B"
+    ],
+    "id": "baseConverter"
+  },
+  {
+    "name": "Dopler Effect Simulation",
+    "description": [
+      "Dopler effect is the effect of having waves in motion this shows different vizualizations you can use"
+    ],
+    "id": "dopler",
+    "href": "https://giphy.com/embed/OfUeRS9mz5yXBEQSpj"
+  },
+  {
+    "name": "Stopwatch",
+    "description": ["Colorful stopwatch"],
+    "id": "timer",
+    "href": "https://giphy.com/embed/g0ducfLbYqo4TZNKLW"
+  },
+  {
+    "name": "Selection Sort",
+    "description": [
+      "Sorting algorithm that picks the next best item to sort O(n²), Ω(n²)"
+    ],
+    "id": "selection",
+    "href": "https://giphy.com/embed/o63QTCDLcfVo37KwQ7"
+  },
+  {
+    "name": "Insertion Sort",
+    "description": [
+      "Sorting algorithm that swaps items until they are in the right place O(n²), Ω(n)"
+    ],
+    "id": "insertion",
+    "href": "https://giphy.com/embed/2kvALN313dVwkGruoQ"
+  },
+  {
+    "name": "Merge Sort",
+    "description": [
+      "Sorting algorithm that uses divide and conquer to sort smaller problems and combine them to sort an array O(n²)"
+    ],
+    "id": "mergeSort",
+    "href": "https://giphy.com/embed/g3Lv6zsFpXxQpCHV9l"
+  },
+  {
+    "name": "Lissajous Generator",
+    "description": [
+      "Lissajous created by using circles with different periods"
+    ],
+    "id": "lissajous",
+    "href": "https://giphy.com/embed/HuLtZMMxuqlNrTkgbd"
+  },
+  {
+    "name": "Flappy Bird",
+    "description": ["Remake of Flappy Bird, press space to jump"],
+    "id": "flappyBird",
+    "href": "https://giphy.com/embed/MusChV7t5hxNjVVLhG"
+  },
+  {
+    "name": "Asteroids",
+    "description": [
+      "Remake of Asteroids, use arrow keys to more space to shoot"
+    ],
+    "id": "rocket",
+    "href": "https://giphy.com/embed/MlJzsgXyVbh9iLR7Lt"
+  },
+  {
+    "name": "Drunk Walk",
+    "description": ["Shows brownian motion and the path the agent takes"],
+    "id": "drunkWalk",
+    "href": "https://giphy.com/embed/VD17t9Pgvm03APABxc"
+  },
+  {
+    "name": "Particle Interaction",
+    "description": [
+      "Shows brownian motion with particles and allows you to see interactions"
+    ],
+    "id": "particleInteraction",
+    "href": "https://giphy.com/embed/duZY4sWwu8qN5zxPFp"
+  },
+  {
+    "name": "Wave Particles",
+    "description": [
+      "Shows particles that move in circles, your mous position changes their period and their overall image"
+    ],
+    "id": "spinParticles",
+    "href": "https://giphy.com/embed/eXfMeLyJAdjXuoMCTU"
+  },
+  {
+    "name": "Angle PID",
+    "description": [
+      "Test your agility! Dodge as three turrets use advanced PID control to target and hit your cursor. Can you outmaneuver them and survive?"
+    ],
+    "id": "anglePID",
+    "href": "https://giphy.com/embed/1cuKntmipdD0FKFLze"
+  },
+  {
+    "name": "Calculator",
+    "description": ["Simple arithmetic calculator"],
+    "id": "calculator"
+  },
+  {
+    "name": "Bar Visualization",
+    "description": ["Simple metronome for 4 beat counts"],
+    "id": "barVis",
+    "href": "https://giphy.com/embed/rlv8vF1Ipi1Ta6BJD2"
+  },
+  {
+    "name": "Platformer",
+    "description": ["Platformer game to escape the lava!"],
+    "id": "platformer",
+    "href": "https://giphy.com/embed/7oEakeAK9NDKcmoDCY"
+  },
+  {
+    "name": "Pretty Pendulums",
+    "description": ["Tried to replicate pretty pendulums from tiktok"],
+    "id": "pendulums",
+    "href": "https://giphy.com/embed/ti5IN7nUIZrfBv1IEU"
+  },
+  {
+    "name": "Chaos Pendulums",
+    "description": ["10 chaos pendulums and a movement path for each"],
+    "id": "chaos_pendulum",
+    "href": "https://giphy.com/embed/kD9dLwwFqgkTqPQQzo"
+  },
+  {
+    "name": "Colors",
+    "description": ["Edit these colors with math!"],
+    "id": "colors",
+    "href": "https://giphy.com/embed/nihwA289LX0cFFBDmO"
+  },
+  {
+    "name": "Simulations",
+    "description": [
+      "Generate many simulations of up or down randomness and see the disctibution at the end!"
+    ],
+    "id": "simulations",
+    "href": "https://giphy.com/embed/x573fMQKeTqh50sm56"
+  },
+  {
+    "name": "COVID Simulations",
+    "description": [
+      "A simulation of infections where one can change the infection, recovery, and creation rates"
+    ],
+    "id": "simulations2D",
+    "href": "https://www.giphy.com/gifs/hCgFIbHQ1P9QYFN64Y"
+  },
+  {
+    "name": "Rocket Orbit",
+    "description": ["A rocket that you can control orbiting around a sun!"],
+    "id": "orbit",
+    "href": "https://giphy.com/embed/xl3Mc7VBo0vZxndJCG"
+  },
+  {
+    "name": "Snake",
+    "description": ["This snake game will always win!"],
+    "id": "snake",
+    "href": "https://giphy.com/embed/TJ9KlmZ2TflJxllNgb"
+  },
+  {
+    "name": "SIN/COS simulation!",
+    "description": ["This demonstration shows how sin and cos are related!"],
+    "id": "cos",
+    "href": "https://giphy.com/embed/rXleKkOaDgolnxaKO2"
+  },
+  {
+    "name": "Roomba algorithm",
+    "description": [
+      "This is a simple line drawing robot, I tried to replicate how the roomba moves"
+    ],
+    "id": "roomba",
+    "href": "https://giphy.com/embed/bJez5TwRoZudrfBX9W"
+  },
+  {
+    "name": "Love Hate",
+    "description": ["A rocket that you can control orbiting around a sun!"],
+    "id": "lovehate",
+    "href": "https://giphy.com/embed/4QvL03ITnHDOlqqYR1"
+  },
+  {
+    "name": "Leslie",
+    "description": ["A love story seen from above"],
+    "id": "leslie",
+    "href": "https://giphy.com/embed/3azIbCRsTEtVhWWEyF"
+  },
+  {
+    "name": "Joseph Albers",
+    "description": ["Joseph Albers inspired digital art."],
+    "id": "josephAlbers",
+    "href": "https://giphy.com/embed/pWPszGOhnwVh8Mg76m"
+  },
+  {
+    "name": "Simple Art",
+    "description": ["Inspired by the Museum of Modern Art San Fransisco."],
+    "id": "simpleArt",
+    "href": "https://giphy.com/embed/5nnxdroX2lm4iLvCnc"
+  },
+  {
+    "name": "Sin Words",
+    "description": ["Just a cool way to show words moving in a sin wave"],
+    "id": "sin_words",
+    "href": "https://giphy.com/embed/pB0NbkebsIAXYQcjBM"
+  },
+  {
+    "name": "Pointer",
+    "description": ["Cool way to emphasize the cursor"],
+    "id": "pointer",
+    "href": "https://giphy.com/embed/wl9eZLRtmgE6lNkHlZ"
+  },
+  {
+    "name": "Graffitti",
+    "description": ["Brick graffitti maker!"],
+    "id": "graffiti",
+    "href": "https://giphy.com/embed/3FNUFncpOTFSCPgaHt"
+  },
+  {
+    "name": "Fireworks",
+    "description": ["Toggle your firework show!"],
+    "id": "fireworks",
+    "href": "https://giphy.com/embed/mcvjed6xNz6xusR95a"
+  },
+  {
+    "name": "Turtles all the way down!",
+    "description": ["Do we have free will?"],
+    "id": "turtles",
+    "href": "https://giphy.com/embed/SjgWeyFOx0uSIQYpv6"
+  },
+  {
+    "name": "Get bigger after every collision",
+    "description": ["I made the tiktok video where the ball gets bigger after every collision"],
+    "id": "bumpBigger",
+    "href": "https://giphy.com/embed/rhYDjtLYQSkUUKID3E"
+  },
+  {
+    "name": "3D Cubes",
+    "description": ["test project to learn webgl in p5"],
+    "id": "3dcubes",
+    "href": "https://giphy.com/embed/5Mmbqe39nduWnlt7HA"
+  },
+  {
+    "name": "Towers of Hanoi!",
+    "description": ["Recursion at its finest"],
+    "id": "hanoi",
+    "href": "https://giphy.com/embed/U6MGXaoobKQ0iOr3dG"
+  },
+  {
+    "name": "Star Wars Hyper Drive!",
+    "description": ["What it feels like to be in the millenium falcon and hit hyperdrive"],
+    "id": "starwars",
+    "href": "https://giphy.com/embed/OsG3kWnZn7DjnlUT9Y"
+  },
+  {
+    "name": "Universal Entity",
+    "description": ["Rozzi Roomian inspired art. What it feels to be in the universe. My interpretation: What it feels like to be god."],
+    "id": "universal",
+    "href": "https://giphy.com/embed/Fggo9nTETtZ407hoA8"
+  },
+  {
+    "name": "PI estimation",
+    "description": ["Generate random points and check if they lie within a circle, use this to approximate PI"],
+    "id": "pi_graph",
+    "href": "https://giphy.com/embed/SR6VqebMz6zuIRBE8o"
+  },
+  {
+    "name": "Mandelbrot Set Explorer",
+    "description": ["See this simple and complex mathematical wonder!"],
+    "id": "mandelbrot",
+    "href": "https://giphy.com/embed/SRl8VF0XjpgRR7U2FZ"
+  },
+  {
+    "name": "Three Body Problem",
+    "description": ["An un solvable problem. How do you create a stable orbit with 3 objects of roughly the same size? Turns out you cant."],
+    "id": "three_body",
+    "href": "https://giphy.com/embed/WrALL9lo7XJ9IoBHZN"
+  },
+  {
+    "name": "Linear Regression",
+    "description": ["Use least squares to find a line that can make a linear regression of some points I generate!"],
+    "id": "linear_regression",
+    "href": "https://giphy.com/embed/8WlTq81B1W43pXWgOl"
+  },
+  {
+    "name": "Draw Classifier",
+    "description": ["Draw an image and press C to see what the image classifiers guess for what it is. Disclaimer this is pretty bad."],
+    "id": "draw_classify",
+    "href": "https://giphy.com/embed/vqOcsoENrWDMVzWa0y"
+  },
+  {
+    "name": "Image Classifier",
+    "description": ["Upload an image and see what the image classifiers guess for what it is."],
+    "id": "image_classify",
+    "href": "https://giphy.com/embed/NtSHnY9nXlj1BjCbYt"
+  },
+  {
+    "name": "Circle Bounce Music",
+    "description": ["Ball bounces and every bounce it plays twinkle twinkle little star aye"],
+    "id": "music_bounce",
+    "href": "https://giphy.com/embed/aYDnUgweHO9SPL0U5B"
+  },
+  {
+    "name": "Theramin",
+    "description": ["Use your hand position to change the freqency of the instrument!"],
+    "id": "theramin",
+    "href": "https://giphy.com/embed/NDgqCApijP3ghU4vql"
+  }
+]

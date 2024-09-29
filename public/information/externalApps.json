@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Fit Check",
+    "description": "Upload your fits, rank them, see how your firs rank",
+    "resources": "Mongo DB, Next JS, Tailwind",
+    "link": "https://fit-check-lime.vercel.app/",
+    "id": "fit-check",
+    "hide": true
+  },
+  {
+    "name": "Grassroots",
+    "description": "The fastest way to figure out who your representatives are and what they are saying!",
+    "resources": "React.JS, Twitter API, Google Maps API, Material UI, Typescript",
+    "link": "https://main.dnsxxxpftj2z2.amplifyapp.com",
+    "id": "grassroots"
+  },
+  {
+    "name": "Goal Tracker",
+    "description": "A better way to track your goals!",
+    "resources": "React.JS, Firebase, Tailwind",
+    "link": "https://main--myuberman.netlify.app/",
+    "id": "goals"
+  },
+  {
+    "name": "DJ Graph",
+    "description": "Add a spotify playlist and see how you should mix your songs! A graph is built where edges represent songs within +-10 BPM and the same key. Happy mixing!",
+    "resources": "React.JS, Spotify Web API, Material UI",
+    "link": "https://main.d2895n4efuepww.amplifyapp.com/",
+    "id": "djGraph"
+  },
+  {
+    "name": "TODOs",
+    "description": "Make a todo list! ",
+    "resources": "React.JS, Firebase, Material UI, Typescript",
+    "link": "https://main.d20g9fwcjddfy5.amplifyapp.com",
+    "id": "todo"
+  },
+  {
+    "name": "Where is the Red Line?",
+    "description": "The fastest way to figure out where the red line is in Boston!",
+    "resources": "Apple Shortcut, AWS API Gateway, AWS Lamdba w Python, and MBTA API",
+    "link": "https://www.icloud.com/shortcuts/c5d02699fc0e4e539c1e22a851b869e4",
+    "id": "redline",
+    "video": "F--q6hZNGpw"
+  },
+  {
+    "name": "Read Fast!",
+    "description": "Add text and it will display it so you can read it much faster!",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://main.d18q6iuh1p0d9y.amplifyapp.com/",
+    "id": "readFast",
+    "video": "WtPxzrSfA3U"
+  },
+  {
+    "name": "Calorie Estimator",
+    "description": "Apple Shortcut to estimate the calories in any food item.",
+    "resources": "Apple Shortcut, AWS API Gateway, AWS Lamdba w Python, and OpenAI GPT-3 API",
+    "link": "https://www.youtube.com/watch?v=Y1BVx9f59Ts",
+    "id": "calories",
+    "video": "Y1BVx9f59Ts"
+  },
+
+  {
+    "name": "Rhyming!",
+    "description": "Paste in your lyrics and you will see all the rhymes highlighted!",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://master.d16qayanzycbk6.amplifyapp.com/",
+    "id": "rhyming",
+    "video": "VSK2dR71rrc"
+  },
+
+  {
+    "name": "Free Writes",
+    "description": "Make a free write!",
+    "resources": "React.JS, Firebase, Material UI, Typescript",
+    "link": "https://main.djnpg8z8p3pn6.amplifyapp.com",
+    "id": "freeWrite"
+  },
+  {
+    "name": "Request me!",
+    "description": "Easier way to split bill costs with friends!",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://main.d9p0ib0b1wuin.amplifyapp.com",
+    "id": "requestme"
+  },
+  {
+    "name": "Bubble Sort It!",
+    "description": "Bubble sort a list in your life: restaurants, companies, friends, anything!",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://mtrejo0.github.io/bubbleSortIt/",
+    "id": "bubble"
+  },
+
+  {
+    "name": "ChatGPT Texbook Generator",
+    "description": "Generate a textbook using any single prompt.",
+    "resources": "Python, OpenAI GPT-3 API",
+    "link": "https://github.com/mtrejo0/chatGPT-Textbook-Generation",
+    "id": "textbook"
+  },
+  {
+    "name": "Do nothing for 2 min",
+    "description": "A simple way to relax",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://main.dgm0121ljahuf.amplifyapp.com/",
+    "id": "relax"
+  },
+  {
+    "name": "Check In",
+    "description": "A way for MIT students to understand how one another is doing",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://main.d2jd8sxowxe8iz.amplifyapp.com/",
+    "id": "checkin"
+  },
+  {
+    "name": "ADCC 2022 BJJ Data Visualization",
+    "description": "Data visualization of ADCC BJJ competition",
+    "resources": "React.JS, Material UI, Typescript",
+    "link": "https://mtrejo0.github.io/bjjVis/",
+    "id": "bjjVis"
+  },
+
+  {
+    "name": "UR Dice",
+    "description": "Roll the dice in a game of UR!",
+    "resources": "React.JS, Typescript",
+    "link": "https://mtrejo0.github.io/ur/",
+    "id": "ur"
+  },
+  {
+    "name": "Greenhouse Emissions",
+    "description": "CO2 emissions by tons by country",
+    "resources": "React.JS, Typescript",
+    "link": "https://mtrejo0.github.io/greenhouse-emissions/",
+    "id": "ghg"
+  },
+  {
+    "name": "Birthday Billboard!",
+    "description": "See the billboard top 10 from your birthday and share it on twitter!",
+    "resources": "React.JS, Typescript, AWS Lambda",
+    "link": "https://mtrejo0.github.io/birthday-billboard/",
+    "id": "billboard"
+  },
+  {
+    "name": "Mis dichos favoritos",
+    "description": "Oíganme decir mis dichos favoritos en español",
+    "resources": "React.JS, AWS S3",
+    "link": "https://mtrejo0.github.io/spanish_sayings/",
+    "id": "spanish"
+  },
+  {
+    "name": "2G Studio",
+    "description": "Architecture firm based in Tlaltenango, Zac",
+    "resources": "React.JS",
+    "link": "https://mtrejo0.github.io/2gstudio/",
+    "id": "2gstudio"
+  },
+  {
+    "name": "Build your bowl!",
+    "description": "I want to make ordering at chipotle much faster! Here is a simple to use app to show a preparer what you want visually with 0 words needed",
+    "resources": "Next JS",
+    "link": "https://bowl-builder-max.vercel.app/",
+    "id": "bowl-builder"
+  },
+  {
+    "name": "TODOs!",
+    "description": "I wanted to learn how to make a next.js app with mong db and clerk auth. Here it is!",
+    "resources": "Next JS, Mongo DB, Clerk Auth, Tailwind",
+    "link": "https://mongo-todo-next.vercel.app/",
+    "id": "mongo-todo",
+    "hide": true
+  }
+]

@@ -1,0 +1,95 @@
+'use client'
+
+import { useState } from 'react'
+import { ExternalLink, Play, Maximize2, Minimize2 } from 'lucide-react'
+import externalApps from "../../public/information/externalApps.json"
+import AppListDisplay from '../components/AppListDisplay'
+
+const ExternalApp = ({ app }) => {
+  const [showVideo, setShowVideo] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+
+  const keywords = ["cloud", "youtube", "github.com"]
+  const includesKeyword = keywords.some((keyword) => app.link.includes(keyword))
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen)
+  }
+
+  return (
+    <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+      <div className="p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold text-gray-800">
+            <a 
+              href={app.link} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="hover:text-blue-600 transition-colors duration-200 flex items-center"
+            >
+              {app.name}
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </a>
+          </h2>
+          {!includesKeyword && !app.hide && (
+            <button
+              onClick={toggleFullscreen}
+              className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+              aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            >
+              {isFullscreen ? <Minimize2 className="h-6 w-6" /> : <Maximize2 className="h-6 w-6" />}
+            </button>
+          )}
+        </div>
+        <p className="text-gray-600 mb-2">{app.description}</p>
+        <p className="text-sm text-gray-500 mb-4">{app.resources}</p>
+        
+        {app.video && (
+          <button
+            onClick={() => setShowVideo(!showVideo)}
+            className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center hover:bg-red-700 transition-colors duration-200 mb-4"
+          >
+            <Play className="mr-2 h-5 w-5" />
+            {showVideo ? 'Hide' : 'Watch'} Video
+          </button>
+        )}
+      </div>
+      
+      {showVideo && app.video && (
+        <div className="aspect-w-16 aspect-h-9 mb-4 px-6">
+          <iframe
+            src={`https://www.youtube.com/embed/${app.video}`}
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title={app.name}
+            className="w-full h-full rounded-lg"
+          />
+        </div>
+      )}
+      
+      {!includesKeyword && !app.hide && (
+        <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px]'}`}>
+          <iframe
+            src={app.link}
+            title={app.id}
+            className="w-full h-full border-t border-gray-200"
+          />
+        </div>
+      )}
+    </div>
+  )
+}
+
+const Portfolio = () => {
+  const displayApp = (app) => <ExternalApp app={app} />
+
+  return (
+    <AppListDisplay
+      apps={externalApps}
+      displayApp={displayApp}
+      subRoute="portfolio"
+    />
+  )
+}
+
+export default Portfolio

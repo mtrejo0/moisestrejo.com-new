@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Instacrt Sazón Shoutout on LinkedIn",
+    "year": "Winter 2023",
+    "tags": ["press"],
+    "description": [""],
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://www.linkedin.com/posts/instacart_latinxheritagemonth-activity-7115477241794363393-L8mN?utm_source=share&utm_medium=member_desktop"
+      }
+    ],
+    "img": "https://media.licdn.com/dms/image/D5622AQEHaEZJm6GAdQ/feedshare-shrink_800/0/1696461973007?e=1706140800&v=beta&t=u8ltG9HWvCQutnggylNktIXkv9PfGdVroGYnDQKu7zg"
+  },
+  {
+    "name": "Spectrum Article about my Sonification UROP",
+    "year": "Spring 2022",
+    "tags": ["press", "research"],
+    "description": [
+      "Article after I was interviewed about my Sonification UROP and how I enjoyed the program!"
+    ],
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://betterworld.mit.edu/spectrum/issues/spring-2022/wildly-popular-urop-is-about-learning-how-you-want-to-learn/"
+      }
+    ],
+    "img": "https://betterworld.mit.edu/wp-content/uploads/2023/08/mens-et-manus-in-action_02.jpg?x65367"
+  },
+  {
+    "name": "Course Sixs Secret Superheroes: EECS and the lecturer track",
+    "year": "Spring 2022",
+    "tags": ["press"],
+    "description": ["I made a cameo! And MIT lecturers are GOATed"],
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://www.eecs.mit.edu/course-sixs-secret-superheroes-eecs-and-the-lecture-track/"
+      }
+    ]
+  },
+
+  {
+    "name": "MIT News Article: The sound of a sunset",
+    "year": "Spring 2022",
+    "tags": ["press", "research"],
+    "description": [
+      "The Digital Humanities Lab unveils its Sonification Toolkit, which enables conversion of almost anything — from data to drawings — into sound."
+    ],
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://news.mit.edu/2022/sound-sunset-sonification-toolkit-0209"
+      },
+      {
+        "name": "Soundcloud Link",
+        "link": "https://soundcloud.com/mitnewsoffice/what-does-a-sunrise-and-sunset-sound-like"
+      }
+    ],
+    "img": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202202/900x600_DH_Sunset-Sonification-1.jpg?itok=jlJffoyY"
+  },
+  {
+    "name": "Sonification Toolkit Article",
+    "year": "Fall 2021",
+    "tags": ["press", "research"],
+    "description": ["Article explaining the project and the team behind it!"],
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://digitalhumanities.mit.edu/project/sonification-toolkit-for-musicians/"
+      },
+      {
+        "name": "Time Series - Sonification",
+        "link": "https://sonification.dhlab.mit.edu/time-series/"
+      }
+    ],
+    "img": "https://cdn.sanity.io/images/fxpgvmzc/production/05182158ae260a2e842037b502ba5e353d6fb5ea-580x394.png?w=500&auto=format"
+  },
+  {
+    "name": "Congratulations to our 2021 Future Fellowship recipients!",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://www.palantir.com/careers/students/scholarship/future/"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["press"],
+    "description": ["Award recipients for 2021"],
+    "img": "https://www.palantir.com/assets/xrfr7uokpv1b/ELGNzTSHVypBckCiBYBPB/f3efa67edb0bbcbbb193bd10d31efbfc/Scholarship_Image_1.png?quality=70&width=2200"
+  },
+
+  {
+    "name": "Five GMiS 2021 Scholars awarded Leidos scholarships",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://greatmindsinstem.org/2021/10/07/five-gmis-2021-scholars-awarded-leidos-scholarships-2/"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["press"],
+    "description": ["Shout out from Leidos"],
+    "img": "https://greatmindsinstem.org/wp-content/uploads/2021/10/Screen-Shot-2021-10-07-at-4.18.21-PM-1024x384.png"
+  },
+  {
+    "name": "2021 GMiS STEM Scholars",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://gmisconference.org/scholars33.html"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["press"],
+    "description": [""]
+  },
+  {
+    "name": "MIT College Student Speaker Series-June 5th",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://sciteens.org/talk/tanner-bonner"
+      }
+    ],
+    "year": "Spring 2021",
+    "tags": ["press"],
+    "description": [""]
+  },
+  {
+    "name": "2020 GMiS STEM Scholars",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://www.gmisconference.org/scholars.html"
+      }
+    ],
+    "year": "Spring 2020",
+    "tags": ["press"],
+    "description": [""]
+  },
+  {
+    "name": "SuperUROP 2020",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://superurop.mit.edu/scholars/moises-trejo/"
+      }
+    ],
+    "year": "Spring 2020",
+    "tags": ["press"],
+    "description": [""],
+    "img": "https://superurop.mit.edu/wp-content/uploads/2020/09/Trejo_Moises_72.jpg"
+  },
+  {
+    "name": "TownSq @townsqapp",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://twitter.com/townsqapp/status/1276236686532501504"
+      }
+    ],
+    "year": "Spring 2020",
+    "tags": ["press"],
+    "description": ["Twitter shoutout!"],
+    "img": "https://pbs.twimg.com/media/EbYaDwdX0AI-Qs2?format=jpg&name=4096x4096"
+  },
+  {
+    "name": "TownSq Uses AWS Data Lab to Support Three of MIT's Future Technology Innovators",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://www.yahoo.com/now/townsq-uses-aws-data-lab-181125194.html"
+      }
+    ],
+    "year": "Spring 2020",
+    "tags": ["press"],
+    "description": [""]
+  },
+  {
+    "name": "MITEI welcomes Class of 2022 to campus",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://energy.mit.edu/news/mitei-welcomes-class-of-2022-to-campus/"
+      }
+    ],
+    "year": "Fall 2018",
+    "tags": ["press"],
+    "description": [""],
+    "img": "https://energy.mit.edu/wp-content/uploads/2018/11/fpop-class-of-2022.jpg"
+  },
+  {
+    "name": "TMSCA 2017",
+    "links": [
+      {
+        "name": "Article",
+        "link": "https://scienceandengineeringhs.portal.rschooltoday.com/page/3329"
+      }
+    ],
+    "year": "Spring 2017",
+    "tags": ["press"],
+    "description": [""],
+    "img": "https://scienceandengineeringhs.portal.rschooltoday.com/thumbnails/semagnetschool.org/files/images/news_items/TMSCA-State_Seniors-with-Newton_600_auto_auto.jpg"
+  }
+]
