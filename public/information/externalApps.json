@@ -1,39 +1,43 @@
 [
   {
     "name": "Fit Check",
-    "description": "Upload your fits, rank them, see how your firs rank",
+    "description": "Upload your fits, rank them, see how your fits rank",
     "resources": "Mongo DB, Next JS, Tailwind",
     "link": "https://fit-check-lime.vercel.app/",
     "id": "fit-check",
-    "hide": true
+    "date": "August 2024"
   },
   {
     "name": "Grassroots",
     "description": "The fastest way to figure out who your representatives are and what they are saying!",
     "resources": "React.JS, Twitter API, Google Maps API, Material UI, Typescript",
     "link": "https://main.dnsxxxpftj2z2.amplifyapp.com",
-    "id": "grassroots"
+    "id": "grassroots",
+    "date": "November 2023"
   },
   {
     "name": "Goal Tracker",
     "description": "A better way to track your goals!",
     "resources": "React.JS, Firebase, Tailwind",
     "link": "https://main--myuberman.netlify.app/",
-    "id": "goals"
+    "id": "goals",
+    "date": "October 2023"
   },
   {
     "name": "DJ Graph",
     "description": "Add a spotify playlist and see how you should mix your songs! A graph is built where edges represent songs within +-10 BPM and the same key. Happy mixing!",
     "resources": "React.JS, Spotify Web API, Material UI",
     "link": "https://main.d2895n4efuepww.amplifyapp.com/",
-    "id": "djGraph"
+    "id": "djGraph",
+    "date": "August 2022"
   },
   {
     "name": "TODOs",
     "description": "Make a todo list! ",
     "resources": "React.JS, Firebase, Material UI, Typescript",
     "link": "https://main.d20g9fwcjddfy5.amplifyapp.com",
-    "id": "todo"
+    "id": "todo",
+    "date": "November 2022"
   },
   {
     "name": "Where is the Red Line?",
@@ -41,7 +45,8 @@
     "resources": "Apple Shortcut, AWS API Gateway, AWS Lamdba w Python, and MBTA API",
     "link": "https://www.icloud.com/shortcuts/c5d02699fc0e4e539c1e22a851b869e4",
     "id": "redline",
-    "video": "F--q6hZNGpw"
+    "video": "F--q6hZNGpw",
+    "date": "November 2022"
   },
   {
     "name": "Read Fast!",
@@ -49,7 +54,8 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d18q6iuh1p0d9y.amplifyapp.com/",
     "id": "readFast",
-    "video": "WtPxzrSfA3U"
+    "video": "WtPxzrSfA3U",
+    "date": "January 2023"
   },
   {
     "name": "Calorie Estimator",
@@ -57,110 +63,121 @@
     "resources": "Apple Shortcut, AWS API Gateway, AWS Lamdba w Python, and OpenAI GPT-3 API",
     "link": "https://www.youtube.com/watch?v=Y1BVx9f59Ts",
     "id": "calories",
-    "video": "Y1BVx9f59Ts"
+    "video": "Y1BVx9f59Ts",
+    "date": "November 2022"
   },
-
   {
     "name": "Rhyming!",
     "description": "Paste in your lyrics and you will see all the rhymes highlighted!",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://master.d16qayanzycbk6.amplifyapp.com/",
     "id": "rhyming",
-    "video": "VSK2dR71rrc"
+    "video": "VSK2dR71rrc",
+    "date": "February 2022"
   },
-
   {
     "name": "Free Writes",
     "description": "Make a free write!",
     "resources": "React.JS, Firebase, Material UI, Typescript",
     "link": "https://main.djnpg8z8p3pn6.amplifyapp.com",
-    "id": "freeWrite"
+    "id": "freeWrite",
+    "date": "November 2022"
   },
   {
     "name": "Request me!",
     "description": "Easier way to split bill costs with friends!",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d9p0ib0b1wuin.amplifyapp.com",
-    "id": "requestme"
+    "id": "requestme",
+    "date": "August 2023"
   },
   {
     "name": "Bubble Sort It!",
     "description": "Bubble sort a list in your life: restaurants, companies, friends, anything!",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://mtrejo0.github.io/bubbleSortIt/",
-    "id": "bubble"
+    "id": "bubble",
+    "date": "October 2023"
   },
-
   {
     "name": "ChatGPT Texbook Generator",
     "description": "Generate a textbook using any single prompt.",
     "resources": "Python, OpenAI GPT-3 API",
     "link": "https://github.com/mtrejo0/chatGPT-Textbook-Generation",
-    "id": "textbook"
+    "id": "textbook",
+    "date": "February 2023"
   },
   {
     "name": "Do nothing for 2 min",
     "description": "A simple way to relax",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.dgm0121ljahuf.amplifyapp.com/",
-    "id": "relax"
+    "id": "relax",
+    "date": "March 2023"
   },
   {
     "name": "Check In",
     "description": "A way for MIT students to understand how one another is doing",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d2jd8sxowxe8iz.amplifyapp.com/",
-    "id": "checkin"
+    "id": "checkin",
+    "date": "April 2023"
   },
   {
     "name": "ADCC 2022 BJJ Data Visualization",
     "description": "Data visualization of ADCC BJJ competition",
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://mtrejo0.github.io/bjjVis/",
-    "id": "bjjVis"
+    "id": "bjjVis",
+    "date": "May 2023"
   },
-
   {
     "name": "UR Dice",
     "description": "Roll the dice in a game of UR!",
     "resources": "React.JS, Typescript",
     "link": "https://mtrejo0.github.io/ur/",
-    "id": "ur"
+    "id": "ur",
+    "date": "May 2023"
   },
   {
     "name": "Greenhouse Emissions",
     "description": "CO2 emissions by tons by country",
     "resources": "React.JS, Typescript",
     "link": "https://mtrejo0.github.io/greenhouse-emissions/",
-    "id": "ghg"
+    "id": "ghg",
+    "date": "May 2023"
   },
   {
     "name": "Birthday Billboard!",
     "description": "See the billboard top 10 from your birthday and share it on twitter!",
     "resources": "React.JS, Typescript, AWS Lambda",
     "link": "https://mtrejo0.github.io/birthday-billboard/",
-    "id": "billboard"
+    "id": "billboard",
+    "date": "June 2023"
   },
   {
     "name": "Mis dichos favoritos",
     "description": "Oíganme decir mis dichos favoritos en español",
     "resources": "React.JS, AWS S3",
     "link": "https://mtrejo0.github.io/spanish_sayings/",
-    "id": "spanish"
+    "id": "spanish",
+    "date": "Sep 2023"
   },
   {
     "name": "2G Studio",
     "description": "Architecture firm based in Tlaltenango, Zac",
     "resources": "React.JS",
     "link": "https://mtrejo0.github.io/2gstudio/",
-    "id": "2gstudio"
+    "id": "2gstudio",
+    "date": "Jan 2024"
   },
   {
     "name": "Build your bowl!",
     "description": "I want to make ordering at chipotle much faster! Here is a simple to use app to show a preparer what you want visually with 0 words needed",
     "resources": "Next JS",
     "link": "https://bowl-builder-max.vercel.app/",
-    "id": "bowl-builder"
+    "id": "bowl-builder",
+    "date": "August 2024"
   },
   {
     "name": "TODOs!",
@@ -168,6 +185,7 @@
     "resources": "Next JS, Mongo DB, Clerk Auth, Tailwind",
     "link": "https://mongo-todo-next.vercel.app/",
     "id": "mongo-todo",
-    "hide": true
+    "hide": true,
+    "date": "August 2024"
   }
 ]

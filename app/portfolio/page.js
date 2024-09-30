@@ -57,6 +57,7 @@ const ExternalApp = ({ app }) => {
         </div>
         <p className="text-gray-600 mb-2">{app.description}</p>
         <p className="text-sm text-gray-500 mb-4">{app.resources}</p>
+        {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
         
         {app.video && (
           <button
@@ -109,10 +110,11 @@ const InternalApp = ({ app }) => {
   const AppComponent = componentMap[app.component]
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden lg:min-h-[60vh]">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">{app.name}</h2>
         <p className="text-gray-600 mb-4">{app.description}</p>
+        {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
         {AppComponent && <AppComponent />}
       </div>
     </div>
@@ -128,7 +130,8 @@ const Portfolio = () => {
     }
   }
 
-  const allApps = [...externalApps, ...internalApps]
+  const sortedExternalApps = externalApps.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const allApps = [...sortedExternalApps, ...internalApps];
 
   return (
     <AppListDisplay
