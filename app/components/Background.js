@@ -1,19 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Sketch from 'react-p5';
 
 export default function Background() {
-  const [isMobile, setIsMobile] = useState(false);
-  const numDots = isMobile ? 20 : 50;
+  const numDots = 50;
   let dots = [];
-
-  useEffect(() => {
-    const checkIfMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    return () => window.removeEventListener('resize', checkIfMobile);
-  }, []);
 
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
@@ -60,7 +51,7 @@ export default function Background() {
   };
 
   return (
-    <div style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}>
+    <div className="absolute inset-0 -z-10">
       <Sketch setup={setup} draw={draw} />
     </div>
   );
