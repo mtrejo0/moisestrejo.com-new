@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Background from "./components/Background";
+// import Background from "./components/Background";
 // import LogRocket from "logrocket";
 // import { setupLogRocketReact } from "logrocket-react";
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Background/>
+        {/* <Background/> */}
         <Navbar/>
         {children}
         <Footer />
