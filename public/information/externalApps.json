@@ -5,7 +5,8 @@
     "resources": "Mongo DB, Next JS, Tailwind",
     "link": "https://fit-check-lime.vercel.app/",
     "id": "fit-check",
-    "date": "August 2024"
+    "date": "August 2024",
+    "hide": true
   },
   {
     "name": "Grassroots",
