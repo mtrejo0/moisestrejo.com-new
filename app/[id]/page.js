@@ -19,28 +19,27 @@ export default function DynamicPage() {
 
     const link = links.find(link => link.ids.includes(id))
     if (link) {
-      window.location.href = link.link
+      router.push(link.link)
       return
     }
 
     const p5Project = p5jsProjects.find(project => project.id === id)
     if (p5Project) {
-      window.location.href = `https://p5moises-27cba0c96786.herokuapp.com/${id}`
+      router.push(`https://p5moises-27cba0c96786.herokuapp.com/${id}`)
       return
     }
 
     const externalApp = externalApps.find(app => app.id === id)
     if (externalApp) {
-      window.location.href = externalApp.link
+      router.push(externalApp.link)
       return
     }
 
     if (id === 'college') {
-      window.location.href = 'https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1'
+      router.push('https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1')
       return
     }
   }, [id, router])
 
   return <></>
 }
-
