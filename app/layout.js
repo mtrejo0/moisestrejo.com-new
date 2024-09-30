@@ -37,6 +37,22 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:url" content="http://moisestrejo.com" />
         <meta name="twitter:card" content="summary_large_image" />
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LRJ9N9DN5T"
+        ></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-LRJ9N9DN5T");
+          `
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
