@@ -3,7 +3,11 @@
 import { useState, useEffect } from 'react'
 import { ExternalLink, Play, Maximize2, Minimize2, Loader2 } from 'lucide-react'
 import externalApps from "../../public/information/externalApps.json"
+import internalApps from "../../public/information/internalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
+import RandomNumbers from '../components/internalApps/RandomNumbers'
+import WordFrequency from '../components/internalApps/WordFrequency'
+import WordFinderGenerator from '../components/internalApps/WordFinderGenerator'
 
 const ExternalApp = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -95,12 +99,40 @@ const ExternalApp = ({ app }) => {
   )
 }
 
+const InternalApp = ({ app }) => {
+  const componentMap = {
+    RandomNumbers: RandomNumbers,
+    WordFrequency: WordFrequency,
+    WordFinderGenerator: WordFinderGenerator
+  }
+
+  const AppComponent = componentMap[app.component]
+
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">{app.name}</h2>
+        <p className="text-gray-600 mb-4">{app.description}</p>
+        {AppComponent && <AppComponent />}
+      </div>
+    </div>
+  )
+}
+
 const Portfolio = () => {
-  const displayApp = (app) => <ExternalApp app={app} />
+  const displayApp = (app) => {
+    if (app.type === 'internal') {
+      return <InternalApp app={app} />
+    } else {
+      return <ExternalApp app={app} />
+    }
+  }
+
+  const allApps = [...externalApps, ...internalApps]
 
   return (
     <AppListDisplay
-      apps={externalApps}
+      apps={allApps}
       displayApp={displayApp}
       subRoute="portfolio"
     />

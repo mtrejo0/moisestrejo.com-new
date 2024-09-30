@@ -2,11 +2,22 @@
   {
     "name": "Random Number Generator",
     "description": "Generates random numbers!",
-    "id": "randomNumbers"
+    "id": "randomNumbers",
+    "type": "internal",
+    "component": "RandomNumbers"
   },
   {
     "name": "Word Frequency",
     "description": "Find the frequency of words in your text!",
-    "id": "wordFrequency"
+    "id": "wordFrequency",
+    "type": "internal",
+    "component": "WordFrequency"
+  },
+  {
+    "name": "Word Finder Puzzle Generator",
+    "description": "Generate word finder puzzles!",
+    "id": "wordFinderGenerator",
+    "type": "internal",
+    "component": "WordFinderGenerator"
   }
 ]
