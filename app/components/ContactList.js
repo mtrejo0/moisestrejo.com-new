@@ -26,22 +26,10 @@ const ListItems = ({ items }) => {
 };
 
 const ContactList = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div className="flex flex-col items-center mt-16">
-      <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-8`}>
+      <div className={`grid sm:grid-cols-1 lg:grid-cols-2 gap-32 bg-white shadow-md p-8 rounded-lg`}>
         <div>
           <h2 className="text-center text-2xl font-bold mb-4">Connect</h2>
           <div className="flex flex-col items-center space-y-2 mb-8">

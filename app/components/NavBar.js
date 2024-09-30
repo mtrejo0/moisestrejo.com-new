@@ -11,6 +11,7 @@ const navItems = [
   { path: '/p5art', label: 'P5 Art' },
   { path: '/art', label: 'Art' },
   { path: '/blog', label: 'Medium' },
+  { path: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
