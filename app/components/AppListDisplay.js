@@ -1,11 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 
 export default function AppListDisplay({ apps, displayApp, subRoute }) {
   const { id } = useParams()
   const router = useRouter()
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AppListDisplayContent apps={apps} displayApp={displayApp} subRoute={subRoute} id={id} router={router} />
+    </Suspense>
+  )
+}
+
+function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   const searchParams = useSearchParams()
   const [activeApp, setActiveApp] = useState(null)
 
