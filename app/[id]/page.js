@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import p5jsProjects from '../../public/information/p5jsProjects.json'
 import links from '../../public/information/links.json'
 import externalApps from '../../public/information/externalApps.json'
-
 export default function DynamicPage() {
   const { id } = useParams()
   const router = useRouter()
@@ -39,6 +38,7 @@ export default function DynamicPage() {
       router.push('https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1')
       return
     }
+
   }, [id, router])
 
   return <></>
