@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.14",
     "axios": "^1.7.7",
     "jspdf": "^2.5.2",
     "logrocket": "^9.0.0",

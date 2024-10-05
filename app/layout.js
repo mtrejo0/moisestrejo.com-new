@@ -4,7 +4,8 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
 import LogRocket from "logrocket";
-import { setupLogRocketReact } from "logrocket-react";
+import setupLogRocketReact  from "logrocket-react";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,7 +20,9 @@ const geistMono = localFont({
 
 LogRocket.init("5ynwnu/moisestrejocom");
 // after calling LogRocket.init()
-// setupLogRocketReact(LogRocket);
+if (typeof window !== 'undefined') {
+  setupLogRocketReact(LogRocket);
+}
 
 export const metadata = {
   title: "Moises Trejo",
@@ -37,23 +40,8 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:url" content="http://moisestrejo.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-LRJ9N9DN5T"
-        ></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "G-LRJ9N9DN5T");
-          `
-        }} />
       </head>
+      <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
       >

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ExternalLink, Play, Maximize2, Minimize2, Loader2 } from 'lucide-react'
+import { ExternalLink, Maximize2, Minimize2, Loader2 } from 'lucide-react'
 import externalApps from "../../public/information/externalApps.json"
 import internalApps from "../../public/information/internalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
@@ -10,7 +10,6 @@ import WordFrequency from '../components/internalApps/WordFrequency'
 import WordFinderGenerator from '../components/internalApps/WordFinderGenerator'
 
 const ExternalApp = ({ app }) => {
-  const [showVideo, setShowVideo] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -58,32 +57,22 @@ const ExternalApp = ({ app }) => {
         <p className="text-gray-600 mb-2">{app.description}</p>
         <p className="text-sm text-gray-500 mb-4">{app.resources}</p>
         {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
-        
-        {app.video && (
-          <button
-            onClick={() => setShowVideo(!showVideo)}
-            className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center hover:bg-red-700 transition-colors duration-200 mb-4"
-          >
-            <Play className="mr-2 h-5 w-5" />
-            {showVideo ? 'Hide' : 'Watch'} Video
-          </button>
-        )}
       </div>
       
-      {showVideo && app.video && (
-        <div className="aspect-w-16 aspect-h-9 mb-4 px-6">
+      {app.video && (
+        <div className="aspect-w-16 aspect-h-9 mb-4 px-6 lg:aspect-h-18">
           <iframe
             src={`https://www.youtube.com/embed/${app.video}`}
             allow="autoplay; encrypted-media"
             allowFullScreen
             title={app.name}
-            className="w-full h-full rounded-lg"
+            className="w-full h-full rounded-lg lg:h-96"
           />
         </div>
       )}
       
       {!includesKeyword && !app.hide && (
-        <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px]'}`}>
+        <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px] lg:h-[1200px]'}`}>
           <div className={`w-full h-full flex items-center justify-center bg-gray-100 ${isLoading ? 'block' : 'hidden'}`}>
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
