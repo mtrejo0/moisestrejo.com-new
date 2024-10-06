@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import EmailForm from "../components/EmailForm"
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -82,6 +83,9 @@ const Home = () => {
             <li key={index}>{interest}</li>
           ))}
         </ul>
+      </div>
+      <div>
+      <EmailForm/>
       </div>
     </div>
   );
