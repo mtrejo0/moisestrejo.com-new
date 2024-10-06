@@ -56,5 +56,23 @@
     "link": "https://medium.com/@moises.trejo0",
     "description": "Read my articles!",
     "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Medium_%28website%29_logo.svg/2880px-Medium_%28website%29_logo.svg.png"
+  },
+  {
+    "name": "Facebook",
+    "link": "https://www.facebook.com/moises.trejo.773",
+    "description": "Connect with me on Facebook!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+  },
+  {
+    "name": "Patreon",
+    "link": "https://www.patreon.com/user?u=87100023",
+    "description": "Support my work on Patreon!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg"
+  },
+  {
+    "name": "Easter Egg",
+    "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "description": "You found a secret!",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Emoji_u1f95a.svg/1200px-Emoji_u1f95a.svg.png"
   }
 ]

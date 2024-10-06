@@ -60,13 +60,14 @@ const Home = () => {
         </div>
         <h2 className="text-2xl font-semibold mb-4">A little about me:</h2>
         <ul className="list-disc list-inside space-y-2 mb-6">
-          <li>Software Engineer at Instacart on the Catalog Enrichment Team!</li>
-          <li>Live in Dallas, Texas - hometown and beloved city.</li>
-          <li>MIT Class of 2022 BS in Computer Science.</li>
-          <li>Enjoy cooking Mexican food and working out.</li>
-          <li>Love making generative art using P5.js.</li>
-          <li>Love building useful web apps.</li>
-          <li>Passionate about using technology.</li>
+          <li>Software Engineer at Instacart on the Catalog Enrichment Team</li>
+          <li>Based in Dallas, Texas</li>
+          <li>MIT Class of 2022 BS in Computer Science</li>
+          <li>Enjoy cooking Mexican food and working out</li>
+          <li>Love making generative art using P5.js</li>
+          <li>Building health and wellness tech</li>
+          <li>Building applicant filtering web apps</li>
+          <li>Building music tech</li>
         </ul>
         <h2 className="text-2xl font-semibold mb-4">I love all of the following:</h2>
         <ul className="list-disc list-inside space-y-2">
