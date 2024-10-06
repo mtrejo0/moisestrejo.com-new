@@ -65,9 +65,16 @@ const Home = () => {
           <li>MIT Class of 2022 BS in Computer Science</li>
           <li>Enjoy cooking Mexican food and working out</li>
           <li>Love making generative art using P5.js</li>
-          <li>Building health and wellness tech</li>
-          <li>Building applicant filtering web apps</li>
-          <li>Building music tech</li>
+          <li>Enjoy building:
+            <ul className="list-disc list-inside ml-6">
+              <li>Health and wellness tech</li>
+              <li>Applicant filtering web apps</li>
+              <li>Music and rhyming tech</li>
+              <li>Productivity tools</li>
+              <li>Data visualization projects</li>
+              <li>Social impact applications</li>
+            </ul>
+          </li>
         </ul>
         <h2 className="text-2xl font-semibold mb-4">I love all of the following:</h2>
         <ul className="list-disc list-inside space-y-2">
