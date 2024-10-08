@@ -188,5 +188,13 @@
     "id": "mongo-todo",
     "hide": true,
     "date": "August 2024"
+  },
+  {
+    "name": "Top Restaurants",
+    "description": "Kaggle data set of top 50 restaurants per year + data vizualisation",
+    "resources": "HTML, Tailwind, Leaflet",
+    "link": "https://mtrejo0.github.io/top-restaurant-viz/",
+    "id": "top-restaurant-viz",
+    "date": "October 2024"
   }
 ]
