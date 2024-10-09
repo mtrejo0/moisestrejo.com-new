@@ -8,9 +8,10 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    LogRocket.init("5ynwnu/moisestrejocom");
-    setupLogRocketReact(LogRocket);
-    
+    if (typeof window !== 'undefined') {
+      LogRocket.init("5ynwnu/moisestrejocom");
+      setupLogRocketReact(LogRocket);
+    }
   }, []);
 
   return (
