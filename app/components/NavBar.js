@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const navItems = [
-  { path: '/about', label: 'About' },
+  { path: '/', label: 'About' },
   { path: '/portfolio', label: 'Portfolio' },
   { path: '/resume', label: 'Resume' },
   { path: '/p5art', label: 'P5 Art' },

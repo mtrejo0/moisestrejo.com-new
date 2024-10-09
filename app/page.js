@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import About from "./components/About.js"
 
 export default function Home() {
-  redirect('/about');
+  return <About/>
 }

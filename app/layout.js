@@ -6,6 +6,7 @@ import Background from "./components/Background";
 import LogRocket from "logrocket";
 import setupLogRocketReact  from "logrocket-react";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { DefaultSeo } from "next-seo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,14 +33,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <DefaultSeo
+        title="Moises Trejo - Personal Website"
+        description="Welcome to the personal website of Moises Trejo, featuring blog posts, projects, and more."
+        canonical="https://www.moisestrejo.com/"
+        openGraph={{
+          url: 'https://www.moisestrejo.com/',
+          title: 'Moises Trejo - Official Site',
+          description: 'Personal blog and portfolio of Moises Trejo.',
+          images: [
+            {
+              url: 'https://www.moisestrejo.com/images/front.png',
+              width: 800,
+              height: 600,
+              alt: 'Moises Trejo Portfolio',
+            },
+          ],
+          site_name: 'Moises Trejo',
+        }}
+        twitter={{
+          handle: '@MTrejo0',
+          site: '@MTrejo0',
+          cardType: 'summary_large_image',
+        }}
+      />
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:image"
-          content="/images/front.png"
-        />
-        <meta property="og:url" content="http://moisestrejo.com" />
-        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
       <body

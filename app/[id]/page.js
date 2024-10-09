@@ -12,7 +12,7 @@ export default function DynamicPage() {
 
   useEffect(() => {
     if (id === 'home') {
-      router.push('/about')
+      router.push('/')
       return
     }
 

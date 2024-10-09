@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import EmailForm from "../components/EmailForm"
+import EmailForm from "./EmailForm"
 
-const Home = () => {
+const About = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState(0);
 
@@ -91,4 +91,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;
