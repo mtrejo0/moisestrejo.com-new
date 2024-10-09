@@ -27,12 +27,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  useEffect(() => {
-    LogRocket.init("5ynwnu/moisestrejocom");
-    setupLogRocketReact(LogRocket);
-    
-  }, []);
-
   return (
     <html lang="en">
       <head>
