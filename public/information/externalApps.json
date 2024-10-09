@@ -190,11 +190,19 @@
     "date": "August 2024"
   },
   {
-    "name": "Top Restaurants",
+    "name": "Top Restaurants 2002 - 2023",
     "description": "Kaggle data set of top 50 restaurants per year + data vizualisation",
     "resources": "HTML, Tailwind, Leaflet",
     "link": "https://mtrejo0.github.io/top-restaurant-viz/",
     "id": "top-restaurant-viz",
+    "date": "October 2024"
+  },
+  {
+    "name": "Mumbai Rainfall 1901 - 2021",
+    "description": "Kaggle data set of monthly rainfall in Mumbai",
+    "resources": "HTML, D3",
+    "link": "https://mtrejo0.github.io/mumbai-rain-viz/",
+    "id": "mumbai-rain-viz",
     "date": "October 2024"
   }
 ]
