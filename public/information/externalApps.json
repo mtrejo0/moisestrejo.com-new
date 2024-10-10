@@ -204,5 +204,13 @@
     "link": "https://mtrejo0.github.io/mumbai-rain-viz/",
     "id": "mumbai-rain-viz",
     "date": "October 2024"
+  },
+  {
+    "name": "Dice Roller Simulator",
+    "description": "Simulations for various number of dice to see the distributions of them",
+    "resources": "HTML, JavaScript",
+    "link": "https://mtrejo0.github.io/dice-roller-sim/",
+    "id": "dice-roller-sim",
+    "date": "October 2024"
   }
 ]
