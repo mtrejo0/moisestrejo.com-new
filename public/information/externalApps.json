@@ -212,5 +212,13 @@
     "link": "https://mtrejo0.github.io/dice-roller-sim/",
     "id": "dice-roller-sim",
     "date": "October 2024"
+  },
+  {
+    "name": "Unfair Coin Distributions",
+    "description": "Flips 3 coins with different head probabilities to show the differing distributions of each",
+    "resources": "HTML, JavaScript",
+    "link": "https://mtrejo0.github.io/unfair-coin-distributions/",
+    "id": "unfair-coin-distributions",
+    "date": "October 2024"
   }
 ]
