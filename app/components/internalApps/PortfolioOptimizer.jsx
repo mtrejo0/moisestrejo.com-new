@@ -14,6 +14,8 @@ const PortfolioOptimizer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lookbackDays, setLookbackDays] = useState(30);
+  const [riskLevel, setRiskLevel] = useState(0.1);
 
   const handleTickerChange = (ticker) => {
     setSelectedTickers(prev => 
@@ -41,7 +43,11 @@ const PortfolioOptimizer = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ tickers: selectedTickers }),
+        body: JSON.stringify({
+          tickers: selectedTickers,
+          lookbackDays,
+          riskLevel,
+        }),
       });
 
       if (!response.ok) {
@@ -103,6 +109,33 @@ const PortfolioOptimizer = () => {
           </span>
         ))}
       </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Lookback Period (Days)
+        </label>
+        <input
+          type="number"
+          value={lookbackDays}
+          onChange={(e) => setLookbackDays(Math.max(1, parseInt(e.target.value)))}
+          className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Risk Level: {riskLevel.toFixed(2)}
+        </label>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={riskLevel}
+          onChange={(e) => setRiskLevel(parseFloat(e.target.value))}
+          className="w-full"
+        />
+      </div>
+
       <button
         onClick={optimizePortfolio}
         disabled={selectedTickers.length < 2 || isLoading}
