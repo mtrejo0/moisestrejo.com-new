@@ -220,5 +220,13 @@
     "link": "https://mtrejo0.github.io/unfair-coin-distributions/",
     "id": "unfair-coin-distributions",
     "date": "October 2024"
+  },
+  {
+    "name": "Istanbul Traffic Index Over Time, 2015 - 2024",
+    "description": "Visualization of Istanbul's worsening traffic conditions over time, showing positive trends in congestion across different days of the week, with Monday experiencing the worst increase.",
+    "resources": "HTML, JavaScript",
+    "link": "https://mtrejo0.github.io/instanbul-traffic-viz/",
+    "id": "istanbul-traffic-viz",
+    "date": "October 2024"
   }
 ]
