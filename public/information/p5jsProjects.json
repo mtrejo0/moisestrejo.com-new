@@ -396,5 +396,11 @@
     "description": ["Use your hand position to change the freqency of the instrument!"],
     "id": "theramin",
     "href": "https://giphy.com/embed/NDgqCApijP3ghU4vql"
+  },
+  {
+    "name": "Smile Fireworks",
+    "description": ["When you smile CV detects your smile and gives you a fireworks show, my cheeks hurt from smiling so much!"],
+    "id": "smile_fireworks",
+    "href": "https://giphy.com/embed/XlWl4jew4qbAJS1QS8"
   }
 ]
