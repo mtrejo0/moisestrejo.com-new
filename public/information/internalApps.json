@@ -19,5 +19,12 @@
     "id": "wordFinderGenerator",
     "type": "internal",
     "component": "WordFinderGenerator"
+  },
+  {
+    "name": "What If I Invested?",
+    "description": "Explore the potential outcomes of your investments. See how much $1000 to NVIDIA in 2019 would be worth today!",
+    "id": "whatIfIInvested",
+    "type": "internal",
+    "component": "WhatIfIInvested"
   }
 ]

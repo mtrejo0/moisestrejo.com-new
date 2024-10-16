@@ -1,24 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ExternalLink, Maximize2, Minimize2, Loader2 } from 'lucide-react'
+import { ExternalLink, Loader2 } from 'lucide-react'
 import externalApps from "../../public/information/externalApps.json"
 import internalApps from "../../public/information/internalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
-import RandomNumbers from '../components/internalApps/RandomNumbers'
-import WordFrequency from '../components/internalApps/WordFrequency'
-import WordFinderGenerator from '../components/internalApps/WordFinderGenerator'
+import dynamic from 'next/dynamic'
 
 const ExternalApp = ({ app }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   const keywords = ["cloud", "youtube", "github.com"]
   const includesKeyword = keywords.some((keyword) => app.link.includes(keyword))
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(!isFullscreen)
-  }
 
   useEffect(() => {
     setIsLoading(true)
@@ -30,7 +23,7 @@ const ExternalApp = ({ app }) => {
   }, [app.id])
 
   return (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+    <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300`}>
       <div className="p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">
@@ -44,15 +37,6 @@ const ExternalApp = ({ app }) => {
               <ExternalLink className="ml-2 h-5 w-5" />
             </a>
           </h2>
-          {!includesKeyword && !app.hide && (
-            <button
-              onClick={toggleFullscreen}
-              className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
-              aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-            >
-              {isFullscreen ? <Minimize2 className="h-6 w-6" /> : <Maximize2 className="h-6 w-6" />}
-            </button>
-          )}
         </div>
         <p className="text-gray-600 mb-2">{app.description}</p>
         <p className="text-sm text-gray-500 mb-4">{app.resources}</p>
@@ -72,7 +56,7 @@ const ExternalApp = ({ app }) => {
       )}
       
       {!includesKeyword && !app.hide && (
-        <div className={`transition-all duration-300 ${isFullscreen ? 'h-[calc(100vh-200px)]' : 'h-[600px] lg:h-[1200px]'}`}>
+        <div className={`transition-all duration-300 h-[600px] lg:h-[1200px]`}>
           <div className={`w-full h-full flex items-center justify-center bg-gray-100 ${isLoading ? 'block' : 'hidden'}`}>
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
@@ -90,13 +74,10 @@ const ExternalApp = ({ app }) => {
 }
 
 const InternalApp = ({ app }) => {
-  const componentMap = {
-    RandomNumbers: RandomNumbers,
-    WordFrequency: WordFrequency,
-    WordFinderGenerator: WordFinderGenerator
-  }
-
-  const AppComponent = componentMap[app.component]
+  const AppComponent = dynamic(() => import(`../components/internalApps/${app.component}`), {
+    loading: () => <p>Loading...</p>,
+    ssr: false
+  })
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden lg:min-h-[60vh]">
@@ -104,7 +85,7 @@ const InternalApp = ({ app }) => {
         <h2 className="text-2xl font-bold text-gray-800 mb-4">{app.name}</h2>
         <p className="text-gray-600 mb-4">{app.description}</p>
         {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
-        {AppComponent && <AppComponent />}
+        <AppComponent />
       </div>
     </div>
   )

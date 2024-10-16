@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import p5jsProjects from '../../public/information/p5jsProjects.json'
 import links from '../../public/information/links.json'
 import externalApps from '../../public/information/externalApps.json'
+import internalApps from '../../public/information/internalApps.json'
+
 export default function DynamicPage() {
   const { id } = useParams()
   const router = useRouter()
@@ -31,6 +33,12 @@ export default function DynamicPage() {
     const externalApp = externalApps.find(app => app.id === id)
     if (externalApp) {
       router.push(externalApp.link)
+      return
+    }
+
+    const internalApp = internalApps.find(app => app.id === id)
+    if (internalApp) {
+      router.push(`/portfolio?id=${id}`)
       return
     }
 

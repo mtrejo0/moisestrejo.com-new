@@ -35,8 +35,8 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   if (!activeApp) return null
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row gap-8">
+    <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-8">
         <div className="w-full lg:w-1/4">
           <div className="lg:hidden mb-4">
             <label htmlFor="app-select" className="sr-only">Select an app</label>
@@ -73,7 +73,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
           </nav>
         </div>
         <main className="w-full lg:w-3/4 overflow-y-auto h-[calc(100vh-4rem)]">
-          <div className="bg-white p-6 rounded-lg">
+          <div className="bg-white p-3 sm:p-6 rounded-lg">
             {displayApp(activeApp)}
           </div>
         </main>

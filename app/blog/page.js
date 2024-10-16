@@ -19,9 +19,9 @@ const Blog = () => {
       {articles.map((article, index) => (
         <div
           key={index}
-          className="w-full max-w-[50%] mx-auto mb-6 bg-white rounded-lg shadow-md overflow-hidden"
+          className="w-full max-w-[90%] sm:max-w-[50%] mx-auto mb-6 bg-white rounded-lg shadow-md overflow-hidden"
         >
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-2">{article.title}</h2>
             <p className="text-sm text-gray-500 mb-4">
               Published: {new Date(article.pubDate).toLocaleDateString()}
