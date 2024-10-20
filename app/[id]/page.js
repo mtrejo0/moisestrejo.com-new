@@ -26,13 +26,13 @@ export default function DynamicPage() {
 
     const p5Project = p5jsProjects.find(project => project.id === id)
     if (p5Project) {
-      router.push(`https://p5moises-27cba0c96786.herokuapp.com/${id}`)
+      router.push(`/p5art?id=${id}`)
       return
     }
 
     const externalApp = externalApps.find(app => app.id === id)
     if (externalApp) {
-      router.push(externalApp.link)
+      router.push(`/portfolio?id=${id}`)
       return
     }
 
