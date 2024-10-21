@@ -2,7 +2,7 @@
 
 import Sketch from 'react-p5';
 
-export default function Background() {
+export default function Background({children}) {
   const numDots = 50;
   let dots = [];
 
@@ -12,8 +12,8 @@ export default function Background() {
       dots.push({
         x: p5.random(p5.width),
         y: p5.random(p5.height),
-        vx: p5.random(-.5, .5),
-        vy: p5.random(-.5, .5)
+        vx: p5.random(-.25, .25),
+        vy: p5.random(-.25, .25)
       });
     }
   };
@@ -41,8 +41,9 @@ export default function Background() {
       for (let j = i + 1; j < dots.length; j++) {
         let other = dots[j];
         let d = p5.dist(dot.x, dot.y, other.x, other.y);
-        if (d < 150) {
-          let alpha = p5.map(d, 0, 100, 255, 0); // Map distance to alpha value
+        const maxDistance = 100;
+        if (d < maxDistance) {
+          let alpha = p5.map(d, 0, maxDistance, 255, 0); // Map distance to alpha value
           p5.stroke(0, alpha); // Set stroke color with calculated alpha
           p5.line(dot.x, dot.y, other.x, other.y);
         }
@@ -51,7 +52,7 @@ export default function Background() {
   };
 
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="fixed top-0 left-0 w-full h-full -z-10">
       <Sketch setup={setup} draw={draw} />
     </div>
   );
