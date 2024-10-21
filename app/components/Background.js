@@ -1,8 +1,15 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Sketch from 'react-p5';
 
 export default function Background({children}) {
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
+
   const numDots = 50;
   let dots = [];
 
@@ -50,6 +57,10 @@ export default function Background({children}) {
       }
     }
   };
+
+  if (!isBrowser) {
+    return null;
+  }
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
