@@ -77,12 +77,12 @@ const About = () => {
             </ul>
           </li>
         </ul>
-        <h2 className="text-2xl font-semibold mb-4">I love all of the following:</h2>
+        {/* <h2 className="text-2xl font-semibold mb-4">I love all of the following:</h2>
         <ul className="list-disc list-inside space-y-2">
           {interests.map((interest, index) => (
             <li key={index}>{interest}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
       <div>
       <EmailForm/>

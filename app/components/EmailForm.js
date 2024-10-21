@@ -39,7 +39,7 @@ export default function EmailForm() {
 
   return (
     <form onSubmit={(e) => onSubmit(e)} className="max-w-lg mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Contact Me</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">How can I help?</h2>
       
       {success && (
         <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">
