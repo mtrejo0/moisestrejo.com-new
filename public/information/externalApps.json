@@ -228,5 +228,13 @@
     "link": "https://mtrejo0.github.io/instanbul-traffic-viz/",
     "id": "istanbul-traffic-viz",
     "date": "October 2024"
+  },
+  {
+    "name": "Fan Quiz",
+    "description": "Pick a playlist and see if you can guess the song correctly. See your score at the end!",
+    "resources": "Next.js, Spotify API",
+    "link": "https://fan-quiz.vercel.app/",
+    "id": "fan-quiz",
+    "date": "November 2024"
   }
 ]
