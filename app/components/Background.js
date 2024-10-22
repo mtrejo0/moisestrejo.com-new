@@ -1,14 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Sketch from 'react-p5';
+import dynamic from 'next/dynamic';
 
-export default function Background({children}) {
-  const [isBrowser, setIsBrowser] = useState(false);
+const DynamicSketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
+  ssr: false,
+});
 
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
+export default function Background() {
 
   const numDots = 50;
   let dots = [];
@@ -58,13 +56,9 @@ export default function Background({children}) {
     }
   };
 
-  if (!isBrowser) {
-    return null;
-  }
-
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
-      <Sketch setup={setup} draw={draw} />
+      <DynamicSketch setup={setup} draw={draw} />
     </div>
   );
 }

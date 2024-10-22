@@ -60,7 +60,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 gap-4">
         {activeApp && <LazyLoadedApp key={activeApp.id} app={activeApp} displayApp={displayApp} likeCount={appLikes[activeApp.id]} />}
         {sortedApps.filter(app => app.id !== activeApp?.id).map((app) => (
           <LazyLoadedApp key={app.id} app={app} displayApp={displayApp} likeCount={appLikes[app.id]} />
