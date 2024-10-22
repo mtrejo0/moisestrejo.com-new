@@ -7,6 +7,8 @@ export async function GET(request) {
     await connectToDatabase();
     const projects = await Project.find({});
 
+    revalidatePath('/');
+
     return NextResponse.json({ projects });
   } catch (error) {
     console.error('Error fetching projects:', error);

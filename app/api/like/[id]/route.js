@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import connectToDatabase from '../../../../lib/mongodb';
 import { Project } from '../../../../models/Project';
 
@@ -9,6 +10,8 @@ export async function GET(request, { params }) {
     await connectToDatabase();
     const project = await Project.findOne({ id });
     const likeCount = project ? project.likeCount : 0;
+
+    revalidatePath('/');
 
     return NextResponse.json({ count: likeCount });
   } catch (error) {
@@ -27,6 +30,8 @@ export async function POST(request, { params }) {
       { $inc: { likeCount: 1 } },
       { upsert: true, new: true }
     );
+
+    revalidatePath('/');
 
     return NextResponse.json({ count: project.likeCount });
   } catch (error) {
