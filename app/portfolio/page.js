@@ -23,7 +23,7 @@ const ExternalApp = ({ app }) => {
   }, [app.id])
 
   return (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300`}>
+    <div className={`bg-white rounded-xl shadow-md overflow-hidden transition-all lg:min-h-[60vh] duration-300`}>
       <div className="p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">
@@ -56,7 +56,7 @@ const ExternalApp = ({ app }) => {
       )}
       
       {!includesKeyword && !app.hide && (
-        <div className={`transition-all duration-300 h-[600px] lg:h-[1200px]`}>
+        <div className={`transition-all duration-300 h-[400px] sm:h-[600px]`}>
           <div className={`w-full h-full flex items-center justify-center bg-gray-100 ${isLoading ? 'block' : 'hidden'}`}>
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
@@ -85,7 +85,9 @@ const InternalApp = ({ app }) => {
         <h2 className="text-2xl font-bold text-gray-800 mb-4">{app.name}</h2>
         <p className="text-gray-600 mb-4">{app.description}</p>
         {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
-        <AppComponent />
+        <div className='h-[600px]'>
+          <AppComponent />
+        </div>
       </div>
     </div>
   )

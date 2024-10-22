@@ -9,7 +9,7 @@ const ArtDisplay = ({ app }) => {
   const [name, date] = app.name.split(', ')
   
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+    <div className="bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-300">
       <div className="p-6">
         <div className="flex flex-col mb-4">
           <h2 className="text-2xl font-bold text-gray-800">
@@ -17,7 +17,7 @@ const ArtDisplay = ({ app }) => {
           </h2>
           <p className="text-sm text-gray-500">{date}</p>
         </div>
-        <div className="relative transition-all duration-300 h-[600px]">
+        <div className="relative transition-all duration-300 h-[400px] sm:h-[600px]">
           <Image
             src={`/images/art/${app.id}`}
             alt={app.name}

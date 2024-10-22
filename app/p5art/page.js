@@ -21,7 +21,7 @@ const P5App = ({ app }) => {
   }, [app.id])
 
   return (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300`}>
+    <div className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300`}>
       <div className="p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">
@@ -63,7 +63,7 @@ const P5App = ({ app }) => {
         </div>
       )}
       
-      <div className={`transition-all duration-300 h-[600px]`}>
+      <div className={`transition-all duration-300 h-[400px] sm:h-[600px]`}>
         {isLoading ? (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />

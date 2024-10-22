@@ -10,18 +10,7 @@
   },
   {
     "name": "DJ Visualizer",
-    "description": [
-      ", - halves the bpm",
-      ". - doubles the bpm",
-      "[ ] - shifts color theme down/up",
-      "1 - toggles random circles",
-      "2 - toggles verticle lines<",
-      "3 - toggles spiral lines",
-      "4 - toggles center circle",
-      "up/down - changes bpm +/- 5",
-      "left/right - changes bpm +/- 1",
-      "spacebar - tap for the program to learn the BPM you are tapping at"
-    ],
+    "description": [", - halves bpm, . - doubles bpm, [ ] - shifts color theme, 1-4 - toggle effects, arrows - change bpm, spacebar - tap to learn BPM"],
     "id": "dj_vis",
     "video": "j-UYMUW4Ehw",
     "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu",
