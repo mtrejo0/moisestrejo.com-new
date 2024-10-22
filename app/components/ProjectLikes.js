@@ -1,27 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaThumbsUp } from 'react-icons/fa'
 
-const ProjectLikes = ({ projectId }) => {
-  const [likeCount, setLikeCount] = useState(0)
+const ProjectLikes = ({ projectId, initialLikeCount }) => {
+  const [likeCount, setLikeCount] = useState(initialLikeCount || 0)
   const [isLiked, setIsLiked] = useState(false)
-
-  useEffect(() => {
-    fetchLikeCount()
-  }, [projectId])
-
-  const fetchLikeCount = async () => {
-    try {
-      const response = await fetch(`/api/like/${projectId}`)
-      if (response.ok) {
-        const data = await response.json()
-        setLikeCount(data.count)
-      }
-    } catch (error) {
-      console.error('Error fetching like count:', error)
-    }
-  }
 
   const handleLike = async () => {
     if (isLiked) return
