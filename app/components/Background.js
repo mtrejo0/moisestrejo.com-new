@@ -1,12 +1,14 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
-const DynamicSketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
-  ssr: false,
-});
+import { useEffect, useState } from 'react';
+import Sketch from 'react-p5';
 
 export default function Background() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const numDots = 50;
   let dots = [];
@@ -58,7 +60,7 @@ export default function Background() {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
-      <DynamicSketch setup={setup} draw={draw} />
+      {isMounted && <Sketch setup={setup} draw={draw} />}
     </div>
   );
 }
