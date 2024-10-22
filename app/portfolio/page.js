@@ -69,6 +69,9 @@ const ExternalApp = ({ app }) => {
           </div>
         </div>
       )}
+      {app.hide && (
+        <p className="text-center text-gray-600 mt-4">Click the link to see this app!</p>
+      )}
     </div>
   )
 }
