@@ -56,7 +56,7 @@ const ExternalApp = ({ app }) => {
       )}
       
       {!includesKeyword && !app.hide && (
-        <div className={`transition-all duration-300 h-[300px] sm:h-[600px]`}>
+        <div className={`transition-all duration-300 h-[400px] sm:h-[600px]`}>
           <div className={`w-full h-full flex items-center justify-center bg-gray-100 ${isLoading ? 'block' : 'hidden'}`}>
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
