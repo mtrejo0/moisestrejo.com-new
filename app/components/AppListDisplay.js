@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 import ProjectLikes from './ProjectLikes'
+import { Shuffle } from 'lucide-react'
 
 export default function AppListDisplay({ apps, displayApp, subRoute }) {
   const { id } = useParams()
@@ -45,8 +46,11 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
         setSortedApps(sortedApps);
 
         const queryId = searchParams.get('id')
-        const initialApp = sortedApps.find(app => app.id === (queryId || id)) || sortedApps[0]
-        setActiveApp(initialApp)
+        if (queryId) {
+          const initialApp = sortedApps.find(app => app.id === (queryId || id)) || sortedApps[0]
+          setActiveApp(initialApp)
+        }
+        
       } catch (error) {
         console.error('Error fetching likes:', error);
         setSortedApps(apps);
@@ -54,13 +58,25 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
     };
 
     fetchLikesAndSortApps();
+    console.log("ok")
   }, [apps, id, searchParams])
 
-  if (!activeApp) return null
+  const shuffleApps = () => {
+    const shuffled = [...sortedApps].sort(() => Math.random() - 0.5);
+    setSortedApps(shuffled);
+  }
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
-      <div className="grid grid-cols-1 gap-4">
+      <div className="fixed bottom-4 right-4 z-50">
+        <button 
+          onClick={shuffleApps}
+          className="w-12 h-12 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg flex items-center justify-center"
+        >
+          <Shuffle className="w-6 h-6" />
+        </button>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {activeApp && <LazyLoadedApp key={activeApp.id} app={activeApp} displayApp={displayApp} likeCount={appLikes[activeApp.id]} />}
         {sortedApps.filter(app => app.id !== activeApp?.id).map((app) => (
           <LazyLoadedApp key={app.id} app={app} displayApp={displayApp} likeCount={appLikes[app.id]} />
