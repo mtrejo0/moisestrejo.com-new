@@ -7,6 +7,7 @@ import p5jsProjects from '../../public/information/p5jsProjects.json'
 import links from '../../public/information/links.json'
 import externalApps from '../../public/information/externalApps.json'
 import internalApps from '../../public/information/internalApps.json'
+import NotFound404 from "../components/NotFound404.js"
 
 export default function DynamicPage() {
   const { id } = useParams()
@@ -49,5 +50,5 @@ export default function DynamicPage() {
 
   }, [id, router])
 
-  return <></>
+  return <><NotFound404/></>
 }
