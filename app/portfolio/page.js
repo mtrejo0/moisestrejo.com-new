@@ -6,6 +6,7 @@ import externalApps from "../../public/information/externalApps.json"
 import internalApps from "../../public/information/internalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 const ExternalApp = ({ app }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -85,7 +86,17 @@ const InternalApp = ({ app }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden lg:min-h-[60vh]">
       <div className="p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">{app.name}</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center justify-between">
+          <a 
+            href={`/internal/${app.id}`}
+            target="_blank" 
+            rel="noreferrer" 
+            className="hover:text-blue-600 transition-colors duration-200 flex items-center"
+          >
+            {app.name}
+            <ExternalLink className="ml-2 h-5 w-5" />
+          </a>
+        </h2>
         <p className="text-gray-600 mb-4">{app.description}</p>
         {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
         <div className='h-[600px]'>
