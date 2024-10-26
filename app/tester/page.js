@@ -1,9 +1,9 @@
 'use client'
-import NameCountries from "../components/internalApps/NameCountries";
+import TaylorSwiftGuess from "../components/internalApps/TaylorSwiftGuess";
 const Page = () => {
 
   return (
-    <NameCountries/>
+    <TaylorSwiftGuess/>
   );
 };
 
