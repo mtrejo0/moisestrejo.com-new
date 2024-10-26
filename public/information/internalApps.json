@@ -26,5 +26,12 @@
     "id": "whatIfIInvested",
     "type": "internal",
     "component": "WhatIfIInvested"
+  },
+  {
+    "name": "Name the Countries",
+    "description": "Test your geography knowledge by naming all the countries in the world!",
+    "id": "nameCountries",
+    "type": "internal",
+    "component": "NameCountries"
   }
 ]

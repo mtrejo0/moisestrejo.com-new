@@ -1,11 +1,9 @@
 'use client'
-import PortfolioOptimizer from "../components/internalApps/PortfolioOptimizer";
-import WhatIfIInvested from "../components/internalApps/WhatIfIInvested";
-
+import NameCountries from "../components/internalApps/NameCountries";
 const Page = () => {
 
   return (
-    <WhatIfIInvested/>
+    <NameCountries/>
   );
 };
 
