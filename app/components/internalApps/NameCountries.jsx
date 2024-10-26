@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { Play, Pause } from "lucide-react";
 import countries from './countries.json';
 
 const NameCountries = () => {
@@ -65,17 +66,9 @@ const NameCountries = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
+    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
       <h2 className="text-2xl font-bold mb-4">Name the Countries</h2>
-      <div className="mb-4">
-        <button
-          onClick={toggleTimer}
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 mr-2"
-        >
-          {isRunning ? "Pause" : "Start"} Timer
-        </button>
-        <span className="text-xl font-bold">{timer} seconds</span>
-      </div>
+      
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="text"
@@ -98,6 +91,15 @@ const NameCountries = () => {
           Hint
         </button>
       </form>
+      <div className="mb-4 flex items-center">
+        <button
+          onClick={toggleTimer}
+          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 mr-2 flex items-center"
+        >
+          {isRunning ? <Pause size={20} /> : <Play size={20} />}
+        </button>
+        <span className="text-xl font-bold">{timer} s</span>
+      </div>
       <div className="mb-4">
         <p>Countries found: {enteredCountries.length}</p>
         <p>Countries remaining: {remainingCountries.length}</p>
@@ -107,7 +109,7 @@ const NameCountries = () => {
           Congratulations! You've named all the countries!
         </div>
       )}
-      <div className="w-full max-w-3xl h-96">
+      <div className="w-full max-w-3xl">
         <ComposableMap>
           <Geographies geography={countries}>
             {({ geographies }) =>
