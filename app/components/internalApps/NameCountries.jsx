@@ -106,7 +106,7 @@ const NameCountries = () => {
       </div>
       {gameWon && (
         <div className="text-green-500 font-bold mb-4">
-          Congratulations! You've named all the countries!
+          Congratulations! You&apos;sve named all the countries!
         </div>
       )}
       <div className="w-full max-w-3xl">
