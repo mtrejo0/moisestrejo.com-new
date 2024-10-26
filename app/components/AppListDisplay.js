@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 import ProjectLikes from './ProjectLikes'
-import { Shuffle } from 'lucide-react'
+import { Shuffle, Search, ChevronDown } from 'lucide-react'
 
 export default function AppListDisplay({ apps, displayApp, subRoute }) {
   const { id } = useParams()
@@ -22,6 +22,9 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   const [activeApp, setActiveApp] = useState(null)
   const [sortedApps, setSortedApps] = useState([])
   const [appLikes, setAppLikes] = useState({})
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filteredApps, setFilteredApps] = useState([])
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const fetchLikesAndSortApps = async () => {
@@ -44,6 +47,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
         });
 
         setSortedApps(sortedApps);
+        setFilteredApps(sortedApps);
 
         const queryId = searchParams.get('id')
         if (queryId) {
@@ -54,20 +58,66 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
       } catch (error) {
         console.error('Error fetching likes:', error);
         setSortedApps(apps);
+        setFilteredApps(apps);
       }
     };
 
     fetchLikesAndSortApps();
-    console.log("ok")
   }, [apps, id, searchParams])
 
+  useEffect(() => {
+    const filtered = sortedApps.filter(app => 
+      app.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredApps(filtered);
+  }, [searchTerm, sortedApps]);
+
   const shuffleApps = () => {
-    const shuffled = [...sortedApps].sort(() => Math.random() - 0.5);
-    setSortedApps(shuffled);
+    const shuffled = [...filteredApps].sort(() => Math.random() - 0.5);
+    setFilteredApps(shuffled);
+  }
+
+  const handleAppSelect = (app) => {
+    setActiveApp(app);
+    setSearchTerm(app.name);
+    setIsDropdownOpen(false);
   }
 
   return (
     <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="mb-4 relative">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search apps..."
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setIsDropdownOpen(true);
+            }}
+            onFocus={() => setIsDropdownOpen(true)}
+            className="w-full p-2 pl-10 pr-10 border border-gray-300 rounded-md"
+          />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <ChevronDown
+            className={`absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          />
+        </div>
+        {isDropdownOpen && (
+          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+            {filteredApps.map((app) => (
+              <div
+                key={app.id}
+                className="p-2 hover:bg-gray-100 cursor-pointer"
+                onClick={() => handleAppSelect(app)}
+              >
+                {app.name}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
       <div className="fixed bottom-4 right-4 z-50">
         <button 
           onClick={shuffleApps}
@@ -78,7 +128,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {activeApp && <LazyLoadedApp key={activeApp.id} app={activeApp} displayApp={displayApp} likeCount={appLikes[activeApp.id]} />}
-        {sortedApps.filter(app => app.id !== activeApp?.id).map((app) => (
+        {filteredApps.filter(app => app.id !== activeApp?.id).map((app) => (
           <LazyLoadedApp key={app.id} app={app} displayApp={displayApp} likeCount={appLikes[app.id]} />
         ))}
       </div>
@@ -96,7 +146,7 @@ function LazyLoadedApp({ app, displayApp, likeCount }) {
     <div ref={ref} className="bg-white p-3 sm:p-6 rounded-lg relative">
       {inView ? (
         <>
-          <div className="absolute top-8 right-8 z-10">
+          <div className="absolute top-8 right-8 z-2">
             <ProjectLikes projectId={app.id} initialLikeCount={likeCount} />
           </div>
           {displayApp(app)}
