@@ -40,5 +40,12 @@
     "id": "taylorSwiftGuess",
     "type": "internal",
     "component": "TaylorSwiftGuess"
+  },
+  {
+    "name": "Lana Del Rey Song Guesser",
+    "description": "Test your knowledge of Lana Del Rey's discography by naming her songs!",
+    "id": "lanaDelReyGuess",
+    "type": "internal", 
+    "component": "LanaDelReyGuess"
   }
 ]

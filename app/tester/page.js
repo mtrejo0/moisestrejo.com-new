@@ -1,9 +1,9 @@
 'use client'
-import TaylorSwiftGuess from "../components/internalApps/TaylorSwiftGuess";
+import LanaDelReyGuess from "../components/internalApps/lana_del_rey/LanaDelReyGuess.jsx";
 const Page = () => {
 
   return (
-    <TaylorSwiftGuess/>
+    <LanaDelReyGuess/>
   );
 };
 
