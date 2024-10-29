@@ -1,9 +1,9 @@
 'use client'
-import LanaDelReyGuess from "../components/internalApps/LanaDelReyGuess.jsx";
+import SpeechToText from "../components/internalApps/SpeechToText.jsx";
 const Page = () => {
 
   return (
-    <LanaDelReyGuess/>
+    <SpeechToText/>
   );
 };
 

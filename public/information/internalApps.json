@@ -47,5 +47,12 @@
     "id": "lanaDelReyGuess",
     "type": "internal", 
     "component": "LanaDelReyGuess"
+  },
+  {
+    "name": "Speech to Text",
+    "description": "Convert your speech to text using your browser's speech recognition!",
+    "id": "speechToText",
+    "type": "internal",
+    "component": "SpeechToText"
   }
 ]
