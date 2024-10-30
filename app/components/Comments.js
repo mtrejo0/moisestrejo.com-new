@@ -48,11 +48,23 @@ const Comments = () => {
   }
 
   const handleLike = async (id) => {
+    // Optimistically update the like count
+    setComments(prevComments => 
+      prevComments.map(c => 
+        c._id === id ? {...c, likes: (c.likes || 0) + 1} : c
+      )
+    )
+
     try {
       await axios.put(`/api/comment/like/${id}`)
-      fetchComments()
     } catch (error) {
       console.error('Error liking comment:', error)
+      // Revert the optimistic update on error
+      setComments(prevComments =>
+        prevComments.map(c =>
+          c._id === id ? {...c, likes: (c.likes || 0) - 1} : c
+        )
+      )
     }
   }
 
