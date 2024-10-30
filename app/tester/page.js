@@ -1,9 +1,9 @@
 'use client'
-import Magic8Ball from "../components/internalApps/Magic8Ball.jsx";
+import ImageEditor from "../components/internalApps/ImageEditor.jsx";
 const Page = () => {
 
   return (
-    <Magic8Ball/>
+    <ImageEditor/>
   );
 };
 

@@ -61,5 +61,12 @@
     "id": "magic8Ball", 
     "type": "internal",
     "component": "Magic8Ball"
+  },
+  {
+    "name": "Image Editor",
+    "description": "Edit your images with filters like brightness, contrast, saturation and more!",
+    "id": "imageEditor",
+    "type": "internal",
+    "component": "ImageEditor"
   }
 ]
