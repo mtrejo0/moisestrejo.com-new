@@ -70,8 +70,9 @@ const ImageEditor = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
+    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white min-h-[400px]">
       <h2 className="text-2xl font-bold mb-4">Image Editor</h2>
+      <p className="text-gray-600 mb-4">Upload an image and use the sliders below to adjust brightness, contrast, saturation and more!</p>
 
       <input
         type="file"
