@@ -102,7 +102,7 @@ const Comments = () => {
 
       <div className="space-y-4 max-h-[calc(3*120px)] overflow-y-auto">
         {comments.map((comment, index) => (
-          <div key={index} className="p-4 border rounded h-[120px]">
+          <div key={index} className="p-4 border rounded">
             <div className="font-semibold">{comment.name}</div>
             <div className="mt-1">{comment.comment}</div>
             <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
