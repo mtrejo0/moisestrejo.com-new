@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import EmailForm from "./EmailForm"
+import Comments from "./Comments"
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -84,9 +84,7 @@ const About = () => {
           ))}
         </ul> */}
       </div>
-      <div>
-      <EmailForm/>
-      </div>
+      <Comments/>
     </div>
   );
 };

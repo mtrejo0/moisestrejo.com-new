@@ -1,10 +1,14 @@
 'use client'
 import ContactList from "../components/ContactList";
+import EmailForm from "../components/EmailForm"
 
 const Page = () => {
 
   return (
-    <ContactList/>
+    <div>
+      <ContactList/>
+      <EmailForm/>
+    </div>
   );
 };
 
