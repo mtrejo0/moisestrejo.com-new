@@ -54,5 +54,12 @@
     "id": "speechToText",
     "type": "internal",
     "component": "SpeechToText"
+  },
+  {
+    "name": "Magic 8 Ball",
+    "description": "Ask the Magic 8 Ball a question and get your fortune told!",
+    "id": "magic8Ball", 
+    "type": "internal",
+    "component": "Magic8Ball"
   }
 ]

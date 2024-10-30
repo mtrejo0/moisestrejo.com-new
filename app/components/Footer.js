@@ -64,7 +64,7 @@ const Footer = () => {
             );
           })}
         </div>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <Link
             href="https://buymeacoffee.com/moisestrejo"
             target="_blank"

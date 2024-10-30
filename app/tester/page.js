@@ -1,9 +1,9 @@
 'use client'
-import SpeechToText from "../components/internalApps/SpeechToText.jsx";
+import Magic8Ball from "../components/internalApps/Magic8Ball.jsx";
 const Page = () => {
 
   return (
-    <SpeechToText/>
+    <Magic8Ball/>
   );
 };
 
