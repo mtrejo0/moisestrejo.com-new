@@ -64,6 +64,16 @@ const Footer = () => {
             );
           })}
         </div>
+        <div className="mt-4 flex justify-center">
+          <Link
+            href="https://buymeacoffee.com/moisestrejo"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-all"
+          >
+            Buy me a coffee ☕
+          </Link>
+        </div>
       </div>
     </footer>
   )
