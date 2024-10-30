@@ -1,75 +1,111 @@
-'use client'
-
-import { useParams, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { notFound, redirect } from 'next/navigation'
+import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
 import p5jsProjects from '../../public/information/p5jsProjects.json'
 import links from '../../public/information/links.json'
 import externalApps from '../../public/information/externalApps.json'
 import internalApps from '../../public/information/internalApps.json'
-import NotFound404 from "../components/NotFound404.js"
-import dynamic from 'next/dynamic'
 
-export default function DynamicPage() {
-  const { id } = useParams()
-  const router = useRouter()
-  const [Component, setComponent] = useState(null)
-  const [loading, setLoading] = useState(true)
+// Generate static paths for all known routes
+export async function generateStaticParams() {
+  const allIds = [
+    ...internalApps.map(app => ({ id: app.id })),
+    ...externalApps.map(app => ({ id: app.id })),
+    ...p5jsProjects.map(project => ({ id: project.id })),
+    ...links.map(link => link.ids.map(id => ({ id }))).flat()
+  ]
+  return allIds
+}
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 500)
+// Generate metadata for the page
+export async function generateMetadata({ params }) {
+  const { id } = params
 
-    if (id === 'home') {
-      router.push('/')
-      return
+  // Find matching app/project/link
+  const internalApp = internalApps.find(app => app.id === id)
+  const externalApp = externalApps.find(app => app.id === id)
+  const p5Project = p5jsProjects.find(project => project.id === id)
+
+  if (internalApp) {
+    return {
+      title: internalApp.name,
+      description: internalApp.description,
+      openGraph: {
+        title: internalApp.name,
+        description: internalApp.description
+      }
     }
+  }
 
-    const link = links.find(link => link.ids.includes(id))
-    if (link) {
-      router.push(link.link)
-      return
+  if (externalApp) {
+    return {
+      title: externalApp.name, 
+      description: externalApp.description,
+      openGraph: {
+        title: externalApp.name,
+        description: externalApp.description
+      }
     }
+  }
 
-    const p5Project = p5jsProjects.find(project => project.id === id)
-    if (p5Project) {
-      router.push(`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`)
-      return
+  if (p5Project) {
+    return {
+      title: p5Project.name,
+      description: p5Project.description.join(' '),
+      openGraph: {
+        title: p5Project.name,
+        description: p5Project.description.join(' ')
+      }
     }
+  }
 
-    const externalApp = externalApps.find(app => app.id === id)
-    if (externalApp) {
-      router.push(externalApp.link)
-      return
-    }
+  return {
+    title: 'Not Found',
+    description: 'The requested page could not be found'
+  }
+}
 
-    const internalApp = internalApps.find(app => app.id === id)
-    if (internalApp) {
-      const DynamicComponent = dynamic(() => import(`../components/internalApps/${internalApp.component}.jsx`))
-      setComponent(() => DynamicComponent)
-      return
-    }
+export default async function Page({ params }) {
+  const { id } = params
 
-    if (id === 'college') {
-      router.push('https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1')
-      return
-    }
+  // Handle special cases first
+  if (id === 'home') {
+    redirect('/')
+  }
 
-  }, [id, router])
+  if (id === 'college') {
+    redirect('https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1')
+  }
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
-        <div className="ml-4 text-xl font-semibold text-gray-700">Loading...</div>
-      </div>
+  // Check for matching link
+  const link = links.find(link => link.ids.includes(id))
+  if (link) {
+    redirect(link.link)
+  }
+
+  // Check for p5 project
+  const p5Project = p5jsProjects.find(project => project.id === id)
+  if (p5Project) {
+    redirect(`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`)
+  }
+
+  // Check for external app
+  const externalApp = externalApps.find(app => app.id === id)
+  if (externalApp) {
+    redirect(externalApp.link)
+  }
+
+  // Check for internal app
+  const internalApp = internalApps.find(app => app.id === id)
+  if (internalApp) {
+    const DynamicComponent = dynamic(
+      () => import(`../components/internalApps/${internalApp.component}.jsx`),
+      { ssr: true }
     )
+    return <DynamicComponent />
   }
 
-  if (Component) {
-    return <Component />
-  }
-
-  return <NotFound404/>
+  // If no matches found, return 404
+  notFound()
 }
