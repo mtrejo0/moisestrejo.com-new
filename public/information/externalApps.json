@@ -3,7 +3,7 @@
     "name": "Fit Check",
     "description": "Upload your fits, rank them, see how your fits rank",
     "resources": "Mongo DB, Next JS, Tailwind",
-    "link": "https://fit-check-lime.vercel.app/",
+    "link": "https://fit-check-me.vercel.app/",
     "id": "fit-check",
     "date": "August 2024",
     "hide": true

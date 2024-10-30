@@ -9,7 +9,7 @@ const P5App = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  const link = `https://moisestrejo.com/${app.id}`
+  const link = `https://p5moises-27cba0c96786.herokuapp.com/${app.id}`
 
   useEffect(() => {
     setIsLoading(true)
