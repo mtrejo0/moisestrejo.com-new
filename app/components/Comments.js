@@ -8,6 +8,7 @@ const Comments = () => {
   const [name, setName] = useState('')
   const [comment, setComment] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetchComments()
@@ -19,6 +20,8 @@ const Comments = () => {
       setComments(response.data)
     } catch (error) {
       console.error('Error fetching comments:', error)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -101,22 +104,28 @@ const Comments = () => {
       </form>
 
       <div className="space-y-4 max-h-[calc(3*120px)] overflow-y-auto">
-        {comments.map((comment, index) => (
-          <div key={index} className="p-4 border rounded">
-            <div className="font-semibold">{comment.name}</div>
-            <div className="mt-1">{comment.comment}</div>
-            <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
-              <span>{new Date(comment.timestamp).toLocaleString()}</span>
-              <button 
-                onClick={() => handleLike(comment._id)}
-                className="flex items-center space-x-1 text-blue-500 hover:text-blue-600"
-              >
-                <span>❤️</span>
-                <span>{comment.likes || 0}</span>
-              </button>
+        {isLoading ? (
+          <div className="text-center py-4">Loading comments...</div>
+        ) : comments.length === 0 ? (
+          <div className="text-center py-4">No comments yet. Be the first to comment!</div>
+        ) : (
+          comments.map((comment, index) => (
+            <div key={index} className="p-4 border rounded">
+              <div className="font-semibold">{comment.name}</div>
+              <div className="mt-1">{comment.comment}</div>
+              <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
+                <span>{new Date(comment.timestamp).toLocaleString()}</span>
+                <button 
+                  onClick={() => handleLike(comment._id)}
+                  className="flex items-center space-x-1 text-blue-500 hover:text-blue-600"
+                >
+                  <span>❤️</span>
+                  <span>{comment.likes || 0}</span>
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   )
