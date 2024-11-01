@@ -1,11 +1,15 @@
 "use client"
 
-import React, { useState } from 'react';
-import { consejos } from './data/consejos';
+import React, { useState, useEffect } from 'react';
+import consejos from './data/consejos.json';
 import { Shuffle } from 'lucide-react';
 
 const Consejos = () => {
-  const [currentConsejo, setCurrentConsejo] = useState(consejos[Math.floor(Math.random() * consejos.length)]);
+  const [currentConsejo, setCurrentConsejo] = useState('');
+
+  useEffect(() => {
+    setCurrentConsejo(consejos[Math.floor(Math.random() * consejos.length)]);
+  }, []);
 
   const getRandomConsejo = () => {
     const randomIndex = Math.floor(Math.random() * consejos.length);
@@ -13,16 +17,26 @@ const Consejos = () => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-2xl mx-auto mt-16">
-      <button
-        onClick={getRandomConsejo}
-        className="w-full mb-6 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center gap-2"
-      >
-        <Shuffle size={20} />
-      </button>
+    <div className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-indigo-50 to-white">
+      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 mx-auto mt-16">
+        <div className="flex flex-col items-center space-y-8">
+          <button
+            onClick={getRandomConsejo}
+            className="w-16 h-16 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 
+                     transform hover:scale-105 transition-all duration-200 
+                     focus:outline-none focus:ring-4 focus:ring-indigo-300
+                     shadow-lg hover:shadow-xl flex items-center justify-center"
+            aria-label="Get new advice"
+          >
+            <Shuffle size={28} />
+          </button>
 
-      <div className="flex justify-center">
-        <p className="text-3xl text-gray-800 text-center">{currentConsejo}</p>
+          <div className="w-full">
+            <p className="text-2xl md:text-3xl font-medium text-gray-800 text-center leading-relaxed">
+              {currentConsejo}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
