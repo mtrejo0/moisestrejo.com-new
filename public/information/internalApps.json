@@ -68,5 +68,12 @@
     "id": "imageEditor",
     "type": "internal",
     "component": "ImageEditor"
+  },
+  {
+    "name": "Consejos",
+    "description": "Dichos y refranes que valen oro - Get wisdom from Spanish proverbs and sayings!",
+    "id": "consejos",
+    "type": "internal",
+    "component": "Consejos"
   }
 ]

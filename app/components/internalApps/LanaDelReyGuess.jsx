@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Play, Pause } from "lucide-react";
-import lanaSongs from "./lana_songs.json";
+import lanaSongs from "./data/lana_songs.json";
 
 const LanaDelReyGuess = () => {
   const [input, setInput] = useState("");

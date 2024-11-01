@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Play, Pause } from "lucide-react";
-import countries from './name_countries.json';
+import countries from './data/name_countries.json';
 
 const NameCountries = () => {
   const [input, setInput] = useState("");
