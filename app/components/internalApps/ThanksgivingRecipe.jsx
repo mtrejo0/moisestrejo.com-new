@@ -10,8 +10,8 @@ const ThanksgivingRecipe = () => {
       options: [
         {
           name: "Herb Butter Roasted Turkey",
-          selected: false,
-          expanded: false,
+          selected: true,
+          expanded: true,
           baseServings: 4,
           ingredients: [
             { name: "Turkey", amount: 6, unit: "lbs", scalable: true, checked: false },
@@ -51,8 +51,8 @@ const ThanksgivingRecipe = () => {
       options: [
         {
           name: "Classic Mashed Potatoes",
-          selected: false,
-          expanded: false,
+          selected: true,
+          expanded: true,
           baseServings: 4,
           ingredients: [
             { name: "Yukon Gold potatoes", amount: 4, unit: "lbs", scalable: true, checked: false },
