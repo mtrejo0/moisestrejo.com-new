@@ -459,7 +459,7 @@ const ThanksgivingRecipe = () => {
       </div>
 
       <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-4">Shopping List</h2>
+        <h2 className="text-2xl font-semibold mb-4">Final Shopping List</h2>
         {Object.values(getShoppingList()).length > 0 ? (
           <div className="grid gap-2">
             {Object.values(getShoppingList()).map((item, index) => (
