@@ -1,16 +1,10 @@
 'use client'
 
 import About from "./components/About.js"
-import LogRocket from "logrocket";
-import setupLogRocketReact from "logrocket-react";
-import { useEffect } from "react";
+import { useLogRocket } from "../lib/hooks/useLogRocket.js"
 
 export default function Home() {
-  useEffect(() => {
-    LogRocket.init("5ynwnu/moisestrejocom");
-    setupLogRocketReact(LogRocket);
-    
-  }, []);
+  useLogRocket();
 
   return (
     <>

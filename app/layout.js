@@ -31,7 +31,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
           content="/images/front.png"
@@ -39,7 +38,6 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content="http://moisestrejo.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:title" content={metadata.title} />
-        <meta property="og:type" content="website" />
 
       </Head>
       <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
