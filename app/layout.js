@@ -37,8 +37,6 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:url" content="http://moisestrejo.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:title" content={metadata.title} />
-
       </Head>
       <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
       <body
