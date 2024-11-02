@@ -9,25 +9,6 @@ const ThanksgivingRecipe = () => {
       title: "Main Course",
       options: [
         {
-          name: "Classic Roasted Turkey",
-          selected: false,
-          expanded: false,
-          baseServings: 4,
-          ingredients: [
-            { name: "Turkey", amount: 6, unit: "lbs", scalable: true, checked: false },
-            { name: "Butter", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Fresh herbs (thyme, rosemary, sage)", amount: 0.25, unit: "cup", scalable: true, checked: false },
-            { name: "Salt and pepper", amount: 2, unit: "tbsp", scalable: true, checked: false }
-          ],
-          steps: [
-            { name: "Preheat oven to 325°F", checked: false },
-            { name: "Prepare turkey: remove giblets, pat dry", checked: false },
-            { name: "Rub with butter, salt, pepper, and herbs", checked: false },
-            { name: "Roast 15 mins per pound, basting every 30 mins", checked: false },
-            { name: "Cook until internal temp reaches 165°F", checked: false }
-          ]
-        },
-        {
           name: "Herb Butter Roasted Turkey",
           selected: false,
           expanded: false,
@@ -43,24 +24,6 @@ const ThanksgivingRecipe = () => {
             { name: "Carefully rub butter mixture under turkey skin", checked: false },
             { name: "Roast at 325°F", checked: false },
             { name: "Baste every 45 minutes until done", checked: false }
-          ]
-        },
-        {
-          name: "Spiced Smoked Turkey",
-          selected: false,
-          expanded: false,
-          baseServings: 4,
-          ingredients: [
-            { name: "Turkey", amount: 6, unit: "lbs", scalable: true, checked: false },
-            { name: "Paprika", amount: 1, unit: "tbsp", scalable: false, checked: false },
-            { name: "Garlic powder", amount: 0.5, unit: "tbsp", scalable: false, checked: false },
-            { name: "Cayenne pepper", amount: 0.25, unit: "tsp", scalable: false, checked: false }
-          ],
-          steps: [
-            { name: "Mix spices together", checked: false },
-            { name: "Rub turkey thoroughly with spice mixture", checked: false },
-            { name: "Smoke at 225°F", checked: false },
-            { name: "Cook for 6-7 hours until done", checked: false }
           ]
         },
         {
@@ -141,21 +104,40 @@ const ThanksgivingRecipe = () => {
           ]
         },
         {
-          name: "Sweet Corn Casserole",
+          name: "Simple Buttered Corn",
           selected: false,
           expanded: false,
           baseServings: 4,
           ingredients: [
             { name: "Corn kernels", amount: 4, unit: "cups", scalable: true, checked: false },
-            { name: "Cream", amount: 1, unit: "cup", scalable: true, checked: false },
-            { name: "Butter", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Salt and pepper", amount: 2, unit: "tbsp", scalable: true, checked: false }
+            { name: "Butter", amount: 0.25, unit: "cup", scalable: true, checked: false },
+            { name: "Salt", amount: 1, unit: "tsp", scalable: true, checked: false }
           ],
           steps: [
-            { name: "Mix corn with cream and butter", checked: false },
-            { name: "Season with salt and pepper", checked: false },
-            { name: "Pour into baking dish", checked: false },
-            { name: "Bake at 350°F for 30 minutes", checked: false }
+            { name: "Steam or boil corn until tender", checked: false },
+            { name: "Drain corn if needed", checked: false }, 
+            { name: "Add butter and salt", checked: false },
+            { name: "Stir until butter is melted", checked: false }
+          ]
+        },
+        {
+          name: "Classic Mac and Cheese",
+          selected: false,
+          expanded: false,
+          baseServings: 4,
+          ingredients: [
+            { name: "Elbow macaroni", amount: 1, unit: "lb", scalable: true, checked: false },
+            { name: "Sharp cheddar cheese", amount: 3, unit: "cups", scalable: true, checked: false },
+            { name: "Milk", amount: 2, unit: "cups", scalable: true, checked: false },
+            { name: "Butter", amount: 0.25, unit: "cup", scalable: true, checked: false },
+            { name: "All-purpose flour", amount: 0.25, unit: "cup", scalable: true, checked: false },
+            { name: "Salt and pepper", amount: 1, unit: "tbsp", scalable: true, checked: false }
+          ],
+          steps: [
+            { name: "Cook macaroni according to package directions", checked: false },
+            { name: "Make cheese sauce with butter, flour, milk and cheese", checked: false },
+            { name: "Combine sauce with cooked macaroni", checked: false },
+            { name: "Bake at 350°F until bubbly and golden", checked: false }
           ]
         }
       ]
