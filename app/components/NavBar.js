@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLogRocket } from '../../lib/hooks/useLogRocket'
 
 const navItems = [
   { path: '/', label: 'About' },
@@ -15,6 +16,7 @@ const navItems = [
 ]
 
 export default function Navbar() {
+  useLogRocket()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
