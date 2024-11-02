@@ -16,7 +16,7 @@ const ThanksgivingRecipe = () => {
           ingredients: [
             { name: "Turkey", amount: 6, unit: "lbs", scalable: true, checked: false },
             { name: "Softened butter", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Garlic", amount: 2, unit: "garlic cloves", scalable: false, checked: false },
+            { name: "Garlic", amount: 2, unit: "garlic cloves", scalable: true, checked: false },
             { name: "Fresh herbs (thyme, sage, rosemary)", amount: 0.25, unit: "cup", scalable: true, checked: false }
           ],
           steps: [
@@ -33,9 +33,9 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Ham", amount: 6, unit: "lbs", scalable: true, checked: false },
-            { name: "Honey", amount: 0.5, unit: "cup", scalable: false, checked: false },
-            { name: "Brown sugar", amount: 0.25, unit: "cup", scalable: false, checked: false },
-            { name: "Dijon mustard", amount: 0.25, unit: "cup", scalable: false, checked: false }
+            { name: "Honey", amount: 0.5, unit: "cup", scalable: true, checked: false },
+            { name: "Brown sugar", amount: 0.25, unit: "cup", scalable: true, checked: false },
+            { name: "Dijon mustard", amount: 0.25, unit: "cup", scalable: true, checked: false }
           ],
           steps: [
             { name: "Mix honey, brown sugar, and Dijon for glaze", checked: false },
@@ -92,7 +92,7 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Fresh green beans", amount: 4, unit: "lbs", scalable: true, checked: false },
-            { name: "Cream of mushroom soup", amount: 1, unit: "can", scalable: false, checked: false },
+            { name: "Cream of mushroom soup", amount: 1, unit: "can", scalable: true, checked: false },
             { name: "Crispy fried onions", amount: 0.5, unit: "cup", scalable: true, checked: false },
             { name: "Salt and pepper", amount: 2, unit: "tbsp", scalable: true, checked: false }
           ],
@@ -152,7 +152,7 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Flour", amount: 2, unit: "cups", scalable: true, checked: false },
-            { name: "Yeast", amount: 0.25, unit: "oz", scalable: false, checked: false },
+            { name: "Yeast", amount: 0.25, unit: "oz", scalable: true, checked: false },
             { name: "Butter", amount: 0.25, unit: "cup", scalable: true, checked: false },
             { name: "Salt", amount: 1, unit: "tsp", scalable: true, checked: false }
           ],
@@ -172,7 +172,7 @@ const ThanksgivingRecipe = () => {
             { name: "All-purpose flour", amount: 2, unit: "cups", scalable: true, checked: false },
             { name: "Buttermilk", amount: 1, unit: "cup", scalable: true, checked: false },
             { name: "Cold butter", amount: 0.25, unit: "cup", scalable: true, checked: false },
-            { name: "Baking powder", amount: 1, unit: "tsp", scalable: false, checked: false },
+            { name: "Baking powder", amount: 1, unit: "tsp", scalable: true, checked: false },
             { name: "Salt", amount: 1, unit: "tsp", scalable: true, checked: false }
           ],
           steps: [
@@ -193,12 +193,12 @@ const ThanksgivingRecipe = () => {
           expanded: false,
           baseServings: 4,
           ingredients: [
-            { name: "Canned pumpkin", amount: 1, unit: "can (15 oz)", scalable: false, checked: false },
-            { name: "Sugar", amount: 0.75, unit: "cup", scalable: false, checked: false },
-            { name: "Pumpkin pie spice", amount: 2.5, unit: "tsp", scalable: false, checked: false },
-            { name: "Eggs", amount: 2, unit: "large eggs", scalable: false, checked: false },
-            { name: "Evaporated milk", amount: 1, unit: "can (12 oz)", scalable: false, checked: false },
-            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: false, checked: false }
+            { name: "Canned pumpkin", amount: 1, unit: "can (15 oz)", scalable: true, checked: false },
+            { name: "Sugar", amount: 0.75, unit: "cup", scalable: true, checked: false },
+            { name: "Pumpkin pie spice", amount: 2.5, unit: "tsp", scalable: true, checked: false },
+            { name: "Eggs", amount: 2, unit: "large eggs", scalable: true, checked: false },
+            { name: "Evaporated milk", amount: 1, unit: "can (12 oz)", scalable: true, checked: false },
+            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: true, checked: false }
           ],
           steps: [
             { name: "Mix pumpkin with sugar and spices", checked: false },
@@ -214,10 +214,10 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Apples", amount: 8, unit: "medium apples", scalable: true, checked: false },
-            { name: "Sugar", amount: 0.75, unit: "cup", scalable: false, checked: false },
-            { name: "Cinnamon", amount: 2, unit: "tsp", scalable: false, checked: false },
+            { name: "Sugar", amount: 0.75, unit: "cup", scalable: true, checked: false },
+            { name: "Cinnamon", amount: 2, unit: "tsp", scalable: true, checked: false },
             { name: "Butter", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: false, checked: false }
+            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: true, checked: false }
           ],
           steps: [
             { name: "Slice apples and mix with sugar and cinnamon", checked: false },
@@ -233,10 +233,10 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Pecans", amount: 4, unit: "cups", scalable: true, checked: false },
-            { name: "Corn syrup", amount: 0.75, unit: "cup", scalable: false, checked: false },
-            { name: "Eggs", amount: 4, unit: "eggs", scalable: false, checked: false },
+            { name: "Corn syrup", amount: 0.75, unit: "cup", scalable: true, checked: false },
+            { name: "Eggs", amount: 4, unit: "eggs", scalable: true, checked: false },
             { name: "Butter", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: false, checked: false }
+            { name: "Pie crust", amount: 1, unit: "pie crust", scalable: true, checked: false }
           ],
           steps: [
             { name: "Mix corn syrup, eggs, and butter", checked: false },
@@ -257,9 +257,9 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Apple cider", amount: 4, unit: "cups", scalable: true, checked: false },
-            { name: "Cinnamon sticks", amount: 2, unit: "whole sticks", scalable: false, checked: false },
-            { name: "Whole cloves", amount: 6, unit: "whole cloves", scalable: false, checked: false },
-            { name: "Orange", amount: 1, unit: "orange, sliced", scalable: false, checked: false }
+            { name: "Cinnamon sticks", amount: 2, unit: "whole sticks", scalable: true, checked: false },
+            { name: "Whole cloves", amount: 6, unit: "whole cloves", scalable: true, checked: false },
+            { name: "Orange", amount: 1, unit: "orange, sliced", scalable: true, checked: false }
           ],
           steps: [
             { name: "Combine all ingredients in pot", checked: false },
@@ -275,10 +275,10 @@ const ThanksgivingRecipe = () => {
           baseServings: 4,
           ingredients: [
             { name: "Red wine", amount: 4, unit: "cups", scalable: true, checked: false },
-            { name: "Orange", amount: 1, unit: "orange", scalable: false, checked: false },
-            { name: "Cinnamon sticks", amount: 2, unit: "whole sticks", scalable: false, checked: false },
-            { name: "Star anise", amount: 2, unit: "whole stars", scalable: false, checked: false },
-            { name: "Honey", amount: 0.25, unit: "cup", scalable: false, checked: false }
+            { name: "Orange", amount: 1, unit: "orange", scalable: true, checked: false },
+            { name: "Cinnamon sticks", amount: 2, unit: "whole sticks", scalable: true, checked: false },
+            { name: "Star anise", amount: 2, unit: "whole stars", scalable: true, checked: false },
+            { name: "Honey", amount: 0.25, unit: "cup", scalable: true, checked: false }
           ],
           steps: [
             { name: "Combine wine and spices in pot", checked: false },
@@ -296,7 +296,7 @@ const ThanksgivingRecipe = () => {
             { name: "Cranberry juice", amount: 4, unit: "cups", scalable: true, checked: false },
             { name: "Sparkling apple cider", amount: 0.5, unit: "cup", scalable: true, checked: false },
             { name: "Orange juice", amount: 0.5, unit: "cup", scalable: true, checked: false },
-            { name: "Fresh cranberries for garnish", amount: 0.5, unit: "cup", scalable: false, checked: false }
+            { name: "Fresh cranberries for garnish", amount: 0.5, unit: "cup", scalable: true, checked: false }
           ],
           steps: [
             { name: "Mix juices in punch bowl", checked: false },
@@ -428,7 +428,8 @@ const ThanksgivingRecipe = () => {
                           <span className={item.checked ? "line-through text-gray-500" : ""}>
                             {item.scalable 
                               ? `${(item.amount * (servings / recipe.baseServings)).toFixed(2)} ${item.unit} ${item.name}`
-                              : item.name}
+                              : `${item.amount} ${item.unit} ${item.name}`
+                            }
                           </span>
                         </li>
                       ))}
