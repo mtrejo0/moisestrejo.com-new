@@ -72,8 +72,15 @@
   {
     "name": "Consejos",
     "description": "Dichos y refranes que valen oro - Get wisdom from Spanish proverbs and sayings!",
-    "id": "consejos",
+    "id": "consejos", 
     "type": "internal",
     "component": "Consejos"
+  },
+  {
+    "name": "Thanksgiving Recipe",
+    "description": "Plan your Thanksgiving meal with this interactive checklist of ingredients and supplies!",
+    "id": "thanksgivingRecipe",
+    "type": "internal",
+    "component": "ThanksgivingRecipe"
   }
 ]
