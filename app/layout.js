@@ -6,7 +6,6 @@ import Background from "./components/Background";
 import LogRocket from "logrocket";
 import setupLogRocketReact  from "logrocket-react";
 import { GoogleAnalytics } from '@next/third-parties/google'
-import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,20 +23,25 @@ LogRocket.init("5ynwnu/moisestrejocom");
 export const metadata = {
   title: "Moises Trejo",
   description: "MIT Software Engineer crafting innovative web applications. Specializing in full-stack development, data visualization, and AI-powered tools.",
+  openGraph: {
+    title: "Moises Trejo",
+    images: [
+      {
+        url: '/images/front.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/front.png'],
+  },
 };
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
-      <Head>
-        <meta
-          property="og:image"
-          content="/images/front.png"
-        />
-        <meta property="og:url" content="http://moisestrejo.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
