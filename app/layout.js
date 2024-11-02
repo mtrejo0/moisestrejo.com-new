@@ -23,7 +23,7 @@ LogRocket.init("5ynwnu/moisestrejocom");
 
 export const metadata = {
   title: "Moises Trejo",
-  description: "Explore the world of Moises Trejo: MIT Software Engineer showcasing custom apps, generative art, and tech articles.",
+  description: "MIT Software Engineer crafting innovative web applications. Specializing in full-stack development, data visualization, and AI-powered tools.",
 };
 
 export default function RootLayout({ children }) {
