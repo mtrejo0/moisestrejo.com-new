@@ -339,6 +339,38 @@ const ThanksgivingRecipe = () => {
     setRecipes(newRecipes);
   };
 
+  const getShoppingList = () => {
+    const shoppingList = {};
+    
+    Object.keys(recipes).forEach(category => {
+      recipes[category].options.forEach(recipe => {
+        if (recipe.selected) {
+          recipe.ingredients.forEach(ingredient => {
+            const key = ingredient.name.toLowerCase();
+            if (shoppingList[key]) {
+              if (ingredient.scalable) {
+                shoppingList[key].amount += ingredient.amount * (servings / recipe.baseServings);
+              }
+              // If not scalable, take the max amount needed
+              else if (ingredient.amount > shoppingList[key].amount) {
+                shoppingList[key].amount = ingredient.amount;
+              }
+            } else {
+              shoppingList[key] = {
+                name: ingredient.name,
+                amount: ingredient.scalable ? ingredient.amount * (servings / recipe.baseServings) : ingredient.amount,
+                unit: ingredient.unit,
+                scalable: ingredient.scalable
+              };
+            }
+          });
+        }
+      });
+    });
+
+    return shoppingList;
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-8">Thanksgiving Recipe Planner</h1>
@@ -424,6 +456,27 @@ const ThanksgivingRecipe = () => {
             ))}
           </div>
         ))}
+      </div>
+
+      <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-2xl font-semibold mb-4">Shopping List</h2>
+        {Object.values(getShoppingList()).length > 0 ? (
+          <div className="grid gap-2">
+            {Object.values(getShoppingList()).map((item, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <input type="checkbox" className="h-5 w-5" />
+                <span>
+                  {item.scalable 
+                    ? `${item.amount.toFixed(2)} ${item.unit} ${item.name}`
+                    : `${item.amount} ${item.unit} ${item.name}`
+                  }
+                </span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500 text-center">Please select a recipe to see the shopping list!</p>
+        )}
       </div>
 
       <div className="mt-8 p-4 bg-green-100 rounded-lg text-center">
