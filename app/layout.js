@@ -6,6 +6,7 @@ import Background from "./components/Background";
 import LogRocket from "logrocket";
 import setupLogRocketReact  from "logrocket-react";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
@@ -37,7 +38,10 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:url" content="http://moisestrejo.com" />
         <meta name="twitter:card" content="summary_large_image" />
-      </head>
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:type" content="website" />
+
+      </Head>
       <GoogleAnalytics gaId="G-LRJ9N9DN5T" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
