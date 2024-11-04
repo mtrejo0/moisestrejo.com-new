@@ -32,7 +32,7 @@ const ExternalApp = ({ app }) => {
               href={app.link} 
               target="_blank" 
               rel="noreferrer" 
-              className="hover:text-blue-600 transition-colors duration-200 flex items-center"
+              className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200 flex items-center"
             >
               {app.name}
               <ExternalLink className="ml-2 h-5 w-5" />
@@ -71,7 +71,14 @@ const ExternalApp = ({ app }) => {
         </div>
       )}
       {app.hide && (
-        <p className="text-center text-gray-600 mt-4">Click the link to see this app!</p>
+        <a 
+          href={app.link}
+          target="_blank"
+          rel="noreferrer"
+          className="block text-center text-blue-600 hover:text-blue-800 underline mt-4"
+        >
+          Click here to see this app!
+        </a>
       )}
     </div>
   )
@@ -91,7 +98,7 @@ const InternalApp = ({ app }) => {
             href={`/internal/${app.id}`}
             target="_blank" 
             rel="noreferrer" 
-            className="hover:text-blue-600 transition-colors duration-200 flex items-center"
+            className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200 flex items-center"
           >
             {app.name}
             <ExternalLink className="ml-2 h-5 w-5" />
