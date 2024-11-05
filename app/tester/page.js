@@ -1,9 +1,9 @@
 'use client'
-import ImageEditor from "../components/internalApps/ImageEditor.jsx";
+import DataSonification from "../components/internalApps/DataSonification.jsx";
 const Page = () => {
 
   return (
-    <ImageEditor/>
+    <DataSonification/>
   );
 };
 

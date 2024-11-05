@@ -79,8 +79,15 @@
   {
     "name": "Thanksgiving Recipe",
     "description": "Plan your Thanksgiving meal with this interactive checklist of ingredients and supplies!",
-    "id": "thanksgivingRecipe",
+    "id": "thanksgivingRecipe", 
     "type": "internal",
     "component": "ThanksgivingRecipe"
+  },
+  {
+    "name": "Simon Says",
+    "description": "Test your memory and reflexes with this classic Simon Says game!",
+    "id": "simonSays",
+    "type": "internal",
+    "component": "SimonSays"
   }
 ]
