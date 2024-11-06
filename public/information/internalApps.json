@@ -89,5 +89,12 @@
     "id": "simonSays",
     "type": "internal",
     "component": "SimonSays"
+  },
+  {
+    "name": "Lotería",
+    "description": "Play the classic Mexican game of chance - match the cards and shout ¡Lotería!",
+    "id": "loteria",
+    "type": "internal",
+    "component": "Loteria"
   }
 ]
