@@ -48,13 +48,14 @@ const Consejos = () => {
       </div>
 
       <div className="w-full max-w-md flex flex-col gap-4 mt-32">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">T-shirts for sale 👕</h2>
         {Object.entries(quoteLinks).map(([quote, link]) => (
           <a
             key={quote}
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-center"
+            className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-center flex items-center justify-center gap-2"
           >
             {quote} {quote === "Échale ganas" ? "💪" : quote === "Ponte trucha" ? "🐟" : "⏳"}
           </a>
