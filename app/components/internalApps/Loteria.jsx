@@ -61,60 +61,79 @@ const Loteria = () => {
   }
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-2xl mx-auto">
-      {board ? (
-        <>
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold">Lotería</h1>
-            <button 
-              onClick={handleNewBoard}
-              className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
-            >
-              New Board
-            </button>
-          </div>
-
-          <div className="grid grid-cols-4 gap-4">
-            {board.map((card, index) => (
-              <div
-                key={index}
-                onClick={() => handleCardClick(index)}
-                className={`relative aspect-square border-2 ${
-                  selectedCards.has(index) ? 'border-indigo-600' : 'border-gray-300'
-                } rounded-lg p-4 cursor-pointer hover:border-indigo-400 transition-colors flex flex-col items-center justify-center`}
+    <>
+      <div className="bg-white shadow-md rounded-lg p-6 max-w-2xl mx-auto">
+        {board ? (
+          <>
+            <div className="flex justify-between items-center mb-6">
+              <h1 className="text-2xl font-bold">Lotería</h1>
+              <button 
+                onClick={handleNewBoard}
+                className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
               >
-                {selectedCards.has(index) && (
-                  <div className="absolute top-1 right-1 text-4xl">🫘</div>
-                )}
-                <span className={`text-3xl mb-2 ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
-                  {card.emoji}
-                </span>
-                <span className={`text-center text-sm font-medium ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
-                  {card.text}
-                </span>
-              </div>
-            ))}
-          </div>
+                New Board
+              </button>
+            </div>
 
-          <div className="mt-8 flex flex-col items-center">
-            <button
-              onClick={callRandomCard}
-              className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 mb-4"
-            >
-              Call Next Card
-            </button>
-            {currentCard && (
-              <div className="text-center">
-                <div className="text-6xl mb-2">{currentCard.emoji}</div>
-                <div className="text-xl font-bold">{currentCard.text}</div>
-              </div>
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="text-center">Loading...</div>
-      )}
-    </div>
+            <div className="grid grid-cols-4 gap-4">
+              {board.map((card, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleCardClick(index)}
+                  className={`relative aspect-square border-2 ${
+                    selectedCards.has(index) ? 'border-indigo-600' : 'border-gray-300'
+                  } rounded-lg p-4 cursor-pointer hover:border-indigo-400 transition-colors flex flex-col items-center justify-center`}
+                >
+                  {selectedCards.has(index) && (
+                    <div className="absolute top-1 right-1 text-4xl">🫘</div>
+                  )}
+                  <span className={`text-3xl mb-2 ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
+                    {card.emoji}
+                  </span>
+                  <span className={`text-center text-sm font-medium ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
+                    {card.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col items-center">
+              <button
+                onClick={callRandomCard}
+                className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 mb-4"
+              >
+                Call Next Card
+              </button>
+              {currentCard && (
+                <div className="text-center">
+                  <div className="text-6xl mb-2">{currentCard.emoji}</div>
+                  <div className="text-xl font-bold">{currentCard.text}</div>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="text-center">Loading...</div>
+        )}
+      </div>
+
+      <div className="w-full max-w-md mx-auto mt-8">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">T-shirts for sale 👕</h2>
+        <a
+          href="https://www.etsy.com/listing/1821311511/cada-gallo-canta-en-su-gallinero-unisex"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-center flex items-center justify-center gap-2"
+        >
+          Cada gallo canta en su gallinero 🐓
+        </a>
+        <img 
+          src="https://i.etsystatic.com/53555334/r/il/c2e019/6454935313/il_1588xN.6454935313_l3pp.jpg"
+          alt="T-shirt design"
+          className="w-full mt-4 rounded-lg"
+        />
+      </div>
+    </>
   );
 };
 
