@@ -4,21 +4,29 @@ import React, { useState, useEffect } from 'react';
 import consejos from './data/consejos.json';
 import { Shuffle } from 'lucide-react';
 
+const quoteLinks = {
+  "Échale ganas": "https://www.etsy.com/listing/1820240099/echale-ganas-unisex-t-shirt",
+  "Ponte trucha": "https://www.etsy.com/listing/1806040142/ponte-trucha-unisex-t-shirt", 
+  "Ahorita estamos, al rato, quién sabe": "https://www.etsy.com/listing/1806600744/ahorita-estamos-unisex-t-shirt"
+};
+
 const Consejos = () => {
   const [currentConsejo, setCurrentConsejo] = useState('');
 
   useEffect(() => {
-    setCurrentConsejo(consejos[Math.floor(Math.random() * consejos.length)]);
+    const randomConsejo = consejos[Math.floor(Math.random() * consejos.length)];
+    setCurrentConsejo(randomConsejo);
   }, []);
 
   const getRandomConsejo = () => {
     const randomIndex = Math.floor(Math.random() * consejos.length);
-    setCurrentConsejo(consejos[randomIndex]);
+    const randomConsejo = consejos[randomIndex];
+    setCurrentConsejo(randomConsejo);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-indigo-50 to-white">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 mx-auto mt-16">
+    <div className="flex flex-col items-center justify-center p-4 bg-gradient-to-b from-indigo-50 to-white ">
+      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 mx-auto mt-16 min-h-[250px]">
         <div className="flex flex-col items-center space-y-8">
           <button
             onClick={getRandomConsejo}
@@ -37,6 +45,20 @@ const Consejos = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="w-full max-w-md flex flex-col gap-4 mt-32">
+        {Object.entries(quoteLinks).map(([quote, link]) => (
+          <a
+            key={quote}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-center"
+          >
+            {quote} {quote === "Échale ganas" ? "💪" : quote === "Ponte trucha" ? "🐟" : "⏳"}
+          </a>
+        ))}
       </div>
     </div>
   );
