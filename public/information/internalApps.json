@@ -96,5 +96,19 @@
     "id": "loteria",
     "type": "internal",
     "component": "Loteria"
+  },
+  {
+    "name": "Which Zodiac Sign Are You?",
+    "description": "Answer a few questions to discover which zodiac sign matches your personality!",
+    "id": "whichZodiacAreYou",
+    "type": "internal", 
+    "component": "WhichZodiacAreYou"
+  },
+  {
+    "name": "Choose Your Adventure",
+    "description": "Embark on an interactive story where your choices determine the outcome!",
+    "id": "chooseAdventure",
+    "type": "internal",
+    "component": "ChooseAdventure"
   }
 ]

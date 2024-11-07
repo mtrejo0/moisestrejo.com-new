@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/third-parties": "^14.2.14",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "logrocket": "^9.0.0",
@@ -19,6 +20,7 @@
     "mathjs": "^13.1.1",
     "mongoose": "^8.7.2",
     "next": "14.2.9",
+    "openai": "^4.71.1",
     "optimize-js": "^1.0.3",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
