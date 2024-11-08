@@ -107,8 +107,22 @@
   {
     "name": "Choose Your Adventure",
     "description": "Embark on an interactive story where your choices determine the outcome!",
-    "id": "chooseAdventure",
+    "id": "chooseAdventure", 
     "type": "internal",
     "component": "ChooseAdventure"
+  },
+  {
+    "name": "Collatz Conjecture",
+    "description": "Visualize the mysterious Collatz Conjecture sequence for any starting number!",
+    "id": "collatz",
+    "type": "internal",
+    "component": "Collatz"
+  },
+  {
+    "name": "Prime Factorization",
+    "description": "Visualize the prime factorization of any number as a tree diagram!",
+    "id": "isPrime",
+    "type": "internal",
+    "component": "IsPrime"
   }
 ]
