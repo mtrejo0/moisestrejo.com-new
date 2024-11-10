@@ -124,5 +124,12 @@
     "id": "isPrime",
     "type": "internal",
     "component": "IsPrime"
+  },
+  {
+    "name": "Daily Budget",
+    "description": "Calculate your daily budget based on salary and tax rate using the 50/30/20 rule",
+    "id": "dailyBudget",
+    "type": "internal",
+    "component": "DailyBudget"
   }
 ]
