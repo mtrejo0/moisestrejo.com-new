@@ -37,6 +37,9 @@ const Blog = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-2">
               {article.title}
             </h2>
+            <p className="text-sm text-gray-600 mb-4">
+              {article.description.replace(/<[^>]*>/g, '').replace(/Summary/g, '').split(' ').slice(0, 40).join(' ')}...
+            </p>
             <p className="text-sm text-gray-500 mb-4">
               Published: {new Date(article.pubDate).toLocaleDateString()}
             </p>
