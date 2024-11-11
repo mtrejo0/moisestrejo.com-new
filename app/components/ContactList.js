@@ -1,11 +1,4 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
 import contact from "../../public/information/contact.json";
-import links from "../../public/information/links.json";
 
 const ListItems = ({ items }) => {
   return (
