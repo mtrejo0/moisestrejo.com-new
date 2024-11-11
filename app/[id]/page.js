@@ -89,7 +89,28 @@ export default async function Page({ params }) {
   // Check for p5 project
   const p5Project = p5jsProjects.find((project) => project.id === id);
   if (p5Project) {
-    redirect(`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`);
+    if (p5Project.redirect) {
+      redirect(`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`);
+    }
+    return (
+      <>
+        <div className="relative w-full h-screen">
+          <a 
+            href={`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`}
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md z-10"
+          >
+            View Full Screen
+          </a>
+          <iframe
+            src={`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`}
+            className="w-full h-full border-0"
+            title={p5Project.name}
+          />
+        </div>
+      </>
+    );
   }
 
   // Check for external app
