@@ -5,15 +5,6 @@ import Image from "next/image";
 import axios from "axios";
 import Comments from "./Comments";
 
-export const metadata = {
-  title: "Moises Trejo | Software Engineer",
-  description: "Welcome to my personal website. I'm a software engineer passionate about building innovative web applications and exploring new technologies.",
-  openGraph: {
-    title: "Moises Trejo | Software Engineer",
-    description: "Welcome to my personal website. I'm a software engineer passionate about building innovative web applications and exploring new technologies.",
-  },
-};
-
 const About = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState(0);
