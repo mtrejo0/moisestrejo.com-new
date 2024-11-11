@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import adventureData from './data/choose_adventure.json';
+import React, { useState } from "react";
+import Image from "next/image";
+import adventureData from "./data/choose_adventure.json";
 
 const ChooseAdventure = () => {
   const [currentScene, setCurrentScene] = useState(adventureData.start);

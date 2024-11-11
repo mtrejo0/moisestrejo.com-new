@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -6,11 +6,14 @@ const IsPrime = () => {
   const [number, setNumber] = useState("");
   const [factors, setFactors] = useState(null);
   const [firstHundredPrimes, setFirstHundredPrimes] = useState([]);
-  const [specialPrimes, setSpecialPrimes] = useState({mersenne: false, germaine: false});
+  const [specialPrimes, setSpecialPrimes] = useState({
+    mersenne: false,
+    germaine: false,
+  });
 
   const isPrime = (num) => {
-    for(let i = 2; i <= Math.sqrt(num); i++) {
-      if(num % i === 0) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
     }
     return num > 1;
   };
@@ -18,8 +21,8 @@ const IsPrime = () => {
   useEffect(() => {
     const primes = [];
     let num = 2;
-    while(primes.length < 100) {
-      if(isPrime(num)) {
+    while (primes.length < 100) {
+      if (isPrime(num)) {
         primes.push(num);
       }
       num++;
@@ -30,13 +33,13 @@ const IsPrime = () => {
   const primeFactorize = (n) => {
     const factors = [];
     let num = n;
-    
+
     // Handle 2 separately to optimize odd number checks
     while (num % 2 === 0) {
       factors.push(2);
       num = num / 2;
     }
-    
+
     // Only check odd numbers up to sqrt(n)
     for (let i = 3; i <= Math.sqrt(num); i += 2) {
       while (num % i === 0) {
@@ -44,12 +47,12 @@ const IsPrime = () => {
         num = num / i;
       }
     }
-    
+
     // If num is still > 1, it's a prime factor
     if (num > 1) {
       factors.push(num);
     }
-    
+
     return factors;
   };
 
@@ -57,23 +60,23 @@ const IsPrime = () => {
     if (factors.length === 0) return "";
 
     const counts = {};
-    factors.forEach(factor => {
+    factors.forEach((factor) => {
       counts[factor] = (counts[factor] || 0) + 1;
     });
 
     return Object.entries(counts)
-      .map(([factor, power]) => power === 1 ? factor : `${factor}^${power}`)
+      .map(([factor, power]) => (power === 1 ? factor : `${factor}^${power}`))
       .join(" × ");
   };
 
   const checkSpecialPrimes = (num) => {
     // Check if Mersenne prime (2^n - 1)
     const isMersenne = isPrime(num) && ((num + 1) & num) === 0;
-    
+
     // Check if Germaine prime (if p and 2p + 1 are both prime)
     const isGermaine = isPrime(num) && isPrime(2 * num + 1);
 
-    return {mersenne: isMersenne, germaine: isGermaine};
+    return { mersenne: isMersenne, germaine: isGermaine };
   };
 
   const handleSubmit = (e) => {
@@ -88,7 +91,9 @@ const IsPrime = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">Prime Factorization</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">
+        Prime Factorization
+      </h1>
 
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="flex gap-4">
@@ -98,13 +103,13 @@ const IsPrime = () => {
             onChange={(e) => {
               setNumber(e.target.value);
               setFactors(null);
-              setSpecialPrimes({mersenne: false, germaine: false});
+              setSpecialPrimes({ mersenne: false, germaine: false });
             }}
             placeholder="Enter a number greater than 1"
             className="flex-1 p-2 border rounded"
             min="2"
           />
-          <button 
+          <button
             type="submit"
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           >
@@ -125,17 +130,22 @@ const IsPrime = () => {
           )}
           {specialPrimes.germaine && (
             <div className="text-lg text-center text-blue-600">
-              This is a Germaine prime! (p = {number} and 2p + 1 = {2 * number + 1} are both prime)
+              This is a Germaine prime! (p = {number} and 2p + 1 ={" "}
+              {2 * number + 1} are both prime)
             </div>
           )}
         </div>
       )}
 
       <div className="mt-8 bg-gray-100 p-4 rounded">
-        <h2 className="text-lg font-semibold mb-2">About Prime Factorization</h2>
+        <h2 className="text-lg font-semibold mb-2">
+          About Prime Factorization
+        </h2>
         <p>
-          Prime factorization is the process of determining which prime numbers multiply together to make the original number.
-          Every positive integer greater than 1 can be represented uniquely as a product of prime numbers.
+          Prime factorization is the process of determining which prime numbers
+          multiply together to make the original number. Every positive integer
+          greater than 1 can be represented uniquely as a product of prime
+          numbers.
         </p>
       </div>
 

@@ -1,55 +1,80 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const questions = [
   {
     text: "How do you typically spend your free time?",
-    options: ["Being active outdoors", "Reading or learning", "Socializing with friends", "Creative activities"]
+    options: [
+      "Being active outdoors",
+      "Reading or learning",
+      "Socializing with friends",
+      "Creative activities",
+    ],
   },
   {
     text: "What's your preferred environment?",
-    options: ["Beach/Water", "Mountains/Nature", "City/Urban", "Cozy indoor spaces"]
+    options: [
+      "Beach/Water",
+      "Mountains/Nature",
+      "City/Urban",
+      "Cozy indoor spaces",
+    ],
   },
   {
     text: "How do you handle conflict?",
-    options: ["Face it head-on", "Analyze and strategize", "Try to keep peace", "Avoid it"]
+    options: [
+      "Face it head-on",
+      "Analyze and strategize",
+      "Try to keep peace",
+      "Avoid it",
+    ],
   },
   {
     text: "What's your ideal date?",
-    options: ["Adventure activity", "Deep conversation", "Social gathering", "Romantic dinner"]
+    options: [
+      "Adventure activity",
+      "Deep conversation",
+      "Social gathering",
+      "Romantic dinner",
+    ],
   },
   {
     text: "How do you make decisions?",
-    options: ["Go with gut feeling", "Careful analysis", "Consider others' input", "Follow your heart"]
+    options: [
+      "Go with gut feeling",
+      "Careful analysis",
+      "Consider others' input",
+      "Follow your heart",
+    ],
   },
   {
     text: "What's your biggest strength?",
-    options: ["Leadership", "Intelligence", "Empathy", "Creativity"]
+    options: ["Leadership", "Intelligence", "Empathy", "Creativity"],
   },
   {
     text: "What's your biggest weakness?",
-    options: ["Impatience", "Overthinking", "Being too trusting", "Moodiness"]
+    options: ["Impatience", "Overthinking", "Being too trusting", "Moodiness"],
   },
   {
     text: "What season do you prefer?",
-    options: ["Summer", "Fall", "Spring", "Winter"]
+    options: ["Summer", "Fall", "Spring", "Winter"],
   },
   {
     text: "How do you react to change?",
-    options: ["Embrace it", "Plan for it", "Go with the flow", "Resist it"]
+    options: ["Embrace it", "Plan for it", "Go with the flow", "Resist it"],
   },
   {
     text: "What motivates you most?",
-    options: ["Success", "Knowledge", "Helping others", "Self-expression"]
-  }
+    options: ["Success", "Knowledge", "Helping others", "Self-expression"],
+  },
 ];
 
 const zodiacSigns = {
   fire: ["Aries ♈", "Leo ♌", "Sagittarius ♐"],
   earth: ["Taurus ♉", "Virgo ♍", "Capricorn ♑"],
   air: ["Gemini ♊", "Libra ♎", "Aquarius ♒"],
-  water: ["Cancer ♋", "Scorpio ♏", "Pisces ♓"]
+  water: ["Cancer ♋", "Scorpio ♏", "Pisces ♓"],
 };
 
 const WhichZodiacAreYou = () => {
@@ -63,16 +88,16 @@ const WhichZodiacAreYou = () => {
       0: 0, // fire tendencies
       1: 0, // earth tendencies
       2: 0, // air tendencies
-      3: 0  // water tendencies
+      3: 0, // water tendencies
     };
-    
-    answers.forEach(answer => {
+
+    answers.forEach((answer) => {
       counts[answer]++;
     });
 
     // Find dominant element
     let maxElement = 0;
-    Object.keys(counts).forEach(key => {
+    Object.keys(counts).forEach((key) => {
       if (counts[key] > counts[maxElement]) {
         maxElement = key;
       }
@@ -105,7 +130,9 @@ const WhichZodiacAreYou = () => {
     <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
       {!result ? (
         <>
-          <h1 className="text-2xl font-bold mb-6 text-center">Which Zodiac Sign Are You?</h1>
+          <h1 className="text-2xl font-bold mb-6 text-center">
+            Which Zodiac Sign Are You?
+          </h1>
           <div className="mb-8">
             <h2 className="text-xl mb-4">
               Question {currentQuestion + 1} of {questions.length}

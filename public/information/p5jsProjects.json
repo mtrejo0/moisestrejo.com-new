@@ -10,7 +10,9 @@
   },
   {
     "name": "DJ Visualizer",
-    "description": [", - halves bpm, . - doubles bpm, [ ] - shifts color theme, 1-4 - toggle effects, arrows - change bpm, spacebar - tap to learn BPM"],
+    "description": [
+      ", - halves bpm, . - doubles bpm, [ ] - shifts color theme, 1-4 - toggle effects, arrows - change bpm, spacebar - tap to learn BPM"
+    ],
     "id": "dj_vis",
     "video": "j-UYMUW4Ehw",
     "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu",
@@ -310,7 +312,9 @@
   },
   {
     "name": "Get bigger after every collision",
-    "description": ["I made the tiktok video where the ball gets bigger after every collision"],
+    "description": [
+      "I made the tiktok video where the ball gets bigger after every collision"
+    ],
     "id": "bumpBigger",
     "href": "https://giphy.com/embed/rhYDjtLYQSkUUKID3E"
   },
@@ -328,19 +332,25 @@
   },
   {
     "name": "Star Wars Hyper Drive!",
-    "description": ["What it feels like to be in the millenium falcon and hit hyperdrive"],
+    "description": [
+      "What it feels like to be in the millenium falcon and hit hyperdrive"
+    ],
     "id": "starwars",
     "href": "https://giphy.com/embed/OsG3kWnZn7DjnlUT9Y"
   },
   {
     "name": "Universal Entity",
-    "description": ["Rozzi Roomian inspired art. What it feels to be in the universe. My interpretation: What it feels like to be god."],
+    "description": [
+      "Rozzi Roomian inspired art. What it feels to be in the universe. My interpretation: What it feels like to be god."
+    ],
     "id": "universal",
     "href": "https://giphy.com/embed/Fggo9nTETtZ407hoA8"
   },
   {
     "name": "PI estimation",
-    "description": ["Generate random points and check if they lie within a circle, use this to approximate PI"],
+    "description": [
+      "Generate random points and check if they lie within a circle, use this to approximate PI"
+    ],
     "id": "pi_graph",
     "href": "https://giphy.com/embed/SR6VqebMz6zuIRBE8o"
   },
@@ -352,43 +362,57 @@
   },
   {
     "name": "Three Body Problem",
-    "description": ["An un solvable problem. How do you create a stable orbit with 3 objects of roughly the same size? Turns out you cant."],
+    "description": [
+      "An un solvable problem. How do you create a stable orbit with 3 objects of roughly the same size? Turns out you cant."
+    ],
     "id": "three_body",
     "href": "https://giphy.com/embed/WrALL9lo7XJ9IoBHZN"
   },
   {
     "name": "Linear Regression",
-    "description": ["Use least squares to find a line that can make a linear regression of some points I generate!"],
+    "description": [
+      "Use least squares to find a line that can make a linear regression of some points I generate!"
+    ],
     "id": "linear_regression",
     "href": "https://giphy.com/embed/8WlTq81B1W43pXWgOl"
   },
   {
     "name": "Draw Classifier",
-    "description": ["Draw an image and press C to see what the image classifiers guess for what it is. Disclaimer this is pretty bad."],
+    "description": [
+      "Draw an image and press C to see what the image classifiers guess for what it is. Disclaimer this is pretty bad."
+    ],
     "id": "draw_classify",
     "href": "https://giphy.com/embed/vqOcsoENrWDMVzWa0y"
   },
   {
     "name": "Image Classifier",
-    "description": ["Upload an image and see what the image classifiers guess for what it is."],
+    "description": [
+      "Upload an image and see what the image classifiers guess for what it is."
+    ],
     "id": "image_classify",
     "href": "https://giphy.com/embed/NtSHnY9nXlj1BjCbYt"
   },
   {
     "name": "Circle Bounce Music",
-    "description": ["Ball bounces and every bounce it plays twinkle twinkle little star aye"],
+    "description": [
+      "Ball bounces and every bounce it plays twinkle twinkle little star aye"
+    ],
     "id": "music_bounce",
     "href": "https://giphy.com/embed/aYDnUgweHO9SPL0U5B"
   },
   {
     "name": "Theramin",
-    "description": ["Use your hand position to change the freqency of the instrument!"],
+    "description": [
+      "Use your hand position to change the freqency of the instrument!"
+    ],
     "id": "theramin",
     "href": "https://giphy.com/embed/NDgqCApijP3ghU4vql"
   },
   {
     "name": "Smile Fireworks",
-    "description": ["When you smile CV detects your smile and gives you a fireworks show, my cheeks hurt from smiling so much!"],
+    "description": [
+      "When you smile CV detects your smile and gives you a fireworks show, my cheeks hurt from smiling so much!"
+    ],
     "id": "smile_fireworks",
     "href": "https://giphy.com/embed/XlWl4jew4qbAJS1QS8"
   }

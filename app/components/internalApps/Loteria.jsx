@@ -1,20 +1,44 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const loteriaCards = [
-  { text: 'El Gallo', emoji: '🐓' }, { text: 'El Diablito', emoji: '😈' }, { text: 'La Dama', emoji: '👒' },
-  { text: 'El Catrín', emoji: '🎩' }, { text: 'El Paraguas', emoji: '☂️' }, { text: 'La Sirena', emoji: '🧜‍♀️' },
-  { text: 'La Escalera', emoji: '🪜' }, { text: 'La Botella', emoji: '🍾' }, { text: 'El Barril', emoji: '🛢️' },
-  { text: 'El Árbol', emoji: '🌳' }, { text: 'El Melón', emoji: '🍈' }, { text: 'El Valiente', emoji: '⚔️' },
-  { text: 'El Gorrito', emoji: '🎩' }, { text: 'La Muerte', emoji: '💀' }, { text: 'La Pera', emoji: '🍐' },
-  { text: 'La Bandera', emoji: '🏳️' }, { text: 'El Bandolón', emoji: '🪕' }, { text: 'El Violoncello', emoji: '🎻' },
-  { text: 'La Garza', emoji: '🦢' }, { text: 'El Pájaro', emoji: '🦜' }, { text: 'La Mano', emoji: '✋' },
-  { text: 'La Bota', emoji: '👢' }, { text: 'La Luna', emoji: '🌙' }, { text: 'El Cotorro', emoji: '🦜' },
-  { text: 'El Borracho', emoji: '🍺' }, { text: 'El Negrito', emoji: '👤' }, { text: 'El Corazón', emoji: '❤️' },
-  { text: 'La Sandía', emoji: '🍉' }, { text: 'El Tambor', emoji: '🥁' }, { text: 'El Camarón', emoji: '🦐' },
-  { text: 'Las Jaras', emoji: '🎯' }, { text: 'El Músico', emoji: '🎵' }, { text: 'La Araña', emoji: '🕷️' },
-  { text: 'El Soldado', emoji: '💂' }, { text: 'La Estrella', emoji: '⭐' }, { text: 'El Cazo', emoji: '🍲' }
+  { text: "El Gallo", emoji: "🐓" },
+  { text: "El Diablito", emoji: "😈" },
+  { text: "La Dama", emoji: "👒" },
+  { text: "El Catrín", emoji: "🎩" },
+  { text: "El Paraguas", emoji: "☂️" },
+  { text: "La Sirena", emoji: "🧜‍♀️" },
+  { text: "La Escalera", emoji: "🪜" },
+  { text: "La Botella", emoji: "🍾" },
+  { text: "El Barril", emoji: "🛢️" },
+  { text: "El Árbol", emoji: "🌳" },
+  { text: "El Melón", emoji: "🍈" },
+  { text: "El Valiente", emoji: "⚔️" },
+  { text: "El Gorrito", emoji: "🎩" },
+  { text: "La Muerte", emoji: "💀" },
+  { text: "La Pera", emoji: "🍐" },
+  { text: "La Bandera", emoji: "🏳️" },
+  { text: "El Bandolón", emoji: "🪕" },
+  { text: "El Violoncello", emoji: "🎻" },
+  { text: "La Garza", emoji: "🦢" },
+  { text: "El Pájaro", emoji: "🦜" },
+  { text: "La Mano", emoji: "✋" },
+  { text: "La Bota", emoji: "👢" },
+  { text: "La Luna", emoji: "🌙" },
+  { text: "El Cotorro", emoji: "🦜" },
+  { text: "El Borracho", emoji: "🍺" },
+  { text: "El Negrito", emoji: "👤" },
+  { text: "El Corazón", emoji: "❤️" },
+  { text: "La Sandía", emoji: "🍉" },
+  { text: "El Tambor", emoji: "🥁" },
+  { text: "El Camarón", emoji: "🦐" },
+  { text: "Las Jaras", emoji: "🎯" },
+  { text: "El Músico", emoji: "🎵" },
+  { text: "La Araña", emoji: "🕷️" },
+  { text: "El Soldado", emoji: "💂" },
+  { text: "La Estrella", emoji: "⭐" },
+  { text: "El Cazo", emoji: "🍲" },
 ];
 
 const Loteria = () => {
@@ -33,7 +57,7 @@ const Loteria = () => {
   }
 
   function handleCardClick(index) {
-    setSelectedCards(prev => {
+    setSelectedCards((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(index)) {
         newSet.delete(index);
@@ -52,11 +76,14 @@ const Loteria = () => {
   }
 
   function callRandomCard() {
-    const remainingCards = loteriaCards.filter(card => !calledCards.includes(card));
+    const remainingCards = loteriaCards.filter(
+      (card) => !calledCards.includes(card),
+    );
     if (remainingCards.length > 0) {
-      const randomCard = remainingCards[Math.floor(Math.random() * remainingCards.length)];
+      const randomCard =
+        remainingCards[Math.floor(Math.random() * remainingCards.length)];
       setCurrentCard(randomCard);
-      setCalledCards(prev => [...prev, randomCard]);
+      setCalledCards((prev) => [...prev, randomCard]);
     }
   }
 
@@ -67,7 +94,7 @@ const Loteria = () => {
           <>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-2xl font-bold">Lotería</h1>
-              <button 
+              <button
                 onClick={handleNewBoard}
                 className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
               >
@@ -81,16 +108,22 @@ const Loteria = () => {
                   key={index}
                   onClick={() => handleCardClick(index)}
                   className={`relative aspect-square border-2 ${
-                    selectedCards.has(index) ? 'border-indigo-600' : 'border-gray-300'
+                    selectedCards.has(index)
+                      ? "border-indigo-600"
+                      : "border-gray-300"
                   } rounded-lg p-4 cursor-pointer hover:border-indigo-400 transition-colors flex flex-col items-center justify-center`}
                 >
                   {selectedCards.has(index) && (
                     <div className="absolute top-1 right-1 text-4xl">🫘</div>
                   )}
-                  <span className={`text-3xl mb-2 ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
+                  <span
+                    className={`text-3xl mb-2 ${selectedCards.has(index) ? "text-gray-400" : ""}`}
+                  >
                     {card.emoji}
                   </span>
-                  <span className={`text-center text-sm font-medium ${selectedCards.has(index) ? 'text-gray-400' : ''}`}>
+                  <span
+                    className={`text-center text-sm font-medium ${selectedCards.has(index) ? "text-gray-400" : ""}`}
+                  >
                     {card.text}
                   </span>
                 </div>
@@ -118,7 +151,9 @@ const Loteria = () => {
       </div>
 
       <div className="w-full max-w-md mx-auto mt-8">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">T-shirts for sale 👕</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+          T-shirts for sale 👕
+        </h2>
         <a
           href="https://www.etsy.com/listing/1821311511/cada-gallo-canta-en-su-gallinero-unisex"
           target="_blank"
@@ -127,7 +162,7 @@ const Loteria = () => {
         >
           Cada gallo canta en su gallinero 🐓
         </a>
-        <img 
+        <img
           src="https://i.etsystatic.com/53555334/r/il/c2e019/6454935313/il_1588xN.6454935313_l3pp.jpg"
           alt="T-shirt design"
           className="w-full mt-4 rounded-lg"

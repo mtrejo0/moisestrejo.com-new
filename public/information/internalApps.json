@@ -45,7 +45,7 @@
     "name": "Lana Del Rey Song Guesser",
     "description": "Test your knowledge of Lana Del Rey's discography by naming her songs!",
     "id": "lanaDelReyGuess",
-    "type": "internal", 
+    "type": "internal",
     "component": "LanaDelReyGuess"
   },
   {
@@ -58,7 +58,7 @@
   {
     "name": "Magic 8 Ball",
     "description": "Ask the Magic 8 Ball a question and get your fortune told!",
-    "id": "magic8Ball", 
+    "id": "magic8Ball",
     "type": "internal",
     "component": "Magic8Ball"
   },
@@ -72,14 +72,14 @@
   {
     "name": "Consejos",
     "description": "Dichos y refranes que valen oro - Get wisdom from Spanish proverbs and sayings!",
-    "id": "consejos", 
+    "id": "consejos",
     "type": "internal",
     "component": "Consejos"
   },
   {
     "name": "Thanksgiving Recipe",
     "description": "Plan your Thanksgiving meal with this interactive checklist of ingredients and supplies!",
-    "id": "thanksgivingRecipe", 
+    "id": "thanksgivingRecipe",
     "type": "internal",
     "component": "ThanksgivingRecipe"
   },
@@ -101,13 +101,13 @@
     "name": "Which Zodiac Sign Are You?",
     "description": "Answer a few questions to discover which zodiac sign matches your personality!",
     "id": "whichZodiacAreYou",
-    "type": "internal", 
+    "type": "internal",
     "component": "WhichZodiacAreYou"
   },
   {
     "name": "Choose Your Adventure",
     "description": "Embark on an interactive story where your choices determine the outcome!",
-    "id": "chooseAdventure", 
+    "id": "chooseAdventure",
     "type": "internal",
     "component": "ChooseAdventure"
   },
@@ -131,5 +131,12 @@
     "id": "dailyBudget",
     "type": "internal",
     "component": "DailyBudget"
+  },
+  {
+    "name": "Word Guesser",
+    "description": "Try to guess the 5-letter word in 6 tries with color-coded feedback!",
+    "id": "modle",
+    "type": "internal",
+    "component": "Modle"
   }
 ]

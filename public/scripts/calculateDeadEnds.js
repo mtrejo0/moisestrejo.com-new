@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const list = require('../../app/components/internalApps/data/choose_adventure.json');
+const list = require("../../app/components/internalApps/data/choose_adventure.json");
 
 // Track visited nodes and dead ends
 const visited = new Set();
@@ -34,18 +34,18 @@ function dfs(nodeId) {
 }
 
 // Start DFS from the beginning node
-dfs('start');
+dfs("start");
 
 // Print results
-console.log('Dead ends found:');
-deadEnds.forEach(id => {
+console.log("Dead ends found:");
+deadEnds.forEach((id) => {
   // Find parent nodes that lead to this dead end
   const parents = Object.entries(list)
-    .filter(([_, node]) => 
-      node.choices && 
-      node.choices.some(choice => choice.next === id)
+    .filter(
+      ([_, node]) =>
+        node.choices && node.choices.some((choice) => choice.next === id),
     )
     .map(([parentId, _]) => parentId);
 
-  console.log(`${id} (referenced by: ${parents.join(', ')})`);
+  console.log(`${id} (referenced by: ${parents.join(", ")})`);
 });

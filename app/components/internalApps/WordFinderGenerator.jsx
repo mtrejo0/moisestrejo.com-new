@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import { jsPDF } from "jspdf";
@@ -17,15 +17,19 @@ const WordFinderGenerator = () => {
   }, []);
 
   const generatePuzzle = (inputWords = words) => {
-    const wordList = inputWords.split(",").map(word => word.trim().toUpperCase());
+    const wordList = inputWords
+      .split(",")
+      .map((word) => word.trim().toUpperCase());
     const size = 15; // Puzzle size (15x15 grid)
-    const grid = Array(size).fill().map(() => Array(size).fill(''));
+    const grid = Array(size)
+      .fill()
+      .map(() => Array(size).fill(""));
 
     // Place words in the grid
-    wordList.forEach(word => {
+    wordList.forEach((word) => {
       let placed = false;
       while (!placed) {
-        const direction = Math.random() < 0.5 ? 'horizontal' : 'vertical';
+        const direction = Math.random() < 0.5 ? "horizontal" : "vertical";
         const row = Math.floor(Math.random() * size);
         const col = Math.floor(Math.random() * size);
 
@@ -39,25 +43,30 @@ const WordFinderGenerator = () => {
     // Fill empty spaces with random letters
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
-        if (grid[i][j] === '') {
+        if (grid[i][j] === "") {
           grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
         }
       }
     }
 
     // Convert grid to string
-    const puzzleString = grid.map(row => row.join(' ')).join('\n');
+    const puzzleString = grid.map((row) => row.join(" ")).join("\n");
     setPuzzle(puzzleString);
   };
 
   const canPlaceWord = (grid, word, row, col, direction) => {
-    if (direction === 'horizontal' && col + word.length > grid.length) return false;
-    if (direction === 'vertical' && row + word.length > grid.length) return false;
+    if (direction === "horizontal" && col + word.length > grid.length)
+      return false;
+    if (direction === "vertical" && row + word.length > grid.length)
+      return false;
 
     for (let i = 0; i < word.length; i++) {
-      const currentRow = direction === 'horizontal' ? row : row + i;
-      const currentCol = direction === 'horizontal' ? col + i : col;
-      if (grid[currentRow][currentCol] !== '' && grid[currentRow][currentCol] !== word[i]) {
+      const currentRow = direction === "horizontal" ? row : row + i;
+      const currentCol = direction === "horizontal" ? col + i : col;
+      if (
+        grid[currentRow][currentCol] !== "" &&
+        grid[currentRow][currentCol] !== word[i]
+      ) {
         return false;
       }
     }
@@ -66,15 +75,15 @@ const WordFinderGenerator = () => {
 
   const placeWord = (grid, word, row, col, direction) => {
     for (let i = 0; i < word.length; i++) {
-      const currentRow = direction === 'horizontal' ? row : row + i;
-      const currentCol = direction === 'horizontal' ? col + i : col;
+      const currentRow = direction === "horizontal" ? row : row + i;
+      const currentCol = direction === "horizontal" ? col + i : col;
       grid[currentRow][currentCol] = word[i];
     }
   };
 
   const downloadPuzzleAsPDF = () => {
     const doc = new jsPDF();
-    const lines = puzzle.split('\n');
+    const lines = puzzle.split("\n");
     const fontSize = 18;
     const lineHeight = fontSize * 0.5;
     const margin = 20;
@@ -82,7 +91,8 @@ const WordFinderGenerator = () => {
 
     doc.setFontSize(16);
     const title = "Vocabulary Puzzle!";
-    const titleWidth = doc.getStringUnitWidth(title) * 16 / doc.internal.scaleFactor;
+    const titleWidth =
+      (doc.getStringUnitWidth(title) * 16) / doc.internal.scaleFactor;
     const titleX = (doc.internal.pageSize.width - titleWidth) / 2;
     doc.text(title, titleX, y);
     y += lineHeight * 2;
@@ -90,11 +100,13 @@ const WordFinderGenerator = () => {
     // Add words to find at the top
     doc.setFontSize(fontSize);
     doc.setFont("courier", "bold");
-    const wordsArray = words.split(",").map(word => word.trim());
+    const wordsArray = words.split(",").map((word) => word.trim());
     const wordsToFind = wordsArray.join(" ");
-    const textWidth = doc.getStringUnitWidth(wordsToFind) * fontSize / doc.internal.scaleFactor;
+    const textWidth =
+      (doc.getStringUnitWidth(wordsToFind) * fontSize) /
+      doc.internal.scaleFactor;
     const centerX = (doc.internal.pageSize.width - textWidth) / 2;
-    
+
     if (textWidth > doc.internal.pageSize.width - 40) {
       // If text is too wide, wrap it
       const maxWidth = doc.internal.pageSize.width - 40;
@@ -108,8 +120,9 @@ const WordFinderGenerator = () => {
     }
 
     doc.setFont("courier", "normal");
-    lines.forEach(line => {
-      const lineWidth = doc.getStringUnitWidth(line) * fontSize / doc.internal.scaleFactor;
+    lines.forEach((line) => {
+      const lineWidth =
+        (doc.getStringUnitWidth(line) * fontSize) / doc.internal.scaleFactor;
       const lineX = (doc.internal.pageSize.width - lineWidth) / 2;
       doc.text(line, lineX, y);
       y += lineHeight;

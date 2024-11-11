@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 
@@ -9,16 +9,20 @@ const DailyBudget = () => {
   const [needsItems, setNeedsItems] = useState([]);
   const [wantsItems, setWantsItems] = useState([]);
   const [savingsItems, setSavingsItems] = useState([]);
-  const [newItem, setNewItem] = useState({category: 'needs', name: '', amount: ''});
+  const [newItem, setNewItem] = useState({
+    category: "needs",
+    name: "",
+    amount: "",
+  });
 
   const calculatePostTax = () => {
-    const postTaxYearly = salary * (1 - taxRate/100);
+    const postTaxYearly = salary * (1 - taxRate / 100);
     const postTaxMonthly = postTaxYearly / 12;
     const postTaxDaily = postTaxYearly / 365;
     return {
       yearly: postTaxYearly,
       monthly: postTaxMonthly,
-      daily: postTaxDaily
+      daily: postTaxDaily,
     };
   };
 
@@ -30,9 +34,9 @@ const DailyBudget = () => {
     const otherNeeds = needs * 0.4; // Remaining needs
 
     return {
-      needs: {total: needs, housing, otherNeeds},
+      needs: { total: needs, housing, otherNeeds },
       wants,
-      savings
+      savings,
     };
   };
 
@@ -46,22 +50,22 @@ const DailyBudget = () => {
 
     const item = {
       name: newItem.name,
-      amount: parseFloat(newItem.amount)
+      amount: parseFloat(newItem.amount),
     };
 
-    switch(newItem.category) {
-      case 'needs':
+    switch (newItem.category) {
+      case "needs":
         setNeedsItems([...needsItems, item]);
         break;
-      case 'wants':
+      case "wants":
         setWantsItems([...wantsItems, item]);
         break;
-      case 'savings':
+      case "savings":
         setSavingsItems([...savingsItems, item]);
         break;
     }
 
-    setNewItem({category: 'needs', name: '', amount: ''});
+    setNewItem({ category: "needs", name: "", amount: "" });
   };
 
   const calculateTotal = (items) => {
@@ -69,14 +73,14 @@ const DailyBudget = () => {
   };
 
   const handleDeleteItem = (category, index) => {
-    switch(category) {
-      case 'needs':
+    switch (category) {
+      case "needs":
         setNeedsItems(needsItems.filter((_, i) => i !== index));
         break;
-      case 'wants':
+      case "wants":
         setWantsItems(wantsItems.filter((_, i) => i !== index));
         break;
-      case 'savings':
+      case "savings":
         setSavingsItems(savingsItems.filter((_, i) => i !== index));
         break;
     }
@@ -122,13 +126,13 @@ const DailyBudget = () => {
           </label>
           <button
             onClick={() => setUsePreTax(false)}
-            className={`px-3 py-1 rounded ${!usePreTax ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 rounded ${!usePreTax ? "bg-blue-500 text-white" : "bg-gray-200"}`}
           >
             Post-Tax
           </button>
           <button
             onClick={() => setUsePreTax(true)}
-            className={`px-3 py-1 rounded ${usePreTax ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 rounded ${usePreTax ? "bg-blue-500 text-white" : "bg-gray-200"}`}
           >
             Pre-Tax
           </button>
@@ -139,21 +143,38 @@ const DailyBudget = () => {
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center">
               <div className="font-medium">Yearly</div>
-              <div className="text-lg">${postTax.yearly.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+              <div className="text-lg">
+                $
+                {postTax.yearly.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                })}
+              </div>
             </div>
             <div className="text-center">
               <div className="font-medium">Monthly</div>
-              <div className="text-lg">${postTax.monthly.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+              <div className="text-lg">
+                $
+                {postTax.monthly.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                })}
+              </div>
             </div>
             <div className="text-center">
               <div className="font-medium">Daily</div>
-              <div className="text-lg">${postTax.daily.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+              <div className="text-lg">
+                $
+                {postTax.daily.toLocaleString(undefined, {
+                  maximumFractionDigits: 0,
+                })}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
-          <h2 className="text-xl font-semibold">Budget Breakdown ({usePreTax ? 'Pre' : 'Post'}-Tax)</h2>
+          <h2 className="text-xl font-semibold">
+            Budget Breakdown ({usePreTax ? "Pre" : "Post"}-Tax)
+          </h2>
           <div className="space-y-6">
             <div>
               <h3 className="font-medium text-lg font-bold text-xl">Monthly</h3>
@@ -161,19 +182,44 @@ const DailyBudget = () => {
                 <div>
                   <div className="font-medium">Needs (50%)</div>
                   <div className="pl-4">
-                    <div>Housing (30%): ${budget.needs.housing.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                    <div>Other Needs (20%): ${budget.needs.otherNeeds.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                    <div className="mt-1 font-medium">Total Needs: ${(budget.needs.housing + budget.needs.otherNeeds).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                    <div>
+                      Housing (30%): $
+                      {budget.needs.housing.toLocaleString(undefined, {
+                        maximumFractionDigits: 0,
+                      })}
+                    </div>
+                    <div>
+                      Other Needs (20%): $
+                      {budget.needs.otherNeeds.toLocaleString(undefined, {
+                        maximumFractionDigits: 0,
+                      })}
+                    </div>
+                    <div className="mt-1 font-medium">
+                      Total Needs: $
+                      {(
+                        budget.needs.housing + budget.needs.otherNeeds
+                      ).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <div className="font-medium">Wants (30%)</div>
-                  <div className="pl-4">${budget.wants.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {budget.wants.toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
                 <div>
                   <div className="font-medium">Investing/Savings (20%)</div>
-                  <div className="pl-4">${budget.savings.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {budget.savings.toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -184,18 +230,38 @@ const DailyBudget = () => {
                 <div>
                   <div className="font-medium">Needs (50%)</div>
                   <div className="pl-4">
-                    <div>Housing (30%): ${(budget.needs.housing / 4).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                    <div>Other Needs (20%): ${(budget.needs.otherNeeds / 4).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                    <div>
+                      Housing (30%): $
+                      {(budget.needs.housing / 4).toLocaleString(undefined, {
+                        maximumFractionDigits: 0,
+                      })}
+                    </div>
+                    <div>
+                      Other Needs (20%): $
+                      {(budget.needs.otherNeeds / 4).toLocaleString(undefined, {
+                        maximumFractionDigits: 0,
+                      })}
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <div className="font-medium">Wants (30%)</div>
-                  <div className="pl-4">${(budget.wants / 4).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {(budget.wants / 4).toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
                 <div>
                   <div className="font-medium">Investing/Savings (20%)</div>
-                  <div className="pl-4">${(budget.savings / 4).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {(budget.savings / 4).toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -206,17 +272,38 @@ const DailyBudget = () => {
                 <div>
                   <div className="font-medium">Needs (50%)</div>
                   <div className="pl-4">
-                    <div>Housing (30%): ${(budget.needs.housing / 30).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
-                    <div>Other Needs (20%): ${(budget.needs.otherNeeds / 30).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                    <div>
+                      Housing (30%): $
+                      {(budget.needs.housing / 30).toLocaleString(undefined, {
+                        maximumFractionDigits: 0,
+                      })}
+                    </div>
+                    <div>
+                      Other Needs (20%): $
+                      {(budget.needs.otherNeeds / 30).toLocaleString(
+                        undefined,
+                        { maximumFractionDigits: 0 },
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div>
                   <div className="font-medium">Wants (30%)</div>
-                  <div className="pl-4">${(budget.wants / 30).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {(budget.wants / 30).toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
                 <div>
                   <div className="font-medium">Investing/Savings (20%)</div>
-                  <div className="pl-4">${(budget.savings / 30).toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                  <div className="pl-4">
+                    $
+                    {(budget.savings / 30).toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -225,11 +312,13 @@ const DailyBudget = () => {
 
         <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
           <h2 className="text-xl font-semibold">Monthly Expense Tracker</h2>
-          
+
           <form onSubmit={handleAddItem} className="flex gap-2 mb-4">
-            <select 
+            <select
               value={newItem.category}
-              onChange={(e) => setNewItem({...newItem, category: e.target.value})}
+              onChange={(e) =>
+                setNewItem({ ...newItem, category: e.target.value })
+              }
               className="p-2 border rounded"
             >
               <option value="needs">Needs</option>
@@ -240,17 +329,24 @@ const DailyBudget = () => {
               type="text"
               placeholder="Item name"
               value={newItem.name}
-              onChange={(e) => setNewItem({...newItem, name: e.target.value})}
+              onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
               className="p-2 border rounded flex-1"
             />
             <input
               type="number"
               placeholder="Amount"
               value={newItem.amount}
-              onChange={(e) => setNewItem({...newItem, amount: e.target.value})}
+              onChange={(e) =>
+                setNewItem({ ...newItem, amount: e.target.value })
+              }
               className="p-2 border rounded w-24"
             />
-            <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">Add</button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Add
+            </button>
           </form>
 
           <div className="grid grid-cols-3 gap-4">
@@ -262,8 +358,8 @@ const DailyBudget = () => {
                     <span>{item.name}</span>
                     <div className="flex items-center gap-2">
                       <span>${item.amount}</span>
-                      <button 
-                        onClick={() => handleDeleteItem('needs', i)}
+                      <button
+                        onClick={() => handleDeleteItem("needs", i)}
                         className="text-red-500 hover:text-red-700"
                       >
                         ×
@@ -273,8 +369,15 @@ const DailyBudget = () => {
                 ))}
               </ul>
               <div className="mt-2 pt-2 border-t">
-                <div className="font-medium">Total: ${calculateTotal(needsItems)}</div>
-                <div className="text-sm text-gray-500">Budget: ${budget.needs.total.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                <div className="font-medium">
+                  Total: ${calculateTotal(needsItems)}
+                </div>
+                <div className="text-sm text-gray-500">
+                  Budget: $
+                  {budget.needs.total.toLocaleString(undefined, {
+                    maximumFractionDigits: 0,
+                  })}
+                </div>
               </div>
             </div>
 
@@ -286,8 +389,8 @@ const DailyBudget = () => {
                     <span>{item.name}</span>
                     <div className="flex items-center gap-2">
                       <span>${item.amount}</span>
-                      <button 
-                        onClick={() => handleDeleteItem('wants', i)}
+                      <button
+                        onClick={() => handleDeleteItem("wants", i)}
                         className="text-red-500 hover:text-red-700"
                       >
                         ×
@@ -297,8 +400,15 @@ const DailyBudget = () => {
                 ))}
               </ul>
               <div className="mt-2 pt-2 border-t">
-                <div className="font-medium">Total: ${calculateTotal(wantsItems)}</div>
-                <div className="text-sm text-gray-500">Budget: ${budget.wants.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                <div className="font-medium">
+                  Total: ${calculateTotal(wantsItems)}
+                </div>
+                <div className="text-sm text-gray-500">
+                  Budget: $
+                  {budget.wants.toLocaleString(undefined, {
+                    maximumFractionDigits: 0,
+                  })}
+                </div>
               </div>
             </div>
 
@@ -310,8 +420,8 @@ const DailyBudget = () => {
                     <span>{item.name}</span>
                     <div className="flex items-center gap-2">
                       <span>${item.amount}</span>
-                      <button 
-                        onClick={() => handleDeleteItem('savings', i)}
+                      <button
+                        onClick={() => handleDeleteItem("savings", i)}
                         className="text-red-500 hover:text-red-700"
                       >
                         ×
@@ -321,8 +431,15 @@ const DailyBudget = () => {
                 ))}
               </ul>
               <div className="mt-2 pt-2 border-t">
-                <div className="font-medium">Total: ${calculateTotal(savingsItems)}</div>
-                <div className="text-sm text-gray-500">Budget: ${budget.savings.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+                <div className="font-medium">
+                  Total: ${calculateTotal(savingsItems)}
+                </div>
+                <div className="text-sm text-gray-500">
+                  Budget: $
+                  {budget.savings.toLocaleString(undefined, {
+                    maximumFractionDigits: 0,
+                  })}
+                </div>
               </div>
             </div>
           </div>

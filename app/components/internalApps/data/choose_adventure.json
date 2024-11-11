@@ -1,527 +1,526 @@
 {
-    "start": {
-      "id": "start",
-      "text": "It's 2 AM. You pull into Joe's Diner, the only light for miles along this desolate highway. The neon sign flickers ominously as you step inside. The bell chimes, and every patron turns to stare at you with unsettling synchronization.",
-      "choices": [
-        {
-          "text": "Take a seat at the counter",
-          "next": "counter_seat"
-        },
-        {
-          "text": "Head for a booth near the exit",
-          "next": "booth_seat"
-        },
-        {
-          "text": "Chat with the silent cook",
-          "next": "silent_cook"
-        }
-      ]
-    },
-    "counter_seat": {
-      "id": "counter_seat",
-      "text": "You settle onto a squeaky vinyl stool. The door clicks shut behind you, locking. A waitress, her name tag reading 'Jane' in blood-red letters, approaches with a twisted smile.",
-      "choices": [
-        {
-          "text": "Ask why the door is locked",
-          "next": "ask_door"
-        },
-        {
-          "text": "Order coffee and act natural",
-          "next": "order_coffee"
-        },
-        {
-          "text": "Glance around at other patrons",
-          "next": "glance_around"
-        }
-      ]
-    },
-    "booth_seat": {
-      "id": "booth_seat",
-      "text": "You slide into a booth, but the vinyl is sticky with something dark. The lock clicks ominously. A child at the next table, eyes completely black, whispers, 'You picked the wrong diner.'",
-      "choices": [
-        {
-          "text": "Try to break the window",
-          "next": "break_window"
-        },
-        {
-          "text": "Confront the other customers",
-          "next": "confront_customers"
-        },
-        {
-          "text": "Quietly observe the child",
-          "next": "observe_child"
-        }
-      ]
-    },
-    "silent_cook": {
-      "id": "silent_cook",
-      "text": "You approach the counter, where a burly cook silently flips burgers. He glances up at you, his eyes filled with what seems like pity.",
-      "choices": [
-        {
-          "text": "Ask the cook for directions out",
-          "next": "ask_cook"
-        },
-        {
-          "text": "Comment on the strange atmosphere",
-          "next": "comment_atmosphere"
-        },
-        {
-          "text": "Order food cautiously",
-          "next": "order_food"
-        }
-      ]
-    },
-    "order_food": {
-      "id": "order_food",
-      "text": "You cautiously order a burger. The cook nods silently and begins preparing it, his movements mechanical and precise. The sizzling meat fills the air with an oddly sweet aroma.",
-      "choices": [
-        {
-          "text": "Change your mind and leave",
-          "next": "demand_exit"
-        },
-        {
-          "text": "Watch him prepare the meat closely",
-          "next": "inspect_meat"
-        },
-        {
-          "text": "Ask about the special sauce",
-          "next": "ask_sauce"
-        }
-      ]
-    },
-    "ask_door": {
-      "id": "ask_door",
-      "text": "Jane's smile widens. 'Oh, that’s for your safety,' she says. Every patron turns again, their faces stretching into inhuman grins.",
-      "choices": [
-        {
-          "text": "Dash toward the kitchen",
-          "next": "kitchen_escape_attempt"
-        },
-        {
-          "text": "Demand to be let out",
-          "next": "demand_exit"
-        },
-        {
-          "text": "Attempt to break a window",
-          "next": "break_window"
-        }
-      ]
-    },
-    "order_coffee": {
-      "id": "order_coffee",
-      "text": "The coffee arrives, black as pitch. As you sip, your vision blurs. 'Special house blend,' Jane whispers, 'guaranteed to change your outlook on life.'",
-      "choices": [
-        {
-          "text": "Spit out the coffee",
-          "next": "spit_coffee"
-        },
-        {
-          "text": "Pretend to drink, planning an escape",
-          "next": "fake_drink"
-        },
-        {
-          "text": "Ask her what’s in the coffee",
-          "next": "ask_coffee"
-        }
-      ]
-    },
-    "glance_around": {
-      "id": "glance_around",
-      "text": "Every customer has gone deathly silent, each staring at you with unblinking eyes. The room feels smaller, the walls inching closer.",
-      "choices": [
-        {
-          "text": "Make a dash for the restroom",
-          "next": "restroom_escape"
-        },
-        {
-          "text": "Demand to know what's going on",
-          "next": "demand_explanation"
-        },
-        {
-          "text": "Try to wake yourself up—this must be a dream",
-          "next": "dream_attempt"
-        }
-      ]
-    },
-    "break_window": {
-      "id": "break_window",
-      "text": "You hurl a napkin dispenser at the window. It ripples like water and remains intact. 'We haven't had a new addition in weeks,' the customers say in unison.",
-      "choices": [
-        {
-          "text": "Accept your fate",
-          "next": "bad_ending"
-        },
-        {
-          "text": "Fight back",
-          "next": "fight_back"
-        }
-      ]
-    },
-    "confront_customers": {
-      "id": "confront_customers",
-      "text": "You stand and demand answers. A man, his face half-melting, grins, 'We've been waiting for you.' They rise from their seats.",
-      "choices": [
-        {
-          "text": "Try to escape through the kitchen",
-          "next": "kitchen_escape_attempt"
-        },
-        {
-          "text": "Challenge them head-on",
-          "next": "fight_back"
-        }
-      ]
-    },
-    "observe_child": {
-      "id": "observe_child",
-      "text": "The child’s eyes grow darker. 'This place is forever, you know,' they whisper with eerie calm.",
-      "choices": [
-        {
-          "text": "Attempt to reason with the child",
-          "next": "reason_child"
-        },
-        {
-          "text": "Ignore and look for an exit",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "ask_cook": {
-      "id": "ask_cook",
-      "text": "The cook glances toward the locked door. 'You don't belong here,' he mutters. 'But there's no way out now.'",
-      "choices": [
-        {
-          "text": "Ask what he means",
-          "next": "ask_meaning"
-        },
-        {
-          "text": "Demand he help you escape",
-          "next": "demand_help_cook"
-        }
-      ]
-    },
-    "demand_exit": {
-      "id": "demand_exit",
-      "text": "You demand to be let out. Jane laughs, a shrill sound that echoes endlessly. 'The fun's just started.' The lights dim, and all exits vanish.",
-      "choices": [
-        {
-          "text": "Look for a hidden exit",
-          "next": "hidden_exit_search"
-        },
-        {
-          "text": "Give in to fear",
-          "next": "bad_ending"
-        }
-      ]
-    },
-    "spit_coffee": {
-      "id": "spit_coffee",
-      "text": "You spit the coffee out. Jane frowns. 'You don’t like our blend?' she sneers, reaching for a knife.",
-      "choices": [
-        {
-          "text": "Defend yourself",
-          "next": "self_defense"
-        },
-        {
-          "text": "Run for the back door",
-          "next": "backdoor_chase"
-        }
-      ]
-    },
-    "fake_drink": {
-      "id": "fake_drink",
-      "text": "You pretend to sip the coffee. Jane moves on, giving you a moment to look around. The kitchen door catches your eye.",
-      "choices": [
-        {
-          "text": "Sneak towards the kitchen",
-          "next": "sneak_kitchen"
-        },
-        {
-          "text": "Head to the restroom to find a hiding spot",
-          "next": "restroom_hide"
-        }
-      ]
-    },
-    "hidden_exit_search": {
-      "id": "hidden_exit_search",
-      "text": "You search frantically, finding a loose panel in the wall. Behind it is a dark passage. You hear footsteps closing in.",
-      "choices": [
-        {
-          "text": "Enter the passage",
-          "next": "secret_passage"
-        },
-        {
-          "text": "Stay and confront the danger",
-          "next": "fight_back"
-        }
-      ]
-    },
-    "secret_passage": {
-      "id": "secret_passage",
-      "text": "You stumble through a dark passage, eventually finding a ladder leading up. As you emerge, the diner is gone. You’re free... for now.",
-      "choices": [
-        {
-          "text": "Play Again",
-          "next": "start"
-        }
-      ]
-    },
-    "backdoor_chase": {
-      "id": "backdoor_chase",
-      "text": "You run for the back door. It opens, and you’re outside, but Jane and the patrons are close behind. You dash toward the woods.",
-      "choices": [
-        {
-          "text": "Hide behind a tree",
-          "next": "tree_hide"
-        },
-        {
-          "text": "Keep running toward the road",
-          "next": "good_ending"
-        }
-      ]
-    },
-    "fight_back": {
-      "id": "fight_back",
-      "text": "With every ounce of strength, you fight, swinging your makeshift weapon at Jane and the patrons. Their faces twist back into haunting smiles.",
-      "choices": [
-        {
-          "text": "Give in to fate",
-          "next": "bad_ending"
-        },
-        {
-          "text": "Keep fighting, desperate",
-          "next": "good_ending"
-        }
-      ]
-    },
-    "bad_ending": {
-      "id": "bad_ending",
-      "text": "You've become part of Joe's Diner now. Forever a patron, forever watching the door for the next unsuspecting customer. Would you like to try again?",
-      "choices": [
-        {
-          "text": "Start Over",
-          "next": "start"
-        }
-      ]
-    },
-    "good_ending": {
-      "id": "good_ending",
-      "text": "You burst into the night air. Behind you, inhuman shrieks echo from the diner. You run to your car and speed away, never looking back. You survived... this time.",
-      "choices": [
-        {
-          "text": "Play Again",
-          "next": "start"
-        }
-      ]
-    },
-    "self_defense": {
-      "id": "self_defense",
-      "text": "You grab a nearby fork and brandish it defensively. Jane's eyes flash with an otherworldly gleam as she lunges forward with inhuman speed.",
-      "choices": [
-        {
-          "text": "Strike first with the fork",
-          "next": "fight_back"
-        },
-        {
-          "text": "Dodge and run for the secret passage",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "inspect_meat": {
-      "id": "inspect_meat",
-      "text": "As you lean in closer, you notice the meat has an unusual color and texture. The cook's hands tremble slightly as he notices your scrutiny.",
-      "choices": [
-        {
-          "text": "Confront him about the meat",
-          "next": "confront_customers"
-        },
-        {
-          "text": "Quietly look for an escape",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "ask_sauce": {
-      "id": "ask_sauce",
-      "text": "The cook freezes mid-motion. 'Family recipe,' he whispers, 'been serving it here for... generations.' His smile doesn't reach his eyes.",
-      "choices": [
-        {
-          "text": "Ask to see the ingredients",
-          "next": "kitchen_escape_attempt"
-        },
-        {
-          "text": "Politely decline the sauce",
-          "next": "demand_exit"
-        }
-      ]
-    },
-    "kitchen_escape_attempt": {
-      "id": "kitchen_escape_attempt",
-      "text": "You burst through the kitchen doors. Industrial-sized pots bubble with mysterious contents. The back door beckons, but something moves in the shadows.",
-      "choices": [
-        {
-          "text": "Run for the back door",
-          "next": "backdoor_chase"
-        },
-        {
-          "text": "Look for another way",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "tree_hide": {
-      "id": "tree_hide",
-      "text": "You duck behind a massive oak tree. Footsteps and whispers surround you in the darkness. The diner's lights cast long shadows.",
-      "choices": [
-        {
-          "text": "Break for the road",
-          "next": "good_ending"
-        },
-        {
-          "text": "Give up hope",
-          "next": "bad_ending"
-        }
-      ]
-    },
-    "sneak_kitchen": {
-      "id": "sneak_kitchen",
-      "text": "You slip toward the kitchen, heart pounding. Through the window, you see the cook preparing something unspeakable.",
-      "choices": [
-        {
-          "text": "Try the back door",
-          "next": "backdoor_chase"
-        },
-        {
-          "text": "Search for alternatives",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "restroom_hide": {
-      "id": "restroom_hide",
-      "text": "The restroom mirror shows no reflection. A window above the sink might be large enough to squeeze through.",
-      "choices": [
-        {
-          "text": "Attempt escape",
-          "next": "good_ending"
-        },
-        {
-          "text": "Look elsewhere",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "ask_coffee": {
-      "id": "ask_coffee",
-      "text": "Jane's eyes glint dangerously. 'Just a family recipe,' she hisses, 'passed down through generations of... special customers.'",
-      "choices": [
-        {
-          "text": "Refuse the coffee",
-          "next": "spit_coffee"
-        },
-        {
-          "text": "Pretend to drink",
-          "next": "fake_drink"
-        }
-      ]
-    },
-    "restroom_escape": {
-      "id": "restroom_escape",
-      "text": "The restroom door creaks open to reveal walls covered in desperate scratched messages. A vent cover looks loose.",
-      "choices": [
-        {
-          "text": "Try the vent",
-          "next": "secret_passage"
-        },
-        {
-          "text": "Go back",
-          "next": "demand_exit"
-        }
-      ]
-    },
-    "demand_explanation": {
-      "id": "demand_explanation",
-      "text": "Your demands echo in the silence. A patron stands, skin shifting like wax. 'We are hungry,' they say in unison.",
-      "choices": [
-        {
-          "text": "Fight",
-          "next": "fight_back"
-        },
-        {
-          "text": "Run",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "dream_attempt": {
-      "id": "dream_attempt",
-      "text": "You pinch yourself hard. The pain is real. 'This is no dream,' the patrons whisper, their voices like static.",
-      "choices": [
-        {
-          "text": "Resist",
-          "next": "fight_back"
-        },
-        {
-          "text": "Flee",
-          "next": "hidden_exit_search"
-        }
-      ]
-    },
-    "reason_child": {
-      "id": "reason_child",
-      "text": "The child tilts their head unnaturally. 'We can't leave,' they say. 'None of us can. But some try anyway.'",
-      "choices": [
-        {
-          "text": "Look for an exit",
-          "next": "hidden_exit_search"
-        },
-        {
-          "text": "Stand your ground",
-          "next": "fight_back"
-        }
-      ]
-    },
-    "ask_meaning": {
-      "id": "ask_meaning",
-      "text": "The cook's eyes dart nervously. 'This place... it hungers. We're all part of it now.'",
-      "choices": [
-        {
-          "text": "Search for a way out",
-          "next": "hidden_exit_search"
-        },
-        {
-          "text": "Accept your fate",
-          "next": "bad_ending"
-        }
-      ]
-    },
-    "demand_help_cook": {
-      "id": "demand_help_cook",
-      "text": "The cook's face twists in fear. 'I can't help you,' he whispers. 'But there might be another way...'",
-      "choices": [
-        {
-          "text": "Look for an escape",
-          "next": "hidden_exit_search"
-        },
-        {
-          "text": "Confront the truth",
-          "next": "bad_ending"
-        }
-      ]
-    },
-    "comment_atmosphere": {
-      "id": "comment_atmosphere",
-      "text": "The cook's expression darkens. 'You notice it too? Then there's still hope.' Jane appears suddenly behind him.",
-      "choices": [
-        {
-          "text": "Try to escape",
-          "next": "hidden_exit_search"
-        },
-        {
-          "text": "Face Jane",
-          "next": "fight_back"
-        }
-      ]
-    }
+  "start": {
+    "id": "start",
+    "text": "It's 2 AM. You pull into Joe's Diner, the only light for miles along this desolate highway. The neon sign flickers ominously as you step inside. The bell chimes, and every patron turns to stare at you with unsettling synchronization.",
+    "choices": [
+      {
+        "text": "Take a seat at the counter",
+        "next": "counter_seat"
+      },
+      {
+        "text": "Head for a booth near the exit",
+        "next": "booth_seat"
+      },
+      {
+        "text": "Chat with the silent cook",
+        "next": "silent_cook"
+      }
+    ]
+  },
+  "counter_seat": {
+    "id": "counter_seat",
+    "text": "You settle onto a squeaky vinyl stool. The door clicks shut behind you, locking. A waitress, her name tag reading 'Jane' in blood-red letters, approaches with a twisted smile.",
+    "choices": [
+      {
+        "text": "Ask why the door is locked",
+        "next": "ask_door"
+      },
+      {
+        "text": "Order coffee and act natural",
+        "next": "order_coffee"
+      },
+      {
+        "text": "Glance around at other patrons",
+        "next": "glance_around"
+      }
+    ]
+  },
+  "booth_seat": {
+    "id": "booth_seat",
+    "text": "You slide into a booth, but the vinyl is sticky with something dark. The lock clicks ominously. A child at the next table, eyes completely black, whispers, 'You picked the wrong diner.'",
+    "choices": [
+      {
+        "text": "Try to break the window",
+        "next": "break_window"
+      },
+      {
+        "text": "Confront the other customers",
+        "next": "confront_customers"
+      },
+      {
+        "text": "Quietly observe the child",
+        "next": "observe_child"
+      }
+    ]
+  },
+  "silent_cook": {
+    "id": "silent_cook",
+    "text": "You approach the counter, where a burly cook silently flips burgers. He glances up at you, his eyes filled with what seems like pity.",
+    "choices": [
+      {
+        "text": "Ask the cook for directions out",
+        "next": "ask_cook"
+      },
+      {
+        "text": "Comment on the strange atmosphere",
+        "next": "comment_atmosphere"
+      },
+      {
+        "text": "Order food cautiously",
+        "next": "order_food"
+      }
+    ]
+  },
+  "order_food": {
+    "id": "order_food",
+    "text": "You cautiously order a burger. The cook nods silently and begins preparing it, his movements mechanical and precise. The sizzling meat fills the air with an oddly sweet aroma.",
+    "choices": [
+      {
+        "text": "Change your mind and leave",
+        "next": "demand_exit"
+      },
+      {
+        "text": "Watch him prepare the meat closely",
+        "next": "inspect_meat"
+      },
+      {
+        "text": "Ask about the special sauce",
+        "next": "ask_sauce"
+      }
+    ]
+  },
+  "ask_door": {
+    "id": "ask_door",
+    "text": "Jane's smile widens. 'Oh, that’s for your safety,' she says. Every patron turns again, their faces stretching into inhuman grins.",
+    "choices": [
+      {
+        "text": "Dash toward the kitchen",
+        "next": "kitchen_escape_attempt"
+      },
+      {
+        "text": "Demand to be let out",
+        "next": "demand_exit"
+      },
+      {
+        "text": "Attempt to break a window",
+        "next": "break_window"
+      }
+    ]
+  },
+  "order_coffee": {
+    "id": "order_coffee",
+    "text": "The coffee arrives, black as pitch. As you sip, your vision blurs. 'Special house blend,' Jane whispers, 'guaranteed to change your outlook on life.'",
+    "choices": [
+      {
+        "text": "Spit out the coffee",
+        "next": "spit_coffee"
+      },
+      {
+        "text": "Pretend to drink, planning an escape",
+        "next": "fake_drink"
+      },
+      {
+        "text": "Ask her what’s in the coffee",
+        "next": "ask_coffee"
+      }
+    ]
+  },
+  "glance_around": {
+    "id": "glance_around",
+    "text": "Every customer has gone deathly silent, each staring at you with unblinking eyes. The room feels smaller, the walls inching closer.",
+    "choices": [
+      {
+        "text": "Make a dash for the restroom",
+        "next": "restroom_escape"
+      },
+      {
+        "text": "Demand to know what's going on",
+        "next": "demand_explanation"
+      },
+      {
+        "text": "Try to wake yourself up—this must be a dream",
+        "next": "dream_attempt"
+      }
+    ]
+  },
+  "break_window": {
+    "id": "break_window",
+    "text": "You hurl a napkin dispenser at the window. It ripples like water and remains intact. 'We haven't had a new addition in weeks,' the customers say in unison.",
+    "choices": [
+      {
+        "text": "Accept your fate",
+        "next": "bad_ending"
+      },
+      {
+        "text": "Fight back",
+        "next": "fight_back"
+      }
+    ]
+  },
+  "confront_customers": {
+    "id": "confront_customers",
+    "text": "You stand and demand answers. A man, his face half-melting, grins, 'We've been waiting for you.' They rise from their seats.",
+    "choices": [
+      {
+        "text": "Try to escape through the kitchen",
+        "next": "kitchen_escape_attempt"
+      },
+      {
+        "text": "Challenge them head-on",
+        "next": "fight_back"
+      }
+    ]
+  },
+  "observe_child": {
+    "id": "observe_child",
+    "text": "The child’s eyes grow darker. 'This place is forever, you know,' they whisper with eerie calm.",
+    "choices": [
+      {
+        "text": "Attempt to reason with the child",
+        "next": "reason_child"
+      },
+      {
+        "text": "Ignore and look for an exit",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "ask_cook": {
+    "id": "ask_cook",
+    "text": "The cook glances toward the locked door. 'You don't belong here,' he mutters. 'But there's no way out now.'",
+    "choices": [
+      {
+        "text": "Ask what he means",
+        "next": "ask_meaning"
+      },
+      {
+        "text": "Demand he help you escape",
+        "next": "demand_help_cook"
+      }
+    ]
+  },
+  "demand_exit": {
+    "id": "demand_exit",
+    "text": "You demand to be let out. Jane laughs, a shrill sound that echoes endlessly. 'The fun's just started.' The lights dim, and all exits vanish.",
+    "choices": [
+      {
+        "text": "Look for a hidden exit",
+        "next": "hidden_exit_search"
+      },
+      {
+        "text": "Give in to fear",
+        "next": "bad_ending"
+      }
+    ]
+  },
+  "spit_coffee": {
+    "id": "spit_coffee",
+    "text": "You spit the coffee out. Jane frowns. 'You don’t like our blend?' she sneers, reaching for a knife.",
+    "choices": [
+      {
+        "text": "Defend yourself",
+        "next": "self_defense"
+      },
+      {
+        "text": "Run for the back door",
+        "next": "backdoor_chase"
+      }
+    ]
+  },
+  "fake_drink": {
+    "id": "fake_drink",
+    "text": "You pretend to sip the coffee. Jane moves on, giving you a moment to look around. The kitchen door catches your eye.",
+    "choices": [
+      {
+        "text": "Sneak towards the kitchen",
+        "next": "sneak_kitchen"
+      },
+      {
+        "text": "Head to the restroom to find a hiding spot",
+        "next": "restroom_hide"
+      }
+    ]
+  },
+  "hidden_exit_search": {
+    "id": "hidden_exit_search",
+    "text": "You search frantically, finding a loose panel in the wall. Behind it is a dark passage. You hear footsteps closing in.",
+    "choices": [
+      {
+        "text": "Enter the passage",
+        "next": "secret_passage"
+      },
+      {
+        "text": "Stay and confront the danger",
+        "next": "fight_back"
+      }
+    ]
+  },
+  "secret_passage": {
+    "id": "secret_passage",
+    "text": "You stumble through a dark passage, eventually finding a ladder leading up. As you emerge, the diner is gone. You’re free... for now.",
+    "choices": [
+      {
+        "text": "Play Again",
+        "next": "start"
+      }
+    ]
+  },
+  "backdoor_chase": {
+    "id": "backdoor_chase",
+    "text": "You run for the back door. It opens, and you’re outside, but Jane and the patrons are close behind. You dash toward the woods.",
+    "choices": [
+      {
+        "text": "Hide behind a tree",
+        "next": "tree_hide"
+      },
+      {
+        "text": "Keep running toward the road",
+        "next": "good_ending"
+      }
+    ]
+  },
+  "fight_back": {
+    "id": "fight_back",
+    "text": "With every ounce of strength, you fight, swinging your makeshift weapon at Jane and the patrons. Their faces twist back into haunting smiles.",
+    "choices": [
+      {
+        "text": "Give in to fate",
+        "next": "bad_ending"
+      },
+      {
+        "text": "Keep fighting, desperate",
+        "next": "good_ending"
+      }
+    ]
+  },
+  "bad_ending": {
+    "id": "bad_ending",
+    "text": "You've become part of Joe's Diner now. Forever a patron, forever watching the door for the next unsuspecting customer. Would you like to try again?",
+    "choices": [
+      {
+        "text": "Start Over",
+        "next": "start"
+      }
+    ]
+  },
+  "good_ending": {
+    "id": "good_ending",
+    "text": "You burst into the night air. Behind you, inhuman shrieks echo from the diner. You run to your car and speed away, never looking back. You survived... this time.",
+    "choices": [
+      {
+        "text": "Play Again",
+        "next": "start"
+      }
+    ]
+  },
+  "self_defense": {
+    "id": "self_defense",
+    "text": "You grab a nearby fork and brandish it defensively. Jane's eyes flash with an otherworldly gleam as she lunges forward with inhuman speed.",
+    "choices": [
+      {
+        "text": "Strike first with the fork",
+        "next": "fight_back"
+      },
+      {
+        "text": "Dodge and run for the secret passage",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "inspect_meat": {
+    "id": "inspect_meat",
+    "text": "As you lean in closer, you notice the meat has an unusual color and texture. The cook's hands tremble slightly as he notices your scrutiny.",
+    "choices": [
+      {
+        "text": "Confront him about the meat",
+        "next": "confront_customers"
+      },
+      {
+        "text": "Quietly look for an escape",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "ask_sauce": {
+    "id": "ask_sauce",
+    "text": "The cook freezes mid-motion. 'Family recipe,' he whispers, 'been serving it here for... generations.' His smile doesn't reach his eyes.",
+    "choices": [
+      {
+        "text": "Ask to see the ingredients",
+        "next": "kitchen_escape_attempt"
+      },
+      {
+        "text": "Politely decline the sauce",
+        "next": "demand_exit"
+      }
+    ]
+  },
+  "kitchen_escape_attempt": {
+    "id": "kitchen_escape_attempt",
+    "text": "You burst through the kitchen doors. Industrial-sized pots bubble with mysterious contents. The back door beckons, but something moves in the shadows.",
+    "choices": [
+      {
+        "text": "Run for the back door",
+        "next": "backdoor_chase"
+      },
+      {
+        "text": "Look for another way",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "tree_hide": {
+    "id": "tree_hide",
+    "text": "You duck behind a massive oak tree. Footsteps and whispers surround you in the darkness. The diner's lights cast long shadows.",
+    "choices": [
+      {
+        "text": "Break for the road",
+        "next": "good_ending"
+      },
+      {
+        "text": "Give up hope",
+        "next": "bad_ending"
+      }
+    ]
+  },
+  "sneak_kitchen": {
+    "id": "sneak_kitchen",
+    "text": "You slip toward the kitchen, heart pounding. Through the window, you see the cook preparing something unspeakable.",
+    "choices": [
+      {
+        "text": "Try the back door",
+        "next": "backdoor_chase"
+      },
+      {
+        "text": "Search for alternatives",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "restroom_hide": {
+    "id": "restroom_hide",
+    "text": "The restroom mirror shows no reflection. A window above the sink might be large enough to squeeze through.",
+    "choices": [
+      {
+        "text": "Attempt escape",
+        "next": "good_ending"
+      },
+      {
+        "text": "Look elsewhere",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "ask_coffee": {
+    "id": "ask_coffee",
+    "text": "Jane's eyes glint dangerously. 'Just a family recipe,' she hisses, 'passed down through generations of... special customers.'",
+    "choices": [
+      {
+        "text": "Refuse the coffee",
+        "next": "spit_coffee"
+      },
+      {
+        "text": "Pretend to drink",
+        "next": "fake_drink"
+      }
+    ]
+  },
+  "restroom_escape": {
+    "id": "restroom_escape",
+    "text": "The restroom door creaks open to reveal walls covered in desperate scratched messages. A vent cover looks loose.",
+    "choices": [
+      {
+        "text": "Try the vent",
+        "next": "secret_passage"
+      },
+      {
+        "text": "Go back",
+        "next": "demand_exit"
+      }
+    ]
+  },
+  "demand_explanation": {
+    "id": "demand_explanation",
+    "text": "Your demands echo in the silence. A patron stands, skin shifting like wax. 'We are hungry,' they say in unison.",
+    "choices": [
+      {
+        "text": "Fight",
+        "next": "fight_back"
+      },
+      {
+        "text": "Run",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "dream_attempt": {
+    "id": "dream_attempt",
+    "text": "You pinch yourself hard. The pain is real. 'This is no dream,' the patrons whisper, their voices like static.",
+    "choices": [
+      {
+        "text": "Resist",
+        "next": "fight_back"
+      },
+      {
+        "text": "Flee",
+        "next": "hidden_exit_search"
+      }
+    ]
+  },
+  "reason_child": {
+    "id": "reason_child",
+    "text": "The child tilts their head unnaturally. 'We can't leave,' they say. 'None of us can. But some try anyway.'",
+    "choices": [
+      {
+        "text": "Look for an exit",
+        "next": "hidden_exit_search"
+      },
+      {
+        "text": "Stand your ground",
+        "next": "fight_back"
+      }
+    ]
+  },
+  "ask_meaning": {
+    "id": "ask_meaning",
+    "text": "The cook's eyes dart nervously. 'This place... it hungers. We're all part of it now.'",
+    "choices": [
+      {
+        "text": "Search for a way out",
+        "next": "hidden_exit_search"
+      },
+      {
+        "text": "Accept your fate",
+        "next": "bad_ending"
+      }
+    ]
+  },
+  "demand_help_cook": {
+    "id": "demand_help_cook",
+    "text": "The cook's face twists in fear. 'I can't help you,' he whispers. 'But there might be another way...'",
+    "choices": [
+      {
+        "text": "Look for an escape",
+        "next": "hidden_exit_search"
+      },
+      {
+        "text": "Confront the truth",
+        "next": "bad_ending"
+      }
+    ]
+  },
+  "comment_atmosphere": {
+    "id": "comment_atmosphere",
+    "text": "The cook's expression darkens. 'You notice it too? Then there's still hope.' Jane appears suddenly behind him.",
+    "choices": [
+      {
+        "text": "Try to escape",
+        "next": "hidden_exit_search"
+      },
+      {
+        "text": "Face Jane",
+        "next": "fight_back"
+      }
+    ]
   }
-  
+}

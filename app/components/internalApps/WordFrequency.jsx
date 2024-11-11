@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 
@@ -82,7 +82,10 @@ const WordFrequency = () => {
               </thead>
               <tbody>
                 {data.frequencies.map(([word, frequency], index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : ""}>
+                  <tr
+                    key={index}
+                    className={index % 2 === 0 ? "bg-gray-100" : ""}
+                  >
                     <td className="text-left px-2 py-1">{word}</td>
                     <td className="text-right px-2 py-1">{frequency}</td>
                   </tr>

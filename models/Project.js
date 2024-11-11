@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const ProjectSchema = new mongoose.Schema({
   id: {
@@ -12,4 +12,5 @@ const ProjectSchema = new mongoose.Schema({
   },
 });
 
-export const Project = mongoose.models.Project || mongoose.model('Project', ProjectSchema);
+export const Project =
+  mongoose.models.Project || mongoose.model("Project", ProjectSchema);

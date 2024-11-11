@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 
@@ -23,7 +23,10 @@ const RandomNumbers = () => {
     <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
       <div className="space-y-4 w-full max-w-sm">
         <div>
-          <label htmlFor="min" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="min"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Minimum value (inclusive):
           </label>
           <input
@@ -37,7 +40,10 @@ const RandomNumbers = () => {
         </div>
 
         <div>
-          <label htmlFor="max" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="max"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Maximum value (inclusive):
           </label>
           <input
@@ -51,7 +57,10 @@ const RandomNumbers = () => {
         </div>
 
         <div>
-          <label htmlFor="arraySize" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="arraySize"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Number of random numbers to generate:
           </label>
           <input

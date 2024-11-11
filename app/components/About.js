@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import Comments from "./Comments"
+import Comments from "./Comments";
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -66,7 +66,8 @@ const About = () => {
           <li>MIT Class of 2022 BS in Computer Science</li>
           <li>Enjoy cooking Mexican food and working out</li>
           <li>Love making generative art using P5.js</li>
-          <li>Enjoy building:
+          <li>
+            Enjoy building:
             <ul className="list-disc list-inside ml-6">
               <li>Health and wellness tech</li>
               <li>Applicant filtering web apps</li>
@@ -84,7 +85,7 @@ const About = () => {
           ))}
         </ul> */}
       </div>
-      <Comments/>
+      <Comments />
     </div>
   );
 };

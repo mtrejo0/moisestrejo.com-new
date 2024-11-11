@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Play, Pause } from "lucide-react";
-import countries from './data/name_countries.json';
+import countries from "./data/name_countries.json";
 
 const NameCountries = () => {
   const [input, setInput] = useState("");
@@ -16,10 +16,12 @@ const NameCountries = () => {
   useEffect(() => {
     const fetchCountries = () => {
       try {
-        const countryNames = countries.objects.world.geometries.map(geo => geo.properties.name);
+        const countryNames = countries.objects.world.geometries.map(
+          (geo) => geo.properties.name,
+        );
         setRemainingCountries(countryNames);
       } catch (error) {
-        console.error('Error fetching countries:', error);
+        console.error("Error fetching countries:", error);
       }
     };
 
@@ -43,9 +45,17 @@ const NameCountries = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const countryName = input.trim().toLowerCase();
-    if (remainingCountries.some(country => country.toLowerCase() === countryName)) {
+    if (
+      remainingCountries.some(
+        (country) => country.toLowerCase() === countryName,
+      )
+    ) {
       setEnteredCountries([...enteredCountries, countryName]);
-      setRemainingCountries(remainingCountries.filter(country => country.toLowerCase() !== countryName));
+      setRemainingCountries(
+        remainingCountries.filter(
+          (country) => country.toLowerCase() !== countryName,
+        ),
+      );
       setInput("");
 
       if (remainingCountries.length === 1) {
@@ -61,8 +71,14 @@ const NameCountries = () => {
 
   const getHint = () => {
     if (window.confirm("Are you sure you want a hint?")) {
-      const randomCountry = remainingCountries[Math.floor(Math.random() * remainingCountries.length)];
-      const blurredHint = randomCountry.split('').map((char, index) => index % 2 === 0 ? char : '*').join('');
+      const randomCountry =
+        remainingCountries[
+          Math.floor(Math.random() * remainingCountries.length)
+        ];
+      const blurredHint = randomCountry
+        .split("")
+        .map((char, index) => (index % 2 === 0 ? char : "*"))
+        .join("");
       alert(`Hint: ${blurredHint}`);
     }
   };
@@ -70,7 +86,7 @@ const NameCountries = () => {
   return (
     <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
       <h2 className="text-2xl font-bold mb-4">Name the Countries</h2>
-      
+
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="text"
@@ -119,7 +135,11 @@ const NameCountries = () => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={enteredCountries.includes(geo.properties.name.toLowerCase()) ? "#34D399" : "#D1D5DB"}
+                  fill={
+                    enteredCountries.includes(geo.properties.name.toLowerCase())
+                      ? "#34D399"
+                      : "#D1D5DB"
+                  }
                   stroke="#FFFFFF"
                 />
               ))

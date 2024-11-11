@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import { Play, Pause } from "lucide-react";
@@ -15,19 +15,21 @@ const LanaDelReyGuess = () => {
 
   useEffect(() => {
     const processSongs = () => {
-      const songList = lanaSongs.map(song => ({
-        title: song.song_title?.trim(),
-        album: song.album_title?.trim(),
-        year: new Date(song.song_release_date).getFullYear().toString()
-      })).filter(song => song.title && song.album);
+      const songList = lanaSongs
+        .map((song) => ({
+          title: song.song_title?.trim(),
+          album: song.album_title?.trim(),
+          year: new Date(song.song_release_date).getFullYear().toString(),
+        }))
+        .filter((song) => song.title && song.album);
 
-      console.log(songList)
+      console.log(songList);
 
       setRemainingSongs(songList);
-      
+
       // Group songs by album
       const albumGroups = {};
-      songList.forEach(song => {
+      songList.forEach((song) => {
         if (!albumGroups[song.album]) {
           albumGroups[song.album] = { songs: [], year: song.year };
         }
@@ -69,10 +71,16 @@ const LanaDelReyGuess = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const songTitle = input?.trim()?.toLowerCase();
-    const foundSong = remainingSongs.find(song => song.title?.toLowerCase() === songTitle);
+    const foundSong = remainingSongs.find(
+      (song) => song.title?.toLowerCase() === songTitle,
+    );
     if (foundSong) {
       setEnteredSongs([...enteredSongs, foundSong]);
-      setRemainingSongs(remainingSongs.filter(song => song.title?.toLowerCase() !== songTitle));
+      setRemainingSongs(
+        remainingSongs.filter(
+          (song) => song.title?.toLowerCase() !== songTitle,
+        ),
+      );
       setInput("");
 
       if (remainingSongs.length === 1) {
@@ -88,16 +96,24 @@ const LanaDelReyGuess = () => {
 
   const getHint = () => {
     if (window.confirm("Are you sure you want a hint?")) {
-      const randomSong = remainingSongs[Math.floor(Math.random() * remainingSongs.length)];
-      const blurredHint = randomSong.title.split('').map((char, index) => index % 2 === 0 ? char : '*').join('');
-      alert(`Hint: ${blurredHint} (Album: ${randomSong.album}, Year: ${randomSong.year})`);
+      const randomSong =
+        remainingSongs[Math.floor(Math.random() * remainingSongs.length)];
+      const blurredHint = randomSong.title
+        .split("")
+        .map((char, index) => (index % 2 === 0 ? char : "*"))
+        .join("");
+      alert(
+        `Hint: ${blurredHint} (Album: ${randomSong.album}, Year: ${randomSong.year})`,
+      );
     }
   };
 
   return (
     <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
-      <h2 className="text-2xl font-bold mb-4">Name Lana Del Rey&apos;s Songs</h2>
-      
+      <h2 className="text-2xl font-bold mb-4">
+        Name Lana Del Rey&apos;s Songs
+      </h2>
+
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="text"
@@ -143,17 +159,28 @@ const LanaDelReyGuess = () => {
           {Object.entries(albums)
             .sort(([, a], [, b]) => -a.year.localeCompare(b.year))
             .map(([album, { songs, year }]) => (
-            <div key={album} className="mb-4">
-              <h3 className="text-xl font-bold">{album} ({year})</h3>
-              <ul>
-                {songs.map(song => (
-                  <li key={song} className={enteredSongs.some(s => s.title === song) ? "text-green-500" : "text-gray-500"}>
-                    {enteredSongs.some(s => s.title === song) ? song : '• • •'}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              <div key={album} className="mb-4">
+                <h3 className="text-xl font-bold">
+                  {album} ({year})
+                </h3>
+                <ul>
+                  {songs.map((song) => (
+                    <li
+                      key={song}
+                      className={
+                        enteredSongs.some((s) => s.title === song)
+                          ? "text-green-500"
+                          : "text-gray-500"
+                      }
+                    >
+                      {enteredSongs.some((s) => s.title === song)
+                        ? song
+                        : "• • •"}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
       </div>
     </div>

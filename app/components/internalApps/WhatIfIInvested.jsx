@@ -1,27 +1,46 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const WhatIfIInvested = () => {
-  const [date, setDate] = useState('2019-01-01');
-  const [ticker, setTicker] = useState('NVDA');
-  const [amount, setAmount] = useState('1000');
+  const [date, setDate] = useState("2019-01-01");
+  const [ticker, setTicker] = useState("NVDA");
+  const [amount, setAmount] = useState("1000");
   const [data, setData] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`/api/ticker?symbol=${ticker}&startDate=${date}`);
-      console.log(response)
+      const response = await axios.get(
+        `/api/ticker?symbol=${ticker}&startDate=${date}`,
+      );
+      console.log(response);
       const historicalData = response.data;
 
       if (historicalData.length === 0) {
-        setError('No data available for the selected date and ticker.');
+        setError("No data available for the selected date and ticker.");
         return;
       }
 
@@ -29,21 +48,28 @@ const WhatIfIInvested = () => {
       const shares = amount / initialPrice;
 
       const chartData = {
-        labels: historicalData.map(item => new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })),
+        labels: historicalData.map((item) =>
+          new Date(item.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+          }),
+        ),
         datasets: [
           {
-            label: 'Investment Value',
-            data: historicalData.map(item => (shares * item.close).toFixed(2)),
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-          }
-        ]
+            label: "Investment Value",
+            data: historicalData.map((item) =>
+              (shares * item.close).toFixed(2),
+            ),
+            borderColor: "rgb(75, 192, 192)",
+            tension: 0.1,
+          },
+        ],
       };
 
       setData(chartData);
-      setError('');
+      setError("");
     } catch (err) {
-      setError('Error fetching data. Please try again.');
+      setError("Error fetching data. Please try again.");
       console.error(err);
     }
   };
@@ -94,7 +120,9 @@ const WhatIfIInvested = () => {
             { value: "MRK", name: "MRK - Merck & Co., Inc." },
             { value: "PFE", name: "PFE - Pfizer Inc." },
           ].map((option) => (
-            <option key={option.value} value={option.value}>{option.name}</option>
+            <option key={option.value} value={option.value}>
+              {option.name}
+            </option>
           ))}
         </select>
         <input
@@ -113,8 +141,11 @@ const WhatIfIInvested = () => {
       </div>
       {error && <p className="text-red-500 mt-4">{error}</p>}
       {data && (
-        <div className="w-full mt-8" style={{ height: '600px' }}>
-          <Line data={data} options={{ responsive: true, maintainAspectRatio: false }} />
+        <div className="w-full mt-8" style={{ height: "600px" }}>
+          <Line
+            data={data}
+            options={{ responsive: true, maintainAspectRatio: false }}
+          />
         </div>
       )}
     </div>

@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import consejos from './data/consejos.json';
-import { Shuffle } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import consejos from "./data/consejos.json";
+import { Shuffle } from "lucide-react";
 
 const quoteLinks = {
-  "Échale ganas": "https://www.etsy.com/listing/1820240099/echale-ganas-unisex-t-shirt",
-  "Ponte trucha": "https://www.etsy.com/listing/1806040142/ponte-trucha-unisex-t-shirt", 
-  "Ahorita estamos, al rato, quién sabe": "https://www.etsy.com/listing/1806600744/ahorita-estamos-unisex-t-shirt"
+  "Échale ganas":
+    "https://www.etsy.com/listing/1820240099/echale-ganas-unisex-t-shirt",
+  "Ponte trucha":
+    "https://www.etsy.com/listing/1806040142/ponte-trucha-unisex-t-shirt",
+  "Ahorita estamos, al rato, quién sabe":
+    "https://www.etsy.com/listing/1806600744/ahorita-estamos-unisex-t-shirt",
 };
 
 const Consejos = () => {
-  const [currentConsejo, setCurrentConsejo] = useState('');
+  const [currentConsejo, setCurrentConsejo] = useState("");
 
   useEffect(() => {
     const randomConsejo = consejos[Math.floor(Math.random() * consejos.length)];
@@ -48,7 +51,9 @@ const Consejos = () => {
       </div>
 
       <div className="w-full max-w-md flex flex-col gap-4 mt-32">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">T-shirts for sale 👕</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+          T-shirts for sale 👕
+        </h2>
         {Object.entries(quoteLinks).map(([quote, link]) => (
           <a
             key={quote}
@@ -57,7 +62,12 @@ const Consejos = () => {
             rel="noopener noreferrer"
             className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-center flex items-center justify-center gap-2"
           >
-            {quote} {quote === "Échale ganas" ? "💪" : quote === "Ponte trucha" ? "🐟" : "⏳"}
+            {quote}{" "}
+            {quote === "Échale ganas"
+              ? "💪"
+              : quote === "Ponte trucha"
+                ? "🐟"
+                : "⏳"}
           </a>
         ))}
       </div>

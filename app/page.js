@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import About from "./components/About.js"
-import { useLogRocket } from "../lib/hooks/useLogRocket.js"
+import About from "./components/About.js";
+import { useLogRocket } from "../lib/hooks/useLogRocket.js";
 
 export default function Home() {
   useLogRocket();
@@ -10,5 +10,5 @@ export default function Home() {
     <>
       <About />
     </>
-  )
+  );
 }

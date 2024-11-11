@@ -4,8 +4,8 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
 import LogRocket from "logrocket";
-import setupLogRocketReact  from "logrocket-react";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import setupLogRocketReact from "logrocket-react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,20 +22,21 @@ LogRocket.init("5ynwnu/moisestrejocom");
 
 export const metadata = {
   title: "Moises Trejo",
-  description: "MIT Software Engineer crafting innovative web applications. Specializing in full-stack development, data visualization, and AI-powered tools.",
+  description:
+    "MIT Software Engineer crafting innovative web applications. Specializing in full-stack development, data visualization, and AI-powered tools.",
   openGraph: {
     title: "Moises Trejo",
     images: [
       {
-        url: '/images/front.png',
+        url: "/images/front.png",
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    images: ['/images/front.png'],
+    card: "summary_large_image",
+    images: ["/images/front.png"],
   },
 };
 
@@ -46,8 +47,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
       >
-        <Background/>
-        <Navbar/>
+        <Background />
+        <Navbar />
         {children}
         <Footer />
       </body>
