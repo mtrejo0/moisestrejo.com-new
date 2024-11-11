@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import Head from 'next/head'
 
 import p5jsProjects from "../../public/information/p5jsProjects.json";
 import links from "../../public/information/links.json";
@@ -128,10 +129,14 @@ export default async function Page({ params }) {
     );
     return (
       <>
-        <title>{internalApp.name}</title>
-        <meta name="description" content={internalApp.description} />
-        <meta property="og:title" content={internalApp.name} />
-        <meta property="og:description" content={internalApp.description} />
+        <Head>
+          <title>{internalApp.name}</title>
+          <meta name="description" content={internalApp.description} />
+          <meta property="og:title" content={internalApp.name} />
+          <meta property="og:description" content={internalApp.description} />
+          <meta name="twitter:title" content={internalApp.name} />
+          <meta name="twitter:description" content={internalApp.description} />
+        </Head>
         <DynamicComponent />
       </>
     );
