@@ -103,7 +103,15 @@ export default async function Page({ params }) {
       () => import(`../components/internalApps/${internalApp.component}.jsx`),
       { ssr: true }
     )
-    return <DynamicComponent />
+    return (
+      <>
+        <title>{internalApp.name}</title>
+        <meta name="description" content={internalApp.description} />
+        <meta property="og:title" content={internalApp.name} />
+        <meta property="og:description" content={internalApp.description} />
+        <DynamicComponent />
+      </>
+    )
   }
 
   // If no matches found, return 404
