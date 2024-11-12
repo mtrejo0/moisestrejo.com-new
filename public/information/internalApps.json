@@ -136,7 +136,14 @@
     "name": "Word Guesser",
     "description": "Try to guess the 5-letter word in 6 tries with color-coded feedback!",
     "id": "modle",
-    "type": "internal",
+    "type": "internal", 
     "component": "Modle"
+  },
+  {
+    "name": "Multiplication Practice",
+    "description": "Practice your multiplication skills with randomly generated problems!",
+    "id": "multiplication",
+    "type": "internal",
+    "component": "Multiplication"
   }
 ]
