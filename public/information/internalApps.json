@@ -145,5 +145,12 @@
     "id": "multiplication",
     "type": "internal",
     "component": "Multiplication"
+  },
+  {
+    "name": "Sudoku Generator",
+    "description": "Generate and solve Sudoku puzzles of varying difficulty levels!",
+    "id": "sudoku",
+    "type": "internal",
+    "component": "Sudoku"
   }
 ]
