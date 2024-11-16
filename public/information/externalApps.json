@@ -236,5 +236,13 @@
     "link": "https://fan-quiz.vercel.app/",
     "id": "fan-quiz",
     "date": "November 2024"
+  },
+  {
+    "name": "BeActive",
+    "description": "Discord server that helps with working out accountability",
+    "resources": "Discord API, Matplotlib, Twitter API", 
+    "link": "https://discord.gg/kAEU6x9b",
+    "id": "beactive",
+    "date": "February 2022"
   }
 ]
