@@ -152,5 +152,12 @@
     "id": "sudoku",
     "type": "internal",
     "component": "Sudoku"
+  },
+  {
+    "name": "JSON Beautifier",
+    "description": "Format and beautify JSON data with proper indentation and syntax highlighting!",
+    "id": "jsonBeautify", 
+    "type": "internal",
+    "component": "JSONBeautify"
   }
 ]

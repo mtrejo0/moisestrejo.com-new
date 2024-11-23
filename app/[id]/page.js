@@ -22,11 +22,12 @@ export async function generateStaticParams() {
 // Generate metadata for the page
 export async function generateMetadata({ params }) {
   const { id } = params;
+  const lowerId = id.toLowerCase();
 
   // Find matching app/project/link
-  const internalApp = internalApps.find((app) => app.id === id);
-  const externalApp = externalApps.find((app) => app.id === id);
-  const p5Project = p5jsProjects.find((project) => project.id === id);
+  const internalApp = internalApps.find((app) => app.id.toLowerCase() === lowerId);
+  const externalApp = externalApps.find((app) => app.id.toLowerCase() === lowerId);
+  const p5Project = p5jsProjects.find((project) => project.id.toLowerCase() === lowerId);
 
   if (internalApp) {
     return {
@@ -69,26 +70,27 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { id } = params;
+  const lowerId = id.toLowerCase();
 
   // Handle special cases first
-  if (id === "home") {
+  if (lowerId === "home") {
     redirect("/");
   }
 
-  if (id === "college") {
+  if (lowerId === "college") {
     redirect(
       "https://medium.com/@moises.trejo0/how-to-apply-to-college-b9084219ffc1",
     );
   }
 
   // Check for matching link
-  const link = links.find((link) => link.ids.includes(id));
+  const link = links.find((link) => link.ids.some(linkId => linkId.toLowerCase() === lowerId));
   if (link) {
     redirect(link.link);
   }
 
   // Check for p5 project
-  const p5Project = p5jsProjects.find((project) => project.id === id);
+  const p5Project = p5jsProjects.find((project) => project.id.toLowerCase() === lowerId);
   if (p5Project) {
     if (p5Project.redirect) {
       redirect(`https://p5moises-27cba0c96786.herokuapp.com/${p5Project.id}`);
@@ -115,13 +117,13 @@ export default async function Page({ params }) {
   }
 
   // Check for external app
-  const externalApp = externalApps.find((app) => app.id === id);
+  const externalApp = externalApps.find((app) => app.id.toLowerCase() === lowerId);
   if (externalApp) {
     redirect(externalApp.link);
   }
 
   // Check for internal app
-  const internalApp = internalApps.find((app) => app.id === id);
+  const internalApp = internalApps.find((app) => app.id.toLowerCase() === lowerId);
   if (internalApp) {
     const DynamicComponent = dynamic(
       () => import(`../components/internalApps/${internalApp.component}.jsx`),
