@@ -61,19 +61,37 @@ const PushupCount = () => {
     let newHistory = [...history];
     const todayIndex = history.findIndex(entry => entry.date === today);
 
+    // Get previous day's pushup count
+    let previousCount = 0;
+    if (history.length > 0) {
+      const sortedHistory = [...history].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const previousEntry = sortedHistory.find(entry => new Date(entry.date) < new Date(today));
+      if (previousEntry) {
+        previousCount = previousEntry.pushups;
+      }
+    }
+
     if (todayIndex >= 0) {
       // Update today's counts
-      newHistory[todayIndex] = { date: today, pushups: newCount, followers: newFollowers };
+      newHistory[todayIndex] = { 
+        date: today, 
+        pushups: previousCount + newCount, 
+        followers: newFollowers 
+      };
     } else {
       // Add new entry for today
-      newHistory.push({ date: today, pushups: newCount, followers: newFollowers });
+      newHistory.push({ 
+        date: today, 
+        pushups: previousCount + newCount, 
+        followers: newFollowers 
+      });
     }
 
     // Sort history by date (most recent first)
     newHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     setHistory(newHistory);
-    setTodayCount(newCount);
+    setTodayCount(previousCount + newCount);
     setTodayFollowers(newFollowers);
     setInputCount("");
     setInputFollowers("");
@@ -271,4 +289,3 @@ const PushupCount = () => {
 };
 
 export default PushupCount;
-
