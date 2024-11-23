@@ -166,5 +166,12 @@
     "id": "diff",
     "type": "internal",
     "component": "Diff"
+  },
+  {
+    "name": "Password Generator",
+    "description": "Generate secure passwords with customizable options for length and character types",
+    "id": "password",
+    "type": "internal",
+    "component": "PasswordGenerator"
   }
 ]
