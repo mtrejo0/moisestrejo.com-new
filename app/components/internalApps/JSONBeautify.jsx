@@ -8,8 +8,11 @@ const JSONBeautify = () => {
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
-    const normalizedInput = e.target.value.replace(/["“]/g, '"').replace(/['‘]/g, "'");
-    setInputJSON(normalizedInput);
+    const normalizedInput = e.target.value
+      .replace(/[\u201C\u201D]/g, '"') // Replace curly quotes with straight quotes
+      .replace(/[\u2018\u2019]/, "'") // Replace curly single quotes with straight single quotes
+      .trim(); // Remove leading/trailing whitespace
+    setInputJSON(e.target.value);
     try {
       const parsed = JSON.parse(normalizedInput);
       setOutputJSON(JSON.stringify(parsed, null, 2));
