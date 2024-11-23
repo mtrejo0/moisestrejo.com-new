@@ -8,10 +8,10 @@ const JSONBeautify = () => {
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
-    setInputJSON(e.target.value);
+    const normalizedInput = e.target.value.replace(/[""]/g, '"').replace(/['']/g, "'");
+    setInputJSON(normalizedInput);
     try {
-      // Try to parse and stringify with indentation
-      const parsed = JSON.parse(e.target.value);
+      const parsed = JSON.parse(normalizedInput);
       setOutputJSON(JSON.stringify(parsed, null, 2));
       setError("");
     } catch (err) {
