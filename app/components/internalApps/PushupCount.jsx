@@ -141,7 +141,7 @@ const PushupCount = () => {
 
       <div className="space-y-4">
         <div className="p-4 bg-gray-100 rounded">
-          <h2 className="font-semibold">Today's Count</h2>
+          <h2 className="font-semibold">Today&apos;s Count</h2>
           <p className="text-2xl">{todayCount} pushups</p>
         </div>
 
