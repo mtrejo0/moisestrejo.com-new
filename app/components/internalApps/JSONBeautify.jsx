@@ -8,7 +8,7 @@ const JSONBeautify = () => {
   const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
-    const normalizedInput = e.target.value.replace(/[""]/g, '"').replace(/['']/g, "'");
+    const normalizedInput = e.target.value.replace(/["“]/g, '"').replace(/['‘]/g, "'");
     setInputJSON(normalizedInput);
     try {
       const parsed = JSON.parse(normalizedInput);
