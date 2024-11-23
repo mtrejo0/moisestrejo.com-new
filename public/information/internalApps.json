@@ -170,8 +170,15 @@
   {
     "name": "Password Generator",
     "description": "Generate secure passwords with customizable options for length and character types",
-    "id": "password",
+    "id": "password", 
     "type": "internal",
     "component": "PasswordGenerator"
+  },
+  {
+    "name": "Pushups vs Followers",
+    "description": "Track and compare your daily pushup count against your social media follower growth",
+    "id": "pushupsVsFollowers",
+    "type": "internal",
+    "component": "PushupCountVsFollowers"
   }
 ]
