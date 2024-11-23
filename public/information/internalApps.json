@@ -156,8 +156,15 @@
   {
     "name": "JSON Beautifier",
     "description": "Format and beautify JSON data with proper indentation and syntax highlighting!",
-    "id": "jsonBeautify", 
+    "id": "json", 
     "type": "internal",
     "component": "JSONBeautify"
+  },
+  {
+    "name": "Text Diff Viewer",
+    "description": "Compare two texts and see the differences highlighted!",
+    "id": "diff",
+    "type": "internal",
+    "component": "Diff"
   }
 ]

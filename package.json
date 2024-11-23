@@ -12,6 +12,7 @@
     "@next/third-parties": "^14.2.17",
     "axios": "^1.7.7",
     "d3": "^7.9.0",
+    "diff": "^7.0.0",
     "dotenv": "^16.4.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
