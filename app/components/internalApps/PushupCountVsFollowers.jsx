@@ -213,7 +213,7 @@ const PushupCount = () => {
 
       <div className="space-y-4">
         <div className="p-3 bg-gray-100 rounded">
-          <h2 className="text-sm font-semibold">Today's Counts</h2>
+          <h2 className="text-sm font-semibold">Today&apos;s Counts</h2>
           <p className="text-lg sm:text-xl">{todayCount} pushups</p>
           <p className="text-lg sm:text-xl">{todayFollowers} followers</p>
         </div>
