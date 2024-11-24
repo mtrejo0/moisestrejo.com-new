@@ -1,7 +1,9 @@
 "use client";
-import DataSonification from "../components/internalApps/DataSonification.jsx";
+
+import FaceScorer from "../components/internalApps/FaceScorer";
+
 const Page = () => {
-  return <DataSonification />;
+  return <FaceScorer />;
 };
 
 export default Page;
