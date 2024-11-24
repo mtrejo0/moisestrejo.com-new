@@ -7,18 +7,26 @@ const FaceScorer = () => {
   const [isModelLoaded, setIsModelLoaded] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
   const [measurements, setMeasurements] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [imageCapture, setImageCapture] = useState(null);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const intervalRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     loadModels();
+    checkIfMobile();
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
   }, []);
+
+  const checkIfMobile = () => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  };
 
   const loadModels = async () => {
     try {
@@ -34,29 +42,49 @@ const FaceScorer = () => {
 
   const startVideo = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: isMobile ? "user" : true } 
+      });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
+        if (isMobile) {
+          const track = stream.getVideoTracks()[0];
+          setImageCapture(new ImageCapture(track));
+        }
       }
     } catch (err) {
-      console.error("Error accessing webcam:", err);
+      console.error("Error accessing camera:", err);
     }
   };
 
-  const analyzeFace = async () => {
-    if (!videoRef.current || !canvasRef.current || !isModelLoaded) return;
+  const takePicture = async () => {
+    if (!imageCapture) return;
+    
+    try {
+      const blob = await imageCapture.takePhoto();
+      const imgUrl = URL.createObjectURL(blob);
+      if (imageRef.current) {
+        imageRef.current.src = imgUrl;
+        imageRef.current.onload = () => analyzeFace(true);
+      }
+    } catch (err) {
+      console.error("Error taking photo:", err);
+    }
+  };
+
+  const analyzeFace = async (isImage = false) => {
+    if ((!videoRef.current && !isImage) || !canvasRef.current || !isModelLoaded) return;
 
     setAnalyzing(true);
 
-    // Clear any existing interval
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
 
-    // Create new interval for updating dots
-    intervalRef.current = setInterval(async () => {
+    const analyze = async () => {
+      const input = isImage ? imageRef.current : videoRef.current;
       const detections = await faceapi
-        .detectSingleFace(videoRef.current, new faceapi.TinyFaceDetectorOptions())
+        .detectSingleFace(input, new faceapi.TinyFaceDetectorOptions())
         .withFaceLandmarks();
 
       if (detections) {
@@ -67,28 +95,29 @@ const FaceScorer = () => {
         const nose = landmarks.getNose();
         const mouth = landmarks.getMouth();
 
-        // Draw landmarks on canvas
         const canvas = canvasRef.current;
-        const displaySize = { width: videoRef.current.videoWidth, height: videoRef.current.videoHeight };
+        const displaySize = { 
+          width: input.width || input.videoWidth, 
+          height: input.height || input.videoHeight 
+        };
         faceapi.matchDimensions(canvas, displaySize);
         
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
-        // Draw dots for each landmark
         const drawDot = (point, color = '#FF0000') => {
           ctx.beginPath();
-          ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI); // Increased dot size from 2 to 4
+          ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI);
           ctx.fillStyle = color;
           ctx.fill();
-          ctx.strokeStyle = '#000000'; // Add black outline
+          ctx.strokeStyle = '#000000';
           ctx.lineWidth = 1;
           ctx.stroke();
         };
-        // Draw all landmarks
+
         landmarks.positions.forEach(point => drawDot(point, '#FF0000'));
 
-        // Calculate measurements
+        // Rest of your measurement calculations...
         const headWidth = Math.abs(jawline[0].x - jawline[16].x);
 
         const leftEyeAvg = {
@@ -100,8 +129,8 @@ const FaceScorer = () => {
           y: rightEye.reduce((sum, point) => sum + point.y, 0) / rightEye.length
         };
 
-        drawDot(leftEyeAvg, "blue")
-        drawDot(rightEyeAvg, "blue")
+        drawDot(leftEyeAvg, "blue");
+        drawDot(rightEyeAvg, "blue");
 
         const eyeCenterDistance = Math.abs(leftEyeAvg.x - rightEyeAvg.x);
         const leftEyeWidth = Math.abs(leftEye[3].x - leftEye[0].x);
@@ -109,24 +138,22 @@ const FaceScorer = () => {
         const avgEyeWidth = (leftEyeWidth + rightEyeWidth) / 2;
 
         const eyeDistanceEdges = Math.abs(leftEye[3].x - rightEye[0].x);
-
         const eyeDistanceToWidthRatio = (eyeDistanceEdges / avgEyeWidth).toFixed(2);
 
-        const topLipHeight = Math.abs(mouth[14].y - mouth[9].y); // Upper lip height (middle points)
-        const bottomLipHeight = Math.abs(mouth[18].y - mouth[2].y); // Lower lip height (middle points)
+        const topLipHeight = Math.abs(mouth[14].y - mouth[9].y);
+        const bottomLipHeight = Math.abs(mouth[18].y - mouth[2].y);
         const lipRatio = (bottomLipHeight / topLipHeight).toFixed(2);
 
-        // Calculate nose tip to lips to chin ratio
-        const noseTop = nose[0]; // top of our nose
-        drawDot(noseTop, "blue")
+        const noseTop = nose[0];
+        drawDot(noseTop, "blue");
         const lipsCenter = {
           x: (mouth[14].x + mouth[18].x) / 2,
           y: (mouth[14].y + mouth[18].y) / 2
         };
-        drawDot(lipsCenter, "blue")
+        drawDot(lipsCenter, "blue");
 
-        const chinBottom = jawline[8]; // bottom point of chin
-        drawDot(chinBottom, "blue")
+        const chinBottom = jawline[8];
+        drawDot(chinBottom, "blue");
 
         const noseToLipsDistance = Math.abs(noseTop.y - lipsCenter.y);
         const lipsToChinDistance = Math.abs(lipsCenter.y - chinBottom.y);
@@ -146,7 +173,13 @@ const FaceScorer = () => {
           lipsToChinDistance: Math.round(lipsToChinDistance),
         });
       }
-    }, 100); // Update every 500ms (half second)
+    };
+
+    if (isImage) {
+      await analyze();
+    } else {
+      intervalRef.current = setInterval(analyze, 100);
+    }
 
     setAnalyzing(false);
   };
@@ -158,11 +191,12 @@ const FaceScorer = () => {
       </h1>
 
       <div className="relative">
+        {isMobile && <img ref={imageRef} className="hidden" />}
         <video
           ref={videoRef}
           autoPlay
           muted
-          onPlay={analyzeFace}
+          onPlay={() => !isMobile && analyzeFace()}
           width={640}
           height={480}
           className="w-full rounded-lg shadow-lg"
@@ -184,16 +218,26 @@ const FaceScorer = () => {
               onClick={startVideo}
               className="px-8 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
             >
-              Start Camera
+              {isMobile ? "Open Camera" : "Start Camera"}
             </button>
 
-            <button
-              onClick={analyzeFace}
-              disabled={analyzing}
-              className="px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:opacity-50"
-            >
-              {analyzing ? "Analyzing..." : "Analyze Face"}
-            </button>
+            {isMobile ? (
+              <button
+                onClick={takePicture}
+                disabled={analyzing || !imageCapture}
+                className="px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:opacity-50"
+              >
+                {analyzing ? "Analyzing..." : "Take Picture"}
+              </button>
+            ) : (
+              <button
+                onClick={() => analyzeFace()}
+                disabled={analyzing}
+                className="px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:opacity-50"
+              >
+                {analyzing ? "Analyzing..." : "Analyze Face"}
+              </button>
+            )}
 
             {measurements !== null && (
               <div className="mt-4 text-left w-full max-w-md">

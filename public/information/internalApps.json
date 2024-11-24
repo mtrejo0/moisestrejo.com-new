@@ -177,8 +177,15 @@
   {
     "name": "Pushups vs Followers",
     "description": "Track and compare your daily pushup count against your social media follower growth",
-    "id": "pushupsVsFollowers",
+    "id": "pushupsVsFollowers", 
     "type": "internal",
     "component": "PushupCountVsFollowers"
+  },
+  {
+    "name": "Face Measurements",
+    "description": "Analyze facial proportions and ratios using your camera or uploaded photos",
+    "id": "faceScorer",
+    "type": "internal",
+    "component": "FaceScorer"
   }
 ]
