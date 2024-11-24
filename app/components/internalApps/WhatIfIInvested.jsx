@@ -79,7 +79,7 @@ const WhatIfIInvested = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
+    <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
       <h2 className="text-2xl font-bold mb-4">What If I Invested?</h2>
       <div className="w-full max-w-md">
         <input
