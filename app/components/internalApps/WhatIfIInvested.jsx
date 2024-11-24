@@ -96,6 +96,8 @@ const WhatIfIInvested = () => {
         >
           <option value="">Select a ticker symbol</option>
           {[
+            { value: "BTC-USD", name: "BTC-USD - Bitcoin USD" },
+            { value: "ETH-USD", name: "ETH-USD - Ethereum USD" },
             { value: "AAPL", name: "AAPL - Apple Inc." },
             { value: "GOOGL", name: "GOOGL - Alphabet Inc." },
             { value: "MSFT", name: "MSFT - Microsoft Corporation" },
