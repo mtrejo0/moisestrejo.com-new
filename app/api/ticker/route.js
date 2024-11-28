@@ -5,6 +5,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const symbol = searchParams.get("symbol");
   const startDate = searchParams.get("startDate");
+  const interval = searchParams.get("interval") || "1mo";
 
   if (!symbol || !startDate) {
     return NextResponse.json(
@@ -14,12 +15,12 @@ export async function GET(request) {
   }
 
   try {
-    const endDate = new Date().toISOString().split("T")[0]; // Today's date
+    const endDate = new Date().toISOString().split("T")[0];
 
     const historicalData = await yahooFinance.historical(symbol, {
       period1: startDate,
       period2: endDate,
-      interval: "1mo", // Fetch data for every month instead of every day
+      interval,
     });
 
     return NextResponse.json(historicalData);

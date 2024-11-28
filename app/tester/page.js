@@ -1,9 +1,9 @@
 "use client";
 
-import FaceScorer from "../components/internalApps/FaceScorer";
+import StockShapes from "../components/internalApps/StockShapes.jsx"
 
 const Page = () => {
-  return <FaceScorer />;
+  return <StockShapes/>
 };
 
 export default Page;

@@ -187,5 +187,12 @@
     "id": "faceScorer",
     "type": "internal",
     "component": "FaceScorer"
+  },
+  {
+    "name": "Cat Facts",
+    "description": "Get random interesting facts about cats with fun animated emojis!",
+    "id": "catFacts",
+    "type": "internal",
+    "component": "CatFacts"
   }
 ]
