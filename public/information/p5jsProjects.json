@@ -414,8 +414,17 @@
     "description": [
       "When you smile CV detects your smile and gives you a fireworks show, my cheeks hurt from smiling so much!"
     ],
-    "id": "smile_fireworks",
+    "id": "smile_fireworks", 
     "href": "https://giphy.com/embed/XlWl4jew4qbAJS1QS8",
+    "redirect": true
+  },
+  {
+    "name": "Sisyphus",
+    "description": [
+      "Help Sisyphus push his boulder up the mountain, only for it to roll back down again. A metaphor for the human condition."
+    ],
+    "id": "sisyphus",
+    "href": "https://giphy.com/embed/UH3DqxA6yqyLewi2nD",
     "redirect": true
   }
 ]

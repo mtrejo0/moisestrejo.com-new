@@ -1,9 +1,9 @@
 "use client";
 
-import StockShapes from "../components/internalApps/StockShapes.jsx"
+import ChessHelp from "../components/internalApps/ChessHelp.jsx";
 
 const Page = () => {
-  return <StockShapes/>
+  return <ChessHelp/>
 };
 
 export default Page;
