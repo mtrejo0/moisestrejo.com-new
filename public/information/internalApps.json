@@ -194,5 +194,12 @@
     "id": "catFacts",
     "type": "internal",
     "component": "CatFacts"
+  },
+  {
+    "name": "College Checklist",
+    "description": "Track your progress through high school to get into college",
+    "id": "collegeChecklist",
+    "type": "internal",
+    "component": "CollegeChecklist"
   }
 ]
