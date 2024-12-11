@@ -233,7 +233,7 @@
     "name": "Fan Quiz",
     "description": "Pick a playlist and see if you can guess the song correctly. See your score at the end!",
     "resources": "Next.js, Spotify API",
-    "link": "https://fan-quiz.vercel.app/",
+    "link": "https://fanquiz.moisestrejo.com/guess",
     "id": "fan-quiz",
     "date": "November 2024"
   },
