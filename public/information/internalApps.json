@@ -199,7 +199,14 @@
     "name": "College Checklist",
     "description": "Track your progress through high school to get into college",
     "id": "collegeChecklist",
-    "type": "internal",
+    "type": "internal", 
     "component": "CollegeChecklist"
+  },
+  {
+    "name": "Chord Progression to MIDI",
+    "description": "Convert chord progressions to MIDI files for music production",
+    "id": "chords",
+    "type": "internal",
+    "component": "Chords"
   }
 ]
