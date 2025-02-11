@@ -211,9 +211,16 @@
   },
   {
     "name": "Chord Progression to MIDI",
-    "description": "Convert chord progressions to MIDI files for music production",
+    "description": "Convert chord progressions to MIDI files for music production", 
     "id": "chords",
     "type": "internal",
     "component": "Chords"
+  },
+  {
+    "name": "Competition Bracket",
+    "description": "Create and manage tournament brackets for competitions and events",
+    "id": "bracket",
+    "type": "internal",
+    "component": "CompetitionBracket"
   }
 ]
