@@ -203,6 +203,13 @@
     "component": "CollegeChecklist"
   },
   {
+    "name": "Slot Machine",
+    "description": "Try your luck with this virtual slot machine featuring emojis and animations!",
+    "id": "slotMachine",
+    "type": "internal",
+    "component": "Slots"
+  },
+  {
     "name": "Chord Progression to MIDI",
     "description": "Convert chord progressions to MIDI files for music production",
     "id": "chords",
