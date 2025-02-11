@@ -10,6 +10,8 @@ const CompetitionBracket = () => {
   const [newTeamName, setNewTeamName] = useState("");
   const [rounds, setRounds] = useState({});
   const [matchResults, setMatchResults] = useState({});
+  const [loserRounds, setLoserRounds] = useState({});
+  const [loserMatchResults, setLoserMatchResults] = useState({});
 
   const updateTeamName = (index, newName) => {
     const updatedTeams = [...teams];
@@ -25,18 +27,59 @@ const CompetitionBracket = () => {
   };
 
   const handleTeamWin = (winningTeam, losingTeam, roundIndex, matchIndex) => {
-    // Check if match has already been decided
     const matchKey = `${roundIndex}-${matchIndex}`;
     if (matchResults[matchKey]) return;
 
-    // Update match results
     setMatchResults(prev => ({
       ...prev,
       [matchKey]: winningTeam
     }));
 
-    // Update rounds
+    // Update rounds for winners bracket
     setRounds(prev => {
+      const nextRound = roundIndex + 1;
+      const nextMatchIndex = Math.floor(matchIndex / 2);
+      
+      return {
+        ...prev,
+        [nextRound]: {
+          ...prev[nextRound],
+          [nextMatchIndex]: [
+            ...(prev[nextRound]?.[nextMatchIndex] || []),
+            winningTeam
+          ]
+        }
+      };
+    });
+
+    // Add losing team to losers bracket if it's the first round
+    if (roundIndex === 0 && losingTeam) {
+      setLoserRounds(prev => {
+        const loserMatchIndex = Math.floor(matchIndex / 2);
+        return {
+          ...prev,
+          0: {
+            ...prev[0],
+            [loserMatchIndex]: [
+              ...(prev[0]?.[loserMatchIndex] || []),
+              losingTeam
+            ]
+          }
+        };
+      });
+    }
+  };
+
+  const handleLoserWin = (winningTeam, losingTeam, roundIndex, matchIndex) => {
+    const matchKey = `${roundIndex}-${matchIndex}`;
+    if (loserMatchResults[matchKey]) return;
+
+    setLoserMatchResults(prev => ({
+      ...prev,
+      [matchKey]: winningTeam
+    }));
+
+    setLoserRounds(prev => {
       const nextRound = roundIndex + 1;
       const nextMatchIndex = Math.floor(matchIndex / 2);
       
@@ -125,6 +168,66 @@ const CompetitionBracket = () => {
     ));
   };
 
+  const renderLoserMatch = (teams, roundIndex, matchIndex) => {
+    if (!teams || teams.length === 0) return null;
+    
+    const matchKey = `${roundIndex}-${matchIndex}`;
+    const isMatchDecided = loserMatchResults[matchKey];
+    const [team1, team2] = teams;
+
+    if (team1 && !team2) {
+      return (
+        <div className="p-2 border border-gray-300 rounded">
+          <button
+            className={`px-4 py-2 text-left rounded ${
+              isMatchDecided ? "bg-green-200" : "bg-gray-100 hover:bg-blue-100"
+            }`}
+            onClick={() => handleLoserWin(team1, null, roundIndex, matchIndex)}
+            disabled={isMatchDecided}
+          >
+            {team1} (Bye)
+          </button>
+        </div>
+      );
+    }
+
+    return (
+      <div className="p-2 border border-gray-300 rounded">
+        <div className="flex gap-4">
+          {[team1, team2].map((team, idx) => (
+            <Fragment key={idx}>
+              {idx > 0 && <span className="self-center">vs</span>}
+              <button
+                className={`px-4 py-2 text-left rounded ${
+                  isMatchDecided
+                    ? isMatchDecided === team
+                      ? "bg-green-200"
+                      : "bg-red-200"
+                    : "bg-white hover:bg-blue-100"
+                }`}
+                onClick={() => handleLoserWin(team, idx === 0 ? team2 : team1, roundIndex, matchIndex)}
+                disabled={isMatchDecided}
+              >
+                {team}
+              </button>
+            </Fragment>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderLoserRound = (roundIndex) => {
+    const matches = loserRounds[roundIndex] || {};
+    const matchCount = Object.keys(matches).length || Math.floor(teams.length / 4);
+
+    return Array.from({ length: matchCount }, (_, i) => (
+      <div key={i} className="flex-shrink-0">
+        {renderLoserMatch(matches[i], roundIndex, i)}
+      </div>
+    ));
+  };
+
   return (
     <div className="p-4 bg-white">
       <div className="mb-6">
@@ -158,19 +261,41 @@ const CompetitionBracket = () => {
         </div>
         
         <div className="flex flex-col gap-8">
-          {Array.from(
-            { length: Math.ceil(Math.log2(teams.length)) },
-            (_, i) => (
-              <div key={i}>
-                <h2 className="font-bold mb-4 text-center">
-                  {i === 0 ? "Initial Round" : `Round ${i + 1}`}
-                </h2>
-                <div className="flex gap-4 overflow-x-auto pb-4 justify-center">
-                  {renderRound(i)}
+          {/* Winners Bracket */}
+          <div>
+            <h2 className="font-bold mb-4 text-center text-xl">Winners Bracket</h2>
+            {Array.from(
+              { length: Math.ceil(Math.log2(teams.length)) },
+              (_, i) => (
+                <div key={i}>
+                  <h3 className="font-bold mb-4 text-center">
+                    {i === 0 ? "Initial Round" : `Round ${i + 1}`}
+                  </h3>
+                  <div className="flex gap-4 overflow-x-auto pb-4 justify-center">
+                    {renderRound(i)}
+                  </div>
                 </div>
-              </div>
-            )
-          )}
+              )
+            )}
+          </div>
+
+          {/* Losers Bracket */}
+          <div>
+            <h2 className="font-bold mb-4 text-center text-xl">Losers Bracket</h2>
+            {Array.from(
+              { length: Math.ceil(Math.log2(teams.length)) - 1 },
+              (_, i) => (
+                <div key={i}>
+                  <h3 className="font-bold mb-4 text-center">
+                    Round {i + 1}
+                  </h3>
+                  <div className="flex gap-4 overflow-x-auto pb-4 justify-center">
+                    {renderLoserRound(i)}
+                  </div>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>
