@@ -222,5 +222,12 @@
     "id": "bracket",
     "type": "internal",
     "component": "CompetitionBracket"
+  },
+  {
+    "name": "Bad Volume UI",
+    "description": "My stab at making a bad UI experience",
+    "id": "badVolume",
+    "type": "internal",
+    "component": "BadVolume"
   }
 ]
