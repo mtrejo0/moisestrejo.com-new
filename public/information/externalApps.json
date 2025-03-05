@@ -133,14 +133,6 @@
     "date": "May 2023"
   },
   {
-    "name": "UR Dice",
-    "description": "Roll the dice in a game of UR!",
-    "resources": "React.JS, Typescript",
-    "link": "https://mtrejo0.github.io/ur/",
-    "id": "ur",
-    "date": "May 2023"
-  },
-  {
     "name": "Greenhouse Emissions",
     "description": "CO2 emissions by tons by country",
     "resources": "React.JS, Typescript",

@@ -229,5 +229,12 @@
     "id": "badVolume",
     "type": "internal",
     "component": "BadVolume"
+  },
+  {
+    "name": "UR Dice",
+    "description": "Roll the dice in a game of UR!",
+    "id": "ur",
+    "type": "internal",
+    "component": "UrDice"
   }
 ]
