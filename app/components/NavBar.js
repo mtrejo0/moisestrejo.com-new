@@ -11,6 +11,7 @@ const navItems = [
   { path: "/resume", label: "Resume" },
   { path: "/p5art", label: "P5 Art" },
   { path: "/art", label: "Art" },
+  { path: "/music", label: "Music" },
   { path: "/blog", label: "Medium" },
   { path: "/contact", label: "Contact" },
 ];
