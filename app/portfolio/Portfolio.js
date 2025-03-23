@@ -85,7 +85,7 @@ const ExternalApp = ({ app }) => {
   )
 }
 
-const InternalApp = ({ app }) => {
+export const InternalApp = ({ app }) => {
   const AppComponent = dynamic(() => import(`../components/internalApps/${app.component}`), {
     loading: () => <p>Loading...</p>,
     ssr: false

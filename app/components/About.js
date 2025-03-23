@@ -4,14 +4,40 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import Comments from "./Comments";
+import Link from "next/link";
+import p5jsProjects from "../../public/information/p5jsProjects.json";
+import internalApps from "../../public/information/internalApps.json";
+import dynamic from 'next/dynamic';
 
 const About = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState(0);
 
+  const [randomProject, setRandomProject] = useState(null);
+  const [randomInternalApp, setRandomInternalApp] = useState(null);
+
+  const AppComponent = randomInternalApp && dynamic(() => import(`../components/internalApps/${randomInternalApp.component}`), {
+    loading: () => <p>Loading...</p>,
+    ssr: false
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * p5jsProjects.length);
+      const project = p5jsProjects[randomIndex];
+      setRandomProject(project);
+
+      const randomAppIndex = Math.floor(Math.random() * internalApps.length);
+      const app = internalApps[randomAppIndex];
+      setRandomInternalApp(app);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const interests = [
     "Computer Science",
-    "Design",
+    "Design", 
     "Entrepreneurship",
     "Making: 3D printing, laser cutting, embedded systems",
     "Cooking",
@@ -25,7 +51,7 @@ const About = () => {
     "Music: Music Producing, DJing",
     "Comedy",
     "Video Editing",
-    "Literature",
+    "Literature", 
     "Urban Planning",
     "the list goes on...",
   ];
@@ -78,6 +104,8 @@ const About = () => {
             </ul>
           </li>
         </ul>
+
+  
         {/* <h2 className="text-2xl font-semibold mb-4">I love all of the following:</h2>
         <ul className="list-disc list-inside space-y-2">
           {interests.map((interest, index) => (
@@ -85,7 +113,49 @@ const About = () => {
           ))}
         </ul> */}
       </div>
+
+      {randomProject && (
+        <div className="mt-8 bg-white">
+          <h2 className="text-2xl font-semibold mb-4 ">Random P5.js Art:</h2>
+          <div className="flex justify-center mb-4">
+            <iframe 
+              src={"https://p5moises-27cba0c96786.herokuapp.com/"+randomProject.id}
+              width="100%" 
+              height="400" 
+              className="border-0"
+              title="P5.js Art"
+            />
+          </div>
+          <div className="text-center">
+            <Link 
+              href="/p5Art" 
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              See more P5.js artwork here →
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {randomInternalApp && (
+        <div className="mt-8 bg-white">
+          <h2 className="text-2xl font-semibold mb-4">Random Internal App:</h2>
+          <div className="flex justify-center mb-4 h-96 overflow-scroll">
+            <AppComponent/>
+          </div>
+          <div className="text-center">
+            <Link 
+              href="/portfolio" 
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              See more apps here →
+            </Link>
+          </div>
+        </div>
+      )}
+
       <Comments />
+
     </div>
   );
 };
