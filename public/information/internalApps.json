@@ -236,5 +236,12 @@
     "id": "ur",
     "type": "internal",
     "component": "UrDice"
+  },
+  {
+    "name": "GitHub Contribution Grid",
+    "description": "Create your own GitHub-style contribution grid by clicking squares to fill them in",
+    "id": "fakeGithub",
+    "type": "internal",
+    "component": "FakeGithub"
   }
 ]
