@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function ContributionGrid() {
   // Define months and days
@@ -13,15 +13,36 @@ export default function ContributionGrid() {
     .map(() => Array(52).fill(0))
   const [grid, setGrid] = useState(initialGrid)
   const [contributions, setContributions] = useState(0)
+  const [isShiftPressed, setIsShiftPressed] = useState(false)
 
-  // Toggle cell color when clicked
-  const toggleCell = (row, col) => {
+  // Add event listeners for shift key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Shift') setIsShiftPressed(true)
+    }
+    const handleKeyUp = (e) => {
+      if (e.key === 'Shift') setIsShiftPressed(false)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+    }
+  }, [])
+
+  // Modify toggleCell to accept an optional value parameter
+  const toggleCell = (row, col, value) => {
     const newGrid = [...grid]
-    // Increment value up to 4, then back to 0
-    newGrid[row][col] = newGrid[row][col] === 4 ? 0 : newGrid[row][col] + 2
+    if (value !== undefined) {
+      newGrid[row][col] = value
+    } else {
+      newGrid[row][col] = newGrid[row][col] === 4 ? 0 : newGrid[row][col] + 2
+    }
     setGrid(newGrid)
 
-    // Count total contributions
     const total = newGrid.flat().filter((cell) => cell > 0).length
     setContributions(total)
   }
@@ -178,6 +199,9 @@ export default function ContributionGrid() {
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.backgroundColor = getHoverColor(cell)
+                    if (isShiftPressed) {
+                      toggleCell(rowIndex, colIndex, 2)
+                    }
                   }}
                   onMouseOut={(e) => {
                     e.currentTarget.style.backgroundColor = getCellColor(cell)
