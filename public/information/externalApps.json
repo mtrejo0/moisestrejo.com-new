@@ -144,7 +144,7 @@
     "name": "Birthday Billboard!",
     "description": "See the billboard top 10 from your birthday and share it on twitter!",
     "resources": "React.JS, Typescript, AWS Lambda",
-    "link": "https://mtrejo0.github.io/birthday-billboard/",
+    "link": "https://birthday-billboard.vercel.app/",
     "id": "billboard",
     "date": "June 2023"
   },
