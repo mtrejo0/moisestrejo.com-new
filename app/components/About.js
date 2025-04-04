@@ -122,7 +122,7 @@ const About = () => {
               src={"https://p5moises-27cba0c96786.herokuapp.com/"+randomProject.id}
               width="100%" 
               height="400" 
-              className="border-0"
+              className="border rounded-lg shadow-lg"
               title="P5.js Art"
             />
           </div>
@@ -140,8 +140,10 @@ const About = () => {
       {randomInternalApp && (
         <div className="mt-8 bg-white">
           <h2 className="text-2xl font-semibold mb-4">Random Internal App:</h2>
-          <div className="flex justify-center mb-4 h-96 overflow-scroll">
-            <AppComponent/>
+          <div className="flex justify-center mb-4 h-96 overflow-scroll rounded-lg shadow-lg">
+            <div className="border w-full">
+              <AppComponent/>
+            </div>
           </div>
           <div className="text-center">
             <Link 
