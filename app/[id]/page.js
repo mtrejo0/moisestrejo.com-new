@@ -93,13 +93,13 @@ export default async function Page({ params }) {
   const p5Project = p5jsProjects.find((project) => project.id.toLowerCase() === lowerId);
   if (p5Project) {
     if (p5Project.redirect) {
-      redirect(`http://18.119.17.181:8000/${p5Project.id}`);
+      redirect(`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`);
     }
     return (
       <>
         <div className="relative w-full h-screen">
           <a 
-            href={`http://18.119.17.181:8000/${p5Project.id}`}
+            href={`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
             target="_blank"
             rel="noopener noreferrer" 
             className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md z-10"
@@ -107,7 +107,7 @@ export default async function Page({ params }) {
             View Full Screen
           </a>
           <iframe
-            src={`http://18.119.17.181:8000/${p5Project.id}`}
+            src={`${provess.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
             className="w-full h-full border-0"
             title={p5Project.name}
           />

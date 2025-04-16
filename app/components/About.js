@@ -68,6 +68,8 @@ const About = () => {
       });
   }, []);
 
+  console.log(process.env.NEXT_PUBLIC_P5)
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="bg-white rounded-lg shadow-md overflow-hidden p-6 mb-12">
@@ -119,7 +121,7 @@ const About = () => {
           <h2 className="text-2xl font-semibold mb-4 ">Random P5.js Art:</h2>
           <div className="flex justify-center mb-4">
             <iframe 
-              src={"http://18.119.17.181:8000/"+randomProject.id}
+              src={`${process.env.NEXT_PUBLIC_P5}/${randomProject.id}`}
               width="100%" 
               height="400" 
               className="border rounded-lg shadow-lg"

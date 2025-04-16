@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { ExternalLink, Play, Loader2 } from "lucide-react";
 import p5jsProjects from "../../public/information/p5jsProjects.json";
 import AppListDisplay from "../components/AppListDisplay";
@@ -8,42 +8,17 @@ import AppListDisplay from "../components/AppListDisplay";
 const P5App = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
-  const iframeRef = useRef(null);
 
-  const link = `http://18.119.17.181:8000/${app.id}`;
+  const link = `${process.env.NEXT_PUBLIC_P5}/${app.id}`;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1
-      }
-    );
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
 
-    if (iframeRef.current) {
-      observer.observe(iframeRef.current);
-    }
-
-    return () => {
-      if (iframeRef.current) {
-        observer.unobserve(iframeRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      setIsLoading(true);
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, app.id]);
+    return () => clearTimeout(timer);
+  }, [app.id]);
 
   return (
     <div
@@ -92,25 +67,18 @@ const P5App = ({ app }) => {
         </div>
       )}
 
-      <div 
-        ref={iframeRef}
-        className={`transition-all duration-300 h-[400px] sm:h-[600px]`}
-      >
-        {isLoading && isVisible ? (
+      <div className={`transition-all duration-300 h-[400px] sm:h-[600px]`}>
+        {isLoading ? (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
-        ) : isVisible ? (
+        ) : (
           <iframe
-            src={`http://18.119.17.181:8000/${app.id}`}
+            src={`${process.env.NEXT_PUBLIC_P5}/${app.id}`}
             title={app.id}
             className="w-full h-full border-t border-gray-200"
             onLoad={() => setIsLoading(false)}
           />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gray-100">
-            <p className="text-gray-500">Scroll to view</p>
-          </div>
         )}
       </div>
     </div>
@@ -122,7 +90,7 @@ const P5Art = () => {
 
   return (
     <AppListDisplay
-      apps={p5jsProjects}
+      apps={p5jsProjects.slice(1, 5)}
       displayApp={displayApp}
       subRoute="p5art"
     />
