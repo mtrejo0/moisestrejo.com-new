@@ -119,7 +119,7 @@ const About = () => {
           <h2 className="text-2xl font-semibold mb-4 ">Random P5.js Art:</h2>
           <div className="flex justify-center mb-4">
             <iframe 
-              src={"https://p5moises-27cba0c96786.herokuapp.com/"+randomProject.id}
+              src={"http://18.119.17.181:8000/"+randomProject.id}
               width="100%" 
               height="400" 
               className="border rounded-lg shadow-lg"

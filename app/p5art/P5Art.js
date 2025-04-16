@@ -9,7 +9,7 @@ const P5App = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const link = `https://p5moises-27cba0c96786.herokuapp.com/${app.id}`;
+  const link = `http://18.119.17.181:8000/${app.id}`;
 
   useEffect(() => {
     setIsLoading(true);
@@ -74,7 +74,7 @@ const P5App = ({ app }) => {
           </div>
         ) : (
           <iframe
-            src={`https://p5moises-27cba0c96786.herokuapp.com/${app.id}`}
+            src={`http://18.119.17.181:8000/${app.id}`}
             title={app.id}
             className="w-full h-full border-t border-gray-200"
           />
