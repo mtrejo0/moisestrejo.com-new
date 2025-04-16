@@ -243,5 +243,19 @@
     "id": "fakeGithub",
     "type": "internal",
     "component": "FakeGithub"
+  },
+  {
+    "name": "Code Fake",
+    "description": "Pretend like youre writing some cool code, hacking into the main frame, and saving the world",
+    "id": "codeFake",
+    "type": "internal",
+    "component": "CodeFake"
+  },
+  {
+    "name": "GPT Skin",
+    "description": "Add your open api key and use this new skin!",
+    "id": "gptSkin",
+    "type": "internal",
+    "component": "GPTSkin"
   }
 ]
