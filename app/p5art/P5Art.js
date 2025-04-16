@@ -90,7 +90,7 @@ const P5Art = () => {
 
   return (
     <AppListDisplay
-      apps={p5jsProjects.slice(1, 5)}
+      apps={p5jsProjects}
       displayApp={displayApp}
       subRoute="p5art"
     />
