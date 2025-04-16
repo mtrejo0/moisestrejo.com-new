@@ -107,7 +107,7 @@ export default async function Page({ params }) {
             View Full Screen
           </a>
           <iframe
-            src={`${provess.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
+            src={`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
             className="w-full h-full border-0"
             title={p5Project.name}
           />
