@@ -73,9 +73,6 @@ const Comments = () => {
 
   return (
     <div className="space-y-6 bg-white p-6 rounded-lg">
-      <h2 className="text-2xl font-semibold mb-4 text-center">
-        Sign my guestbook!
-      </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <input
