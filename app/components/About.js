@@ -356,7 +356,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">My Diverse Interests</h3>
-                <p className="text-sm text-gray-500 mb-4">I'm passionate about many things</p>
+                <p className="text-sm text-gray-500 mb-4">Im passionate about many things</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {interests.slice(0, 15).map((interest, index) => (
                     <motion.div
@@ -423,7 +423,7 @@ const About = () => {
                   <span className="mr-2">&#128736;</span>
                   Internal Applications
                 </h3>
-                <p className="text-sm text-purple-100">Tools and applications I've built</p>
+                <p className="text-sm text-purple-100">Tools and applications Ive built</p>
               </div>
               <div className="p-0">
                 {randomInternalApp && (
