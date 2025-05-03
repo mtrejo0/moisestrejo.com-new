@@ -11,7 +11,7 @@ export const metadata = {
   },
 };
 
-export const Page = () => {
+const Page = () => {
   return (
     <Spotify/>
   );
