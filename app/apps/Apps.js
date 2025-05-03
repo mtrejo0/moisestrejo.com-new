@@ -3,11 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ExternalLink, Loader2 } from 'lucide-react'
 import externalApps from "../../public/information/externalApps.json"
-import internalApps from "../../public/information/internalApps.json"
 import AppListDisplay from '../components/AppListDisplay'
-import dynamic from 'next/dynamic'
-import Link from 'next/link'
-
 
 const ExternalApp = ({ app }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -85,55 +81,20 @@ const ExternalApp = ({ app }) => {
   )
 }
 
-export const InternalApp = ({ app }) => {
-  const AppComponent = dynamic(() => import(`../components/internalApps/${app.component}`), {
-    loading: () => <p>Loading...</p>,
-    ssr: false
-  })
-
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden lg:min-h-[60vh]">
-      <div className="p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center justify-between">
-          <a 
-            href={`/${app.id}`}
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200 flex items-center"
-          >
-            {app.name}
-            <ExternalLink className="ml-2 h-5 w-5" />
-          </a>
-        </h2>
-        <p className="text-gray-600 mb-4">{app.description}</p>
-        {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
-        <div className='h-[600px]'>
-          <AppComponent />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const Portfolio = () => {
+const Apps = () => {
   const displayApp = (app) => {
-    if (app.type === 'internal') {
-      return <InternalApp app={app} />
-    } else {
       return <ExternalApp app={app} />
-    }
   }
 
   const sortedExternalApps = externalApps.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const allApps = [...sortedExternalApps, ...internalApps];
 
   return (
     <AppListDisplay
-      apps={allApps}
+      apps={sortedExternalApps}
       displayApp={displayApp}
       subRoute="portfolio"
     />
   )
 }
 
-export default Portfolio
+export default Apps

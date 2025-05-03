@@ -15,8 +15,7 @@
     ],
     "id": "dj_vis",
     "video": "j-UYMUW4Ehw",
-    "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu",
-    "youtubeLink": ""
+    "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu"
   },
   {
     "name": "Maze path finder",
@@ -432,6 +431,7 @@
       "A 3D recreation of the classic Windows pipes screensaver. Watch as colorful pipes grow and wind their way through 3D space."
     ],
     "id": "pipes3D",
-    "href": "https://giphy.com/embed/TmvUwF0MJ4bIBVRskQ"
+    "href": "https://giphy.com/embed/TmvUwF0MJ4bIBVRskQ",
+    "timeout": 10 
   }
 ]

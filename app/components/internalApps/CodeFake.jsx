@@ -111,6 +111,9 @@ const CodeFake = () => {
 
   return (
     <div className="bg-black min-h-[90vh] p-8">
+      {displayedCode.length === 0 && (
+        <div className="text-[#11ff11] mb-4">Type on your keyboard to see the code!</div>
+      )}
       <pre className="text-[#11ff11] font-mono whitespace-pre-wrap">
         {displayedCode.join('')}
       </pre>

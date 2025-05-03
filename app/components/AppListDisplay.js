@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useInView } from "react-intersection-observer";
-import ProjectLikes from "./ProjectLikes";
+// import ProjectLikes from "./ProjectLikes";  // Comment out import
 import { Shuffle, Search, ChevronDown } from "lucide-react";
 
 export default function AppListDisplay({ apps, displayApp, subRoute }) {
@@ -27,7 +27,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   const searchParams = useSearchParams();
   const [activeApp, setActiveApp] = useState(null);
   const [sortedApps, setSortedApps] = useState([]);
-  const [appLikes, setAppLikes] = useState({});
+  // const [appLikes, setAppLikes] = useState({});  // Comment out state
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredApps, setFilteredApps] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -42,35 +42,36 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   useEffect(() => {
     const fetchLikesAndSortApps = async () => {
       try {
-        const response = await fetch("/api/like/all");
-        const data = await response.json();
-        const projectsWithLikes = data.projects;
+        // Comment out likes fetching
+        // const response = await fetch("/api/like/all");
+        // const data = await response.json();
+        // const projectsWithLikes = data.projects;
 
-        const likesMap = projectsWithLikes.reduce((acc, project) => {
-          acc[project.id] = project.likeCount;
-          return acc;
-        }, {});
+        // const likesMap = projectsWithLikes.reduce((acc, project) => {
+        //   acc[project.id] = project.likeCount;
+        //   return acc;
+        // }, {});
 
-        setAppLikes(likesMap);
+        // setAppLikes(likesMap);
 
-        const sortedApps = apps.sort((a, b) => {
-          const aLikes = likesMap[a.id] || 0;
-          const bLikes = likesMap[b.id] || 0;
-          return bLikes - aLikes;
-        });
+        // const sortedApps = apps.sort((a, b) => {
+        //   const aLikes = likesMap[a.id] || 0;
+        //   const bLikes = likesMap[b.id] || 0;
+        //   return bLikes - aLikes;
+        // });
 
-        setSortedApps(sortedApps);
-        setFilteredApps(sortedApps);
+        setSortedApps(apps);
+        setFilteredApps(apps);
 
         const queryId = searchParams.get("id");
         if (queryId) {
           const initialApp =
-            sortedApps.find((app) => app.id === (queryId || id)) ||
-            sortedApps[0];
+            apps.find((app) => app.id === (queryId || id)) ||
+            apps[0];
           setActiveApp(initialApp);
         }
       } catch (error) {
-        console.error("Error fetching likes:", error);
+        console.error("Error:", error);
         setSortedApps(apps);
         setFilteredApps(apps);
       }
@@ -157,7 +158,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
             key={activeApp.id}
             app={activeApp}
             displayApp={displayApp}
-            likeCount={appLikes[activeApp.id]}
+            // likeCount={appLikes[activeApp.id]}  // Comment out prop
           />
         )}
         {filteredApps
@@ -167,7 +168,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
               key={app.id}
               app={app}
               displayApp={displayApp}
-              likeCount={appLikes[app.id]}
+              // likeCount={appLikes[app.id]}  // Comment out prop
             />
           ))}
       </div>
@@ -175,7 +176,7 @@ function AppListDisplayContent({ apps, displayApp, subRoute, id, router }) {
   );
 }
 
-function LazyLoadedApp({ app, displayApp, likeCount }) {
+function LazyLoadedApp({ app, displayApp }) {  // Remove likeCount from props
   const { ref, inView } = useInView({
     triggerOnce: true,
     rootMargin: "200px 0px",
@@ -185,9 +186,10 @@ function LazyLoadedApp({ app, displayApp, likeCount }) {
     <div ref={ref} className="bg-white p-3 sm:p-6 rounded-lg relative">
       {inView ? (
         <>
-          <div className="absolute top-8 right-8 z-2">
+          {/* Comment out the likes display */}
+          {/* <div className="absolute top-8 right-8 z-2">
             <ProjectLikes projectId={app.id} initialLikeCount={likeCount} />
-          </div>
+          </div> */}
           {displayApp(app)}
         </>
       ) : (

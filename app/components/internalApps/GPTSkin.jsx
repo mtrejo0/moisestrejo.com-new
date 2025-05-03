@@ -142,7 +142,7 @@ const GPTSkin = () => {
   };
 
   return (
-    <div className="bg-black min-h-[90vh] relative text-[#11ff11] mb-[-132px] pl-8">
+    <div className="bg-black  relative text-[#11ff11] mb-[-132px] pl-8">
       {/* Icons */}
       <div className="absolute top-4 right-4 flex gap-3">
         <div 
@@ -254,7 +254,7 @@ const GPTSkin = () => {
 
       <div 
         ref={messagesContainerRef}
-        className="overflow-y-auto h-[calc(100vh-180px)] pt-16"
+        className="overflow-y-auto min-h-96 pt-16"
       >
         <div className="flex flex-col">
           {lines.map((l, index) => (

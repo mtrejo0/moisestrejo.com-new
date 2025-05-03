@@ -8,6 +8,7 @@ import AppListDisplay from "../components/AppListDisplay";
 const P5App = ({ app }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showApp, setShowApp] = useState(true);
 
   const link = `${process.env.NEXT_PUBLIC_P5}/${app.id}`;
 
@@ -20,6 +21,15 @@ const P5App = ({ app }) => {
     return () => clearTimeout(timer);
   }, [app.id]);
 
+  useEffect(() => {
+    if (app.timeout) {
+      const hideTimer = setTimeout(() => {
+        setShowApp(false);
+      }, app.timeout * 1000);
+
+      return () => clearTimeout(hideTimer);
+    }
+  }, [app.timeout]);
   return (
     <div
       className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300`}
@@ -31,7 +41,7 @@ const P5App = ({ app }) => {
               href={link}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-blue-600 transition-colors duration-200 flex items-center"
+              className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200 flex items-center"
             >
               {app.name}
               <ExternalLink className="ml-2 h-5 w-5" />
@@ -43,42 +53,24 @@ const P5App = ({ app }) => {
             {desc}
           </p>
         ))}
-
-        {app.youtubeLink && (
-          <button
-            onClick={() => setShowVideo(!showVideo)}
-            className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center hover:bg-red-700 transition-colors duration-200 mt-4"
-          >
-            <Play className="mr-2 h-5 w-5" />
-            {showVideo ? "Hide" : "Watch"} Video
-          </button>
-        )}
       </div>
-
-      {showVideo && app.youtubeLink && (
-        <div className="aspect-w-16 aspect-h-9 mb-4 px-6">
-          <iframe
-            src={app.youtubeLink}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            title={app.name}
-            className="w-full h-full rounded-lg"
-          />
-        </div>
-      )}
 
       <div className={`transition-all duration-300 h-[400px] sm:h-[600px]`}>
         {isLoading ? (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
           </div>
-        ) : (
+        ) : showApp ? (
           <iframe
             src={`${process.env.NEXT_PUBLIC_P5}/${app.id}`}
             title={app.id}
             className="w-full h-full border-t border-gray-200"
             onLoad={() => setIsLoading(false)}
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gray-100">
+            <p className="text-gray-600">App hidden for performance reasons.</p>
+          </div>
         )}
       </div>
     </div>
@@ -90,7 +82,7 @@ const P5Art = () => {
 
   return (
     <AppListDisplay
-      apps={p5jsProjects}
+      apps={[...p5jsProjects].reverse()}
       displayApp={displayApp}
       subRoute="p5art"
     />
