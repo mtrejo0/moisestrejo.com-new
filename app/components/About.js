@@ -151,7 +151,7 @@ const About = () => {
   )
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-gray-50 to-white">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -432,7 +432,7 @@ const About = () => {
         </div>
       </motion.div>
 
-      <SectionDivider title="My Art" icon="🎨" color="from-yellow-600 to-orange-600" />
+      <SectionDivider title="Artwork" icon="🎨" color="from-yellow-600 to-orange-600" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -493,7 +493,7 @@ const About = () => {
         <div className="bg-gradient-to-r from-pink-600 to-red-600 p-4 text-white">
           <h3 className="text-xl font-semibold flex items-center">
             <span className="mr-2">🎵</span>
-            Music Production
+            Music
           </h3>
           <p className="text-sm text-pink-100">Check out my latest tracks and remixes</p>
         </div>
@@ -513,70 +513,68 @@ const About = () => {
 
       {/* Medium Articles Section */}
       <SectionDivider title="Medium Articles" icon="📝" color="from-gray-600 to-gray-800" />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow p-6 mb-12"
+        className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden mb-12"
       >
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-semibold">Latest Article:</h3>
-          <Link
-            href="/blog"
-            className="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-md flex items-center transition-colors text-sm"
-          >
-            See more <span className="ml-2">→</span>
-          </Link>
+        <div className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 p-4 text-white">
+          <h3 className="text-xl font-semibold flex items-center">
+            <span className="mr-2">📝</span>
+            Latest Article
+          </h3>
+          <p className="text-sm text-emerald-100">Read my thoughts and tutorials</p>
         </div>
 
-        <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-          {articles && articles[0] ? (
-            <>
-              <div className="p-4">
-                <h4 className="font-semibold text-lg mb-2">{articles[0].title}</h4>
-                <p className="text-gray-600 text-sm mb-3">
-                  {articles[0].description.replace(/<[^>]*>/g, '').replace(/Summary/g, '').split(' ').slice(0, 120).join(' ')}...
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-500">
-                    {new Date(articles[0].pubDate).toLocaleDateString()}
-                  </span>
-                  <a 
-                    href={articles[0].link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 text-sm flex items-center"
-                  >
-                    Read more 
-                    <span className="ml-1">→</span>
-                  </a>
+        <div className="p-6">
+          <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+            {articles && articles[0] ? (
+              <>
+                <div className="p-4">
+                  <h4 className="font-semibold text-lg mb-2">{articles[0].title}</h4>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {articles[0].description.replace(/<[^>]*>/g, '').replace(/Summary/g, '').split(' ').slice(0, 120).join(' ')}...
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-gray-500">
+                      {new Date(articles[0].pubDate).toLocaleDateString()}
+                    </span>
+                    <a 
+                      href={articles[0].link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 text-sm flex items-center"
+                    >
+                      Read more 
+                      <span className="ml-1">→</span>
+                    </a>
+                  </div>
                 </div>
+              </>
+            ) : (
+              <div className="p-4 text-center text-gray-500">
+                Loading latest article...
               </div>
-            </>
-          ) : (
-            <div className="p-4 text-center text-gray-500">
-              Loading latest article...
-            </div>
-          )}
+            )}
+          </div>
+        </div>
+
+        <div className="bg-gray-50 p-4 flex justify-end">
+          <Link
+            href="/blog"
+            className="flex items-center text-gray-600 hover:text-gray-800 font-medium text-sm"
+          >
+            See all articles
+            <span className="ml-1">→</span>
+          </Link>
         </div>
       </motion.div>
 
       <ContactPageClient/>
 
-      {/* Comments Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-        className="bg-white rounded-lg shadow-md p-6"
-      >
-        <h2 className="text-2xl font-semibold mb-6 flex items-center">
-          <span className="mr-2">&#128172;</span>
-          Leave a Comment
-        </h2>
-        <Comments />
-      </motion.div>
+      
+      <Comments />
 
     </div>
   )
