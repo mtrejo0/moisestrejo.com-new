@@ -257,5 +257,12 @@
     "id": "gptSkin",
     "type": "internal",
     "component": "GPTSkin"
+  },
+  {
+    "name": "Tier List",
+    "description": "Put each item in a tier!",
+    "id": "tierList",
+    "type": "internal",
+    "component": "TierApp"
   }
 ]
