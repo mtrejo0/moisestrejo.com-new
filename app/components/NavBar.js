@@ -14,7 +14,6 @@ const navItems = [
   { path: "/art", label: "Art" },
   { path: "/music", label: "Music" },
   { path: "/blog", label: "Medium" },
-  { path: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

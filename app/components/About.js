@@ -12,6 +12,7 @@ import { motion } from "framer-motion"
 import ContactPageClient from "../contact/ContactPageClient"
 import SpotifyPage from "../music/Spotify"
 import artList from "../../public/information/art.json"
+import { RefreshCw } from "lucide-react"
 
 const About = () => {
   const [loading, setLoading] = useState(true)
@@ -196,21 +197,15 @@ const About = () => {
             Software Engineer | Creative Coder | MIT Alum
           </motion.p>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-wrap gap-2 mb-6"
+            className="text-lg text-gray-600 mb-8"
           >
-            {["JavaScript", "React", "Next.js", "P5.js", "AWS", "Python"].map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 text-sm bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md transition-shadow"
-              >
-                {skill}
-              </span>
-            ))}
-          </motion.div>
+            I create interactive experiences, generative art, and tools that help people work better. 
+            Currently engineering at Instacart, MIT alum, and always exploring new ways to blend creativity with code.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,20 +230,18 @@ const About = () => {
             className="flex gap-4"
           >
             <a
-              href="https://github.com/mtrejo0"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#my-work"
               className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md flex items-center transition-colors"
             >
               <span className="mr-2">&#128187;</span>
-              GitHub
+              See My Work
             </a>
             <a
-              href="/contact"
+              href="#contact"
               className="px-4 py-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 rounded-md flex items-center transition-colors"
             >
               <span className="mr-2">&#9749;</span>
-              Contact Me
+              Let's Connect
             </a>
           </motion.div>
         </div>
@@ -329,56 +322,58 @@ const About = () => {
       </motion.div>
 
       {/* Random Internal App Section */}
-      <SectionDivider title="Try My Apps" icon="🚀" color="from-green-600 to-teal-600" />
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden mb-12"
-      >
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 text-white">
-          <h3 className="text-xl font-semibold flex items-center">
-            <span className="mr-2">🚀</span>
-            Internal Applications
-          </h3>
-          <p className="text-sm text-purple-100">Tools and applications I've built</p>
-        </div>
-        <div className="p-0">
-          {randomInternalApp && (
-            <div className="w-full h-[500px] overflow-hidden relative">
-              <div className="w-full h-full">
-                <AppComponent />
-              </div>
-              {isExploring && (
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
-                </div>
-              )}
+      <div id="my-work">
+        <SectionDivider title="Try My Apps" icon="🚀" color="from-green-600 to-teal-600" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden mb-12"
+        >
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 text-white flex justify-between items-center">
+            <div>
+              <h3 className="text-xl font-semibold flex items-center">
+                <span className="mr-2">🚀</span>
+                Internal Tools
+              </h3>
+              <p className="text-sm text-purple-100">Tools and applications I've built</p>
             </div>
-          )}
-        </div>
-        <div className="bg-gray-50 p-4 flex justify-between items-center">
-          <p className="text-sm text-gray-600">
-            {randomInternalApp ? `Trying: ${randomInternalApp.name || "Random application"}` : "Loading..."}
-          </p>
-          <div className="flex gap-2">
-            <button
-              onClick={refreshRandomContent}
-              className="px-3 py-1 bg-purple-100 text-purple-700 rounded-md hover:bg-purple-200 transition-colors text-sm font-medium"
-            >
-              Try another
-            </button>
             <Link
               href="/portfolio"
-              className="flex items-center text-purple-600 hover:text-purple-800 font-medium text-sm"
+              className="flex items-center text-white hover:text-purple-200 font-medium text-sm"
             >
-              Explore portfolio
-              <span className="ml-1">&#8594;</span>
+              Explore more
+              <span className="ml-1">→</span>
             </Link>
           </div>
-        </div>
-      </motion.div>
+          <div className="p-0">
+            {randomInternalApp && (
+              <div className="w-full h-[500px] overflow-hidden relative">
+                <div className="w-full h-full">
+                  <AppComponent />
+                </div>
+                {isExploring && (
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+          <div className="bg-gray-50 p-4 flex justify-between items-center">
+            <p className="text-sm text-gray-600">
+              {randomInternalApp ? `Trying: ${randomInternalApp.name || "Random application"}` : "Loading..."}
+            </p>
+            <button
+              onClick={refreshRandomContent}
+              className="px-3 py-1 bg-purple-100 text-purple-700 rounded-md hover:bg-purple-200 transition-colors text-sm font-medium flex items-center gap-2"
+            >
+              <RefreshCw className="w-4 h-4" />
+              Try another
+            </button>
+          </div>
+        </motion.div>
+      </div>
 
       <SectionDivider title="P5.js Projects" icon="🎨" color="from-blue-600 to-indigo-600" />
 
@@ -388,12 +383,21 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden mb-12"
       >
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white">
-          <h3 className="text-xl font-semibold flex items-center">
-            <span className="mr-2">🎨</span>
-            P5.js Projects
-          </h3>
-          <p className="text-sm text-blue-100">Generative art and creative coding projects</p>
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white flex justify-between items-center">
+          <div>
+            <h3 className="text-xl font-semibold flex items-center">
+              <span className="mr-2">🎨</span>
+              P5.js Projects
+            </h3>
+            <p className="text-sm text-blue-100">Generative art and creative coding projects</p>
+          </div>
+          <Link 
+            href="/p5Art" 
+            className="flex items-center text-white hover:text-blue-200 font-medium text-sm"
+          >
+            Explore more
+            <span className="ml-1">→</span>
+          </Link>
         </div>
         <div className="p-0">
           {randomProject && (
@@ -417,18 +421,13 @@ const About = () => {
           <p className="text-sm text-gray-600">
             {randomProject ? `Viewing: ${randomProject.name || "Random P5.js artwork"}` : "Loading..."}
           </p>
-          <div className="flex gap-2">
-            <button
-              onClick={refreshRandomContent}
-              className="px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium"
-            >
-              Try another
-            </button>
-            <Link href="/p5Art" className="flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
-              See all artwork
-              <span className="ml-1">&#8594;</span>
-            </Link>
-          </div>
+          <button
+            onClick={refreshRandomContent}
+            className="px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium flex items-center gap-2"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Try another
+          </button>
         </div>
       </motion.div>
 
@@ -440,12 +439,21 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden mb-12"
       >
-        <div className="bg-gradient-to-r from-yellow-600 to-orange-600 p-4 text-white">
-          <h3 className="text-xl font-semibold flex items-center">
-            <span className="mr-2">🎨</span>
-            Artwork
-          </h3>
-          <p className="text-sm text-yellow-100">Check out my latest creations</p>
+        <div className="bg-gradient-to-r from-yellow-600 to-orange-600 p-4 text-white flex justify-between items-center">
+          <div>
+            <h3 className="text-xl font-semibold flex items-center">
+              <span className="mr-2">🎨</span>
+              Artwork
+            </h3>
+            <p className="text-sm text-yellow-100">Check out my latest creations</p>
+          </div>
+          <Link
+            href="/art"
+            className="flex items-center text-white hover:text-yellow-200 font-medium text-sm"
+          >
+            Explore more
+            <span className="ml-1">→</span>
+          </Link>
         </div>
         <div className="p-6">
           {randomArt && (
@@ -464,21 +472,13 @@ const About = () => {
           <p className="text-sm text-gray-600">
             {randomArt ? `Viewing: ${randomArt.name}` : "Loading..."}
           </p>
-          <div className="flex gap-2">
-            <button
-              onClick={refreshRandomContent}
-              className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-md hover:bg-yellow-200 transition-colors text-sm font-medium"
-            >
-              Try another
-            </button>
-            <Link
-              href="/art"
-              className="flex items-center text-yellow-600 hover:text-yellow-800 font-medium text-sm"
-            >
-              See all artwork
-              <span className="ml-1">→</span>
-            </Link>
-          </div>
+          <button
+            onClick={refreshRandomContent}
+            className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-md hover:bg-yellow-200 transition-colors text-sm font-medium flex items-center gap-2"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Try another
+          </button>
         </div>
       </motion.div>
 
@@ -571,7 +571,9 @@ const About = () => {
         </div>
       </motion.div>
 
-      <ContactPageClient/>
+      <div id="contact">
+        <ContactPageClient/>
+      </div>
 
       
       <Comments />
