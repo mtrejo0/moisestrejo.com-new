@@ -129,7 +129,7 @@ const About = () => {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
         const data = await response.json()
-        setWorkExperience(data.slice(0, 5)) // Only show last 5 experiences
+        setWorkExperience(data.slice(0, 3)) // Only show last 5 experiences
       } catch (error) {
         console.error('Error fetching work experience:', error)
       }
