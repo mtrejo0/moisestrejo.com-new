@@ -17,7 +17,7 @@ import { RefreshCw } from "lucide-react"
 const About = () => {
   const [loading, setLoading] = useState(true)
   const [users, setUsers] = useState(0)
-  const [randomProject, setRandomProject] = useState(null)
+  const [randomP5Project, setRandomP5Project] = useState(null)
   const [randomInternalApp, setRandomInternalApp] = useState(null)
   const [isExploring, setIsExploring] = useState(false)
   const [workExperience, setWorkExperience] = useState([])
@@ -56,7 +56,7 @@ const About = () => {
       // Get a random P5.js project
       const randomP5Index = Math.floor(Math.random() * p5jsProjects.length)
       const randomP5Project = p5jsProjects[randomP5Index]
-      setRandomProject(randomP5Project)
+      setRandomP5Project(randomP5Project)
   
       // Get a random internal app
       const randomInternalIndex = Math.floor(Math.random() * internalApps.length)
@@ -339,7 +339,7 @@ const About = () => {
               <p className="text-sm text-purple-100">Tools and applications I've built</p>
             </div>
             <Link
-              href="/portfolio"
+              href="/tools"
               className="flex items-center text-white hover:text-purple-200 font-medium text-sm"
             >
               Explore more
@@ -361,9 +361,22 @@ const About = () => {
             )}
           </div>
           <div className="bg-gray-50 p-4 flex justify-between items-center">
-            <p className="text-sm text-gray-600">
-              {randomInternalApp ? `Trying: ${randomInternalApp.name || "Random application"}` : "Loading..."}
-            </p>
+            <div className="flex items-center gap-2">
+              {randomInternalApp && (
+                <div className="text-sm text-gray-600">
+                  Now viewing:{" "}
+                  <Link
+                    href={`/${randomInternalApp.id}`}
+                    className="text-purple-600 hover:text-purple-800 transition-colors underline"
+                  >
+                    {randomInternalApp.name || "Random application"}
+                  </Link>
+                </div>
+              )}
+              {!randomInternalApp && (
+                <p className="text-sm text-gray-600">Loading...</p>
+              )}
+            </div>
             <button
               onClick={refreshRandomContent}
               className="px-3 py-1 bg-purple-100 text-purple-700 rounded-md hover:bg-purple-200 transition-colors text-sm font-medium flex items-center gap-2"
@@ -392,7 +405,7 @@ const About = () => {
             <p className="text-sm text-blue-100">Generative art and creative coding projects</p>
           </div>
           <Link 
-            href="/p5Art" 
+            href="/p5art" 
             className="flex items-center text-white hover:text-blue-200 font-medium text-sm"
           >
             Explore more
@@ -400,10 +413,10 @@ const About = () => {
           </Link>
         </div>
         <div className="p-0">
-          {randomProject && (
+          {randomP5Project && (
             <div className="w-full h-[500px] bg-black relative">
               <iframe
-                src={`${process.env.NEXT_PUBLIC_P5}/${randomProject.id}`}
+                src={`${process.env.NEXT_PUBLIC_P5}/${randomP5Project.id}`}
                 width="100%"
                 height="100%"
                 className="border-0"
@@ -418,9 +431,20 @@ const About = () => {
           )}
         </div>
         <div className="bg-gray-50 p-4 flex justify-between items-center">
-          <p className="text-sm text-gray-600">
-            {randomProject ? `Viewing: ${randomProject.name || "Random P5.js artwork"}` : "Loading..."}
-          </p>
+          {randomP5Project && (
+            <div className="text-sm text-gray-600">
+              Now viewing:{" "}
+              <Link
+                href={`${process.env.NEXT_PUBLIC_P5}/${randomP5Project.id}`}
+                className="text-purple-600 hover:text-purple-800 transition-colors underline"
+              >
+                {randomP5Project.name || "Random P5.js artwork"}
+              </Link>
+            </div>
+          )}
+          {!randomP5Project && (
+            <p className="text-sm text-gray-600">Loading...</p>
+          )}
           <button
             onClick={refreshRandomContent}
             className="px-3 py-1 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium flex items-center gap-2"
