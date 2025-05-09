@@ -47,6 +47,9 @@ const P5App = ({ app }) => {
               <ExternalLink className="ml-2 h-5 w-5" />
             </a>
           </h2>
+          <span className="text-sm text-gray-500">
+            {new Date(app.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+          </span>
         </div>
         {app.description.map((desc, index) => (
           <p key={index} className="text-gray-600 mb-2">
@@ -80,9 +83,13 @@ const P5App = ({ app }) => {
 const P5Art = () => {
   const displayApp = (app) => <P5App app={app} />;
 
+  const sortedProjects = [...p5jsProjects].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   return (
     <AppListDisplay
-      apps={[...p5jsProjects].reverse()}
+      apps={sortedProjects}
       displayApp={displayApp}
       subRoute="p5art"
     />

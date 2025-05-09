@@ -35,10 +35,12 @@ const ExternalApp = ({ app }) => {
               <ExternalLink className="ml-2 h-5 w-5" />
             </a>
           </h2>
+          <span className="text-sm text-gray-500">
+            {new Date(app.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+          </span>
         </div>
         <p className="text-gray-600 mb-2">{app.description}</p>
         <p className="text-sm text-gray-500 mb-4">{app.resources}</p>
-        {app.date && <p className="text-sm text-gray-500 mb-4">{app.date}</p>}
       </div>
       
       {app.video && (

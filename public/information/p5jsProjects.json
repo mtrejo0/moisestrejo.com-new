@@ -6,7 +6,8 @@
     ],
     "id": "genetic",
     "src": "genetic.gif",
-    "href": "https://giphy.com/embed/d27oC1jjwGfQhPbWJI"
+    "href": "https://giphy.com/embed/d27oC1jjwGfQhPbWJI",
+    "date": "2021-01-30"
   },
   {
     "name": "DJ Visualizer",
@@ -15,7 +16,8 @@
     ],
     "id": "dj_vis",
     "video": "j-UYMUW4Ehw",
-    "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu"
+    "href": "https://giphy.com/embed/1Koln3SN5uLmwNFdxu",
+    "date": "2022-06-30"
   },
   {
     "name": "Maze path finder",
@@ -23,7 +25,8 @@
       "Generates random maze and uses BFS to make sure there is a path possible between them then visualizes how it searches the graph until it finds a path from the start point to the end point"
     ],
     "id": "maze_solver",
-    "href": "https://giphy.com/embed/K6xPbwxUA3Ib7JB83y"
+    "href": "https://giphy.com/embed/K6xPbwxUA3Ib7JB83y",
+    "date": "2021-01-30"
   },
   {
     "name": "Text Display",
@@ -31,7 +34,8 @@
       "I was inspired to make something cute for displaying tiktok names on live or just any text in an interesting way"
     ],
     "id": "names",
-    "href": "https://giphy.com/embed/YRKybvHrPpVMcNt44z"
+    "href": "https://giphy.com/embed/YRKybvHrPpVMcNt44z",
+    "date": "2023-04-24"
   },
   {
     "name": "Langton's Ant",
@@ -39,13 +43,15 @@
       "A large matrix where we can simulate Langton's Ant that has the simple rules: if white turn left, if black turn right"
     ],
     "id": "ant",
-    "href": "https://giphy.com/embed/EwyhrR0Oy9Z9j6sTII"
+    "href": "https://giphy.com/embed/EwyhrR0Oy9Z9j6sTII",
+    "date": "2021-01-30"
   },
   {
     "name": "Conways Game of Life",
     "description": ["With a twist, you can reverse the direction of time"],
     "id": "conway",
-    "href": "https://giphy.com/embed/5vCmRwwqYlosjyWfNg"
+    "href": "https://giphy.com/embed/5vCmRwwqYlosjyWfNg",
+    "date": "2023-10-14"
   },
   {
     "name": "PID Control",
@@ -53,25 +59,29 @@
       "PID stands for proportional integral derivative which is a controller that will try to reach a state this interaction lets you change the constants and goal state"
     ],
     "id": "PID",
-    "href": "https://giphy.com/embed/nof9LToV001nxDPF3z"
+    "href": "https://giphy.com/embed/nof9LToV001nxDPF3z",
+    "date": "2021-01-30"
   },
   {
     "name": "Hearts <3",
     "description": ["Randomized heart animations for my love"],
     "id": "hearts",
-    "href": "https://giphy.com/embed/n1jqKaHxYNOxhorWAe"
+    "href": "https://giphy.com/embed/n1jqKaHxYNOxhorWAe",
+    "date": "2021-01-30"
   },
   {
     "name": "Sheps :)",
     "description": ["What it is like to kiss with my girlfriend"],
     "id": "sheps",
-    "href": "https://giphy.com/embed/nKqTRiYPU25FeOgUkF"
+    "href": "https://giphy.com/embed/nKqTRiYPU25FeOgUkF",
+    "date": "2023-04-24"
   },
   {
     "name": "Triangles.",
     "description": ["Random triangles popping up on your screen!"],
     "id": "triangles",
-    "href": "https://giphy.com/embed/WuPjfhrDs1vev9YAcA"
+    "href": "https://giphy.com/embed/WuPjfhrDs1vev9YAcA",
+    "date": "2021-08-08"
   },
   {
     "name": "PID Race car",
@@ -79,14 +89,16 @@
       "Small simulation with a car that uses PID to follow a wall. Click and drag to add obstacles"
     ],
     "id": "race car",
-    "href": "https://giphy.com/embed/tBzDKntjdBAfjbWx8S"
+    "href": "https://giphy.com/embed/tBzDKntjdBAfjbWx8S",
+    "date": "2021-01-30"
   },
   {
     "name": "Base Calculator",
     "description": [
       "Add number, its base A, and target base B this will convert the number from base A to base B"
     ],
-    "id": "baseConverter"
+    "id": "baseConverter",
+    "date": "2021-01-30"
   },
   {
     "name": "Dopler Effect Simulation",
@@ -94,13 +106,15 @@
       "Dopler effect is the effect of having waves in motion this shows different vizualizations you can use"
     ],
     "id": "dopler",
-    "href": "https://giphy.com/embed/OfUeRS9mz5yXBEQSpj"
+    "href": "https://giphy.com/embed/OfUeRS9mz5yXBEQSpj",
+    "date": "2021-01-30"
   },
   {
     "name": "Stopwatch",
     "description": ["Colorful stopwatch"],
     "id": "timer",
-    "href": "https://giphy.com/embed/g0ducfLbYqo4TZNKLW"
+    "href": "https://giphy.com/embed/g0ducfLbYqo4TZNKLW",
+    "date": "2021-01-30"
   },
   {
     "name": "Selection Sort",
@@ -108,7 +122,8 @@
       "Sorting algorithm that picks the next best item to sort O(n²), Ω(n²)"
     ],
     "id": "selection",
-    "href": "https://giphy.com/embed/o63QTCDLcfVo37KwQ7"
+    "href": "https://giphy.com/embed/o63QTCDLcfVo37KwQ7",
+    "date": "2021-01-30"
   },
   {
     "name": "Insertion Sort",
@@ -116,7 +131,8 @@
       "Sorting algorithm that swaps items until they are in the right place O(n²), Ω(n)"
     ],
     "id": "insertion",
-    "href": "https://giphy.com/embed/2kvALN313dVwkGruoQ"
+    "href": "https://giphy.com/embed/2kvALN313dVwkGruoQ",
+    "date": "2021-01-30"
   },
   {
     "name": "Merge Sort",
@@ -124,7 +140,8 @@
       "Sorting algorithm that uses divide and conquer to sort smaller problems and combine them to sort an array O(n²)"
     ],
     "id": "mergeSort",
-    "href": "https://giphy.com/embed/g3Lv6zsFpXxQpCHV9l"
+    "href": "https://giphy.com/embed/g3Lv6zsFpXxQpCHV9l",
+    "date": "2021-01-30"
   },
   {
     "name": "Lissajous Generator",
@@ -132,13 +149,15 @@
       "Lissajous created by using circles with different periods"
     ],
     "id": "lissajous",
-    "href": "https://giphy.com/embed/HuLtZMMxuqlNrTkgbd"
+    "href": "https://giphy.com/embed/HuLtZMMxuqlNrTkgbd",
+    "date": "2021-01-30"
   },
   {
     "name": "Flappy Bird",
     "description": ["Remake of Flappy Bird, press space to jump"],
     "id": "flappyBird",
-    "href": "https://giphy.com/embed/MusChV7t5hxNjVVLhG"
+    "href": "https://giphy.com/embed/MusChV7t5hxNjVVLhG",
+    "date": "2021-01-30"
   },
   {
     "name": "Asteroids",
@@ -146,13 +165,15 @@
       "Remake of Asteroids, use arrow keys to more space to shoot"
     ],
     "id": "rocket",
-    "href": "https://giphy.com/embed/MlJzsgXyVbh9iLR7Lt"
+    "href": "https://giphy.com/embed/MlJzsgXyVbh9iLR7Lt",
+    "date": "2021-01-30"
   },
   {
     "name": "Drunk Walk",
     "description": ["Shows brownian motion and the path the agent takes"],
     "id": "drunkWalk",
-    "href": "https://giphy.com/embed/VD17t9Pgvm03APABxc"
+    "href": "https://giphy.com/embed/VD17t9Pgvm03APABxc",
+    "date": "2021-01-30"
   },
   {
     "name": "Particle Interaction",
@@ -160,7 +181,8 @@
       "Shows brownian motion with particles and allows you to see interactions"
     ],
     "id": "particleInteraction",
-    "href": "https://giphy.com/embed/duZY4sWwu8qN5zxPFp"
+    "href": "https://giphy.com/embed/duZY4sWwu8qN5zxPFp",
+    "date": "2021-01-30"
   },
   {
     "name": "Wave Particles",
@@ -168,7 +190,8 @@
       "Shows particles that move in circles, your mous position changes their period and their overall image"
     ],
     "id": "spinParticles",
-    "href": "https://giphy.com/embed/eXfMeLyJAdjXuoMCTU"
+    "href": "https://giphy.com/embed/eXfMeLyJAdjXuoMCTU",
+    "date": "2021-01-30"
   },
   {
     "name": "Angle PID",
@@ -176,42 +199,49 @@
       "Test your agility! Dodge as three turrets use advanced PID control to target and hit your cursor. Can you outmaneuver them and survive?"
     ],
     "id": "anglePID",
-    "href": "https://giphy.com/embed/1cuKntmipdD0FKFLze"
+    "href": "https://giphy.com/embed/1cuKntmipdD0FKFLze",
+    "date": "2021-01-30"
   },
   {
     "name": "Calculator",
     "description": ["Simple arithmetic calculator"],
-    "id": "calculator"
+    "id": "calculator",
+    "date": "2021-01-30"
   },
   {
     "name": "Bar Visualization",
     "description": ["Simple metronome for 4 beat counts"],
     "id": "barVis",
-    "href": "https://giphy.com/embed/rlv8vF1Ipi1Ta6BJD2"
+    "href": "https://giphy.com/embed/rlv8vF1Ipi1Ta6BJD2",
+    "date": "2023-04-24"
   },
   {
     "name": "Platformer",
     "description": ["Platformer game to escape the lava!"],
     "id": "platformer",
-    "href": "https://giphy.com/embed/7oEakeAK9NDKcmoDCY"
+    "href": "https://giphy.com/embed/7oEakeAK9NDKcmoDCY",
+    "date": "2021-01-30"
   },
   {
     "name": "Pretty Pendulums",
     "description": ["Tried to replicate pretty pendulums from tiktok"],
     "id": "pendulums",
-    "href": "https://giphy.com/embed/ti5IN7nUIZrfBv1IEU"
+    "href": "https://giphy.com/embed/ti5IN7nUIZrfBv1IEU",
+    "date": "2023-10-14"
   },
   {
     "name": "Chaos Pendulums",
     "description": ["10 chaos pendulums and a movement path for each"],
     "id": "chaos_pendulum",
-    "href": "https://giphy.com/embed/kD9dLwwFqgkTqPQQzo"
+    "href": "https://giphy.com/embed/kD9dLwwFqgkTqPQQzo",
+    "date": "2023-10-14"
   },
   {
     "name": "Colors",
     "description": ["Edit these colors with math!"],
     "id": "colors",
-    "href": "https://giphy.com/embed/nihwA289LX0cFFBDmO"
+    "href": "https://giphy.com/embed/nihwA289LX0cFFBDmO",
+    "date": "2023-10-14"
   },
   {
     "name": "Simulations",
@@ -219,7 +249,8 @@
       "Generate many simulations of up or down randomness and see the disctibution at the end!"
     ],
     "id": "simulations",
-    "href": "https://giphy.com/embed/x573fMQKeTqh50sm56"
+    "href": "https://giphy.com/embed/x573fMQKeTqh50sm56",
+    "date": "2023-10-14"
   },
   {
     "name": "COVID Simulations",
@@ -227,25 +258,29 @@
       "A simulation of infections where one can change the infection, recovery, and creation rates"
     ],
     "id": "simulations2D",
-    "href": "https://www.giphy.com/gifs/hCgFIbHQ1P9QYFN64Y"
+    "href": "https://www.giphy.com/gifs/hCgFIbHQ1P9QYFN64Y",
+    "date": "2023-10-14"
   },
   {
     "name": "Rocket Orbit",
     "description": ["A rocket that you can control orbiting around a sun!"],
     "id": "orbit",
-    "href": "https://giphy.com/embed/xl3Mc7VBo0vZxndJCG"
+    "href": "https://giphy.com/embed/xl3Mc7VBo0vZxndJCG",
+    "date": "2023-10-14"
   },
   {
     "name": "Snake",
     "description": ["This snake game will always win!"],
     "id": "snake",
-    "href": "https://giphy.com/embed/TJ9KlmZ2TflJxllNgb"
+    "href": "https://giphy.com/embed/TJ9KlmZ2TflJxllNgb",
+    "date": "2023-10-14"
   },
   {
     "name": "SIN/COS simulation!",
     "description": ["This demonstration shows how sin and cos are related!"],
     "id": "cos",
-    "href": "https://giphy.com/embed/rXleKkOaDgolnxaKO2"
+    "href": "https://giphy.com/embed/rXleKkOaDgolnxaKO2",
+    "date": "2023-10-14"
   },
   {
     "name": "Roomba algorithm",
@@ -253,61 +288,71 @@
       "This is a simple line drawing robot, I tried to replicate how the roomba moves"
     ],
     "id": "roomba",
-    "href": "https://giphy.com/embed/bJez5TwRoZudrfBX9W"
+    "href": "https://giphy.com/embed/bJez5TwRoZudrfBX9W",
+    "date": "2023-10-14"
   },
   {
     "name": "Love Hate",
     "description": ["A special dance between love and hate, shown with two sin waves"],
     "id": "lovehate",
-    "href": "https://giphy.com/embed/4QvL03ITnHDOlqqYR1"
+    "href": "https://giphy.com/embed/4QvL03ITnHDOlqqYR1",
+    "date": "2023-10-14"
   },
   {
     "name": "Leslie",
     "description": ["A love story seen from above"],
     "id": "leslie",
-    "href": "https://giphy.com/embed/3azIbCRsTEtVhWWEyF"
+    "href": "https://giphy.com/embed/3azIbCRsTEtVhWWEyF",
+    "date": "2023-10-14"
   },
   {
     "name": "Joseph Albers",
     "description": ["Joseph Albers inspired digital art."],
     "id": "josephAlbers",
-    "href": "https://giphy.com/embed/pWPszGOhnwVh8Mg76m"
+    "href": "https://giphy.com/embed/pWPszGOhnwVh8Mg76m",
+    "date": "2023-10-14"
   },
   {
     "name": "Simple Art",
     "description": ["Inspired by the Museum of Modern Art San Fransisco."],
     "id": "simpleArt",
-    "href": "https://giphy.com/embed/5nnxdroX2lm4iLvCnc"
+    "href": "https://giphy.com/embed/5nnxdroX2lm4iLvCnc",
+    "date": "2023-10-14"
   },
   {
     "name": "Sin Words",
     "description": ["Just a cool way to show words moving in a sin wave"],
     "id": "sin_words",
-    "href": "https://giphy.com/embed/pB0NbkebsIAXYQcjBM"
+    "href": "https://giphy.com/embed/pB0NbkebsIAXYQcjBM",
+    "date": "2023-10-14"
   },
   {
     "name": "Pointer",
     "description": ["Cool way to emphasize the cursor"],
     "id": "pointer",
-    "href": "https://giphy.com/embed/wl9eZLRtmgE6lNkHlZ"
+    "href": "https://giphy.com/embed/wl9eZLRtmgE6lNkHlZ",
+    "date": "2021-01-30"
   },
   {
     "name": "Graffitti",
     "description": ["Brick graffitti maker!"],
     "id": "graffiti",
-    "href": "https://giphy.com/embed/3FNUFncpOTFSCPgaHt"
+    "href": "https://giphy.com/embed/3FNUFncpOTFSCPgaHt",
+    "date": "2024-04-10"
   },
   {
     "name": "Fireworks",
     "description": ["Toggle your firework show!"],
     "id": "fireworks",
-    "href": "https://giphy.com/embed/mcvjed6xNz6xusR95a"
+    "href": "https://giphy.com/embed/mcvjed6xNz6xusR95a",
+    "date": "2024-04-24"
   },
   {
     "name": "Turtles all the way down!",
     "description": ["Do we have free will?"],
     "id": "turtles",
-    "href": "https://giphy.com/embed/SjgWeyFOx0uSIQYpv6"
+    "href": "https://giphy.com/embed/SjgWeyFOx0uSIQYpv6",
+    "date": "2024-05-02"
   },
   {
     "name": "Get bigger after every collision",
@@ -315,19 +360,22 @@
       "I made the tiktok video where the ball gets bigger after every collision"
     ],
     "id": "bumpBigger",
-    "href": "https://giphy.com/embed/rhYDjtLYQSkUUKID3E"
+    "href": "https://giphy.com/embed/rhYDjtLYQSkUUKID3E",
+    "date": "2024-05-12"
   },
   {
     "name": "3D Cubes",
     "description": ["test project to learn webgl in p5"],
     "id": "3dcubes",
-    "href": "https://giphy.com/embed/5Mmbqe39nduWnlt7HA"
+    "href": "https://giphy.com/embed/5Mmbqe39nduWnlt7HA",
+    "date": "2024-05-19"
   },
   {
     "name": "Towers of Hanoi!",
     "description": ["Recursion at its finest"],
     "id": "hanoi",
-    "href": "https://giphy.com/embed/U6MGXaoobKQ0iOr3dG"
+    "href": "https://giphy.com/embed/U6MGXaoobKQ0iOr3dG",
+    "date": "2024-06-09"
   },
   {
     "name": "Star Wars Hyper Drive!",
@@ -335,7 +383,8 @@
       "What it feels like to be in the millenium falcon and hit hyperdrive"
     ],
     "id": "starwars",
-    "href": "https://giphy.com/embed/OsG3kWnZn7DjnlUT9Y"
+    "href": "https://giphy.com/embed/OsG3kWnZn7DjnlUT9Y",
+    "date": "2024-06-20"
   },
   {
     "name": "Universal Entity",
@@ -343,7 +392,8 @@
       "Rozzi Roomian inspired art. What it feels to be in the universe. My interpretation: What it feels like to be god."
     ],
     "id": "universal",
-    "href": "https://giphy.com/embed/Fggo9nTETtZ407hoA8"
+    "href": "https://giphy.com/embed/Fggo9nTETtZ407hoA8",
+    "date": "2024-06-21"
   },
   {
     "name": "PI estimation",
@@ -351,13 +401,15 @@
       "Generate random points and check if they lie within a circle, use this to approximate PI"
     ],
     "id": "pi_graph",
-    "href": "https://giphy.com/embed/SR6VqebMz6zuIRBE8o"
+    "href": "https://giphy.com/embed/SR6VqebMz6zuIRBE8o",
+    "date": "2024-07-30"
   },
   {
     "name": "Mandelbrot Set Explorer",
     "description": ["See this simple and complex mathematical wonder!"],
     "id": "mandelbrot",
-    "href": "https://giphy.com/embed/SRl8VF0XjpgRR7U2FZ"
+    "href": "https://giphy.com/embed/SRl8VF0XjpgRR7U2FZ",
+    "date": "2024-08-19"
   },
   {
     "name": "Three Body Problem",
@@ -365,7 +417,8 @@
       "An un solvable problem. How do you create a stable orbit with 3 objects of roughly the same size? Turns out you cant."
     ],
     "id": "three_body",
-    "href": "https://giphy.com/embed/WrALL9lo7XJ9IoBHZN"
+    "href": "https://giphy.com/embed/WrALL9lo7XJ9IoBHZN",
+    "date": "2024-09-06"
   },
   {
     "name": "Linear Regression",
@@ -373,7 +426,8 @@
       "Use least squares to find a line that can make a linear regression of some points I generate!"
     ],
     "id": "linear_regression",
-    "href": "https://giphy.com/embed/8WlTq81B1W43pXWgOl"
+    "href": "https://giphy.com/embed/8WlTq81B1W43pXWgOl",
+    "date": "2024-09-06"
   },
   {
     "name": "Draw Classifier",
@@ -381,7 +435,8 @@
       "Draw an image and press C to see what the image classifiers guess for what it is. Disclaimer this is pretty bad."
     ],
     "id": "draw_classify",
-    "href": "https://giphy.com/embed/vqOcsoENrWDMVzWa0y"
+    "href": "https://giphy.com/embed/vqOcsoENrWDMVzWa0y",
+    "date": "2024-09-06"
   },
   {
     "name": "Image Classifier",
@@ -389,7 +444,8 @@
       "Upload an image and see what the image classifiers guess for what it is."
     ],
     "id": "image_classify",
-    "href": "https://giphy.com/embed/NtSHnY9nXlj1BjCbYt"
+    "href": "https://giphy.com/embed/NtSHnY9nXlj1BjCbYt",
+    "date": "2024-09-06"
   },
   {
     "name": "Circle Bounce Music",
@@ -397,7 +453,8 @@
       "Ball bounces and every bounce it plays twinkle twinkle little star aye"
     ],
     "id": "music_bounce",
-    "href": "https://giphy.com/embed/aYDnUgweHO9SPL0U5B"
+    "href": "https://giphy.com/embed/aYDnUgweHO9SPL0U5B",
+    "date": "2024-09-06"
   },
   {
     "name": "Theramin",
@@ -406,16 +463,18 @@
     ],
     "id": "theramin",
     "href": "https://giphy.com/embed/NDgqCApijP3ghU4vql",
-    "redirect": true
+    "redirect": true,
+    "date": "2024-09-06"
   },
   {
     "name": "Smile Fireworks",
     "description": [
       "When you smile CV detects your smile and gives you a fireworks show, my cheeks hurt from smiling so much!"
     ],
-    "id": "smile_fireworks", 
+    "id": "smile_fireworks",
     "href": "https://giphy.com/embed/XlWl4jew4qbAJS1QS8",
-    "redirect": true
+    "redirect": true,
+    "date": "2024-10-15"
   },
   {
     "name": "Sisyphus",
@@ -423,7 +482,8 @@
       "Help Sisyphus push his boulder up the mountain, only for it to roll back down again. A metaphor for the human condition."
     ],
     "id": "sisyphus",
-    "href": "https://giphy.com/embed/UH3DqxA6yqyLewi2nD"
+    "href": "https://giphy.com/embed/UH3DqxA6yqyLewi2nD",
+    "date": "2024-12-07"
   },
   {
     "name": "3D Pipes Screensaver",
@@ -432,6 +492,7 @@
     ],
     "id": "pipes3D",
     "href": "https://giphy.com/embed/TmvUwF0MJ4bIBVRskQ",
-    "timeout": 10 
+    "timeout": 10,
+    "date": "2024-12-08"
   }
 ]
