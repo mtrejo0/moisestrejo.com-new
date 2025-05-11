@@ -22,22 +22,21 @@ export async function POST(request) {
     }
 
     // Save original resized image
-    const outputDir = path.join(process.cwd(), 'public', 'debug');
-    await fs.mkdir(outputDir, { recursive: true });
+    // const outputDir = path.join(process.cwd(), 'public', 'debug');
+    // await fs.mkdir(outputDir, { recursive: true });
     
     // Helper function to save OpenCV matrix as image
-    async function saveMatAsImage(mat, filename) {
-      const buffer = Buffer.from(mat.data);
-      await sharp(buffer, {
-        raw: {
-          width: mat.cols,
-          height: mat.rows,
-          channels: mat.channels()
-        }
-      })
-      .toFile(path.join(outputDir, filename));
-    }
-
+    // async function saveMatAsImage(mat, filename) {
+    //   const buffer = Buffer.from(mat.data);
+    //   await sharp(buffer, {
+    //     raw: {
+    //       width: mat.cols,
+    //       height: mat.rows,
+    //       channels: mat.channels()
+    //     }
+    //   })
+    //   .toFile(path.join(outputDir, filename));
+    // }
 
     // Convert uploaded file to buffer and process with sharp first
     const buffer = Buffer.from(await image.arrayBuffer());
@@ -60,16 +59,16 @@ export async function POST(request) {
     // Convert to grayscale
     const gray = new cv.Mat();
     cv.cvtColor(mat, gray, cv.COLOR_RGB2GRAY);
-    await saveMatAsImage(gray, 'gray.png');
+    // await saveMatAsImage(gray, 'gray.png');
 
     // Apply Gaussian blur to reduce noise
     const blurred = new cv.Mat();
     cv.GaussianBlur(gray, blurred, new cv.Size(5, 5), 0);
-    await saveMatAsImage(blurred, 'blurred.png');
+    // await saveMatAsImage(blurred, 'blurred.png');
 
     const edges = new cv.Mat();
     cv.Canny(blurred, edges, 30, 90); 
-    await saveMatAsImage(edges, 'edges.png');
+    // await saveMatAsImage(edges, 'edges.png');
 
     // After Canny edge detection:
     const lines = new cv.Mat();
@@ -183,7 +182,7 @@ export async function POST(request) {
     }
 
     // Save the grid image
-    await saveMatAsImage(gridImage, 'grid.png');
+    // await saveMatAsImage(gridImage, 'grid.png');
 
     // Create a copy of the original image to overlay grid lines
     const overlayImage = new cv.Mat();
@@ -273,7 +272,7 @@ export async function POST(request) {
       }
 
       // Save the overlay image
-      await saveMatAsImage(overlayImage, 'overlay.png');
+      // await saveMatAsImage(overlayImage, 'overlay.png');
 
     }
 
@@ -312,7 +311,7 @@ export async function POST(request) {
     }
 
     // Save the piece visualization
-    await saveMatAsImage(pieceVisualization, 'pieces.png');
+    // await saveMatAsImage(pieceVisualization, 'pieces.png');
 
     // Clean up
     pieceVisualization.delete();
@@ -321,8 +320,8 @@ export async function POST(request) {
     gridImage.delete();
 
     // Create directory for piece clouds
-    const piecesCloudDir = path.join(process.cwd(), 'public', 'pieces_clouds');
-    await fs.mkdir(piecesCloudDir, { recursive: true });
+    // const piecesCloudDir = path.join(process.cwd(), 'public', 'pieces_clouds');
+    // await fs.mkdir(piecesCloudDir, { recursive: true });
 
     // Function to extract piece shape from a square
     async function extractPieceShape(row, col, pieceType) {
@@ -398,8 +397,8 @@ export async function POST(request) {
       // Only save black pieces
       if (pieceColor === 'black') {
         // Save the piece edges with square size in filename
-        const filename = `piece_${pieceType}_${squareWidth}x${squareHeight}.png`;
-        await saveMatAsImage(pieceEdges, path.join('pieces_clouds', filename));
+        // const filename = `piece_${pieceType}_${squareWidth}x${squareHeight}.png`;
+        // await saveMatAsImage(pieceEdges, path.join('pieces_clouds', filename));
       }
 
       // Clean up
@@ -637,7 +636,7 @@ export async function POST(request) {
     }
 
     // Save the piece guess visualization
-    await saveMatAsImage(pieceGuessVisualization, 'piece_guesses.png');
+    // await saveMatAsImage(pieceGuessVisualization, 'piece_guesses.png');
 
     // Clean up
     pieceGuessVisualization.delete();
@@ -652,22 +651,22 @@ export async function POST(request) {
     );
 
     return NextResponse.json({ 
-      debugImages: {
-        gray: '/debug/gray.png',
-        blurred: '/debug/blurred.png',
-        edges: '/debug/edges.png',
-        grid: '/debug/grid.png',
-        overlay: '/debug/overlay.png',
-        pieces: '/debug/pieces.png',
-        pieceGuesses: '/debug/piece_guesses.png'
-      },
+      // debugImages: {
+      //   gray: '/debug/gray.png',
+      //   blurred: '/debug/blurred.png',
+      //   edges: '/debug/edges.png',
+      //   grid: '/debug/grid.png',
+      //   overlay: '/debug/overlay.png',
+      //   pieces: '/debug/pieces.png',
+      //   pieceGuesses: '/debug/piece_guesses.png'
+      // },
       gridInfo: {
         horizontalLines: horizontalLines.length,
         verticalLines: verticalLines.length
       },
       board: boardRepresentation.toString(),
       pieces: pieceRepresentation.toString(),
-      boardState: boardState,
+      // boardState: boardState,
       formattedBoardState: formattedBoardState,
       fen: fen,
       message: 'Board state analyzed using template matching'
