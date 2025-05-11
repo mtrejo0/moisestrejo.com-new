@@ -236,6 +236,14 @@
     "link": "https://discord.gg/kAEU6x9b",
     "id": "beactive",
     "date": "February 2022"
+  },
+  {
+    "name": "Space Force",
+    "description": "Navigate your spaceship through the cosmos in this space-themed coding adventure",
+    "resources": "Vite, Three.js",
+    "link": "https://spaceforce.moisestrejo.com/",
+    "id": "spaceforce",
+    "date": "May 2025"
   }
 ]
   
