@@ -244,6 +244,13 @@
     "link": "https://spaceforce.moisestrejo.com/",
     "id": "spaceforce",
     "date": "May 2025"
+  },
+  {
+    "name": "Racetrack",
+    "description": "Race your car around the track in this interactive racing game",
+    "resources": "p5.js, Three.js",
+    "link": "https://racetrack.moisestrejo.com/",
+    "id": "racetrack",
+    "date": "June 2025"
   }
 ]
-  
