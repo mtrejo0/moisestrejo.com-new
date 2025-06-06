@@ -494,5 +494,21 @@
     "href": "https://giphy.com/embed/TmvUwF0MJ4bIBVRskQ",
     "timeout": 10,
     "date": "2024-12-08"
+  },
+  {
+    "name": "Windows Ball Morph",
+    "description": [
+      "A 3D morphing cube with colored faces that bounces around the screen, inspired by classic Windows screensavers. Watch as the cube transforms and rotates while bouncing off invisible boundaries."
+    ],
+    "id": "windows_ball_morph",
+    "date": "2025-06-06"
+  },
+  {
+    "name": "NEAT Racing Game",
+    "description": [
+      "Cars evolve using neural networks to navigate a race track. Watch as AI cars learn to drive through generations of evolution using the NEAT algorithm."
+    ],
+    "id": "neat_racetrack",
+    "date": "2025-06-05"
   }
 ]
