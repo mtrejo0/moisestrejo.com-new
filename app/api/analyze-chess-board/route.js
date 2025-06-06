@@ -666,7 +666,7 @@ export async function POST(request) {
       },
       board: boardRepresentation.toString(),
       pieces: pieceRepresentation.toString(),
-      // boardState: boardState,
+      boardState: boardState,
       formattedBoardState: formattedBoardState,
       fen: fen,
       message: 'Board state analyzed using template matching'

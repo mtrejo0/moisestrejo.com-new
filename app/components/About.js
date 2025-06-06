@@ -247,79 +247,7 @@ const About = () => {
         </div>
       </motion.div>
 
-      {/* About Me Section */}
-      <SectionDivider title="About Me" icon="👤" />
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-6"
-      >
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">Interests</h3>
-              <p className="text-sm text-gray-500 mb-4">Things I'm passionate about</p>
-              <ul className="space-y-2">
-                {interests.slice(0, 6).map((interest, index) => (
-                  <li key={index} className="flex items-center">
-                    <div className="mr-2 h-2 w-2 rounded-full bg-blue-600"></div>
-                    <span>{interest}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">What I Build</h3>
-              <p className="text-sm text-gray-500 mb-4">Areas I love to work in</p>
-              <ul className="space-y-2">
-                {whatIBuild.map((item, index) => (
-                  <li key={index} className="flex items-center">
-                    <div className="mr-2 h-2 w-2 rounded-full bg-purple-600"></div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Career Timeline */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold">Career Timeline</h3>
-            <Link href="/resume" className="text-blue-600 hover:text-blue-800 text-sm">
-              View Full Details →
-            </Link>
-          </div>
-          <div className="relative border-l-2 border-blue-200 ml-8">
-            {workExperience.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-                className="mb-8 relative pl-8"
-              >
-                {/* Timeline dot */}
-                <div className="absolute -left-[17px] top-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                </div>
-                
-                {/* Content */}
-                <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
-                  <h4 className="text-lg font-semibold">{item.name}</h4>
-                  <div className="font-bold text-blue-600">{item.year}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+      
 
       {/* Random Internal App Section */}
       <div id="my-work">
@@ -592,6 +520,80 @@ const About = () => {
             See all articles
             <span className="ml-1">→</span>
           </Link>
+        </div>
+      </motion.div>
+
+      {/* About Me Section */}
+      <SectionDivider title="About Me" icon="👤" />
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="space-y-6"
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Interests</h3>
+              <p className="text-sm text-gray-500 mb-4">Things I'm passionate about</p>
+              <ul className="space-y-2">
+                {interests.slice(0, 6).map((interest, index) => (
+                  <li key={index} className="flex items-center">
+                    <div className="mr-2 h-2 w-2 rounded-full bg-blue-600"></div>
+                    <span>{interest}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">What I Build</h3>
+              <p className="text-sm text-gray-500 mb-4">Areas I love to work in</p>
+              <ul className="space-y-2">
+                {whatIBuild.map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <div className="mr-2 h-2 w-2 rounded-full bg-purple-600"></div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Career Timeline */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-xl font-semibold">Career Timeline</h3>
+            <Link href="/resume" className="text-blue-600 hover:text-blue-800 text-sm">
+              View Full Details →
+            </Link>
+          </div>
+          <div className="relative border-l-2 border-blue-200 ml-8">
+            {workExperience.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                className="mb-8 relative pl-8"
+              >
+                {/* Timeline dot */}
+                <div className="absolute -left-[17px] top-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 bg-white rounded-full"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold">{item.name}</h4>
+                  <div className="font-bold text-blue-600">{item.year}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
 
