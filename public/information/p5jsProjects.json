@@ -510,5 +510,13 @@
     ],
     "id": "neat_racetrack",
     "date": "2025-06-05"
+  },
+  {
+    "name": "Pulse Concentric",
+    "description": [
+      "Concentric circles pulse outward from the center with customizable frequency, growth speed, and rainbow colors. Control the visual parameters with interactive sliders and color checkboxes."
+    ],
+    "id": "pulse_concentric",
+    "date": "2025-06-08"
   }
 ]
