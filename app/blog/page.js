@@ -1,3 +1,4 @@
+import Medium from "./Medium";
 import Blog from "./Blog";
 
 export const metadata = {
@@ -14,7 +15,8 @@ export const metadata = {
 const Page = () => {
   return (
     <div>
-      <Blog />
+      <Blog/>
+      <Medium />
     </div>
   );
 };
