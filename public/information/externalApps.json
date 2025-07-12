@@ -252,5 +252,13 @@
     "link": "https://racetrack.moisestrejo.com/",
     "id": "racetrack",
     "date": "June 2025"
+  },
+  {
+    "name": "Kanban",
+    "description": "Organize your tasks and projects with this interactive kanban board featuring drag-and-drop functionality and customizable columns",
+    "resources": "p5.js, Three.js",
+    "link": "https://kanban.moisestrejo.com/",
+    "id": "kanban",
+    "date": "July 2025"
   }
 ]
