@@ -260,5 +260,13 @@
     "link": "https://kanban.moisestrejo.com/",
     "id": "kanban",
     "date": "July 2025"
+  },
+  {
+    "name": "Calorie Goals",
+    "description": "Track and manage your daily calorie intake with personalized goals and progress tracking",
+    "resources": "Next.js, Vercel",
+    "link": "https://calorie-goals.vercel.app/",
+    "id": "calorie-goals", 
+    "date": "July 2025"
   }
 ]
