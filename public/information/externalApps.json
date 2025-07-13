@@ -90,7 +90,8 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d9p0ib0b1wuin.amplifyapp.com",
     "id": "requestme",
-    "date": "August 2023"
+    "date": "August 2023",
+    "product_hunt": "https://www.producthunt.com/posts/requestme"
   },
   {
     "name": "Bubble Sort It!",
@@ -146,7 +147,8 @@
     "resources": "React.JS, Typescript, AWS Lambda",
     "link": "https://birthday-billboard.moisestrejo.com/",
     "id": "billboard",
-    "date": "June 2023"
+    "date": "June 2023",
+    "product_hunt": "https://www.producthunt.com/products/birthday-billboad?launch=birthday-billboad"
   },
   {
     "name": "Mis dichos favoritos",
@@ -267,6 +269,7 @@
     "resources": "Next.js, Vercel",
     "link": "https://calorie-goals.moisestrejo.com/",
     "id": "calorie-goals", 
-    "date": "July 2025"
+    "date": "July 2025",
+    "product_hunt": "https://www.producthunt.com/products/calorie-goals?launch=calorie-goals"
   }
 ]
