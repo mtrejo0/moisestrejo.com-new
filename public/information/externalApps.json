@@ -275,10 +275,18 @@
   {
     "name": "Small Purchases Add Up",
     "description": "See how much money you could save by investing instead of making small recurring purchases",
-    "resources": "HTML, JavaScript, Chart.js",
+    "resources": "HTML, JavaScript, Chart.js", 
     "link": "https://mtrejo0.github.io/small-purchases-add-up/",
     "id": "small-purchases",
     "date": "July 2025",
     "product_hunt": "https://www.producthunt.com/products/small-purchases-add-up/"
+  },
+  {
+    "name": "Take Pills",
+    "description": "Track your medication schedule and never miss a dose",
+    "resources": "Next.js, Vercel",
+    "link": "https://take-pills.moisestrejo.com/",
+    "id": "take-pills",
+    "date": "July 2025"
   }
 ]
