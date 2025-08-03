@@ -229,7 +229,7 @@
     "resources": "Next.js, Spotify API",
     "link": "https://fanquiz.moisestrejo.com/guess",
     "id": "fan-quiz",
-    "date": "November 2024"
+    "date": "November 10 2024"
   },
   {
     "name": "BeActive",
@@ -245,7 +245,7 @@
     "resources": "Vite, Three.js",
     "link": "https://spaceforce.moisestrejo.com/",
     "id": "spaceforce",
-    "date": "May 2025"
+    "date": "May 10 2025"
   },
   {
     "name": "Racetrack",
@@ -253,7 +253,7 @@
     "resources": "p5.js, Three.js",
     "link": "https://racetrack.moisestrejo.com/",
     "id": "racetrack",
-    "date": "June 2025"
+    "date": "June 5 2025"
   },
   {
     "name": "Kanban",
@@ -261,7 +261,7 @@
     "resources": "p5.js, Three.js",
     "link": "https://kanban.moisestrejo.com/",
     "id": "kanban",
-    "date": "July 2025"
+    "date": "July 12 2025"
   },
   {
     "name": "Calorie Goals",
@@ -269,7 +269,7 @@
     "resources": "Next.js, Vercel",
     "link": "https://calorie-goals.moisestrejo.com/",
     "id": "calorie-goals", 
-    "date": "July 2025",
+    "date": "July 12 2025",
     "product_hunt": "https://www.producthunt.com/products/calorie-goals?launch=calorie-goals"
   },
   {
@@ -278,7 +278,7 @@
     "resources": "HTML, JavaScript, Chart.js", 
     "link": "https://mtrejo0.github.io/small-purchases-add-up/",
     "id": "small-purchases",
-    "date": "July 2025",
+    "date": "July 21 2025",
     "product_hunt": "https://www.producthunt.com/products/small-purchases-add-up/"
   },
   {
@@ -287,6 +287,6 @@
     "resources": "Next.js, Vercel",
     "link": "https://take-pills.moisestrejo.com/",
     "id": "take-pills",
-    "date": "July 2025"
+    "date": "July 25 2025"
   }
 ]
