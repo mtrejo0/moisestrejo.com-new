@@ -302,5 +302,13 @@
     "type": "internal",
     "component": "TierApp",
     "date": "2025-05-03"
+  },
+  {
+    "name": "Face Plane Angle Detector",
+    "description": "Uses computer vision to detect if your face plane is perpendicular to the ground relative to your camera/screen. Analyzes head tilt, up/down angle, and left/right turn for proper alignment.",
+    "id": "screenTooHigh",
+    "type": "internal",
+    "component": "ScreenTooHigh",
+    "date": "2024-12-19"
   }
 ]
