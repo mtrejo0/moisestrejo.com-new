@@ -288,13 +288,5 @@
     "link": "https://take-pills.moisestrejo.com/",
     "id": "take-pills",
     "date": "July 25 2025"
-  },
-  {
-    "name": "Fitbit Step Tracker",
-    "description": "Track and visualize your daily Fitbit step count with customizable goals and hourly breakdown",
-    "resources": "Next.js, Recharts, Fitbit API",
-    "link": "https://fitbit-steps.vercel.app/",
-    "id": "fitbit-steps",
-    "date": "August 3 2025"
   }
 ]
