@@ -98,7 +98,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="text-black px-16 py-16 border-t border-black mt-32 flex flex-col sm:flex-row items-center justify-evenly text-center sm:text-left">
+    <footer className="text-black px-16 py-16 border-t flex flex-col sm:flex-row items-center justify-evenly text-center sm:text-left">
       <div>
         <div className="flex justify-center gap-4">
           {filteredContacts.map((contact) => {
@@ -117,7 +117,7 @@ const Footer = () => {
             );
           })}
         </div>
-        <div className="mt-8 flex justify-center">
+        {/* <div className="mt-8 flex justify-center">
           <Link
             href="https://buymeacoffee.com/moisestrejo"
             target="_blank"
@@ -126,7 +126,7 @@ const Footer = () => {
           >
             Buy me a coffee ☕
           </Link>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

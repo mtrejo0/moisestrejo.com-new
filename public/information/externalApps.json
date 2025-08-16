@@ -286,7 +286,15 @@
     "description": "Track your medication schedule and never miss a dose",
     "resources": "Next.js, Vercel",
     "link": "https://take-pills.moisestrejo.com/",
-    "id": "take-pills",
+    "id": "take-pills", 
     "date": "July 25 2025"
+  },
+  {
+    "name": "CV Pushup Counter",
+    "description": "See how you compete with others in pushup tracking using computer vision",
+    "resources": "Next.js, TensorFlow.js, OpenCV",
+    "link": "https://pushup-cv.vercel.app/",
+    "id": "pushup-cv",
+    "date": "Aug 16 2025"
   }
 ]
