@@ -10,7 +10,7 @@ const P5App = ({ app }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [showApp, setShowApp] = useState(true);
 
-  const link = `${process.env.NEXT_PUBLIC_P5}/${app.id}`;
+  const link = `${window.location.origin}/${app.id}`;
 
   useEffect(() => {
     setIsLoading(true);
