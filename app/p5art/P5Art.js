@@ -2,9 +2,16 @@
 
 import { ExternalLink } from 'lucide-react'
 import p5jsProjects from "../../public/information/p5jsProjects.json"
+import { useEffect, useState } from 'react'
 
 const P5App = ({ app }) => {
-  const link = `${window.location.origin}/${app.id}`
+  const [link, setLink] = useState(`/${app.id}`)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setLink(`${window.location.origin}/${app.id}`)
+    }
+  }, [app.id])
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
