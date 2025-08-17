@@ -17,6 +17,7 @@ export default function Home() {
       <Hero />
       <Products />
       <EmailCapture />
+      <Contact />
       <PlaygroundLinks />
     </div>
   );
@@ -121,18 +122,8 @@ function ProductCard({ id, icon, name, tagline, bullets, cta, priceNote, seconda
 }
 
 function EmailCapture() {
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
-
-  function submit(e) {
-    e.preventDefault();
-    if (!email) return;
-    setSent(true);
-    // Wire this to Buttondown/Mailchimp/Supabase later.
-  }
-
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-16">
+    <section id="contact" className="mx-auto max-w-6xl px-4 py-8">
       <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 grid md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-2xl font-extrabold">Get updates on new drops</h3>
@@ -159,6 +150,27 @@ function MiniCard({ title, copy }) {
       <div className="font-semibold">{title}</div>
       <p className="text-slate-600 text-xs mt-1">{copy}</p>
     </div>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="mx-auto max-w-6xl px-4 py-12">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="text-center">
+          <p className="text-slate-600 mb-4">
+            Questions about products, demos, or just want to chat?
+          </p>
+          <a 
+            href="mailto:contact@moisestrejo.com" 
+            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm"
+          >
+            <Mail className="w-4 h-4" />
+            contact@moisestrejo.com
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
