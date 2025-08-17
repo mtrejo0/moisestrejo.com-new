@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Activity, Dumbbell, Users, Star, ArrowRight, Mail, CheckCircle2, Sparkles } from "lucide-react";
+import { Activity, Dumbbell, Copy, Star, ArrowRight, Mail, CheckCircle2, Sparkles } from "lucide-react";
 import EmailSignupResend from "../components/EmailSignupResend"
 /**
  * Drop this file in your Next.js app as `app/page.jsx` (or `pages/index.js`).
@@ -154,6 +154,12 @@ function MiniCard({ title, copy }) {
 }
 
 function Contact() {
+  const email = "contact[at]moisestrejo.com";
+  
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email.replace("[at]", "@"));
+  };
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-4 py-12">
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -161,13 +167,18 @@ function Contact() {
           <p className="text-slate-600 mb-4">
             Questions about products, demos, or just want to chat?
           </p>
-          <a 
-            href="mailto:contact@moisestrejo.com" 
-            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm"
-          >
-            <Mail className="w-4 h-4" />
-            contact@moisestrejo.com
-          </a>
+          <div className="flex flex-col items-center gap-4">
+            <div className="bg-slate-100 rounded-lg px-4 py-2 font-mono text-sm flex items-center gap-2">
+              <code>{email}</code>
+              <button
+                onClick={copyToClipboard}
+                className="hover:text-blue-600 transition-colors"
+                title="Copy email"
+              >
+                <Copy className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
