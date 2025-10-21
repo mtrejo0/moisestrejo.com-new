@@ -3,13 +3,15 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Head from 'next/head'
 
-import p5jsProjects from "../../public/information/p5jsProjects.json";
 import links from "../../public/information/links.json";
 import externalApps from "../../public/information/externalApps.json";
 import internalApps from "../../public/information/internalApps.json";
+import { fetchP5Projects } from "../../lib/fetchP5Projects";
 
 // Generate static paths for all known routes
 export async function generateStaticParams() {
+  const p5jsProjects = await fetchP5Projects();
+  
   const allIds = [
     ...internalApps.map((app) => ({ id: app.id })),
     ...externalApps.map((app) => ({ id: app.id })),
@@ -23,6 +25,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { id } = params;
   const lowerId = id.toLowerCase();
+
+  // Fetch p5 projects
+  const p5jsProjects = await fetchP5Projects();
 
   // Find matching app/project/link
   const internalApp = internalApps.find((app) => app.id.toLowerCase() === lowerId);
@@ -88,6 +93,9 @@ export default async function Page({ params }) {
   if (link) {
     redirect(link.link);
   }
+
+  // Fetch p5 projects
+  const p5jsProjects = await fetchP5Projects();
 
   // Check for p5 project
   const p5Project = p5jsProjects.find((project) => project.id.toLowerCase() === lowerId);
