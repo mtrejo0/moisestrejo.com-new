@@ -296,5 +296,14 @@
     "link": "https://pushup-cv.vercel.app/",
     "id": "pushup-cv",
     "date": "Aug 16 2025"
+  },
+  {
+    "name": "Escribe Notes",
+    "description": "Voice notes that automatically organize themselves",
+    "resources": "Next.js, OpenAI, Vercel",
+    "link": "https://escribenotes.com",
+    "id": "escribe-notes",
+    "date": "Sep 12 2025",
+    "product_hunt": "https://www.producthunt.com/products/escribe-notes"
   }
 ]
