@@ -16,8 +16,8 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Hero />
       <Products />
-      <EmailCapture />
-      <Contact />
+      {/* <EmailCapture /> */}
+      {/* <Contact /> */}
       <PlaygroundLinks />
     </div>
   );
@@ -37,7 +37,9 @@ function Hero() {
             Products built by <span className="text-blue-600">Moises</span>.
           </motion.h1>
           <p className="mt-4 text-lg text-slate-600">
-            I make consumer tools that are fun, simple, and help you move. 
+            I make products that are useful. 
+            <br></br>
+            Instacart SWE 2, MIT 2022, Prod, Ex-Twitter, Ex-Facebook,. 
           </p>
         </div>
       </div>

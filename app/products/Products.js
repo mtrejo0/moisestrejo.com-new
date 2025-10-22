@@ -28,17 +28,22 @@ const ExternalApp = ({ app }) => {
       </div>
       <p className="text-gray-600 mb-2">{app.description}</p>
       <p className="text-sm text-gray-500">{app.resources}</p>
-      {app.product_hunt && (
+      {app.product_hunt_embed ? (
+        <div
+          className="mt-3"
+          dangerouslySetInnerHTML={{ __html: app.product_hunt_embed }}
+        />
+      ) : app.product_hunt ? (
         <a
           href={app.product_hunt}
-          target="_blank" 
+          target="_blank"
           rel="noreferrer"
           className="mt-2 text-orange-500 hover:text-orange-700 underline transition-colors duration-200 flex items-center text-sm font-medium"
         >
           Product Hunt
           <ExternalLink className="ml-1 h-4 w-4" />
         </a>
-      )}
+      ) : null}
     </div>
   )
 }
