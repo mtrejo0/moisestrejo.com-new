@@ -5,7 +5,7 @@
     "resources": "Mongo DB, Next JS, Tailwind",
     "link": "https://fit-check-me.vercel.app/",
     "id": "fit-check",
-    "date": "08-01-2024",
+    "date": "2024-08-01",
     "hide": true
   },
   {
@@ -14,7 +14,7 @@
     "resources": "React.JS, Twitter API, Google Maps API, Material UI, Typescript",
     "link": "https://main.dnsxxxpftj2z2.amplifyapp.com",
     "id": "grassroots",
-    "date": "11-01-2023"
+    "date": "2023-11-01"
   },
   {
     "name": "Goal Tracker",
@@ -22,7 +22,7 @@
     "resources": "React.JS, Firebase, Tailwind",
     "link": "https://main--myuberman.netlify.app/",
     "id": "goals",
-    "date": "10-01-2023"
+    "date": "2023-10-01"
   },
   {
     "name": "DJ Graph",
@@ -30,7 +30,7 @@
     "resources": "React.JS, Spotify Web API, Material UI",
     "link": "https://main.d2895n4efuepww.amplifyapp.com/",
     "id": "djGraph",
-    "date": "08-01-2022"
+    "date": "2022-08-01"
   },
   {
     "name": "TODOs",
@@ -38,7 +38,7 @@
     "resources": "React.JS, Firebase, Material UI, Typescript",
     "link": "https://main.d20g9fwcjddfy5.amplifyapp.com",
     "id": "todo",
-    "date": "11-01-2022"
+    "date": "2022-11-01"
   },
   {
     "name": "Where is the Red Line?",
@@ -47,7 +47,7 @@
     "link": "https://www.icloud.com/shortcuts/c5d02699fc0e4e539c1e22a851b869e4",
     "id": "redline",
     "video": "F--q6hZNGpw",
-    "date": "11-01-2022"
+    "date": "2022-11-01"
   },
   {
     "name": "Read Fast!",
@@ -56,7 +56,7 @@
     "link": "https://main.d18q6iuh1p0d9y.amplifyapp.com/",
     "id": "readFast",
     "video": "WtPxzrSfA3U",
-    "date": "01-01-2023"
+    "date": "2023-01-01"
   },
   {
     "name": "Calorie Estimator",
@@ -65,7 +65,7 @@
     "link": "https://www.youtube.com/watch?v=Y1BVx9f59Ts",
     "id": "calories",
     "video": "Y1BVx9f59Ts",
-    "date": "11-01-2022"
+    "date": "2022-11-01"
   },
   {
     "name": "Rhyming!",
@@ -74,7 +74,7 @@
     "link": "https://master.d16qayanzycbk6.amplifyapp.com/",
     "id": "rhyming",
     "video": "VSK2dR71rrc",
-    "date": "02-01-2022"
+    "date": "2022-02-01"
   },
   {
     "name": "Free Writes",
@@ -82,7 +82,7 @@
     "resources": "React.JS, Firebase, Material UI, Typescript",
     "link": "https://main.djnpg8z8p3pn6.amplifyapp.com",
     "id": "freeWrite",
-    "date": "11-01-2022"
+    "date": "2022-11-01"
   },
   {
     "name": "Request me!",
@@ -90,7 +90,7 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d9p0ib0b1wuin.amplifyapp.com",
     "id": "requestme",
-    "date": "08-01-2023",
+    "date": "2023-08-01",
     "product_hunt": "https://www.producthunt.com/products/request-me?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-requestme",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/request-me?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-requestme\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=409872&theme=light&t=1761118354998\" alt=\"RequestMe - Easiest&#0032;way&#0032;to&#0032;split&#0032;dinner&#0032;costs | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
@@ -100,7 +100,7 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://mtrejo0.github.io/bubbleSortIt/",
     "id": "bubble",
-    "date": "10-01-2023"
+    "date": "2023-10-01"
   },
   {
     "name": "ChatGPT Texbook Generator",
@@ -108,7 +108,7 @@
     "resources": "Python, OpenAI GPT-3 API",
     "link": "https://github.com/mtrejo0/chatGPT-Textbook-Generation",
     "id": "textbook",
-    "date": "02-01-2023"
+    "date": "2023-02-01"
   },
   {
     "name": "Do nothing for 2 min",
@@ -116,7 +116,7 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.dgm0121ljahuf.amplifyapp.com/",
     "id": "relax",
-    "date": "03-01-2023"
+    "date": "2023-03-01"
   },
   {
     "name": "Check In",
@@ -124,7 +124,7 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://main.d2jd8sxowxe8iz.amplifyapp.com/",
     "id": "checkin",
-    "date": "04-01-2023"
+    "date": "2023-04-01"
   },
   {
     "name": "ADCC 2022 BJJ Data Visualization",
@@ -132,7 +132,7 @@
     "resources": "React.JS, Material UI, Typescript",
     "link": "https://mtrejo0.github.io/bjjVis/",
     "id": "bjjVis",
-    "date": "05-01-2023"
+    "date": "2023-05-01"
   },
   {
     "name": "Greenhouse Emissions",
@@ -140,7 +140,7 @@
     "resources": "React.JS, Typescript",
     "link": "https://mtrejo0.github.io/greenhouse-emissions/",
     "id": "ghg",
-    "date": "05-01-2023"
+    "date": "2023-05-01"
   },
   {
     "name": "Birthday Billboard!",
@@ -148,7 +148,7 @@
     "resources": "React.JS, Typescript, AWS Lambda",
     "link": "https://birthday-billboard.moisestrejo.com/",
     "id": "billboard",
-    "date": "06-01-2023",
+    "date": "2023-06-01",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/birthday-billboad?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-birthday&#0045;billboad\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=941112&amp;theme=light&amp;t=1761118195806\" alt=\"Birthday&#0032;Billboad - Top&#0032;10&#0032;songs&#0032;from&#0032;when&#0032;you&#0032;were&#0032;born&#0033; | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
   {
@@ -157,7 +157,7 @@
     "resources": "React.JS, AWS S3",
     "link": "https://mtrejo0.github.io/spanish_sayings/",
     "id": "spanish",
-    "date": "09-01-2023"
+    "date": "2023-09-01"
   },
   {
     "name": "2G Studio",
@@ -165,7 +165,7 @@
     "resources": "React.JS",
     "link": "https://mtrejo0.github.io/2gstudio/",
     "id": "2gstudio",
-    "date": "01-01-2024"
+    "date": "2024-01-01"
   },
   {
     "name": "Build your bowl!",
@@ -173,7 +173,7 @@
     "resources": "Next JS",
     "link": "https://bowl-builder-max.vercel.app/",
     "id": "bowl-builder",
-    "date": "08-01-2024"
+    "date": "2024-08-01"
   },
   {
     "name": "TODOs!",
@@ -182,7 +182,7 @@
     "link": "https://mongo-todo-next.vercel.app/",
     "id": "mongo-todo",
     "hide": true,
-    "date": "08-01-2024"
+    "date": "2024-08-01"
   },
   {
     "name": "Top Restaurants 2002 - 2023",
@@ -190,7 +190,7 @@
     "resources": "HTML, Tailwind, Leaflet",
     "link": "https://mtrejo0.github.io/top-restaurant-viz/",
     "id": "top-restaurant-viz",
-    "date": "10-01-2024"
+    "date": "2024-10-01"
   },
   {
     "name": "Mumbai Rainfall 1901 - 2021",
@@ -198,7 +198,7 @@
     "resources": "HTML, D3",
     "link": "https://mtrejo0.github.io/mumbai-rain-viz/",
     "id": "mumbai-rain-viz",
-    "date": "10-01-2024"
+    "date": "2024-10-01"
   },
   {
     "name": "Dice Roller Simulator",
@@ -206,7 +206,7 @@
     "resources": "HTML, JavaScript",
     "link": "https://mtrejo0.github.io/dice-roller-sim/",
     "id": "dice-roller-sim",
-    "date": "10-01-2024"
+    "date": "2024-10-01"
   },
   {
     "name": "Unfair Coin Distributions",
@@ -214,7 +214,7 @@
     "resources": "HTML, JavaScript",
     "link": "https://mtrejo0.github.io/unfair-coin-distributions/",
     "id": "unfair-coin-distributions",
-    "date": "10-01-2024"
+    "date": "2024-10-01"
   },
   {
     "name": "Istanbul Traffic Index Over Time, 2015 - 2024",
@@ -222,7 +222,7 @@
     "resources": "HTML, JavaScript",
     "link": "https://mtrejo0.github.io/instanbul-traffic-viz/",
     "id": "istanbul-traffic-viz",
-    "date": "10-01-2024"
+    "date": "2024-10-01"
   },
   {
     "name": "Fan Quiz",
@@ -230,7 +230,7 @@
     "resources": "Next.js, Spotify API",
     "link": "https://fanquiz.moisestrejo.com/guess",
     "id": "fan-quiz",
-    "date": "11-10-2024"
+    "date": "2024-11-10"
   },
   {
     "name": "BeActive",
@@ -238,7 +238,7 @@
     "resources": "Discord API, Matplotlib, Twitter API", 
     "link": "https://discord.gg/kAEU6x9b",
     "id": "beactive",
-    "date": "02-01-2022"
+    "date": "2022-02-01"
   },
   {
     "name": "Space Force",
@@ -246,7 +246,7 @@
     "resources": "Vite, Three.js",
     "link": "https://spaceforce.moisestrejo.com/",
     "id": "spaceforce",
-    "date": "05-10-2025"
+    "date": "2025-05-10"
   },
   {
     "name": "Racetrack",
@@ -254,7 +254,7 @@
     "resources": "p5.js, Three.js",
     "link": "https://racetrack.moisestrejo.com/",
     "id": "racetrack",
-    "date": "06-05-2025"
+    "date": "2025-06-05"
   },
   {
     "name": "Kanban",
@@ -262,7 +262,7 @@
     "resources": "p5.js, Three.js",
     "link": "https://kanban.moisestrejo.com/",
     "id": "kanban",
-    "date": "07-12-2025"
+    "date": "2025-07-12"
   },
   {
     "name": "Calorie Goals",
@@ -270,7 +270,7 @@
     "resources": "Next.js, Vercel",
     "link": "https://calorie-goals.moisestrejo.com/",
     "id": "calorie-goals", 
-    "date": "07-12-2025",
+    "date": "2025-07-12",
     "product_hunt": "https://www.producthunt.com/products/calorie-goals?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-calorie&#0045;goals",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/calorie-goals?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-calorie&#0045;goals\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=992293&theme=light&t=1761118327283\" alt=\"Calorie&#0032;Goals - Smart&#0032;Nutrition&#0032;Planning&#0032;with&#0032;Algorithmic&#0032;Recipe&#0032;Variations | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
@@ -280,7 +280,7 @@
     "resources": "HTML, JavaScript, Chart.js", 
     "link": "https://mtrejo0.github.io/small-purchases-add-up/",
     "id": "small-purchases",
-    "date": "07-21-2025",
+    "date": "2025-07-21",
     "product_hunt": "https://www.producthunt.com/products/small-purchases-add-up/",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/small-purchases-add-up?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-small&#0045;purchases&#0045;add&#0045;up\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=995906&theme=light&t=1761118311285\" alt=\"Small&#0032;Purchases&#0032;Add&#0032;Up - See&#0032;what&#0032;your&#0032;daily&#0032;coffee&#0032;could&#0032;be&#0032;worth&#0032;in&#0032;60&#0032;years | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
@@ -290,7 +290,7 @@
     "resources": "Next.js, Vercel",
     "link": "https://take-pills.moisestrejo.com/",
     "id": "take-pills", 
-    "date": "07-25-2025"
+    "date": "2025-07-25"
   },
   {
     "name": "CV Pushup Counter",
@@ -298,7 +298,7 @@
     "resources": "Next.js, TensorFlow.js, OpenCV",
     "link": "https://pushup-cv.vercel.app/",
     "id": "pushup-cv",
-    "date": "08-16-2025",
+    "date": "2025-08-16",
     "product_hunt": "https://www.producthunt.com/products/pushupcv?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pushupcv",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/pushupcv?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pushupcv\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1009473&theme=light&t=1761118249407\" alt=\"PushupCV - Track&#0032;your&#0032;pushups&#0032;w&#0032;computer&#0032;vision | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
@@ -308,7 +308,7 @@
     "resources": "Next.js, OpenAI, Vercel",
     "link": "https://escribenotes.com",
     "id": "escribe-notes",
-    "date": "09-12-2025",
+    "date": "2025-09-12",
     "product_hunt": "https://www.producthunt.com/products/escribe-notes",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/escribe-notes?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-escribe-notes\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1020480&theme=light&t=1761116556872\" alt=\"Escribe Notes - Transcribe any conversation with AI | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   }
