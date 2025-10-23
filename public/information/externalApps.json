@@ -298,7 +298,7 @@
     "resources": "Next.js, TensorFlow.js, OpenCV",
     "link": "https://pushup-cv.vercel.app/",
     "id": "pushup-cv",
-    "date": "Aug 16 2025",
+    "date": "August 16 2025",
     "product_hunt": "https://www.producthunt.com/products/pushupcv?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pushupcv",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/pushupcv?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pushupcv\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1009473&theme=light&t=1761118249407\" alt=\"PushupCV - Track&#0032;your&#0032;pushups&#0032;w&#0032;computer&#0032;vision | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   },
@@ -308,7 +308,7 @@
     "resources": "Next.js, OpenAI, Vercel",
     "link": "https://escribenotes.com",
     "id": "escribe-notes",
-    "date": "Sep 12 2025",
+    "date": "September 12 2025",
     "product_hunt": "https://www.producthunt.com/products/escribe-notes",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/escribe-notes?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-escribe-notes\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1020480&theme=light&t=1761116556872\" alt=\"Escribe Notes - Transcribe any conversation with AI | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
   }

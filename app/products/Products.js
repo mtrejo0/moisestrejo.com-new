@@ -19,11 +19,7 @@ const ExternalApp = ({ app }) => {
           </a>
         </h2>
         <span className="text-sm text-gray-500">
-          {new Date(app.date).toLocaleDateString('en-US', {
-            month: 'long',
-            year: 'numeric',
-            day: new Date(app.date).getDate() !== 0 ? 'numeric' : undefined
-          })}
+          {app.date}
         </span>
       </div>
       <p className="text-gray-600 mb-2">{app.description}</p>

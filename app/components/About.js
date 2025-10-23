@@ -197,7 +197,7 @@ function PlaygroundLinks() {
         Into generative art, music, and random tools? Explore the fun stuff:
       </p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <PlayLink href="/apps" label="Products" />
+        <PlayLink href="/products" label="Products" />
         <PlayLink href="/tools" label="Tools" />
         <PlayLink href="/p5art" label="P5.js Art" />
         <PlayLink href="/music" label="Music" />
