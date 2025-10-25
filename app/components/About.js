@@ -39,7 +39,7 @@ function Hero() {
           <p className="mt-4 text-lg text-slate-600">
             I make products that are useful. 
             <br></br>
-            Instacart SWE 2, MIT 2022, Prod, Ex-Twitter, Ex-Facebook,. 
+            Instacart SWE 2, MIT 2022, Prod, Ex-Twitter, Ex-Facebook.
           </p>
         </div>
       </div>
