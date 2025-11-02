@@ -7,7 +7,7 @@ import { useLogRocket } from "../../lib/hooks/useLogRocket";
 
 const navItems = [
   { path: "/", label: "About" },
-  // { path: "/resume", label: "Resume" },
+  { path: "/resume", label: "Resume" },
   { path: "/products", label: "Products" },
   { path: "/tools", label: "Tools" },
   { path: "/p5art", label: "P5 Art" },

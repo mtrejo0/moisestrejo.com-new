@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Activity, Dumbbell, Copy, Star, ArrowRight, Mail, CheckCircle2, Sparkles } from "lucide-react";
-import EmailSignupResend from "../components/EmailSignupResend"
+import { Activity, Dumbbell, Copy, Star, ArrowRight, Mail, CheckCircle2, Sparkles, ExternalLink } from "lucide-react";
+import EmailSignupResend from "../components/EmailSignupResend";
+import externalApps from "../../public/information/externalApps.json";
 /**
  * Drop this file in your Next.js app as `app/page.jsx` (or `pages/index.js`).
  * Tailwind + Framer Motion + lucide-react. No external data calls.
@@ -18,7 +19,7 @@ export default function Home() {
       <Products />
       {/* <EmailCapture /> */}
       {/* <Contact /> */}
-      <PlaygroundLinks />
+      {/* <PlaygroundLinks /> */}
     </div>
   );
 }
@@ -34,10 +35,10 @@ function Hero() {
             transition={{ duration: 0.4 }}
             className="text-4xl sm:text-5xl font-extrabold leading-tight"
           >
-            Products built by <span className="text-blue-600">Moises</span>.
+            Built by <span className="text-blue-600">Moises</span>.
           </motion.h1>
           <p className="mt-4 text-lg text-slate-600">
-            I make products that are useful. 
+            I make things.
             <br></br>
             Instacart SWE 2, MIT 2022, Prod, Ex-Twitter, Ex-Facebook.
           </p>
@@ -49,76 +50,74 @@ function Hero() {
 
 
 function Products() {
+  // Filter apps that have product_hunt or product_hunt_embed
+  const productHuntApps = externalApps
+    .filter(app => app.product_hunt || app.product_hunt_embed)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 6); // Show top 6 most recent
+
   return (
     <section id="products" className="mx-auto max-w-6xl px-4 py-12">
-      <div className="mb-8 flex items-center gap-2">
-        <Sparkles className="w-5 h-5 text-purple-600" />
-        <h2 className="text-2xl font-extrabold">Products</h2>
+      <div className="mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-5 h-5 text-purple-600" />
+          <h2 className="text-2xl font-extrabold">Products</h2>
+        </div>
+        <Link
+          href="/products"
+          className="text-sm text-slate-600 hover:text-slate-900 flex items-center gap-1"
+        >
+          View all <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <ProductCard
-          id="pushup"
-          icon={<Dumbbell className="w-5 h-5" />}
-          name="Pushup Counter"
-          tagline="Your webcam counts perfect‑form pushups."
-          bullets={["Real‑time counting", "Form awareness", "Streaks & history"]}
-          cta={{ label: "Try free", href: "/pushup-cv" }}
-        />
-        <ProductCard
-          id="beactive"
-          icon={<Activity className="w-5 h-5" />}
-          name="BeActive"
-          tagline="Daily workout leaderboard with your friends."
-          bullets={["Discord integration", "Auto summaries", "Challenges & badges (Pro)"]}
-          cta={{ label: "Book Demo", href: "https://airtable.com/appCRN4CjHtzXCHUu/pag4p6Pv9vSKTMlzx/form" }}
-        />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {productHuntApps.map((app) => (
+          <ProductHuntCard key={app.id} app={app} />
+        ))}
       </div>
-
     </section>
   );
 }
 
-function ProductCard({ id, icon, name, tagline, bullets, cta, priceNote, secondary }) {
+
+function ProductHuntCard({ app }) {
   return (
     <motion.article
-      id={id}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md"
     >
-      <div className="inline-flex items-center gap-2 rounded-full border bg-slate-50 px-3 py-1 text-sm text-slate-600">
-        {icon}
-        <span>{name}</span>
-      </div>
-      <h3 className="mt-3 text-xl font-bold">{tagline}</h3>
-      <ul className="mt-4 space-y-2 text-sm text-slate-600">
-        {bullets.map((b) => (
-          <li key={b} className="flex items-start gap-2">
-            <Star className="w-4 h-4 text-amber-500 mt-0.5" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-5 flex flex-wrap items-center gap-3">
-        <Link
-          href={cta.href}
-          className="inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-4 py-2 text-sm hover:bg-slate-800"
+      <div className="flex items-start justify-between mb-3">
+        <h3 className="text-lg font-bold text-slate-900">{app.name}</h3>
+        <a
+          href={app.link}
+          target="_blank"
+          rel="noreferrer"
+          className="text-slate-400 hover:text-slate-600"
         >
-          {cta.label} <ArrowRight className="w-4 h-4" />
-        </Link>
-        {secondary && (
-          <Link
-            href={secondary.href}
-            className="inline-flex items-center gap-2 rounded-xl bg-white border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"
-          >
-            {secondary.label}
-          </Link>
-        )}
-        {priceNote && <span className="text-xs text-slate-500">{priceNote}</span>}
+          <ExternalLink className="w-4 h-4" />
+        </a>
       </div>
+      <p className="text-sm text-slate-600 mb-4 line-clamp-2">{app.description}</p>
+      {app.product_hunt_embed && (
+        <div
+          className="mt-2"
+          dangerouslySetInnerHTML={{ __html: app.product_hunt_embed }}
+        />
+      )}
+      {!app.product_hunt_embed && app.product_hunt && (
+        <a
+          href={app.product_hunt}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-orange-500 hover:text-orange-700 mt-2"
+        >
+          View on Product Hunt <ExternalLink className="w-3 h-3" />
+        </a>
+      )}
     </motion.article>
   );
 }
