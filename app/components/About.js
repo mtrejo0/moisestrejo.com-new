@@ -54,7 +54,6 @@ function Products() {
   const productHuntApps = externalApps
     .filter(app => app.product_hunt || app.product_hunt_embed)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 6); // Show top 6 most recent
 
   return (
     <section id="products" className="mx-auto max-w-6xl px-4 py-12">
