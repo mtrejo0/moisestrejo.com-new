@@ -110,7 +110,7 @@ const Comments = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-gray-400 text-sm"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
             required
           />
           <textarea
