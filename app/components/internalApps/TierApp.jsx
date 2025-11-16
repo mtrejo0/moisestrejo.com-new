@@ -35,6 +35,15 @@ const TierApp = () => {
   const [unassigned, setUnassigned] = useState([]);
   const fileInputRef = useRef();
 
+  // Clean up any undefined items
+  useEffect(() => {
+    setTiers(prev => prev.map(tier => ({
+      ...tier,
+      items: tier.items.filter(item => item && item.id)
+    })));
+    setUnassigned(prev => prev.filter(item => item && item.id));
+  }, []);
+
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
     const readers = files.map(
@@ -70,6 +79,7 @@ const TierApp = () => {
     // Handle dragging from unassigned pool
     if (source.droppableId === "unassigned") {
       const draggedItem = unassigned[source.index];
+      if (!draggedItem) return;
       
       // Remove from unassigned
       setUnassigned(prev => 
@@ -93,7 +103,8 @@ const TierApp = () => {
       const sourceTier = tiers.find(t => t.id === source.droppableId);
       if (!sourceTier) return;
 
-      const [draggedItem] = sourceTier.items.slice(source.index, source.index + 1);
+      const draggedItem = sourceTier.items[source.index];
+      if (!draggedItem) return;
       
       // Remove from source tier
       setTiers(prev => 
@@ -118,14 +129,24 @@ const TierApp = () => {
     // Handle dragging between tiers
     else {
       setTiers(prev => {
-        const newTiers = [...prev];
+        const newTiers = prev.map(tier => ({ ...tier, items: [...tier.items] }));
         const sourceTier = newTiers.find(t => t.id === source.droppableId);
         const destTier = newTiers.find(t => t.id === destination.droppableId);
         
         if (!sourceTier || !destTier) return prev;
 
-        const [draggedItem] = sourceTier.items.splice(source.index, 1);
-        destTier.items.splice(destination.index, 0, draggedItem);
+        const draggedItem = sourceTier.items[source.index];
+        if (!draggedItem) return prev;
+
+        // Remove from source tier
+        sourceTier.items = sourceTier.items.filter((_, idx) => idx !== source.index);
+        
+        // Add to destination tier
+        destTier.items = [
+          ...destTier.items.slice(0, destination.index),
+          draggedItem,
+          ...destTier.items.slice(destination.index)
+        ];
 
         return newTiers;
       });
@@ -141,7 +162,7 @@ const TierApp = () => {
   };
 
   return (
-    <div className="min-w-screen mx-auto p-16 bg-black min-h-[150vh] text-white">
+    <div className="min-w-screen mx-auto p-16 bg-black text-white">
       <DragDropContext onDragEnd={onDragEnd}>
         {/* Two-column layout */}
         <div className="flex">
