@@ -322,5 +322,13 @@
     "date": "2025-09-12",
     "product_hunt": "https://www.producthunt.com/products/escribe-notes",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/escribe-notes?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-escribe-notes\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1020480&theme=light&t=1761116556872\" alt=\"Escribe Notes - Transcribe any conversation with AI | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
+  },
+  {
+    "name": "Smile Detector",
+    "description": "A simple smile detector that shows your webcam feed and detects if you're smiling.",
+    "resources": "Chrome Extension, JavaScript",
+    "link": "https://chromewebstore.google.com/detail/smile-detector/daabbmgmdeghaabgpoflpjdjhnhcdbgj?authuser=0&hl=en",
+    "id": "smile-detector",
+    "date": "2025-11-15"
   }
 ]
