@@ -102,7 +102,7 @@ const RandomImageGenerator = () => {
     const extension = imageFormat === "jpeg" ? "jpg" : "png";
     
     const link = document.createElement("a");
-    link.download = `random-image-${width}x${height}.${extension}`;
+    link.download = `random-album-cover-${width}x${height}.${extension}`;
     link.href = canvas.toDataURL(mimeType, quality);
     link.click();
   };
@@ -110,7 +110,7 @@ const RandomImageGenerator = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Random Image Generator</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Random Album Cover</h1>
 
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -264,7 +264,7 @@ const RandomImageGenerator = () => {
               className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium"
             >
               <RefreshCw className="w-5 h-5" />
-              Generate Image
+              Generate Album Cover
             </button>
             <button
               onClick={downloadImage}
