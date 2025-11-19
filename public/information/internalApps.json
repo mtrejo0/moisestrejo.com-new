@@ -314,7 +314,7 @@
   {
     "name": "Random Album Cover",
     "description": "Generate random album covers with customizable dimensions, background color, and random emojis placed at any orientation.",
-    "id": "randomImageGenerator",
+    "id": "randomAlbumCover",
     "type": "internal",
     "component": "RandomImageGenerator",
     "date": "2025-11-18"

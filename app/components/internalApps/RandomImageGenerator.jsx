@@ -9,6 +9,7 @@ const RandomImageGenerator = () => {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
   const [numEmojis, setNumEmojis] = useState(50);
   const [emojiList, setEmojiList] = useState("😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾");
+  const [fontSize, setFontSize] = useState(null); // null means auto-calculate
   const [imageFormat, setImageFormat] = useState("jpeg");
   const [jpegQuality, setJpegQuality] = useState(0.85);
   const [estimatedSize, setEstimatedSize] = useState(0);
@@ -35,19 +36,19 @@ const RandomImageGenerator = () => {
     const emojis = emojiList.trim().split(/\s+/).filter(e => e.length > 0);
     if (emojis.length === 0) return;
 
-    // Calculate font size based on canvas dimensions
-    const fontSize = Math.min(width, height) / 20;
-    ctx.font = `${fontSize}px Arial`;
+    // Use custom font size or calculate based on canvas dimensions
+    const emojiFontSize = fontSize || Math.min(width, height) / 20;
+    ctx.font = `${emojiFontSize}px Arial`;
 
     // Place random emojis
     for (let i = 0; i < numEmojis; i++) {
       const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-      const x = Math.random() * (width);
-      const y = Math.random() * (height);
+      const x = Math.random() * (width ) ;
+      const y = Math.random() * (height ) ;
       const rotation = Math.random() * 360; // Random rotation in degrees
 
       ctx.save();
-      ctx.translate(x , y );
+      ctx.translate(x, y);
       ctx.rotate((rotation * Math.PI) / 180);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
@@ -178,6 +179,25 @@ const RandomImageGenerator = () => {
                 max="1000"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
+            </div>
+
+            {/* Font Size */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Emoji Font Size (px)
+              </label>
+              <input
+                type="number"
+                value={fontSize || ""}
+                onChange={(e) => setFontSize(e.target.value ? parseInt(e.target.value) : null)}
+                placeholder={`Auto (${Math.round(Math.min(width, height) / 20)})`}
+                min="10"
+                max="1000"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Leave empty for auto-calculated size
+              </p>
             </div>
 
             {/* Image Format */}
