@@ -6,6 +6,7 @@ import Background from "./components/Background";
 import LogRocket from "logrocket";
 import setupLogRocketReact from "logrocket-react";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { PostHogProvider } from './providers'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,10 +48,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
       >
-        {/* <Background /> */}
-        <Navbar />
-        {children}
-        <Footer />
+        <PostHogProvider>
+          {/* <Background /> */}
+          <Navbar />
+          {children}
+          <Footer />
+        </PostHogProvider>
       </body>
     </html>
   );
