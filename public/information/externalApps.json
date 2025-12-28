@@ -332,5 +332,15 @@
     "date": "2025-11-15",
     "product_hunt": "https://www.producthunt.com/products/smile-detector",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/smile-detector?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-smile&#0045;detector\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1038568&theme=light&t=1763260083625\" alt=\"Smile&#0032;Detector - Chrome&#0032;extension&#0032;for&#0032;remembering&#0032;to&#0032;&#0058;&#0041;&#0032;in&#0032;meetings | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
+  },
+  {
+    "name": "Moodz Mental Health Tracker",
+    "description": "Track your mood daily, share your journey, support others",
+    "resources": "Next.js, Vercel",
+    "link": "https://www.producthunt.com/products/moodz-mental-health-tracker",
+    "id": "moodz-mental-health-tracker",
+    "date": "2025-12-28",
+    "product_hunt": "https://www.producthunt.com/products/moodz-mental-health-tracker?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-moodz-mental-health-tracker",
+    "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/moodz-mental-health-tracker?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-moodz-mental-health-tracker\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Moodz - Mental Health Tracker - Track your mood daily, share your journey, support others | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1055451&amp;theme=light&amp;t=1766953306952\"></a>"
   }
 ]
