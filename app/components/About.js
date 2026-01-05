@@ -85,6 +85,15 @@ function Products() {
 
 
 function ProductHuntCard({ app }) {
+  // Format date as e.g. "Jan 3, 2026"
+  const formattedDate = app.date
+    ? new Date(app.date).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : "";
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 10 }}
@@ -94,7 +103,12 @@ function ProductHuntCard({ app }) {
       className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md"
     >
       <div className="flex items-start justify-between mb-3">
-        <h3 className="text-lg font-bold text-slate-900">{app.name}</h3>
+        <div>
+          <h3 className="text-lg font-bold text-slate-900">{app.name}</h3>
+          {formattedDate && (
+            <div className="text-xs text-slate-400 mt-1">{formattedDate}</div>
+          )}
+        </div>
         <a
           href={app.link}
           target="_blank"
