@@ -3,6 +3,23 @@
 import { useState, useEffect } from "react";
 import { Play, Pause } from "lucide-react";
 
+/** Raw TSV titles sometimes include wrapping straight/curly quotes — users should not have to type those. */
+function cleanSongTitle(raw) {
+  if (raw == null || raw === "") return "";
+  let t = String(raw).trim();
+  let prev;
+  do {
+    prev = t;
+    t = t
+      .replace(
+        /^["'\u201C\u201D\u2018\u2019\s]+|["'\u201C\u201D\u2018\u2019\s]+$/g,
+        "",
+      )
+      .trim();
+  } while (t !== prev);
+  return t;
+}
+
 const TaylorSwiftGuess = () => {
   const [input, setInput] = useState("");
   const [enteredSongs, setEnteredSongs] = useState([]);
@@ -11,6 +28,7 @@ const TaylorSwiftGuess = () => {
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [albums, setAlbums] = useState({});
+  const [songsReady, setSongsReady] = useState(false);
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -43,7 +61,7 @@ const TaylorSwiftGuess = () => {
               year: "Unknown",
             };
             return {
-              title: values[2]?.trim(),
+              title: cleanSongTitle(values[2]),
               album: albumInfo.title,
               year: albumInfo.year,
             };
@@ -61,8 +79,10 @@ const TaylorSwiftGuess = () => {
           albumGroups[song.album].songs.push(song.title);
         });
         setAlbums(albumGroups);
+        setSongsReady(true);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setSongsReady(false);
       }
     };
 
@@ -85,20 +105,50 @@ const TaylorSwiftGuess = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const songTitle = input?.trim()?.toLowerCase();
-    const foundSong = remainingSongs.find(
-      (song) => song.title?.toLowerCase() === songTitle,
+    if (!songsReady || remainingSongs.length === 0) return;
+
+    const normalizeStrong = (value) =>
+      cleanSongTitle(value)
+        .replace(/[\u200B-\u200D\uFEFF]/g, "")
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+
+    // Less strict: remove punctuation so curly quotes/commas/feat markers
+    // don't prevent a "correct" answer from matching.
+    const normalizeLoose = (value) =>
+      normalizeStrong(value).replace(/[^a-z0-9 ]/g, "");
+
+    const inputStrong = normalizeStrong(input);
+    const inputLoose = normalizeLoose(input);
+
+    // Prefer exact (normalized) match first.
+    let foundSong = remainingSongs.find(
+      (song) => normalizeStrong(song.title) === inputStrong,
     );
-    if (foundSong) {
-      setEnteredSongs([...enteredSongs, foundSong]);
-      setRemainingSongs(
-        remainingSongs.filter(
-          (song) => song.title?.toLowerCase() !== songTitle,
-        ),
+
+    // Fall back to looser punctuation-insensitive match.
+    let usedLooseMatch = false;
+    if (!foundSong) {
+      foundSong = remainingSongs.find(
+        (song) => normalizeLoose(song.title) === inputLoose,
       );
+      usedLooseMatch = true;
+    }
+
+    if (foundSong) {
+      const nextRemainingSongs = remainingSongs.filter((song) => {
+        const songKey = usedLooseMatch
+          ? normalizeLoose(song.title)
+          : normalizeStrong(song.title);
+        const inputKey = usedLooseMatch ? inputLoose : inputStrong;
+        return songKey !== inputKey;
+      });
+
+      setEnteredSongs((prev) => [...prev, foundSong]);
+      setRemainingSongs(nextRemainingSongs);
       setInput("");
 
-      if (remainingSongs.length === 1) {
+      if (nextRemainingSongs.length === 0) {
         setGameWon(true);
         setIsRunning(false);
       }
@@ -110,6 +160,7 @@ const TaylorSwiftGuess = () => {
   };
 
   const getHint = () => {
+    if (remainingSongs.length === 0) return;
     if (window.confirm("Are you sure you want a hint?")) {
       const randomSong =
         remainingSongs[Math.floor(Math.random() * remainingSongs.length)];
@@ -119,6 +170,28 @@ const TaylorSwiftGuess = () => {
         .join("");
       alert(
         `Hint: ${blurredHint} (Album: ${randomSong.album}, Year: ${randomSong.year})`,
+      );
+    }
+  };
+
+  const revealSongAnswer = (songTitle) => {
+    if (!songTitle) return;
+    const songToReveal = remainingSongs.find((s) => s.title === songTitle);
+    if (!songToReveal) return;
+    if (window.confirm("Are you sure you want to answer?")) {
+      // Mark it as found and show the actual answer.
+      setEnteredSongs((prev) => [...prev, songToReveal]);
+      setRemainingSongs((prev) => {
+        const next = prev.filter((s) => s.title !== songTitle);
+        if (next.length === 0) {
+          setGameWon(true);
+          setIsRunning(false);
+        }
+        return next;
+      });
+
+      alert(
+        `Answer: ${songToReveal.title} (Album: ${songToReveal.album}, Year: ${songToReveal.year})`,
       );
     }
   };
@@ -134,12 +207,14 @@ const TaylorSwiftGuess = () => {
           type="text"
           value={input}
           onChange={handleInputChange}
-          placeholder="Enter a song title"
-          className="p-2 border border-gray-300 rounded mr-2"
+          placeholder="Song title (no quotes needed)"
+          disabled={!songsReady}
+          className="p-2 border border-gray-300 rounded mr-2 disabled:opacity-50"
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mr-2"
+          disabled={!songsReady}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mr-2 disabled:opacity-50 disabled:pointer-events-none"
         >
           Submit
         </button>
@@ -151,6 +226,9 @@ const TaylorSwiftGuess = () => {
           Hint
         </button>
       </form>
+      {!songsReady && (
+        <p className="text-sm text-gray-600 mb-4">Loading song list…</p>
+      )}
       <div className="mb-4 flex items-center">
         <button
           onClick={toggleTimer}
@@ -188,9 +266,17 @@ const TaylorSwiftGuess = () => {
                           : "text-gray-500"
                       }
                     >
-                      {enteredSongs.some((s) => s.title === song)
-                        ? song
-                        : "• • •"}
+                      {enteredSongs.some((s) => s.title === song) ? (
+                        song
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => revealSongAnswer(song)}
+                          className="text-gray-500 hover:underline bg-transparent"
+                        >
+                          ...
+                        </button>
+                      )}
                     </li>
                   ))}
                 </ul>
