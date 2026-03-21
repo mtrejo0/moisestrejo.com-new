@@ -1,4 +1,5 @@
 import P5Art from "./P5Art";
+import { fetchP5Projects } from "../../lib/fetchP5Projects";
 
 export const metadata = {
   title: "p5.js Art | Moises Trejo",
@@ -11,10 +12,11 @@ export const metadata = {
   },
 };
 
-const Page = () => {
+const Page = async () => {
+  const projects = await fetchP5Projects();
   return (
     <div>
-      <P5Art />
+      <P5Art projects={projects} />
     </div>
   );
 };
