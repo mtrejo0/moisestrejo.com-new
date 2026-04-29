@@ -16,7 +16,7 @@ const RandomImageGenerator = () => {
   const [gridRows, setGridRows] = useState(10);
   const [gridColumns, setGridColumns] = useState(10);
   const [emojiList, setEmojiList] = useState("😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾");
-  const [fontSize, setFontSize] = useState(null); // null means auto-calculate
+  const [fontSize, setFontSize] = useState(200); // null means auto-calculate
   const [rotationRange, setRotationRange] = useState(0); // degrees of rotation (0-360)
   const [imageFormat, setImageFormat] = useState("jpeg");
   const [jpegQuality, setJpegQuality] = useState(0.85);
