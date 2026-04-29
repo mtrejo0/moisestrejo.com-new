@@ -11,10 +11,13 @@ const RandomImageGenerator = () => {
   const [gradientColor1, setGradientColor1] = useState("#ff6b6b");
   const [gradientColor2, setGradientColor2] = useState("#4ecdc4");
   const [gradientDirection, setGradientDirection] = useState("diagonal-tl-br"); // diagonal directions or horizontal/vertical
+  const [placementMode, setPlacementMode] = useState("random"); // "random" or "grid"
   const [numEmojis, setNumEmojis] = useState(50);
+  const [gridRows, setGridRows] = useState(10);
+  const [gridColumns, setGridColumns] = useState(10);
   const [emojiList, setEmojiList] = useState("😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾");
   const [fontSize, setFontSize] = useState(null); // null means auto-calculate
-  const [rotationRange, setRotationRange] = useState(360); // degrees of rotation (0-360)
+  const [rotationRange, setRotationRange] = useState(0); // degrees of rotation (0-360)
   const [imageFormat, setImageFormat] = useState("jpeg");
   const [jpegQuality, setJpegQuality] = useState(0.85);
   const [estimatedSize, setEstimatedSize] = useState(0);
@@ -24,6 +27,11 @@ const RandomImageGenerator = () => {
   useEffect(() => {
     generateImage();
   }, []);
+
+  const generateRandomColor = () => {
+    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    return randomColor;
+  };
 
   const generateImage = () => {
     const canvas = canvasRef.current;
@@ -84,20 +92,44 @@ const RandomImageGenerator = () => {
     const emojiFontSize = fontSize || Math.min(width, height) / 20;
     ctx.font = `${emojiFontSize}px Arial`;
 
-    // Place random emojis
-    for (let i = 0; i < numEmojis; i++) {
-      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-      const x = Math.random() * (width ) ;
-      const y = Math.random() * (height ) ;
-      const rotation = (Math.random() - 0.5) * rotationRange; // Random rotation within range
+    // Place emojis based on mode
+    if (placementMode === "random") {
+      // Random placement
+      for (let i = 0; i < numEmojis; i++) {
+        const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        const x = Math.random() * (width ) ;
+        const y = Math.random() * (height ) ;
+        const rotation = (Math.random() - 0.5) * rotationRange;
 
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate((rotation * Math.PI) / 180);
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(emoji, 0, 0);
-      ctx.restore();
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate((rotation * Math.PI) / 180);
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(emoji, 0, 0);
+        ctx.restore();
+      }
+    } else {
+      // Grid placement
+      const cellWidth = width / gridColumns;
+      const cellHeight = height / gridRows;
+
+      for (let row = 0; row < gridRows; row++) {
+        for (let col = 0; col < gridColumns; col++) {
+          const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+          const x = (col + 0.5) * cellWidth;
+          const y = (row + 0.5) * cellHeight;
+          const rotation = (Math.random() - 0.5) * rotationRange;
+
+          ctx.save();
+          ctx.translate(x, y);
+          ctx.rotate((rotation * Math.PI) / 180);
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(emoji, 0, 0);
+          ctx.restore();
+        }
+      }
     }
 
     // Estimate file size
@@ -237,6 +269,12 @@ const RandomImageGenerator = () => {
                     placeholder="#ffffff"
                     className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
+                  <button
+                    onClick={() => setBackgroundColor(generateRandomColor())}
+                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors whitespace-nowrap"
+                  >
+                    Random
+                  </button>
                 </div>
               </div>
             )}
@@ -263,6 +301,12 @@ const RandomImageGenerator = () => {
                       placeholder="#ff6b6b"
                       className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
+                    <button
+                      onClick={() => setGradientColor1(generateRandomColor())}
+                      className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors whitespace-nowrap"
+                    >
+                      Random
+                    </button>
                   </div>
                 </div>
 
@@ -285,6 +329,12 @@ const RandomImageGenerator = () => {
                       placeholder="#4ecdc4"
                       className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
+                    <button
+                      onClick={() => setGradientColor2(generateRandomColor())}
+                      className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors whitespace-nowrap"
+                    >
+                      Random
+                    </button>
                   </div>
                 </div>
 
@@ -316,20 +366,93 @@ const RandomImageGenerator = () => {
               </>
             )}
 
-            {/* Number of Emojis */}
-            <div>
+            {/* Placement Mode Selection */}
+            <div className="md:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Number of Emojis
+                Emoji Placement Mode
               </label>
-              <input
-                type="number"
-                value={numEmojis}
-                onChange={(e) => setNumEmojis(parseInt(e.target.value) || 0)}
-                min="0"
-                max="1000"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              <div className="flex gap-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="random"
+                    checked={placementMode === "random"}
+                    onChange={(e) => setPlacementMode(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-gray-700">Random Placement</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="grid"
+                    checked={placementMode === "grid"}
+                    onChange={(e) => setPlacementMode(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-gray-700">Grid Placement</span>
+                </label>
+              </div>
             </div>
+
+            {/* Random Mode Controls */}
+            {placementMode === "random" && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Number of Emojis: {numEmojis}
+                </label>
+                <input
+                  type="range"
+                  min="0"
+                  max="1000"
+                  step="10"
+                  value={numEmojis}
+                  onChange={(e) => setNumEmojis(parseInt(e.target.value))}
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>None (0)</span>
+                  <span>Maximum (1000)</span>
+                </div>
+              </div>
+            )}
+
+            {/* Grid Mode Controls */}
+            {placementMode === "grid" && (
+              <>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Grid Rows
+                  </label>
+                  <input
+                    type="number"
+                    value={gridRows}
+                    onChange={(e) => setGridRows(parseInt(e.target.value) || 1)}
+                    min="1"
+                    max="100"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Grid Columns
+                  </label>
+                  <input
+                    type="number"
+                    value={gridColumns}
+                    onChange={(e) => setGridColumns(parseInt(e.target.value) || 1)}
+                    min="1"
+                    max="100"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div className="md:col-span-2 p-3 bg-blue-50 rounded-md">
+                  <p className="text-sm text-blue-700">
+                    Grid mode will place {gridRows * gridColumns} emojis evenly spaced in a {gridRows} × {gridColumns} grid
+                  </p>
+                </div>
+              </>
+            )}
 
             {/* Rotation Range */}
             <div>
@@ -357,20 +480,27 @@ const RandomImageGenerator = () => {
             {/* Font Size */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Emoji Font Size (px)
+                Emoji Font Size: {fontSize || `Auto (${Math.round(Math.min(width, height) / 20)})`}px
               </label>
               <input
-                type="number"
-                value={fontSize || ""}
-                onChange={(e) => setFontSize(e.target.value ? parseInt(e.target.value) : null)}
-                placeholder={`Auto (${Math.round(Math.min(width, height) / 20)})`}
+                type="range"
                 min="10"
                 max="1000"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                step="10"
+                value={fontSize || Math.round(Math.min(width, height) / 20)}
+                onChange={(e) => setFontSize(parseInt(e.target.value))}
+                className="w-full"
               />
-              <p className="text-xs text-gray-500 mt-1">
-                Leave empty for auto-calculated size
-              </p>
+              <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <span>Small (10px)</span>
+                <span>Large (1000px)</span>
+              </div>
+              <button
+                onClick={() => setFontSize(null)}
+                className="mt-2 text-sm text-blue-600 hover:text-blue-700 underline"
+              >
+                Reset to Auto
+              </button>
             </div>
 
             {/* Image Format */}
