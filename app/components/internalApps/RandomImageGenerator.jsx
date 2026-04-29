@@ -6,10 +6,15 @@ import { Download, RefreshCw, Palette } from "lucide-react";
 const RandomImageGenerator = () => {
   const [width, setWidth] = useState(3000);
   const [height, setHeight] = useState(3000);
+  const [colorMode, setColorMode] = useState("single"); // "single" or "gradient"
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
+  const [gradientColor1, setGradientColor1] = useState("#ff6b6b");
+  const [gradientColor2, setGradientColor2] = useState("#4ecdc4");
+  const [gradientDirection, setGradientDirection] = useState("diagonal-tl-br"); // diagonal directions or horizontal/vertical
   const [numEmojis, setNumEmojis] = useState(50);
   const [emojiList, setEmojiList] = useState("😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾");
   const [fontSize, setFontSize] = useState(null); // null means auto-calculate
+  const [rotationRange, setRotationRange] = useState(360); // degrees of rotation (0-360)
   const [imageFormat, setImageFormat] = useState("jpeg");
   const [jpegQuality, setJpegQuality] = useState(0.85);
   const [estimatedSize, setEstimatedSize] = useState(0);
@@ -28,9 +33,48 @@ const RandomImageGenerator = () => {
     canvas.width = width;
     canvas.height = height;
 
-    // Fill background
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, width, height);
+    // Fill background with solid color or gradient
+    if (colorMode === "single") {
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(0, 0, width, height);
+    } else {
+      // Create gradient based on direction
+      let gradient;
+      
+      switch (gradientDirection) {
+        case "diagonal-tl-br": // Top-left to bottom-right
+          gradient = ctx.createLinearGradient(0, 0, width, height);
+          break;
+        case "diagonal-tr-bl": // Top-right to bottom-left
+          gradient = ctx.createLinearGradient(width, 0, 0, height);
+          break;
+        case "diagonal-bl-tr": // Bottom-left to top-right
+          gradient = ctx.createLinearGradient(0, height, width, 0);
+          break;
+        case "diagonal-br-tl": // Bottom-right to top-left
+          gradient = ctx.createLinearGradient(width, height, 0, 0);
+          break;
+        case "horizontal-lr": // Left to right
+          gradient = ctx.createLinearGradient(0, 0, width, 0);
+          break;
+        case "horizontal-rl": // Right to left
+          gradient = ctx.createLinearGradient(width, 0, 0, 0);
+          break;
+        case "vertical-tb": // Top to bottom
+          gradient = ctx.createLinearGradient(0, 0, 0, height);
+          break;
+        case "vertical-bt": // Bottom to top
+          gradient = ctx.createLinearGradient(0, height, 0, 0);
+          break;
+        default:
+          gradient = ctx.createLinearGradient(0, 0, width, height);
+      }
+      
+      gradient.addColorStop(0, gradientColor1);
+      gradient.addColorStop(1, gradientColor2);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+    }
 
     // Parse emojis from the list
     const emojis = emojiList.trim().split(/\s+/).filter(e => e.length > 0);
@@ -45,7 +89,7 @@ const RandomImageGenerator = () => {
       const emoji = emojis[Math.floor(Math.random() * emojis.length)];
       const x = Math.random() * (width ) ;
       const y = Math.random() * (height ) ;
-      const rotation = Math.random() * 360; // Random rotation in degrees
+      const rotation = (Math.random() - 0.5) * rotationRange; // Random rotation within range
 
       ctx.save();
       ctx.translate(x, y);
@@ -143,28 +187,134 @@ const RandomImageGenerator = () => {
               />
             </div>
 
-            {/* Background Color */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                <Palette className="w-4 h-4" />
-                Background Color
+            {/* Color Mode Selection */}
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Background Mode
               </label>
-              <div className="flex gap-2">
-                <input
-                  type="color"
-                  value={backgroundColor}
-                  onChange={(e) => setBackgroundColor(e.target.value)}
-                  className="h-10 w-20 border border-gray-300 rounded cursor-pointer"
-                />
-                <input
-                  type="text"
-                  value={backgroundColor}
-                  onChange={(e) => setBackgroundColor(e.target.value)}
-                  placeholder="#ffffff"
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
+              <div className="flex gap-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="single"
+                    checked={colorMode === "single"}
+                    onChange={(e) => setColorMode(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-gray-700">Single Color</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    value="gradient"
+                    checked={colorMode === "gradient"}
+                    onChange={(e) => setColorMode(e.target.value)}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-gray-700">Two Color Gradient</span>
+                </label>
               </div>
             </div>
+
+            {/* Single Color Mode */}
+            {colorMode === "single" && (
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                  <Palette className="w-4 h-4" />
+                  Background Color
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="color"
+                    value={backgroundColor}
+                    onChange={(e) => setBackgroundColor(e.target.value)}
+                    className="h-10 w-20 border border-gray-300 rounded cursor-pointer"
+                  />
+                  <input
+                    type="text"
+                    value={backgroundColor}
+                    onChange={(e) => setBackgroundColor(e.target.value)}
+                    placeholder="#ffffff"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Gradient Mode */}
+            {colorMode === "gradient" && (
+              <>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    <Palette className="w-4 h-4" />
+                    Color 1
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      type="color"
+                      value={gradientColor1}
+                      onChange={(e) => setGradientColor1(e.target.value)}
+                      className="h-10 w-20 border border-gray-300 rounded cursor-pointer"
+                    />
+                    <input
+                      type="text"
+                      value={gradientColor1}
+                      onChange={(e) => setGradientColor1(e.target.value)}
+                      placeholder="#ff6b6b"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    <Palette className="w-4 h-4" />
+                    Color 2
+                  </label>
+                  <div className="flex gap-2">
+                    <input
+                      type="color"
+                      value={gradientColor2}
+                      onChange={(e) => setGradientColor2(e.target.value)}
+                      className="h-10 w-20 border border-gray-300 rounded cursor-pointer"
+                    />
+                    <input
+                      type="text"
+                      value={gradientColor2}
+                      onChange={(e) => setGradientColor2(e.target.value)}
+                      placeholder="#4ecdc4"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Gradient Direction
+                  </label>
+                  <select
+                    value={gradientDirection}
+                    onChange={(e) => setGradientDirection(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <optgroup label="Diagonal">
+                      <option value="diagonal-tl-br">↘ Top-Left to Bottom-Right</option>
+                      <option value="diagonal-tr-bl">↙ Top-Right to Bottom-Left</option>
+                      <option value="diagonal-bl-tr">↗ Bottom-Left to Top-Right</option>
+                      <option value="diagonal-br-tl">↖ Bottom-Right to Top-Left</option>
+                    </optgroup>
+                    <optgroup label="Horizontal">
+                      <option value="horizontal-lr">→ Left to Right</option>
+                      <option value="horizontal-rl">← Right to Left</option>
+                    </optgroup>
+                    <optgroup label="Vertical">
+                      <option value="vertical-tb">↓ Top to Bottom</option>
+                      <option value="vertical-bt">↑ Bottom to Top</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </>
+            )}
 
             {/* Number of Emojis */}
             <div>
@@ -179,6 +329,29 @@ const RandomImageGenerator = () => {
                 max="1000"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
+            </div>
+
+            {/* Rotation Range */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Rotation Range: {rotationRange}°
+              </label>
+              <input
+                type="range"
+                min="0"
+                max="360"
+                step="15"
+                value={rotationRange}
+                onChange={(e) => setRotationRange(parseInt(e.target.value))}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <span>No rotation (0°)</span>
+                <span>Full rotation (360°)</span>
+              </div>
+              <p className="text-xs text-gray-500 mt-1">
+                {rotationRange === 0 ? "Emojis will stay upright" : `Emojis can rotate ±${rotationRange / 2}° from upright`}
+              </p>
             </div>
 
             {/* Font Size */}
