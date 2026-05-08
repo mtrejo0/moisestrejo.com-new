@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
 import {
@@ -30,13 +30,22 @@ const WhatIfIInvested = () => {
   const [amount, setAmount] = useState("1000");
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = async () => {
+    if (!ticker || !date || Number(amount) <= 0) {
+      setError("Please enter a valid ticker, date, and amount.");
+      return;
+    }
+
+    setIsLoading(true);
+    setError("");
+
     try {
       const response = await axios.get(
         `/api/ticker?symbol=${ticker}&startDate=${date}`,
       );
-      console.log(response);
+
       const historicalData = response.data;
 
       if (historicalData.length === 0) {
@@ -67,16 +76,14 @@ const WhatIfIInvested = () => {
       };
 
       setData(chartData);
-      setError("");
     } catch (err) {
-      setError("Error fetching data. Please try again.");
+      const apiError = err?.response?.data?.error;
+      setError(apiError || "Error fetching data. Please try again.");
       console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg bg-white">
@@ -136,9 +143,10 @@ const WhatIfIInvested = () => {
         />
         <button
           onClick={fetchData}
+          disabled={isLoading}
           className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600"
         >
-          Calculate
+          {isLoading ? "Calculating..." : "Calculate"}
         </button>
       </div>
       {error && <p className="text-red-500 mt-4">{error}</p>}
