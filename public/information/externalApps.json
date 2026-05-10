@@ -362,5 +362,15 @@
     "date": "2026-05-09",
     "product_hunt": "https://www.producthunt.com/products/gluten-free-spots?launch=gluten-free-spots-favorite-dishes-gf",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/gluten-free-spots?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-gluten-free-spots-favorite-dishes-gf\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Gluten Free Spots (Favorite dishes GF) - Find GF restaurants and dishes by category! | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141948&amp;theme=light&amp;t=1778344850443\"></a>"
+  },
+  {
+    "name": "Random Album Cover Generator",
+    "description": "Make album covers from emojis, gradients, and bold text.",
+    "resources": "Next.js, Vercel, TypeScript, Tailwind",
+    "link": "https://albumcovergenerator.vercel.app",
+    "id": "random-album-cover-generator",
+    "date": "2026-05-10",
+    "product_hunt": "https://www.producthunt.com/products/random-album-cover-generator?launch=random-album-cover-generator",
+    "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/random-album-cover-generator?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-random-album-cover-generator\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Random Album Cover Generator - Make album covers from emojis, gradients, and bold text. | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1143671&amp;theme=light&amp;t=1778430189589\"></a>"
   }
 ]
