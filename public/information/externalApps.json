@@ -367,7 +367,7 @@
     "name": "Random Album Cover Generator",
     "description": "Make album covers from emojis, gradients, and bold text.",
     "resources": "Next.js, Vercel, TypeScript, Tailwind",
-    "link": "https://albumcovergenerator.vercel.app",
+    "link": "https://random-album-cover.vercel.app/",
     "id": "random-album-cover-generator",
     "date": "2026-05-10",
     "product_hunt": "https://www.producthunt.com/products/random-album-cover-generator?launch=random-album-cover-generator",
