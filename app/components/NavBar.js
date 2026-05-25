@@ -13,6 +13,7 @@ const navItems = [
   { path: "/p5art", label: "P5 Art" },
   // { path: "/art", label: "Art" },
   { path: "/music", label: "Music" },
+  { path: "/contact", label: "Contact" },
   // { path: "/blog", label: "Blog" },
   // { path: "/poetry", label: "Poetry" }
 ];
