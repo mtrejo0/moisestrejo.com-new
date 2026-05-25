@@ -17,7 +17,7 @@ import {
   FaLink,
   FaEnvelope,
 } from "react-icons/fa";
-import { SiDevpost } from "react-icons/si";
+import { SiDevpost, SiProducthunt } from "react-icons/si";
 
 const brandColors = {
   LinkedIn: "bg-blue-700 hover:bg-blue-800",
@@ -25,6 +25,7 @@ const brandColors = {
   Instagram:
     "bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600",
   Github: "bg-gray-800 hover:bg-gray-900",
+  "Product Hunt": "bg-[#da552f] hover:bg-[#c44929]",
   Devpost: "bg-blue-600 hover:bg-blue-700",
   Youtube: "bg-red-600 hover:bg-red-700",
   TikTok: "bg-black hover:bg-gray-900",
@@ -42,6 +43,7 @@ const socialIcons = {
   Twitter: FaTwitter,
   Instagram: FaInstagram,
   Github: FaGithub,
+  "Product Hunt": SiProducthunt,
   Devpost: SiDevpost,
   Youtube: FaYoutube,
   TikTok: FaTiktok,
