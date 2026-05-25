@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Activity, Dumbbell, Copy, Star, ArrowRight, Mail, CheckCircle2, Sparkles, ExternalLink } from "lucide-react";
 import EmailSignupResend from "../components/EmailSignupResend";
 import externalApps from "../../public/information/externalApps.json";
-import Comments from "./Comments"
+import ContactLinks from "./ContactLinks";
 /**
  * Drop this file in your Next.js app as `app/page.jsx` (or `pages/index.js`).
  * Tailwind + Framer Motion + lucide-react. No external data calls.
@@ -18,11 +18,9 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Hero />
       <Products />
-      {/* <EmailCapture /> */}
-      {/* <Contact /> */}
-      {/* <PlaygroundLinks /> */}
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <Comments/>
+      <section id="contact" className="mx-auto max-w-6xl px-4 py-12">
+        <h2 className="text-2xl font-extrabold mb-6">Contact</h2>
+        <ContactLinks />
       </section>
     </div>
   );

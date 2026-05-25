@@ -108,18 +108,14 @@ const LinkStackItem = ({ item, index }) => {
   );
 };
 
-const ContactPageClient = () => {
+export default function ContactLinks() {
   const links = contact.filter((item) => getHref(item));
 
   return (
-    <div className="flex min-h-[60vh] justify-center px-4 py-16">
-      <div className="grid w-full grid-cols-1 gap-3 md:w-1/2 md:grid-cols-2">
-        {links.map((item, index) => (
-          <LinkStackItem key={item.name} item={item} index={index} />
-        ))}
-      </div>
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2">
+      {links.map((item, index) => (
+        <LinkStackItem key={item.name} item={item} index={index} />
+      ))}
     </div>
   );
-};
-
-export default ContactPageClient;
+}

@@ -1,16 +1,14 @@
-import ContactPageClient from "./ContactPageClient"
+"use client";
 
-export const metadata = {
-  title: "Contact Me | Moises Trejo",
-  description: "Get in touch with me through various social media platforms or send me an email directly.",
-  openGraph: {
-    title: "Contact Me | Moises Trejo",
-    description: "Get in touch with me through various social media platforms or send me an email directly.",
-  },
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function ContactPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/#contact");
+  }, [router]);
+
+  return null;
 }
-
-const Page = () => {
-  return <ContactPageClient />
-}
-
-export default Page
