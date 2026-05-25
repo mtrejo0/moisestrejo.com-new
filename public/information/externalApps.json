@@ -71,7 +71,7 @@
     "name": "Rhyming!",
     "description": "Paste in your lyrics and you will see all the rhymes highlighted!",
     "resources": "React.JS, Material UI, Typescript",
-    "link": "https://master.d16qayanzycbk6.amplifyapp.com/",
+    "link": "https://rhyming-highlighter.vercel.app/",
     "id": "rhyming",
     "video": "VSK2dR71rrc",
     "date": "2022-02-01"
