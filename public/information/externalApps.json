@@ -364,6 +364,16 @@
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/gluten-free-spots?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-gluten-free-spots-favorite-dishes-gf\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Gluten Free Spots (Favorite dishes GF) - Find GF restaurants and dishes by category! | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1141948&amp;theme=light&amp;t=1778344850443\"></a>"
   },
   {
+    "name": "Anchor: Affirmation Reminders",
+    "description": "Say the important things out loud. An iPhone alarm where you speak a custom phrase to turn it off.",
+    "resources": "Swift, iOS, Speech Recognition",
+    "link": "https://apps.apple.com/us/app/anchor-affirmation-reminders/id6773032005",
+    "id": "anchor-affirmation-reminders",
+    "date": "2026-07-05",
+    "product_hunt": "https://www.producthunt.com/products/anchor-affirmation-reminders?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-anchor-affirmation-reminders",
+    "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/anchor-affirmation-reminders?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-anchor-affirmation-reminders\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Anchor: Affirmation Reminders - Say the important things out loud | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1188089&amp;theme=light&amp;t=1783256811550\"></a>"
+  },
+  {
     "name": "Random Album Cover Generator",
     "description": "Make album covers from emojis, gradients, and bold text.",
     "resources": "Next.js, Vercel, TypeScript, Tailwind",
