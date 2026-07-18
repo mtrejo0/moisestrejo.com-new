@@ -382,5 +382,15 @@
     "date": "2026-05-10",
     "product_hunt": "https://www.producthunt.com/products/random-album-cover-generator?launch=random-album-cover-generator",
     "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/random-album-cover-generator?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-random-album-cover-generator\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"Random Album Cover Generator - Make album covers from emojis, gradients, and bold text. | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1143671&amp;theme=light&amp;t=1778430189589\"></a>"
+  },
+  {
+    "name": "My 10 Goals Daily",
+    "description": "Write 10 goals every morning. No excuses.",
+    "resources": "Swift, iOS",
+    "link": "https://apps.apple.com/us/app/my-10-goals-daily/id6788410140",
+    "id": "my-10-goals-daily",
+    "date": "2026-07-18",
+    "product_hunt": "https://www.producthunt.com/products/my-10-goals-daily?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-my-10-goals-daily",
+    "product_hunt_embed": "<a href=\"https://www.producthunt.com/products/my-10-goals-daily?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-my-10-goals-daily\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"My 10 Goals Daily - Write 10 goals every morning. No excuses. | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1199548&amp;theme=light&amp;t=1784384999717\"></a>"
   }
 ]
