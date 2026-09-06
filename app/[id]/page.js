@@ -6,7 +6,10 @@ import Head from 'next/head'
 import links from "../../public/information/links.json";
 import externalApps from "../../public/information/externalApps.json";
 import internalApps from "../../public/information/internalApps.json";
-import { fetchP5Projects } from "../../lib/fetchP5Projects";
+import {
+  fetchP5Projects,
+  getP5ProjectUrl,
+} from "../../lib/fetchP5Projects";
 
 // Generate static paths for all known routes
 export async function generateStaticParams() {
@@ -97,25 +100,26 @@ export default async function Page({ params }) {
   // Fetch p5 projects
   const p5jsProjects = await fetchP5Projects();
 
-  // Check for p5 project
+  // Check for p5 project (GitHub Pages–hosted sketches)
   const p5Project = p5jsProjects.find((project) => project.id.toLowerCase() === lowerId);
   if (p5Project) {
+    const sketchUrl = getP5ProjectUrl(p5Project.id);
     if (p5Project.redirect) {
-      redirect(`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`);
+      redirect(sketchUrl);
     }
     return (
       <>
         <div className="relative w-full h-screen">
-          <a 
-            href={`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
+          <a
+            href={sketchUrl}
             target="_blank"
-            rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md z-10"
           >
             View Full Screen
           </a>
           <iframe
-            src={`${process.env.NEXT_PUBLIC_P5}/${p5Project.id}`}
+            src={sketchUrl}
             className="w-full h-full border-0"
             title={p5Project.name}
           />

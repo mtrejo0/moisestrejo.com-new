@@ -1,5 +1,13 @@
 [
   {
+    "name": "Connect Four",
+    "description": "Play Connect Four with a most-optimal-move assistant for either player.",
+    "id": "connectFour",
+    "type": "internal",
+    "component": "ConnectFour",
+    "date": "2026-09-06"
+  },
+  {
     "name": "Random Number Generator",
     "description": "Generates random numbers!",
     "id": "randomNumbers",
